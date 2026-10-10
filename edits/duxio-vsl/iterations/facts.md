@@ -23,3 +23,12 @@ Additions (owner sources):
 - The owner's vault describes the audit scope: inspect the offer, lead capture, booking flow, follow-up and pipeline, to find a real problem and decide fit.
 - General, verifiable context: a GoHighLevel "snapshot" is a pre-built template account setup.
 - The same HBR study (Oldroyd, McElheran and Elkington, 2011) also found firms that tried to contact leads within an hour were more than sixty times as likely to qualify them as firms that waited 24 hours or longer. (Verified across secondary reports: smartcompany.com.au 2011, crankwheel and others.)
+
+Confirmed from the site FAQ (page.html, quoted verbatim). These override the earlier "price not allowed" and "approval to confirm" notes:
+- "Will this sound like a robot talking to my people? No. We write every message in your own voice and you approve all of it before anything goes out. Your reputation is the whole point."
+- "Why not just hire an assistant…? An assistant sleeps, forgets and costs more every month. This answers in under a minute, day or night, and never loses a lead."
+- "Reminders go out 24 hours, 2 hours and 10 minutes before the call, plus a short note on how you work, so they arrive warm."
+- "We build it, write it and run it. You get a text when someone serious comes in, and a weekly report. Setup takes about 30 minutes of your time."
+- "Who owns it…? You do. It is built inside your own accounts and your leads stay yours. Nothing is held hostage."
+- "$397 once to build it, then usually $300 to $800 a month to run it, based on your lead volume. You get the exact number on the call before paying anything." (Public on the site, so it may be stated.)
+Still not available: owner name or face, client results or testimonials.
