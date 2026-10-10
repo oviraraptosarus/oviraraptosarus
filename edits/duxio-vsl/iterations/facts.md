@@ -32,3 +32,9 @@ Confirmed from the site FAQ (page.html, quoted verbatim). These override the ear
 - "Who owns it…? You do. It is built inside your own accounts and your leads stay yours. Nothing is held hostage."
 - "$397 once to build it, then usually $300 to $800 a month to run it, based on your lead volume. You get the exact number on the call before paying anything." (Public on the site, so it may be stated.)
 Still not available: owner name or face, client results or testimonials.
+
+Owner answers (this conversation):
+- No client result or testimonial yet. Do not claim one.
+- Founding offer: 5 founding-coach spots, a genuine cap. Founding clients get a founding-client price and additional implementation support, in exchange for honest feedback. The exact price is not yet confirmed.
+- First reply: the owner's draft is a template, so the script may quote a first-reply message only if the owner sets it as the live message. Proposed: "Hey Maya, thanks for reaching out! What made you look into the program right now?"
+- The owner's framework advice: avoid naming GoHighLevel and other tool jargon in the VSL.
