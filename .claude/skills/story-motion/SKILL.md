@@ -9,7 +9,7 @@ description: Character-and-metaphor storytelling style plus the build and audio 
 
 Exemplars: `motion-reel-v2-src/` (16:9 character story: `motion-reel-v2.mp4`) and `kept-reel-src/` (9:16 reel: `kept-reel.mp4`). Open the `index.html` of one before building and match its *caliber and rigour*, never its layout: new story, new metaphor, new palette every time. Ignore `motion-reel-src/`: it is the earlier draft that failed review.
 
-A video that only animates text and shapes fails this bar. Every video needs a **story told by a character through physical metaphor, cut to sound**.
+This style tells the story **through a character and physical metaphor, cut to sound**. Whatever style is used, a video needs a story and sound; animating text and shapes with no story behind it fails `video-craft`.
 
 ## 0. Companion skills (vendored in `.claude/skills/`, MIT, see each SOURCE.md)
 
