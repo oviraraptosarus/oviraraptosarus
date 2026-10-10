@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="gsap.min.js"></script>
+<style>
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;src:url('assets/fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:500;font-style:normal;src:url('assets/fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;src:url('assets/fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;src:url('assets/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;src:url('assets/fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2');}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#fff}
+:root{--ink:#0b0b0f;--sec:#44444d;--mut:#6e6e7a;--acc:#7300f0;--accs:#f2ebff;--urg:#e31029;--sub:#f6f6fb;--warm:#f9f1eb;--obs:#0b0b0f;--obc:#15151b;--obb:#2d2d35;--line:rgba(11,11,15,.09)}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:#fff;font-family:"Plus Jakarta Sans",sans-serif;color:var(--ink)}
+.abs{position:absolute}
+.sc{position:absolute;inset:0;opacity:0;overflow:hidden}
+.eb{font-size:22px;font-weight:700;letter-spacing:.18em;color:var(--mut);text-transform:uppercase}
+.eb::before{content:"";display:inline-block;width:26px;height:3px;margin-right:14px;vertical-align:middle;background:var(--urg)}
+.h{font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 60px -30px rgba(11,11,15,.22)}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:10px;padding:10px 20px;border-radius:999px;font-size:24px;font-weight:700;white-space:nowrap}
+.bub{position:absolute;padding:20px 26px;border-radius:24px;font-size:28px;font-weight:600;line-height:1.3}
+.mw{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.mw>span{display:inline-block}
+.dot{position:absolute;border-radius:50%}
+.ck{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;font-size:20px;font-weight:800;align-items:center;justify-content:center;flex:none}
+.xk{display:inline-flex;width:34px;height:34px;border-radius:50%;background:#e9e9ee;color:var(--mut);font-size:20px;font-weight:800;align-items:center;justify-content:center;flex:none}
+.row{position:absolute;display:flex;align-items:center;gap:18px;font-size:30px;font-weight:600}
+#logo{left:80px;top:52px;height:30px;opacity:0}
+/* captions */
+#cap{left:0;top:968px;width:1920px;height:80px}
+.cl{position:absolute;left:0;top:0;width:1920px;display:flex;justify-content:center;opacity:0}
+.cl>div{display:flex;gap:0 12px;padding:12px 28px;border-radius:16px;background:rgba(255,255,255,.94);border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(11,11,15,.25)}
+.cw{font-size:38px;font-weight:700;letter-spacing:-.01em;color:var(--ink)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="117" data-width="1920" data-height="1080">
+
+
+<!-- S1 hook -->
+<div id="s1" class="sc">
+  <div class="eb abs" style="left:0;width:1920px;text-align:center;top:250px">For coaches selling high-ticket offers</div>
+  <div id="s1a" class="h abs" style="left:0;width:1920px;text-align:center;top:320px;font-size:118px"></div>
+  <div id="s1b" class="h abs" style="left:0;width:1920px;text-align:center;top:455px;font-size:118px"></div>
+  <div id="s1dots" class="abs" style="left:0;top:690px;width:1920px;height:60px"></div>
+</div>
+
+<!-- S2 the DM -->
+<div id="s2" class="sc" style="background:var(--sub)">
+  <div class="card" style="left:220px;top:150px;width:700px;height:640px">
+    <div class="abs" style="left:32px;top:30px;width:60px;height:60px;border-radius:50%;background:#e4dcff"></div>
+    <div class="abs" style="left:110px;top:32px;font-size:28px;font-weight:800">New lead</div>
+    <div class="abs" style="left:110px;top:70px;font-size:20px;color:var(--mut);font-weight:600">via Instagram DM</div>
+    <div class="abs" style="left:0;top:118px;width:700px;height:1px;background:var(--line)"></div>
+    <div id="dm1" class="bub" style="left:32px;top:160px;width:470px;background:#f0f0f4">Hi! Is your coaching program still open?</div>
+    <div id="dm1t" class="abs" style="left:36px;top:296px;font-size:20px;color:var(--mut);font-weight:600">2:14 PM</div>
+    <div id="dm2" class="bub" style="left:250px;top:360px;width:420px;background:var(--acc);color:#fff">Yes! Want to book a quick call?</div>
+    <div id="dm2t" class="abs" style="left:540px;top:496px;font-size:20px;color:var(--mut);font-weight:600">6:22 PM</div>
+    <div id="dm3" class="abs" style="left:32px;top:560px;font-size:24px;color:var(--urg);font-weight:700">● No reply</div>
+  </div>
+  <div id="s2a" class="h abs" style="left:1020px;top:330px;font-size:120px;color:var(--urg)">4 hours later.</div>
+  <div id="s2b" class="h abs" style="left:1024px;top:480px;font-size:64px;color:var(--sec)">They’ve moved on.</div>
+</div>
+
+<!-- S3 six places -->
+<div id="s3" class="sc">
+  <div id="s3h" class="h abs" style="left:0;width:1920px;text-align:center;top:110px;font-size:74px">Your leads live in six places.</div>
+  <div id="tiles"></div>
+  <div id="drops"></div>
+</div>
+
+<!-- S4 no-shows -->
+<div id="s4" class="sc" style="background:var(--sub)">
+  <div id="s4h" class="h abs" style="left:0;width:1920px;text-align:center;top:110px;font-size:74px">Booked. Then they don’t show.</div>
+  <div class="card" style="left:510px;top:250px;width:900px;height:560px">
+    <div class="abs" style="left:40px;top:34px;font-size:30px;font-weight:800">Tuesday</div>
+    <div class="abs" style="left:40px;top:76px;font-size:22px;color:var(--mut);font-weight:600">3 calls booked</div>
+    <div id="slots"></div>
+  </div>
+</div>
+
+<!-- S5 can't pay -->
+<div id="s5" class="sc">
+  <div class="card" style="left:560px;top:160px;width:800px;height:470px;background:var(--obc);border-color:var(--obb)">
+    <div class="abs" style="left:44px;top:40px;font-size:24px;color:#a9a9b6;font-weight:700;letter-spacing:.14em">STRATEGY CALL</div>
+    <div class="abs" style="left:44px;top:84px;width:14px;height:14px;border-radius:50%;background:var(--urg)"></div>
+    <div id="timer" class="abs" style="left:0;width:800px;text-align:center;top:150px;font-size:170px;font-weight:800;color:#fff;letter-spacing:-.03em;font-variant-numeric:tabular-nums">00:00</div>
+  </div>
+  <div id="q5" class="bub h" style="left:430px;top:560px;width:1060px;text-align:center;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(11,11,15,.3);font-size:64px;padding:34px">“I don’t have the money.”</div>
+</div>
+
+<!-- S6 the leak, then DUXIO -->
+<div id="s6" class="sc">
+  <div id="s6a" class="abs h" style="left:0;width:1920px;text-align:center;top:120px;font-size:74px">Your offer is fine.</div>
+  <div id="s6b" class="abs h" style="left:0;width:1920px;text-align:center;top:120px;font-size:74px">The leak is after <span style="color:var(--acc)">“I’m interested.”</span></div>
+  <div id="flow"></div>
+  <img id="s6logo" class="abs" src="assets/img/logo-dark-hero.png" style="left:810px;top:720px;height:60px;opacity:0" alt="">
+  <div id="s6t" class="abs h" style="left:0;width:1920px;text-align:center;top:815px;font-size:44px;color:var(--sec);opacity:0">We build it. We run it. You take the calls.</div>
+</div>
+
+<!-- S7 overview -->
+<div id="s7" class="sc" style="background:var(--sub)">
+  <div class="eb abs" style="left:0;width:1920px;text-align:center;top:190px">How it works</div>
+  <div class="h abs" style="left:0;width:1920px;text-align:center;top:240px;font-size:74px">Four steps from interested to enrolled.</div>
+  <div id="ovline" class="abs" style="left:320px;top:552px;width:1280px;height:4px;background:var(--acc);transform-origin:left"></div>
+  <div id="ov"></div>
+</div>
+
+<!-- S8 step 1 -->
+<div id="s8" class="sc">
+  <div class="eb abs" style="left:160px;top:120px">Step 01</div>
+  <div class="h abs" style="left:160px;top:160px;font-size:68px">Every lead gets an answer.</div>
+  <div id="src1"></div>
+  <svg id="merge" class="abs" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px;fill:none;stroke:var(--acc);stroke-width:3"></svg>
+  <div class="card" style="left:900px;top:300px;width:860px;height:540px">
+    <div class="abs" style="left:36px;top:30px;font-size:28px;font-weight:800">One inbox</div>
+    <div id="inrows"></div>
+    <div id="rep" class="bub" style="left:300px;top:330px;width:520px;background:var(--acc);color:#fff;font-size:26px">Hey! Thanks for reaching out. What made you message today?</div>
+  </div>
+  <div id="c48" class="chip" style="left:1380px;top:260px;background:var(--accs);color:var(--acc)">⏱ Answered in 0:48</div>
+  <div id="cvoice" class="chip" style="left:930px;top:860px;background:#fff;border:1px solid var(--line);color:var(--sec)">✎ Written in your voice</div>
+  <div id="cnight" class="chip" style="left:1300px;top:860px;background:var(--obs);color:#fff">☾ 11:42 PM · answered</div>
+</div>
+
+<!-- S9 step 2 -->
+<div id="s9" class="sc" style="background:var(--sub)">
+  <div class="eb abs" style="left:160px;top:120px">Step 02</div>
+  <div class="h abs" style="left:160px;top:160px;font-size:68px">Serious buyers get sorted.</div>
+  <div class="card" style="left:160px;top:300px;width:900px;height:560px">
+    <div id="qa1" class="bub" style="left:34px;top:40px;width:560px;background:#f0f0f4;font-size:26px">What’s the goal you want help with?</div>
+    <div id="qa2" class="bub" style="left:420px;top:150px;width:440px;background:var(--acc);color:#fff;font-size:26px">Signing more clients.</div>
+    <div id="qa3" class="bub" style="left:34px;top:260px;width:620px;background:#f0f0f4;font-size:26px">Is investing in this a priority right now?</div>
+    <div id="qa4" class="bub" style="left:560px;top:370px;width:300px;background:var(--acc);color:#fff;font-size:26px">Yes, it is.</div>
+  </div>
+  <div id="sms" class="card" style="left:1160px;top:380px;width:600px;height:200px;background:var(--obc);border-color:var(--obb)">
+    <div class="abs" style="left:30px;top:30px;width:52px;height:52px;border-radius:14px;background:var(--acc)"></div>
+    <div class="abs" style="left:104px;top:28px;font-size:22px;color:#a9a9b6;font-weight:700">TEXT MESSAGE · now</div>
+    <div class="abs" style="left:104px;top:66px;width:460px;font-size:30px;color:#fff;font-weight:700;line-height:1.3">A serious lead looks ready to book.</div>
+  </div>
+</div>
+
+<!-- S10 step 3 -->
+<div id="s10" class="sc">
+  <div class="eb abs" style="left:160px;top:120px">Step 03</div>
+  <div class="h abs" style="left:160px;top:160px;font-size:68px">Follow up and booking.</div>
+  <div id="tlline" class="abs" style="left:200px;top:640px;width:1520px;height:4px;background:#e4e4ea;transform-origin:left"></div>
+  <div id="tl"></div>
+  <div id="rems"></div>
+</div>
+
+<!-- S11 step 4 -->
+<div id="s11" class="sc" style="background:var(--sub)">
+  <div class="eb abs" style="left:160px;top:120px">Step 04</div>
+  <div class="h abs" style="left:160px;top:160px;font-size:68px">Quiet leads reopened.</div>
+  <div id="months"></div>
+  <div id="c90" class="chip" style="left:160px;top:770px;background:var(--accs);color:var(--acc)">Quiet leads reopened for 90 days</div>
+</div>
+
+<!-- S12 numbers -->
+<div id="s12" class="sc">
+  <div class="eb abs" style="left:160px;top:96px">The numbers</div>
+  <div class="h abs" style="left:160px;top:136px;font-size:60px">What would one more client a month be worth?</div>
+  <div class="card" style="left:160px;top:260px;width:760px;height:600px"><div id="ins"></div></div>
+  <div class="card" style="left:1000px;top:260px;width:760px;height:600px;background:var(--obc);border-color:var(--obb)"><div id="outs"></div></div>
+  <div id="illus" class="abs" style="left:1000px;top:880px;width:760px;text-align:center;font-size:22px;color:var(--mut);font-weight:600;opacity:0">An illustration, not a forecast.</div>
+</div>
+
+<!-- S13 done for you -->
+<div id="s13" class="sc" style="background:var(--sub)">
+  <div class="h abs" style="left:160px;top:140px;font-size:72px;width:760px">We build it. We run it. <span style="color:var(--acc)">You take the calls.</span></div>
+  <div class="card" style="left:960px;top:150px;width:800px;height:700px"><div id="list"></div></div>
+  <div id="cown" class="chip" style="left:160px;top:380px;background:var(--obs);color:#fff">Built inside your own accounts</div>
+</div>
+
+<!-- S14 pricing -->
+<div id="s14" class="sc">
+  <div class="eb abs" style="left:0;width:1920px;text-align:center;top:110px">Pricing</div>
+  <div class="card" style="left:560px;top:170px;width:800px;height:620px">
+    <div class="abs" style="left:0;width:800px;text-align:center;top:60px;font-size:28px;color:var(--mut);font-weight:700">One-time setup</div>
+    <div id="p397" class="abs h" style="left:0;width:800px;text-align:center;top:110px;font-size:190px">$397</div>
+    <div id="pmo" class="abs" style="left:0;width:800px;text-align:center;top:340px;font-size:42px;font-weight:800">then $300 to $800 a month</div>
+    <div id="pvol" class="abs" style="left:0;width:800px;text-align:center;top:400px;font-size:26px;color:var(--mut);font-weight:600">based on your lead volume</div>
+    <div class="abs" style="left:60px;top:470px;width:680px;height:1px;background:var(--line)"></div>
+    <div id="pex" class="abs" style="left:0;width:800px;text-align:center;top:500px;font-size:28px;color:var(--sec);font-weight:700">Exact number on the call, before you pay anything.</div>
+  </div>
+  <div id="pyours" class="chip" style="left:830px;top:830px;background:var(--accs);color:var(--acc)">✓ It stays yours</div>
+</div>
+
+<!-- S15 fit -->
+<div id="s15" class="sc" style="background:var(--sub)">
+  <div class="eb abs" style="left:0;width:1920px;text-align:center;top:110px">Fit</div>
+  <div class="h abs" style="left:0;width:1920px;text-align:center;top:156px;font-size:64px">This works when people already reach out.</div>
+  <div class="card" style="left:220px;top:300px;width:800px;height:520px"><div class="abs" style="left:44px;top:40px;font-size:30px;font-weight:800">A strong fit</div><div id="fy"></div></div>
+  <div class="card" style="left:1080px;top:300px;width:620px;height:520px;opacity:.85"><div class="abs" style="left:44px;top:40px;font-size:30px;font-weight:800;color:var(--mut)">Not a fit</div><div id="fn"></div></div>
+</div>
+
+<!-- S16 CTA -->
+<div id="s16" class="sc" style="background:var(--obs)">
+  <img class="abs" src="assets/img/logo-light.png" style="left:810px;top:200px;height:60px" alt="">
+  <div id="ctah" class="abs h" style="left:0;width:1920px;text-align:center;top:330px;font-size:96px;color:#fff">Turn interested leads into<br><span style="color:#b98cff">paying clients.</span></div>
+  <div id="ctab" class="abs" style="left:700px;top:620px;width:520px;height:100px;border-radius:14px;background:var(--acc);color:#fff;font-size:36px;font-weight:800;text-align:center;line-height:100px">Book a Strategy Call</div>
+  <div id="ctas" class="abs" style="left:0;width:1920px;text-align:center;top:750px;font-size:28px;color:#a9a9b6;font-weight:600">Apply below. If there’s a fit, we’ll book your call.</div>
+  <div id="disc" class="abs" style="left:0;width:1920px;text-align:center;top:1010px;font-size:18px;color:#6d6d7a;font-weight:600">Numbers are estimates, not promises. Results depend on your offer, price, lead flow and close rate.</div>
+</div>
+
+<img id="logo" class="abs" src="assets/img/logo-dark.png" alt="DUXIO">
+<div id="cap" class="abs"></div>
+<!--AUDIO-->
+</div>
+<script>window.VO=__VO__;window.PL=__PLAN__;</script>
+<script>
+const tl=gsap.timeline({paused:true});
+const $=s=>document.querySelector(s);
+const mk=(p,c,css,html)=>{const e=document.createElement("div");if(c)e.className=c;if(css)e.style.cssText=css;if(html!=null)e.innerHTML=html;(typeof p==="string"?$(p):p).appendChild(e);return e};
+const VO=window.VO, ST=window.PL.starts, SC=window.PL.scenes;
+const L=id=>ST[id];
+const NW=s=>s.replace(/’/g,"'").replace(/[^\w$%'-]/g,"").toLowerCase();
+const W=(id,word,n=0)=>{const ws=VO[id].words;let c=0;for(const w of ws){if(NW(w.w)===NW(word)){if(c===n)return ST[id]+w.s;c++;}}console.warn("no word",id,word);return ST[id]};
+const WI=(id,i)=>ST[id]+VO[id].words[Math.min(i,VO[id].words.length-1)].s;
+const IN=(el,t,o={})=>tl.fromTo(el,Object.assign({opacity:0,y:30},o.from||{}),Object.assign({opacity:1,y:0,x:0,duration:.45,ease:"expo.out"},o.to||{}),t);
+const OUT=(el,t)=>tl.to(el,{opacity:0,duration:.25,ease:"power2.in"},t);
+/* masked word-by-word headline synced to VO */
+const head=(sel,text,times)=>{const el=$(sel);text.split(" ").forEach((w,i)=>{const m=mk(el,"mw","",null);const s=document.createElement("span");s.textContent=w;m.appendChild(s);m.insertAdjacentText("afterend"," ");tl.fromTo(s,{yPercent:110},{yPercent:0,duration:.45,ease:"expo.out"},times[i]);});};
+
+/* scene switching: slide in from right, slide out to left (no zooms) */
+const scIds=["s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","s11","s12","s13","s14","s15","s16"];
+scIds.forEach((id,i)=>{const [a,b]=SC[i];
+  tl.set("#"+id,{opacity:1},a);
+  if(i>0 && id!=="s16") tl.fromTo("#"+id,{x:90},{x:0,duration:.55,ease:"expo.out"},a);
+  if(id==="s16") tl.fromTo("#"+id,{clipPath:"inset(100% 0 0 0)"},{clipPath:"inset(0% 0 0 0)",duration:.6,ease:"expo.inOut"},a);
+  if(i<scIds.length-1){tl.to("#"+id,{x:-90,opacity:0,duration:.26,ease:"power2.in"},b-.27);}
+});
+/* small brand mark appears once DUXIO is introduced */
+tl.to("#logo",{opacity:1,duration:.4},SC[6][0]+.2);
+tl.to("#logo",{opacity:0,duration:.3},SC[15][0]);
+
+/* S1 */
+head("#s1a","You don’t need more leads.",VO.h1.words.slice(3,8).map(w=>ST.h1+w.s-.05));
+head("#s1b","Stop losing the ones you have.",[W("h2","stop"),W("h2","losing"),W("h2","the"),W("h2","ones"),W("h2","you",1),W("h2","have")]);
+for(let i=0;i<14;i++){const d=mk("#s1dots","dot",`left:${612+i*52}px;top:0;width:36px;height:36px;background:#dcdce6`);
+  tl.fromTo(d,{scale:0},{scale:1,duration:.3,ease:"back.out(2)"},.3+i*.05);
+  if([1,4,6,9,11,13].includes(i)){tl.to(d,{backgroundColor:"#e31029",duration:.2},W("h2","losing")+i*.02);tl.to(d,{y:120,opacity:0,duration:.6,ease:"power2.in"},W("h2","losing")+.25+i*.03);}}
+
+/* S2 */
+tl.set(["#dm1","#dm1t","#dm2","#dm2t","#dm3","#s2a","#s2b"],{opacity:0},0);
+IN("#dm1",W("p1","DM.")-.2); IN("#dm1t",W("p1","DM."));
+IN("#s2a",W("p2","four")-.05,{from:{x:-30,y:0}});
+IN("#dm2",W("p2","reply")); IN("#dm2t",W("p2","later."));
+IN("#s2b",W("p2","moved")-.1); IN("#dm3",W("p2","moved"));
+tl.to(["#dm1","#dm2"],{opacity:.45,duration:.4},W("p2","moved")+.2);
+
+/* S3 six places */
+const tiles=[["Instagram DMs","Instagram"],["Email","email,"],["Calendar","calendar,"],["Notes app","notes"],["Website form",null],["Webinar sign-ups",null]];
+tiles.forEach((tt,i)=>{const x=330+(i%3)*440,y=250+Math.floor(i/3)*280;
+  const c=mk("#tiles","card",`left:${x}px;top:${y}px;width:380px;height:220px`);
+  mk(c,"abs",`left:30px;top:26px;font-size:30px;font-weight:800`,tt[0]);
+  const ds=[];for(let k=0;k<3;k++)ds.push(mk(c,"dot",`left:${30+k*46}px;top:150px;width:30px;height:30px;background:#7300f0`));
+  const t=tt[1]?W("p3",tt[1]):W("p3","places.")+.15+(i-4)*.15;
+  IN(c,t-.15);
+  ds.forEach((d,k)=>{if((i+k)%2===0){tl.to(d,{backgroundColor:"#e31029",duration:.15},W("p3","slip")+k*.05);tl.to(d,{y:420,opacity:0,duration:.7,ease:"power2.in"},W("p3","slip")+.1+i*.04+k*.05);}});
+});
+IN("#s3h",SC[2][0]+.2);
+
+/* S4 no-shows */
+const slots=[["10:00","Strategy call",false],["13:00","Strategy call",true],["16:00","Strategy call",true]];
+slots.forEach((s,i)=>{const r=mk("#slots","abs",`left:40px;top:${140+i*130}px;width:820px;height:104px;border-radius:16px;background:#f2ebff;border:1px solid rgba(115,0,240,.25)`);
+  mk(r,"abs",`left:28px;top:32px;font-size:30px;font-weight:800;color:#7300f0`,s[0]);
+  const lab=mk(r,"abs",`left:160px;top:32px;font-size:30px;font-weight:700`,s[1]);
+  IN(r,SC[3][0]+.3+i*.12);
+  if(s[2]){const tag=mk(r,"abs",`right:24px;top:28px;padding:6px 16px;border-radius:999px;background:#fde7ea;color:#e31029;font-size:22px;font-weight:800;opacity:0`,"No-show");
+    const t=W("p4","forget")+(i-1)*.25;
+    tl.to(r,{backgroundColor:"#f3f3f6",borderColor:"rgba(11,11,15,.08)",duration:.3},t);tl.to(lab,{color:"#9a9aa6",duration:.3},t);IN(tag,t+.05,{from:{x:20,y:0}});}});
+IN("#s4h",SC[3][0]+.15);
+
+/* S5 can't pay */
+tl.set("#q5",{opacity:0},0);
+const tm={v:0};tl.to(tm,{v:45*60,duration:1.3,ease:"power2.in",onUpdate(){const m=Math.floor(tm.v/60),s=Math.floor(tm.v%60);$("#timer").textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}},W("p5","forty-five")-.6);
+IN("#q5",W("p5","I")-.05,{from:{y:40}});
+tl.to("#timer",{color:"#6d6d7a",duration:.3},W("p5","I"));
+
+/* S6 leak -> DUXIO */
+tl.set(["#s6a","#s6b"],{opacity:0},0);
+IN("#s6a",L("t1")); OUT("#s6a",W("t1","lose")-.1); IN("#s6b",W("t1","lose"));
+const dl=mk("#flow","abs","left:0;top:0;width:1920px;height:1080px",null);
+const nodes=[["Interested",300],["Booked call",810],["Client",1320]];
+const segA=mk("#flow","abs",`left:600px;top:422px;width:210px;height:6px;background:#dcdce6`);
+const segB=mk("#flow","abs",`left:1110px;top:422px;width:210px;height:6px;background:#dcdce6`);
+nodes.forEach(([n,x],i)=>{const c=mk("#flow","card",`left:${x}px;top:360px;width:300px;height:130px;text-align:center;line-height:130px;font-size:38px;font-weight:800`,n);IN(c,L("t1")+.2+i*.15);});
+IN(segA,L("t1")+.4,{from:{y:0}});IN(segB,L("t1")+.55,{from:{y:0}});
+const redSeg=mk("#flow","abs",`left:640px;top:420px;width:130px;height:10px;border-radius:5px;background:#e31029;transform-origin:left`);
+tl.set(redSeg,{scaleX:0},0);tl.to(redSeg,{scaleX:1,duration:.4,ease:"power2.out"},W("t1","lose"));
+const leakLab=mk("#flow","abs",`left:505px;top:600px;width:400px;text-align:center;font-size:32px;font-weight:800;color:#e31029;opacity:0`,"Where leads go quiet");
+IN(leakLab,W("t1","interested")-.1);
+/* leads flow out of "Interested": most drop at the gap */
+const lost=[1,1,0,1,1,1,0,1,1];
+lost.forEach((l,k)=>{const t=W("t1","lose")+.1+k*.42;const d=mk(dl,"dot",`left:585px;top:413px;width:24px;height:24px;background:#7300f0;opacity:0`);
+  tl.set(d,{opacity:1},t);tl.to(d,{x:l?110:220,duration:.4,ease:"none"},t);
+  if(l){tl.to(d,{backgroundColor:"#e31029",duration:.15},t+.35);tl.to(d,{y:150,duration:.55,ease:"power2.in"},t+.4);tl.to(d,{opacity:0,duration:.2},t+.75);}
+  else tl.set(d,{opacity:0},t+.4);});
+const fix=mk("#flow","abs",`left:600px;top:420px;width:210px;height:10px;border-radius:5px;background:#7300f0;transform-origin:left`);
+tl.set(fix,{scaleX:0},0);tl.to(fix,{scaleX:1,duration:.5,ease:"power2.inOut"},W("t2","DUXIO"));
+tl.to(leakLab,{opacity:0,duration:.25},W("t2","DUXIO"));
+/* after the fix every lead makes it through */
+for(let k=0;k<6;k++){const t=W("t2","DUXIO")+.5+k*.4;const d=mk(dl,"dot",`left:585px;top:413px;width:24px;height:24px;background:#7300f0;opacity:0`);
+  tl.set(d,{opacity:1},t);tl.to(d,{x:735,duration:1.1,ease:"none"},t);tl.set(d,{opacity:0},t+1.1);}
+IN("#s6logo",W("t2","DUXIO")-.05,{from:{y:20}});
+IN("#s6t",W("t2","build"));
+
+/* S7 overview */
+const steps=["Every lead gets an answer","Serious buyers get sorted","Follow up and booking","Quiet leads reopened"];
+tl.fromTo("#ovline",{scaleX:0},{scaleX:1,duration:1.6,ease:"power2.inOut"},L("m0"));
+steps.forEach((s,i)=>{const x=260+i*440;
+  const n=mk("#ov","abs",`left:${x}px;top:494px;width:120px;height:120px;border-radius:50%;background:#7300f0;color:#fff;font-size:40px;font-weight:800;text-align:center;line-height:120px`,"0"+(i+1));
+  const lb=mk("#ov","abs",`left:${x-100}px;top:650px;width:320px;text-align:center;font-size:30px;font-weight:700;line-height:1.25`,s);
+  tl.fromTo(n,{scale:0},{scale:1,duration:.35,ease:"back.out(2)"},L("m0")+.25+i*.4);IN(lb,L("m0")+.35+i*.4);});
+
+/* S8 step 1 */
+const srcs=["Instagram DM","Website form","Freebie","Webinar"];
+const msvg=$("#merge");
+srcs.forEach((s,i)=>{const y=330+i*130;
+  const c=mk("#src1","chip",`left:160px;top:${y}px;background:#fff;border:1px solid rgba(11,11,15,.12);color:#0b0b0f`,s);
+  IN(c,L("m1")+.1+i*.12,{from:{x:-30,y:0}});
+  const p=document.createElementNS("http://www.w3.org/2000/svg","path");p.setAttribute("d",`M420 ${y+26} C650 ${y+26} 680 570 900 570`);msvg.appendChild(p);
+  const len=520;p.style.strokeDasharray=len;tl.fromTo(p,{strokeDashoffset:len},{strokeDashoffset:0,duration:.6,ease:"power2.out"},L("m1")+.3+i*.12);});
+["New lead · Instagram","New lead · Website form","New lead · Freebie"].forEach((r,i)=>{const e=mk("#inrows","abs",`left:36px;top:${96+i*70}px;width:780px;height:56px;border-radius:12px;background:#f6f6fb;font-size:24px;font-weight:700;padding:14px 20px`,r);IN(e,L("m1")+.5+i*.12);});
+tl.set(["#rep","#c48","#cvoice","#cnight"],{opacity:0},0);
+IN("#rep",W("m1","answer")-.1); IN("#c48",W("m1","minute,")-.15,{from:{y:-20}});
+IN("#cvoice",W("m1","voice,")-.15); IN("#cnight",W("m1","night.")-.25);
+
+/* S9 step 2 */
+tl.set(["#qa1","#qa2","#qa3","#qa4","#sms"],{opacity:0},0);
+IN("#qa1",W("m2","quiet")-.1);IN("#qa2",W("m2","questions")+.1);IN("#qa3",W("m2","sort")+.1);IN("#qa4",W("m2","serious")+.2);
+IN("#sms",W("m2","text.")-.35,{from:{x:60,y:0}});
+
+/* S10 step 3 */
+tl.fromTo("#tlline",{scaleX:0},{scaleX:1,duration:1,ease:"power2.inOut"},L("m3")+.1);
+const wk=[["Week 1","Your story","story,"],["Week 2","A real result","result,"],["Week 3","Invite to book","invite"]];
+wk.forEach((w,i)=>{const x=300+i*500;
+  const mkr=mk("#tl","abs",`left:${x+150}px;top:628px;width:28px;height:28px;border-radius:50%;background:#7300f0`);
+  const lb=mk("#tl","abs",`left:${x+100}px;top:676px;width:130px;text-align:center;font-size:24px;font-weight:700;color:#6e6e7a`,w[0]);
+  const c=mk("#tl","card",`left:${x}px;top:330px;width:330px;height:220px;padding:32px`,`<div style="font-size:22px;font-weight:700;color:#6e6e7a;letter-spacing:.12em">MESSAGE ${i+1}</div><div style="font-size:38px;font-weight:800;margin-top:16px;line-height:1.15">${w[1]}</div>`);
+  tl.fromTo(mkr,{scale:0},{scale:1,duration:.3,ease:"back.out(2)"},W("m3",w[2])-.2);IN(lb,W("m3",w[2])-.2);IN(c,W("m3",w[2])-.15);});
+["24 hours before","2 hours before","10 minutes before"].forEach((r,i)=>{const c=mk("#rems","chip",`left:${300+i*420}px;top:780px;background:#f2ebff;color:#7300f0`,"🔔 "+r);IN(c,W("m3","reminders.")-.3+i*.18);});
+
+/* S11 step 4 */
+const msgs=["Hey, just checking in. Still thinking about coaching?","Quick one: is now a better time to talk?","Spots open this month, if you want one."];
+["Month 1","Month 2","Month 3"].forEach((m,i)=>{const x=160+i*540;
+  const c=mk("#months","card",`left:${x}px;top:320px;width:480px;height:400px`);
+  mk(c,"abs",`left:36px;top:30px;font-size:26px;font-weight:800;color:#6e6e7a`,m);
+  const b=mk(c,"bub",`left:36px;top:90px;width:408px;background:#f0f0f4;font-size:27px`,msgs[i]);
+  IN(c,W("m4","Every")-.2+i*.25);IN(b,W("m4","check-in")-.4+i*.15);
+  if(i===2){const r=mk(c,"bub",`left:184px;top:230px;width:260px;background:#7300f0;color:#fff;font-size:27px`,"Yes, let’s talk.");IN(r,W("m4","check-in")+.5,{from:{y:20}});
+    const rc=mk(c,"chip",`left:36px;top:328px;background:#f2ebff;color:#7300f0;font-size:22px;padding:6px 16px`,"● Back in follow-up");IN(rc,W("m4","check-in")+.7,{from:{y:10}});}});
+tl.set("#c90",{opacity:0},0);IN("#c90",W("m4","check-in")+1.1);
+
+/* S12 numbers */
+const ins=[["Your offer price","$3,000",.8,W("n1","three")],["Leads a month who go quiet","80",.6,W("n1","eighty")],["Share who book a call","4%",.25,W("n2","four")],["Calls you close","30%",.45,W("n2","thirty")]];
+ins.forEach((r,i)=>{const y=50+i*135;
+  mk("#ins","abs",`left:44px;top:${y}px;font-size:26px;font-weight:700;color:#44444d`,r[0]);
+  const v=mk("#ins","abs",`right:44px;top:${y-6}px;font-size:40px;font-weight:800`,r[1]);
+  const tr=mk("#ins","abs",`left:44px;top:${y+56}px;width:670px;height:8px;border-radius:4px;background:#ececf2`);
+  const fl=mk(tr,"abs",`left:0;top:0;width:670px;height:8px;border-radius:4px;background:#7300f0;transform-origin:left`);
+  const kn=mk(tr,"abs",`left:0;top:-10px;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid #7300f0`);
+  tl.set([v],{opacity:0},0);tl.set(fl,{scaleX:0},0);
+  tl.to(fl,{scaleX:r[2],duration:.6,ease:"power3.out"},r[3]-.1);tl.fromTo(kn,{x:0},{x:670*r[2]-14,duration:.6,ease:"power3.out"},r[3]-.1);
+  IN(v,r[3]-.05,{from:{y:10}});});
+const outs=[["Extra calls a month","3.2 calls",W("n2","that’s")],["New clients a month","1.0 client",W("n2","one")],["Extra revenue","+$2,880",W("n2","month.")+.3],["Our monthly plan","−$500",W("n3","after")-.2]];
+outs.forEach((r,i)=>{const y=50+i*96;
+  const a=mk("#outs","abs",`left:44px;top:${y}px;font-size:26px;font-weight:600;color:#a9a9b6`,r[0]);
+  const b=mk("#outs","abs",`right:44px;top:${y-4}px;font-size:36px;font-weight:800;color:#fff`,r[1]);
+  tl.set([a,b],{opacity:0},0);tl.to(a,{opacity:.45,duration:.4},L("n1")+.8+i*.12);tl.to(a,{opacity:1,duration:.3},r[2]-.1);IN(b,r[2],{from:{y:10}});});
+mk("#outs","abs",`left:44px;top:430px;width:670px;height:1px;background:#2d2d35`);
+const kl=mk("#outs","abs",`left:44px;top:460px;font-size:28px;font-weight:700;color:#b98cff`,"Left in your pocket");
+const kv=mk("#outs","abs h",`left:44px;top:500px;font-size:84px;color:#fff`,"+$2,380");
+tl.set([kl,kv],{opacity:0},0);tl.to(kl,{opacity:.45,duration:.4},L("n1")+1.3);tl.to(kl,{opacity:1,duration:.3},W("n3","About")-.1);IN(kv,W("n3","About"),{from:{y:24}});
+const kc={v:0};tl.to(kc,{v:2380,duration:.9,ease:"power3.out",onUpdate(){kv.textContent="+$"+Math.round(kc.v).toLocaleString("en-US")}},W("n3","About"));
+IN("#illus",W("n3","illustration,")-.15,{from:{y:8}});
+
+/* S13 done for you */
+const items=["Full setup, done for you","Three weeks of follow up, written for you","Questions that filter out poor fits","Reminders before every call","Quiet leads reopened for 90 days","A weekly report of calls booked"];
+items.forEach((s,i)=>{const r=mk("#list","row",`left:48px;top:${54+i*104}px;width:720px`,`<span class="ck">✓</span><span>${s}</span>`);IN(r,L("o1")+.4+i*.55,{from:{x:24,y:0}});});
+tl.set("#cown",{opacity:0},0);IN("#cown",W("o1","own")-.1);
+
+/* S14 pricing */
+tl.set(["#p397","#pmo","#pvol","#pex","#pyours"],{opacity:0},0);
+IN("#p397",WI("o2",0)-.05,{from:{y:30}});
+IN("#pmo",W("o2","Then")-.05);IN("#pvol",W("o2","based"));
+IN("#pex",W("o3","exact")-.1);IN("#pyours",W("o3","stays")-.1);
+
+/* S15 fit */
+const fy=[["People already reach out to you",W("f1","reach")],["You sell coaching between $1,000 and $10,000",W("f1","reach")+.5],["You sign clients on one-to-one calls",W("f1","sign")]];
+fy.forEach(([s,t],i)=>{const r=mk("#fy","row",`left:44px;top:${120+i*110}px;width:720px;font-size:28px`,`<span class="ck">✓</span><span>${s}</span>`);IN(r,t-.15,{from:{x:24,y:0}});});
+const fn=[["No leads coming in yet"],["Courses or ebooks under $500"],["You want traffic from zero"]];
+fn.forEach(([s],i)=>{const r=mk("#fn","row",`left:44px;top:${120+i*110}px;width:540px;font-size:26px;color:#6e6e7a`,`<span class="xk">✕</span><span>${s}</span>`);IN(r,L("f1")+.3+i*.25,{from:{x:24,y:0}});});
+
+/* S16 CTA */
+tl.set(["#ctah","#ctab","#ctas","#disc"],{opacity:0},0);tl.to("#disc",{opacity:1,duration:.5},window.PL.voend+.15);
+IN("#ctab",W("c1","book")-.1,{from:{y:20}}); IN("#ctas",W("c1","call.")+.1);
+IN("#ctah",L("c2")+.05,{from:{y:30}});
+tl.to("#ctab",{y:-6,duration:.18,yoyo:true,repeat:1,ease:"power2.out"},L("c2")+1.6);
+
+/* captions: up to 7 words per line, active word in brand violet */
+const cap=$("#cap");
+Object.keys(ST).sort((a,b)=>ST[a]-ST[b]).forEach(id=>{
+  const ws=VO[id].words;const groups=[];let cur=[];
+  ws.forEach((w,i)=>{cur.push(w);if(cur.length>=7||(/[.,:?!]$/.test(w.w)&&cur.length>=3)||i===ws.length-1){groups.push(cur);cur=[];}});
+  groups.forEach((g,gi)=>{const line=mk(cap,"cl","",null);const box=mk(line,"","",null);
+    const sp=g.map(w=>mk(box,"cw","",w.w));
+    const t0=ST[id]+g[0].s-.05, t1=gi+1<groups.length?ST[id]+groups[gi+1][0].s-.06:ST[id]+VO[id].d+.05;
+    tl.set(line,{opacity:1},t0);tl.set(line,{opacity:0},t1);
+    sp.forEach((s,k)=>{tl.set(s,{color:"#7300f0"},ST[id]+g[k].s);tl.set(s,{color:"#0b0b0f"},k+1<g.length?ST[id]+g[k+1].s:ST[id]+g[k].e);});
+  });
+});
+
+window.__timelines["main"]=tl;
+tl.seek(0);
+</script>
+</body>
+</html>
