@@ -8,7 +8,9 @@
 | v7 | C (capped), top of B once fixed | trailing comma clause; fit line unused |
 | v8 | B+ | bot answer partial; hook presumed the viewer replies late |
 | v9 | B | stat-led hook (60×) landed too slowly and didn't fit the story |
-| **v10** | **A- (graded; confirmed ceiling with current facts)** | credibility 7 and tire-kicker 6.5 need owner facts |
+| v10 | A- | credibility 7, tire-kicker 6.5 |
+| v11 | B+ | site FAQ facts added; dropped too much to fit them |
+| **v12** | **A- (low A at best; ceiling with current facts)** | blockers: one real client result plus one real sample message or question |
 
 ## Why O is blocked
 The panel needs facts only the owner has. The first four are essential:
