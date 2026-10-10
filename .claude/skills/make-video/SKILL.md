@@ -55,7 +55,7 @@ Load these with the Skill tool (or read their `SKILL.md`) before planning. Alway
 | Any piece with an animated backdrop | `motion-background` (subtle, and never against a brand's "no blobs" rule) |
 | Free-form / montage | `general-video`, `hyperframes-creative` |
 
-**Brand overrides (load first, they win on conflicts):** a DUXIO job loads `duxio-brand` and `duxio-vsl`. The brand's look, words and CTA replace the generic style choice.
+**Brand overrides (load first, they win on conflicts):** a DUXIO job loads `duxio-brand` and `duxio-vsl` and takes logos, fonts, tokens, SFX and voice from `brand/duxio/`. Any brand with a `brand/<name>/` kit works the same way: its files answer the brand questions. The brand's look, words and CTA replace the generic style choice.
 
 Say in one line which skills were loaded, then go.
 

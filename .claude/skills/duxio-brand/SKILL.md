@@ -5,6 +5,8 @@ description: The DUXIO rulebook shared by every DUXIO deliverable (website, VSL,
 
 # DUXIO brand rulebook
 
+**Brand kit:** `brand/duxio/` holds everything this skill points to: logos (SVG, PNG, social avatars, the monogram), fonts, `tokens/tokens.css` and `tokens.json`, SFX, the owner's ElevenLabs voice, the master spec verbatim (`docs/owner-spec-parts-1-to-5.md`), facts, live site copy, the content library and raw research. Read `brand/duxio/README.md` first, and use those files instead of asking the owner again.
+
 DUXIO builds and runs the follow up that moves serious buyers from first interest to a booked sales call, for coaches and consultants selling high ticket offers. Everything below applies to every DUXIO asset. `duxio-website` and `duxio-vsl` add their own rules on top and never relax these.
 
 ## 1. Voice
@@ -76,8 +78,13 @@ Form questions (offer price point, monthly inquiries, biggest bottleneck) are op
 - Alert red `#F1283A`: problems, missed revenue, leaks only.
 - Obsidian `#0D0E12`: the video frame and focus surfaces.
 - Borders `rgba(0,0,0,.08)` to `rgba(0,0,0,.12)`, thin.
-- Font: Plus Jakarta Sans (vendored in `edits/duxio-vsl/src/assets/fonts/`).
-- Logo files: `edits/duxio-vsl-v3/src/assets/img/logo-dark.png` (on light) and `logo-light.png` (on dark).
+- Font: Plus Jakarta Sans 400 to 800 in `brand/duxio/fonts/`; `brand/duxio/tokens/tokens.css` declares them with the colour variables.
+- Logos, all in `brand/duxio/logo/`:
+  - `svg/duxio-wordmark-{ink,white,violet,violet-gradient}.svg`
+  - `svg/duxio-wordmark-parts.svg` (per-letter ids, for animation)
+  - `png/*-2400.png`
+  - `original/monogram-metal.png` (the hexagon mark)
+  - `social/avatar-*.png` (profile pictures)
 - Banned look: floating purple-pink gradients, neon glassmorphism blobs, generic SaaS card grids, low-contrast grey text on dark grey cards.
 
 ## 9. Pre-flight check (run on every DUXIO deliverable)

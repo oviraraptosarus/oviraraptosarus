@@ -44,6 +44,8 @@ if not out:
 
 msg = ("Skill router: before doing anything else, load these skills with the Skill tool, in order: "
        + ", ".join(out) + ".")
+if duxio:
+    msg += " DUXIO brand kit (logos, fonts, tokens, SFX, voice, spec, facts): brand/duxio/README.md."
 if "make-video" in out:
     msg += (" make-video will auto-select the specialist skills for this type of video and ask, in one "
             "AskUserQuestion round, for any required brief field the prompt left out (type, platform/length, "

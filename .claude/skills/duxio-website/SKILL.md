@@ -5,6 +5,8 @@ description: Build, edit, redesign or review the DUXIO website and funnel (landi
 
 # DUXIO website
 
+Brand files: `brand/duxio/` (logos, fonts, tokens, live site copy in `docs/site-copy.md`, repo facts and known issues in `docs/website.md`).
+
 First load `duxio-brand` (voice, banned words, zero dashes, offer, claims). This skill adds the website-only rules. Videos live in `duxio-vsl`; never mix the two.
 
 Standard: eight-figure editorial direct response. Clean, light, high contrast, honest. Reject AI slop: no floating purple-pink gradients, no neon glassmorphism blobs, no generic SaaS card grids, no low-contrast grey on dark grey.

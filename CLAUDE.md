@@ -31,6 +31,7 @@ Companion skills in `.claude/skills/` (MIT, sources in each `SOURCE.md`):
 - Exemplars: `motion-reel-v2-src/` (16:9 story piece) and `kept-reel-src/` (9:16 reel).
 
 ## DUXIO (the owner's business)
+- **Brand kit: `brand/duxio/`** (start at its README). It holds logos, fonts, tokens, SFX, voice, the master spec, facts, live site copy, the content library and research. Use it; don't ask the owner for these again.
 - `duxio-brand`: shared rules. Voice, zero dashes in customer-facing text, banned words, no freebies (CTA is "Book a Strategy Call"), no income gate, the 4-step mechanism, the claims that may be made.
 - `duxio-vsl`: all DUXIO videos (VSL, cutdown, reels, ads).
 - `duxio-website`: the site and funnel.

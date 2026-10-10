@@ -32,7 +32,12 @@ Load order: `duxio-brand` (rules every asset obeys) → this skill (what DUXIO v
 - **Obsidian `#0D0E12`:** one contrast scene (night, the leak, the cold lead), then back to light. Never a whole dark video.
 - UI is drawn the way the real thing looks: an Instagram DM thread, an iOS notification, a calendar invite, the real form. Thin `rgba(0,0,0,.08)` borders and soft shadows.
 - **Banned:** purple-pink gradient blobs, neon glassmorphism, floating particles, generic SaaS card grids, grey-on-grey text, zoom-as-filler.
-- Logo: `edits/duxio-vsl-v3/src/assets/img/logo-dark.png` on light, `logo-light.png` on dark. It lands on the final hit, never as an intro.
+- Logo:
+  - `brand/duxio/logo/svg/duxio-wordmark-ink.svg` on light, `-white.svg` on dark.
+  - For a build-up animation use `duxio-wordmark-parts.svg`: the four X arms (`x-tl x-tr x-bl x-br`) converge, then `d u i o` follow.
+  - It lands on the final hit, never as an intro.
+- Sound effects: `brand/duxio/sfx/`. Voice: `brand/duxio/voice/`. Fonts and tokens: `brand/duxio/fonts/`, `brand/duxio/tokens/tokens.css`.
+- Before a new video, check `brand/duxio/docs/content-library.md` so nothing gets rebuilt that already exists.
 
 ## 4. Master VSL script (word for word, about 3.5 to 4 min)
 Zero dashes, zero jargon, zero freebies. Visual notes are for the build only.
