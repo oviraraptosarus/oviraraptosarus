@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0a0a10}
+:root{--bg:#0a0a10;--co:#ff3d5a;--bl:#4d7cff;--li:#c6ff3d;--wh:#f5f5f7}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:Helvetica,Arial,sans-serif;color:var(--wh)}
+.scene{position:absolute;inset:0;opacity:0}
+.center{display:flex;align-items:center;justify-content:center;flex-direction:column}
+#dots{position:absolute;inset:-100px;opacity:.35}
+.dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#3a3a55}
+#bar{position:absolute;left:0;bottom:0;height:8px;width:1920px;background:var(--co);transform-origin:left;}
+.mask{overflow:hidden;line-height:1;padding:0 20px}
+.big{font-size:250px;font-weight:900;letter-spacing:-.05em;line-height:.92;display:block}
+.flood{position:absolute;inset:0;transform-origin:left;transform:scaleX(0)}
+/* scene2 */
+#ring{position:absolute;left:960px;top:540px;width:0;height:0}
+.sq{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px}
+#prec{position:absolute;font-size:120px;font-weight:900;letter-spacing:-.02em}
+/* scene3 */
+#stat{font-size:430px;font-weight:900;letter-spacing:-.06em;line-height:1;color:var(--li)}
+#statlbl{font-size:70px;font-weight:800;letter-spacing:.3em;margin-top:-10px}
+#bars{position:absolute;left:0;right:0;bottom:0;height:300px;display:flex;align-items:flex-end;justify-content:center;gap:24px}
+.b{width:90px;transform-origin:bottom}
+/* scene4 */
+.lane{position:absolute;left:300px;width:1320px;height:4px;background:#2b2b40}
+.ball{position:absolute;width:64px;height:64px;border-radius:50%;margin:-30px 0 0 0}
+.lbl{position:absolute;left:120px;font-size:34px;font-weight:800;letter-spacing:.12em;width:170px}
+#ease{position:absolute;left:0;top:130px;width:1920px;text-align:center;font-size:130px;font-weight:900;letter-spacing:-.03em}
+/* scene5 */
+#brag{font-size:480px;font-weight:900;letter-spacing:-.06em;display:flex}
+#brag span{display:inline-block}
+#sub{font-size:52px;font-weight:700;letter-spacing:.45em;margin-top:10px;color:#a0a0b8}
+.conf{position:absolute;left:960px;top:540px}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1920" data-height="1080">
+  <div id="dots"></div>
+
+  <!-- S1 -->
+  <div id="s1" class="scene center">
+    <div class="mask"><span class="big l1">I MAKE</span></div>
+    <div class="mask"><span class="big l2" style="color:var(--co)">PIXELS</span></div>
+    <div class="mask"><span class="big l3">MOVE.</span></div>
+  </div>
+  <div id="f1" class="flood" style="background:var(--co)"></div>
+
+  <!-- S2 -->
+  <div id="s2" class="scene center" style="background:var(--co)">
+    <div id="ring"></div>
+    <div id="prec" style="color:#0a0a10">PRECISION</div>
+  </div>
+
+  <!-- S3 -->
+  <div id="s3" class="scene center" style="background:var(--bg)">
+    <div id="stat">0</div>
+    <div id="statlbl">FPS OF PURE INTENT</div>
+    <div id="bars"></div>
+  </div>
+  <div id="f3" class="flood" style="background:var(--bl);transform-origin:right"></div>
+
+  <!-- S4 -->
+  <div id="s4" class="scene" style="background:var(--bl)">
+    <div id="ease">EASING IS EVERYTHING</div>
+  </div>
+
+  <!-- S5 -->
+  <div id="s5" class="scene center">
+    <div id="brag"><span>B</span><span>R</span><span>A</span><span>G</span><span style="color:var(--co)">.</span></div>
+    <div id="sub">MADE WITH HYPERFRAMES</div>
+  </div>
+  <div id="bar"></div>
+</div>
+<script>
+const W=1920,H=1080;
+const tl=gsap.timeline({paused:true});
+const $=s=>document.querySelector(s);
+const mk=(p,c,css)=>{const e=document.createElement("div");e.className=c;if(css)e.style.cssText=css;p.appendChild(e);return e};
+
+// background dots
+const dots=$("#dots");
+for(let i=0;i<14*8;i++){const x=(i%14)*150,y=Math.floor(i/14)*150;mk(dots,"dot",`left:${x}px;top:${y}px`)}
+tl.fromTo("#dots",{x:0,y:0},{x:-150,y:-150,duration:15,ease:"none"},0);
+tl.fromTo("#bar",{scaleX:0},{scaleX:1,duration:15,ease:"none"},0);
+
+// ---- S1 0–3
+tl.set("#s1",{opacity:1},0);
+tl.fromTo(".l1",{yPercent:115,rotate:6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.1);
+tl.fromTo(".l2",{yPercent:115,rotate:-6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.3);
+tl.fromTo(".l3",{yPercent:115,rotate:6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.5);
+tl.to(".l2",{x:60,duration:2,ease:"power1.inOut"},.9);
+tl.to("#s1",{scale:1.12,duration:2.2,ease:"power1.in"},.8);
+tl.to("#f1",{scaleX:1,duration:.55,ease:"expo.inOut"},2.45);
+tl.set("#s1",{opacity:0},3.0);
+
+// ---- S2 3–6
+const ring=$("#ring");const cols=["#0a0a10","#f5f5f7","#4d7cff"];const sqs=[];
+for(let i=0;i<24;i++){const e=mk(ring,"sq",`background:${cols[i%3]};border-radius:${i%2?"50%":"8px"}`);sqs.push(e)}
+tl.set("#s2",{opacity:1},3.0);
+tl.set("#f1",{transformOrigin:"right"},3.0);
+tl.to("#f1",{scaleX:0,duration:.01},3.0);
+sqs.forEach((e,i)=>{
+  const a=i/24*Math.PI*2;
+  tl.fromTo(e,{x:0,y:0,scale:0,rotate:0},{x:Math.cos(a)*420,y:Math.sin(a)*420,scale:1,rotate:360,duration:.9,ease:"back.out(2)"},3.1+i*.02);
+  tl.to(e,{x:Math.cos(a+Math.PI)*620,y:Math.sin(a+Math.PI)*620,duration:1.4,ease:"sine.inOut"},4.1+i*.01);
+});
+tl.fromTo("#ring",{rotate:0},{rotate:200,duration:2.9,ease:"power2.inOut"},3.0);
+tl.fromTo("#prec",{scale:.2,opacity:0},{scale:1,opacity:1,duration:.9,ease:"expo.out"},3.3);
+tl.to("#prec",{scale:1.8,opacity:0,duration:.5,ease:"power3.in"},5.45);
+tl.set("#s2",{opacity:0},6.0);
+
+// ---- S3 6–9
+const bars=$("#bars");const bc=["#ff3d5a","#4d7cff","#c6ff3d","#f5f5f7"];
+for(let i=0;i<13;i++){const h=80+Math.abs(Math.sin(i*1.7))*190;mk(bars,"b",`height:${h}px;background:${bc[i%4]}`)}
+tl.set("#s3",{opacity:1},6.0);
+tl.to("#f3",{scaleX:0,transformOrigin:"right",duration:.01},6.0);
+tl.fromTo(".b",{scaleY:0},{scaleY:1,duration:.9,ease:"elastic.out(1,.5)",stagger:.045},6.2);
+tl.to(".b",{scaleY:.35,duration:.8,ease:"sine.inOut",stagger:{each:.05,yoyo:true,repeat:1}},7.2);
+const c={v:0};
+tl.fromTo("#stat",{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:"power3.out"},6.1);
+tl.to(c,{v:120,duration:1.7,ease:"power3.out",onUpdate(){$("#stat").textContent=Math.round(c.v)}},6.2);
+tl.fromTo("#statlbl",{opacity:0,scaleX:1.6},{opacity:1,scaleX:1,duration:.9,ease:"expo.out"},6.5);
+tl.set("#f3",{transformOrigin:"left"},8.45);
+tl.to("#f3",{scaleX:1,duration:.55,ease:"expo.inOut"},8.45);
+tl.set("#s3",{opacity:0},9.0);
+
+// ---- S4 9–12
+const eases=[["LINEAR","none","#f5f5f7"],["POWER4","power4.inOut","#c6ff3d"],["ELASTIC","elastic.out(1,.4)","#ff3d5a"],["BACK","back.inOut(2)","#0a0a10"],["BOUNCE","bounce.out","#f5f5f7"]];
+const s4=$("#s4");
+eases.forEach((e,i)=>{
+  const y=400+i*115;
+  mk(s4,"lane",`top:${y}px`);
+  const l=mk(s4,"lbl",`top:${y-17}px;color:${e[2]==="#0a0a10"?"#0a0a10":"#f5f5f7"}`);l.textContent=e[0];
+  const b=mk(s4,"ball",`top:${y}px;left:300px;background:${e[2]}`);b.id="ball"+i;
+  tl.fromTo(b,{x:0,scale:0},{scale:1,duration:.3,ease:"back.out(3)"},9.15+i*.05);
+  tl.to(b,{x:1256,duration:1.5,ease:e[1]},9.5+i*.03);
+  tl.to(b,{x:0,duration:.9,ease:"power3.inOut"},11.1);
+});
+tl.set("#s4",{opacity:1},9.0);
+tl.set("#f3",{scaleX:0},9.0);
+tl.fromTo("#ease",{y:-200,opacity:0,skewX:-20},{y:0,opacity:1,skewX:0,duration:.8,ease:"expo.out"},9.1);
+tl.to("#s4",{clipPath:"circle(0% at 50% 50%)",duration:.5,ease:"power3.in"},11.5);
+tl.set("#s4",{opacity:0},12.0);
+
+// ---- S5 12–15
+tl.set("#s5",{opacity:1},12.0);
+document.querySelectorAll("#brag span").forEach((s,i)=>{
+  tl.fromTo(s,{y:-900,rotate:-40+i*20,scaleY:1.6},{y:0,rotate:0,scaleY:1,duration:.9,ease:"bounce.out"},12.05+i*.1);
+});
+tl.fromTo("#sub",{opacity:0,y:30},{opacity:1,y:0,duration:.7,ease:"power3.out"},12.9);
+const s5=$("#s5");const cc=["#ff3d5a","#4d7cff","#c6ff3d","#f5f5f7"];
+for(let i=0;i<48;i++){
+  const a=i*2.399, r=350+(i%7)*130, sz=14+(i%5)*8;
+  const e=mk(s5,"conf",`width:${sz}px;height:${sz}px;background:${cc[i%4]};border-radius:${i%3?"2px":"50%"}`);
+  tl.fromTo(e,{x:0,y:0,scale:0,rotate:0},{x:Math.cos(a)*r*1.5,y:Math.sin(a)*r*.9,scale:1,rotate:540,duration:1.1,ease:"expo.out"},12.4+(i%8)*.03);
+  tl.to(e,{y:"+=220",opacity:0,duration:1.2,ease:"power2.in"},13.4+(i%6)*.04);
+}
+tl.to("#s5",{opacity:0,duration:.45,ease:"power2.in"},14.55);
+
+window.__timelines["main"]=tl;
+tl.seek(0);
+</script>
+</body>
+</html>
