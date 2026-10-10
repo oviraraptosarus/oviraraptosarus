@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Check the available skills. If any matches this task, invoke it with the Skill tool before doing anything else. Use several when several apply.'"
+          }
+        ]
+      }
+    ]
+  }
+}
