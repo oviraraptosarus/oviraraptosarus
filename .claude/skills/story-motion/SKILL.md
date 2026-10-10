@@ -9,6 +9,24 @@ The exemplar is `motion-reel-src/` (render: `motion-reel.mp4`). Open its `index.
 
 A video that only animates text and shapes fails this bar. Every video needs a **story told by a character through physical metaphor, cut to sound**.
 
+## 0. Companion skills (vendored in `.claude/skills/`, MIT, see each SOURCE.md)
+
+Load the ones that match the job. This skill stays the boss on caliber. Their code samples are often Remotion/React or After Effects, so translate the *principles* into the HyperFrames/GSAP timeline; never switch frameworks.
+
+| Phase | Load | Use it for |
+|---|---|---|
+| Concept and story | `storyteller`, `marketing-psychology` | arc, emotional stakes, tension and release, persuasion triggers behind the hook |
+| Script / VO / on-screen copy | `copywriting`, then `copy-editing` (sweep the script) | specific, benefit-first lines, customer language, cutting filler words |
+| Ads / promos | `ad-creative` | hook angles, variants, CTA |
+| Reels / TikTok / Shorts | `short-form-video`, `video-content-strategist` | 0–1s hook, an open loop closed last, pattern interrupts every 2–3s, loop endings, 9:16 safe areas |
+| Captions / name tags | `caption-animation`, `lower-thirds` | word-by-word captions synced to the VO (reels need them; most viewers watch muted) |
+| Art direction | `motion-art-direction`, `color-motion`, `shot-composition` | pick one motion personality and commit; palette, focal point, grid |
+| Animation feel | `animation-principles`, `motion-design` | easing and duration tables, Disney principles, choreography and stagger |
+| Edit rhythm | `beat-sync-editing` | cuts on beat phrases, `frames_per_beat=(60/BPM)*fps`, speed ramps into hits, match / J / L cuts |
+| Logo / backgrounds | `logo-animation`, `motion-background` | brand sting at the end, living backgrounds |
+
+**Platform defaults.** If the user says reel, TikTok, short or story, render 1080×1920 (9:16), keep text inside the safe area, add word-synced captions, and make the first frame itself a hook (no logo intro). Otherwise use 1920×1080.
+
 ## 1. Concept first (before any code)
 
 Write these into `BRIEF.md` yourself; do not interview the user unless the subject is unknown.
