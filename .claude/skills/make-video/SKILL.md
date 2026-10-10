@@ -41,8 +41,8 @@ Always offer (and when it's cheap, produce) the platform versions the format imp
 - `node -v` (22+), `ffmpeg`, `npx hyperframes doctor`.
 - Cloud network limits: some hosts (CDNs, model hosts, user websites) may be blocked. Say which, and give the user the exact fix (allow the domain in the environment's network settings, or paste the content).
 
-## 6. Generated media (AI B-roll, images, voices)
-Only use a generation provider that is actually connected and signed in. Never fake or imply generated footage. If none is available, build the B-roll as designed motion graphics or use the user's own material, and say so in one line.
+## 6. B-roll and visuals
+Built from the tools here: designed motion graphics in HyperFrames, registry blocks, the user's own material, and stock via `media-use`. No AI image or video generation is needed or used. Don't ask for a provider. If a line is abstract, make it a diagram, UI scene or kinetic typography.
 
 ## 7. Deliver
 Send the mp4 (`SendUserFile`, render), one line on what it is (format, length, voice), plus the script and any variants. Commit the source and render to the session's branch.

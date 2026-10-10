@@ -1,6 +1,6 @@
 ---
 name: footage-edit
-description: Workflow for when the user supplies raw footage (talking head, screen recording, podcast, interview) and wants AI to do the editing and the B-roll: ingest, transcript, cut dead air and filler, story-driven edit, B-roll plan from the transcript with the right source for each shot (designed motion graphics, stock, screen captures, or generated media when a provider is connected), captions and overlays, audio cleanup and music, colour, reframing for each platform, QC. Use for any request that starts from the user's own video or audio files.
+description: Workflow for when the user supplies raw footage (talking head, screen recording, podcast, interview) and wants AI to do the editing and the B-roll: ingest, transcript, cut dead air and filler, story-driven edit, B-roll plan from the transcript with each shot built from the tools in this repo (designed motion graphics, registry blocks, stock, screen captures, the user's own material), captions and overlays, audio cleanup and music, colour, reframing for each platform, QC. Use for any request that starts from the user's own video or audio files.
 ---
 
 # Footage edit: user's footage, AI's B-roll and editing
@@ -25,11 +25,11 @@ The user is the talent and director; you are editor, motion designer and sound m
 ## 4. B-roll plan (the creative core)
 For every sentence or beat, write what it should *show*, using these questions: what is being claimed, what is the most concrete image of that, and does a viewer need it to understand? Not every line needs B-roll; a talking face is fine for emotion and trust. Cover any stretch of 8s with no visual change.
 
-Source order for each shot:
-1. **Designed motion graphics in HyperFrames** (always available, fully on-brand): diagrams, UI mockups, charts, kinetic text, maps, timelines, product flows. Best for ideas, numbers, steps and processes.
-2. **User's own material**: screen recordings, product shots, previous videos.
-3. **Stock** via `media-use` / the registry when it has something that actually matches.
-4. **Generated image or video** only if a generation provider is connected and signed in (for example a media plugin or an API key the user supplies). Don't fake it, don't pretend; if none is connected, say so and use 1–3. Generated shots should be short (2–4s), match the grade, and never show text, hands or faces that look wrong; reject any that do.
+B-roll is **built, not generated.** The toolset here is enough; don't ask for or wait on any AI video or image generator. Source order for each shot:
+1. **Designed motion graphics in HyperFrames** (the default, fully on-brand): diagrams, UI mockups and product flows, charts and counters, kinetic text, maps, timelines, checklists, line-drawn illustrations, device frames, animated icons, shape-based scenes and characters. Build them with GSAP, SVG, CSS, canvas or Three.js, and start from the registry (`hyperframes-registry`: ~400 ready blocks for charts, terminals, maps, transitions and effects) before hand-building.
+2. **The user's own material**: screen recordings, product shots, earlier videos, photos, logos. Treat them with `media-use` (grade, reframe, background removal, privacy blur).
+3. **Stock and assets** via `media-use` / the registry when something actually matches (icons, brand logos, images, textures, LUTs).
+Never leave a gap because a "generated clip" isn't available. If a line is abstract, build it as a diagram or kinetic typography.
 
 Rules for B-roll: it illustrates the *exact words being spoken*, enters on the key word, leaves before the thought ends, and keeps the same palette, grade and motion language as the rest. Alternate it with the speaker so the face returns every 5–8s. Don't use zoom in or out as a stand-in for B-roll.
 
