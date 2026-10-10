@@ -66,3 +66,4 @@ When the user or anyone else critiques a video, don't patch only that video. Ext
 - Reveal order is part of the design: the cause before the effect, the "before" before the "after".
 - A video is weakest at the joins between scenes. Check that the story, the visuals and the audio agree at each cut.
 - Prefer motivated, designed motion over camera tricks. Don't use zoom in/out as a default effect.
+- Align by layout, never by guessed pixel offsets: centre with flex or measured bounds, then check every centred element's rendered centre numerically (logo, headline, button) before delivering.
