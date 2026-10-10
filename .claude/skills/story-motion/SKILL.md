@@ -83,9 +83,37 @@ Every video ships with voiceover, SFX and music.
    - an off-screen element peeks in (park it ≥900px away)
    - a frame is empty or just a fade
    - a beat has no character or physical action
+   - any item in section 5b is violated
    - two consecutive beats look alike
 5. Render, then extract frames at 1fps (`ffmpeg ... fps=1,tile=5x3`) and review the whole flow once more.
 6. Deliver the mp4 with a short beat list.
+
+## 5b. Pro review rules (from a working motion designer's critique; mandatory)
+
+These were real notes on an earlier version of `motion-reel-v2-src/`. Check every item against the snapshots before rendering. The bad version of each is in the git history (`motion-reel-src/`, commit `56b9e5c` and earlier) if you want to see it.
+
+**Show it, don't write it**
+- If the VO says a metric is false, broken or lying, show it visually (the number turns red or grey, the line breaks, a warning badge appears). Do not put the word on screen as big text.
+- If the VO uses a verb (ate, burned, took), the visual must do that exact verb. A bite needs real contact and a hole. A flame burns, with a scorch, an ember rim and sparks. A box takes, with a chunk visibly pulled in. If the script and the visual disagree, change the visual or the script. Never ship a character that doesn't have the body part for the verb (no biting without a mouth).
+- Anything that moves or appears must have a job. A shape that approaches and leaves without doing anything gets cut.
+
+**Represent real things the way real companies do**
+- A dashboard is the whole screen: a large tilted panel with sidebar, KPI cards and a chart, roughly 70% of the frame, with perspective, motion blur, a gradient and a vignette. Never one small card or box.
+- A money breakdown is a bill: total, then each deduction subtracted one by one, a line, then the result. Reveal the final number last, about 1.5 to 2 seconds after the total appears, and dim the other rows when it lands. Most viewers won't read every row, so the end number is the hero.
+
+**Order of information**
+- Never hint at a reveal before the word that triggers it. Show the "before" state first and flip on the word (daytime, then night on "midnight"). Split the VO into two clips so the flip lands exactly on the word.
+- Check that the content matches its label: a clock for "midnight" reads 12:30 or later, never 11:47.
+
+**Restraint and consistency (story, video and design must agree)**
+- No decorative filler: no floating bubbles, dots, confetti or random coloured squares. Every element on screen must relate to the story. Fewer elements, simpler, premium.
+- One palette across all scenes. If the theme is white, orange and black, every scene (including dark ones like night) carries orange elements for continuity.
+- No marker or circle scribbles around numbers, and no "sale"-style stamps or badges (REAL, NEW, 50% OFF). They read as a retail promo. Highlight the key number with the design system instead (an orange pill, a colour fill, a glow, a size jump).
+- One hero per frame; everything else demoted (smaller, lighter, dimmed). If two things compete for the eye, cut one.
+
+**Craft details**
+- Logos and lockups must be optically aligned (same centre line and baseline). Check the end card in a close crop.
+- Bite holes, masks and cut-outs need a flat background in that scene so the hole matches. Clip scorch and burn effects to the object.
 
 ## 6. Environment gotchas
 

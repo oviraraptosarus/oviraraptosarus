@@ -52,7 +52,11 @@ Load `.claude/skills/story-motion/SKILL.md` and follow it end to end, with Hyper
 2. **Tools.** Check `node -v` (22+), `ffmpeg -version` and `npx hyperframes doctor`. For `--voice`, run `pip install kokoro-onnx soundfile` if `hyperframes tts` complains.
 3. **Cloud sandbox.** jsDelivr is blocked, so vendor `gsap.min.js` locally (see story-motion §6).
 
-## 5. Deliver
+## 5. Pro review gate (both routes)
+
+Before rendering, read `story-motion` section 5b and check the snapshots against every rule. Fix violations first. Don't wait for the user to point them out.
+
+## 6. Deliver
 
 - Send the mp4 with `SendUserFile` (`display: render`).
 - Give one line on what was made: route, length, format, voice on or off.
