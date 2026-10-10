@@ -70,7 +70,8 @@ Every video ships with voiceover, SFX and music.
 2. **SFX**: `python3 .claude/skills/story-motion/tools/sfx.py audio/`. **Every visual event gets a sound**: slam for letters, boing for landings, slide whistle for melts, bloops for drips, blink, two-bite chomp, pop for numbers, tick for clocks, ding for reveals, riser before the resolution, stamp, scribble while drawing, sparkle for the logo, whoosh on transitions, glitch on "lies". Expect ~2–3 SFX per second of video. Give each SFX type its own `data-track-index`.
 3. **Music**: `python3 .claude/skills/story-motion/tools/music.py audio/ --dur <len> --bpm 128-145 --drop <lowpoint_start>,<lowpoint_end> --hit <logo_time>`. The drums drop out during the low-point scene, a riser leads back in, and a final hit lands on the logo.
 4. **Mix**: VO `data-volume` 1.0, SFX ~0.55, bed ~0.28. Target about −16 LUFS integrated, peak below −1 dBFS. Check with `ffmpeg -i out.mp4 -af ebur128=peak=true -f null -`.
-5. Every `<audio>` needs an `id`. If a HeyGen login or a music/SFX connector is available, prefer real stock BGM/SFX via `/media-use` over the synth kit.
+5. **Real assets first.** The `brag` plugin (enabled in `.claude/settings.json`) bundles real music beds with beat/cue maps (`skills/brag/assets/music/` plus `cues/*.music-cues.md`) and recorded SFX (`assets/sfx/` ui, keyboard, impact, interface, casino; see `sfx-analysis.md`). Copy the needed files into the project's `audio/` and cut to the cue map. Fall back to the synth kit only when they don't fit. The music license is unverified upstream: fine for your own renders, but check before redistributing a video commercially.
+6. Every `<audio>` needs an `id`. If a HeyGen login or a music/SFX connector is available, prefer real stock BGM/SFX via `/media-use` over the synth kit.
 
 ## 5. Build and self-review loop
 

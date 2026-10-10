@@ -7,3 +7,7 @@ For any video, motion graphic, promo, reel or explainer request, load the `story
 - **Copy:** copywriting, copy-editing, ad-creative
 - **Reels:** short-form-video, video-content-strategist, caption-animation, lower-thirds
 - **Motion:** motion-art-direction, animation-principles, motion-design, beat-sync-editing, shot-composition, color-motion, logo-animation, motion-background
+
+## Plugins (auto-installed from `.claude/settings.json`)
+- `hyperframes@hyperframes` (heygen-com/hyperframes): the HTML-to-video framework and its skills.
+- `brag@brag` (latent-spaces/brag): `/brag` turns the current project into a ~20s launch video (`--voice`, `--tone`, `--format vertical`). It also bundles real music and SFX that `story-motion` uses.
