@@ -22,3 +22,5 @@ The panel needs facts only the owner has. The first four are essential:
 6. *(A to O)* A true capacity limit, only if one exists.
 7. *(A to O)* How often audits end with "you don't need us".
 | **v13** | **A- (best; average 8.15; ceiling with current facts)** | closed-loop mechanism. O needs a real client result plus a real sample message |
+| v16 | B+ (7.85) | quoted reply was generic; 'You took eight' accusatory; closing urgency pressure |
+| v17 | pending | grader's v16 edits applied; no price, no spot count |
