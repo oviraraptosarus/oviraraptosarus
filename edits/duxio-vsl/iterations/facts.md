@@ -20,3 +20,5 @@ Additions (owner sources):
 - The site's calculator uses a $3,000 offer as an *illustration* ("an illustration, not a forecast"). Use it only conditionally ("if your offer is…").
 - The site FAQ says messages are "written in your voice and approved". The reading used here is that the coach approves the message set before it goes live. Flagged to confirm with the owner.
 - Positioning (site hero): "We build and run the follow up that moves serious buyers from first interest to a booked sales call."
+- The owner's vault describes the audit scope: inspect the offer, lead capture, booking flow, follow-up and pipeline, to find a real problem and decide fit.
+- General, verifiable context: a GoHighLevel "snapshot" is a pre-built template account setup.
