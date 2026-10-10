@@ -1,15 +1,13 @@
 ---
 name: story-motion
-description: House standard for every motion graphics / promo / explainer / "show off" video in this repo. Use whenever asked to make, redo or improve a video (HyperFrames or otherwise), even with no reference. Defines the creative caliber (character-driven story, metaphor, match cuts), the edit rhythm, the type/color system, and the full audio pipeline (voiceover + SFX on every action + music bed), plus a self-review loop. Use alongside /hyperframes; this skill wins on taste and pacing.
+description: Character-and-metaphor storytelling style plus the build and audio pipeline for HyperFrames videos (voiceover, SFX on every action, music bed, beat sheet, snapshot review). Use when a video should be told through a lovable character or physical metaphor (playful, explanatory, brand-story pieces) and for the production steps of any HyperFrames video. Load together with video-craft (quality standard) and video-formats (specs); for serious, premium or sales pieces prefer typography, diagram and UI styles.
 ---
 
 # Story-motion: a creative style and build engine
 
 > The quality standard is `video-craft` (always load it first); pick the format and specs from `video-formats`. This skill is the **character-and-metaphor storytelling style** plus the build and audio pipeline. Use its character approach only when it fits the message and tone (playful, explanatory, brand-story). For premium or serious pieces (VSLs, finance, B2B) lean on typography, diagrams and UI instead of mascots. Pick the style that serves the message; never force a character.
 
-# Story-motion: the caliber bar
-
-The exemplar is `motion-reel-src/` (render: `motion-reel.mp4`). Open its `index.html` before building. Match its **caliber**, never its layout: new story, new metaphor, new palette every time.
+Exemplars: `motion-reel-v2-src/` (16:9 character story: `motion-reel-v2.mp4`) and `kept-reel-src/` (9:16 reel: `kept-reel.mp4`). Open the `index.html` of one before building and match its *caliber and rigour*, never its layout: new story, new metaphor, new palette every time. Ignore `motion-reel-src/`: it is the earlier draft that failed review.
 
 A video that only animates text and shapes fails this bar. Every video needs a **story told by a character through physical metaphor, cut to sound**.
 
