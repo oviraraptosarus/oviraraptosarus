@@ -6,7 +6,9 @@
 | v5 | B- | the $3k maths overclaims, the bot question is dodged, specifics were lost |
 | v6 | C (capped), B once fixed | invented "first fix" audit deliverable |
 | v7 | C (capped), top of B once fixed | trailing comma clause; fit line unused |
-| v8 | B+ to A- (the panel's estimated ceiling with current facts) | grader's edits applied |
+| v8 | B+ | bot answer partial; hook presumed the viewer replies late |
+| v9 | B | stat-led hook (60×) landed too slowly and didn't fit the story |
+| **v10** | **A- (graded; confirmed ceiling with current facts)** | credibility 7 and tire-kicker 6.5 need owner facts |
 
 ## Why O is blocked
 The panel needs facts only the owner has. The first four are essential:
