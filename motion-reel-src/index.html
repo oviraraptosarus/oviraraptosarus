@@ -6,161 +6,308 @@
 <script src="gsap.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0a0a10}
-:root{--bg:#0a0a10;--co:#ff3d5a;--bl:#4d7cff;--li:#c6ff3d;--wh:#f5f5f7}
-#root{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:Helvetica,Arial,sans-serif;color:var(--wh)}
-.scene{position:absolute;inset:0;opacity:0}
-.center{display:flex;align-items:center;justify-content:center;flex-direction:column}
-#dots{position:absolute;inset:-100px;opacity:.35}
-.dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#3a3a55}
-#bar{position:absolute;left:0;bottom:0;height:8px;width:1920px;background:var(--co);transform-origin:left;}
-.mask{overflow:hidden;line-height:1;padding:0 20px}
-.big{font-size:250px;font-weight:900;letter-spacing:-.05em;line-height:.92;display:block}
-.flood{position:absolute;inset:0;transform-origin:left;transform:scaleX(0)}
-/* scene2 */
-#ring{position:absolute;left:960px;top:540px;width:0;height:0}
-.sq{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px}
-#prec{position:absolute;font-size:120px;font-weight:900;letter-spacing:-.02em}
-/* scene3 */
-#stat{font-size:430px;font-weight:900;letter-spacing:-.06em;line-height:1;color:var(--li)}
-#statlbl{font-size:70px;font-weight:800;letter-spacing:.3em;margin-top:-10px}
-#bars{position:absolute;left:0;right:0;bottom:0;height:300px;display:flex;align-items:flex-end;justify-content:center;gap:24px}
-.b{width:90px;transform-origin:bottom}
-/* scene4 */
-.lane{position:absolute;left:300px;width:1320px;height:4px;background:#2b2b40}
-.ball{position:absolute;width:64px;height:64px;border-radius:50%;margin:-30px 0 0 0}
-.lbl{position:absolute;left:120px;font-size:34px;font-weight:800;letter-spacing:.12em;width:170px}
-#ease{position:absolute;left:0;top:130px;width:1920px;text-align:center;font-size:130px;font-weight:900;letter-spacing:-.03em}
-/* scene5 */
-#brag{font-size:480px;font-weight:900;letter-spacing:-.06em;display:flex}
-#brag span{display:inline-block}
-#sub{font-size:52px;font-weight:700;letter-spacing:.45em;margin-top:10px;color:#a0a0b8}
-.conf{position:absolute;left:960px;top:540px}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#f1efed}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:#f1efed;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#17171a}
+.scene{position:absolute;inset:0;opacity:0;overflow:hidden}
+.light{background:radial-gradient(ellipse at 50% 45%,#fbfaf9 0%,#f1efed 60%,#e6e2df 100%)}
+.flat{background:#f1efed}
+.abs{position:absolute}
+.it{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400}
+.or{color:#e23c0b}
+.ball{position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#ffb08a 0%,#ff6a33 22%,#ff4f1a 48%,#e2380b 78%,#b52a06 100%);
+  box-shadow:inset -18px -28px 50px rgba(110,20,0,.35),0 50px 70px -30px rgba(200,60,20,.45)}
+.pearl{position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 34% 28%,#ffffff 0%,#fbeee8 30%,#efcfc2 70%,#d8a593 100%);
+  box-shadow:0 30px 50px -20px rgba(120,30,0,.35)}
+.amb{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a70,#ff5a22 60%,#d8400f)}
+.num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;letter-spacing:-.02em;text-shadow:0 2px 10px rgba(120,20,0,.45)}
+.eye{position:absolute;width:44px;height:52px;border-radius:50%;background:#fff}
+.eye i{position:absolute;width:22px;height:24px;border-radius:50%;background:#17171a;left:12px;top:16px}
+.hdr{position:absolute;left:0;width:1920px;text-align:center;font-size:54px;font-weight:500;letter-spacing:-.01em}
+.mask{position:absolute;left:0;width:1920px;overflow:hidden;text-align:center}
+.mask>div{display:block}
+.bite{position:absolute;border-radius:50%;background:#f1efed}
+.crumb{position:absolute;width:16px;height:16px;border-radius:50%;background:#ff5a22}
+.minus{position:absolute;font-size:120px;font-weight:800;letter-spacing:-.03em}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff}
+#lying span{display:inline-block}
 </style>
 </head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1920" data-height="1080">
-  <div id="dots"></div>
 
-  <!-- S1 -->
-  <div id="s1" class="scene center">
-    <div class="mask"><span class="big l1">I MAKE</span></div>
-    <div class="mask"><span class="big l2" style="color:var(--co)">PIXELS</span></div>
-    <div class="mask"><span class="big l3">MOVE.</span></div>
+<!-- S2 light: says you made / kept -->
+<div id="s2" class="scene light">
+  <div class="mask" style="top:190px;height:80px"><div id="s2h1" class="hdr" style="position:relative">It says you made</div></div>
+  <div class="mask" style="top:180px;height:100px"><div id="s2h2" class="hdr" style="position:relative">You <span class="it or" style="font-size:66px">actually</span> kept</div></div>
+  <div id="puddle" class="abs" style="left:610px;top:790px;width:700px;height:56px;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#ff7a45,#ff4f1a 60%,#c8340a)"></div>
+  <div id="drips"></div>
+  <div id="b2" class="ball" style="left:780px;top:360px;width:360px;height:360px">
+    <div id="b2n" class="num" style="font-size:82px">$1,284</div>
+    <div id="b2e1" class="eye" style="left:110px;top:70px"><i></i></div>
+    <div id="b2e2" class="eye" style="left:206px;top:70px"><i></i></div>
   </div>
-  <div id="f1" class="flood" style="background:var(--co)"></div>
+  <div id="today" class="abs it or" style="left:0;width:1920px;text-align:center;top:770px;font-size:84px">today.</div>
+  <div id="sigh" class="abs it" style="left:1240px;top:330px;font-size:56px;color:#9b9792">(sigh)</div>
+</div>
 
-  <!-- S2 -->
-  <div id="s2" class="scene center" style="background:var(--co)">
-    <div id="ring"></div>
-    <div id="prec" style="color:#0a0a10">PRECISION</div>
+<!-- S1 orange: dashboard lying -->
+<div id="s1" class="scene" style="background:radial-gradient(ellipse at 50% 40%,#ff6a30 0%,#ff4f1a 55%,#e8400f 100%)">
+  <div id="pearls"></div>
+  <div id="dash" class="abs" style="left:610px;top:290px;width:700px;height:460px">
+    <div class="abs" style="left:0;top:-90px;width:700px;text-align:center;color:#fff;font-size:46px;font-weight:600">Your dashboard</div>
+    <div class="abs" style="inset:0;background:#fff;border-radius:28px;box-shadow:0 40px 80px -20px rgba(120,20,0,.5)"></div>
+    <div id="dashn" class="abs" style="left:60px;top:50px;font-size:110px;font-weight:700;letter-spacing:-.03em">$0.00</div>
+    <div class="abs" style="left:64px;top:180px;font-size:30px;font-weight:600;color:#16a34a">▲ 12.4% this week</div>
+    <svg class="abs" style="left:40px;top:230px" width="620" height="200" viewBox="0 0 620 200">
+      <path id="spark" d="M10 170 C80 160 110 120 170 130 S260 80 320 100 S420 40 480 60 S570 20 610 14" fill="none" stroke="#22c55e" stroke-width="8" stroke-linecap="round"/>
+    </svg>
   </div>
+  <div id="lying" class="abs" style="left:0;width:1920px;top:330px;text-align:center;font-size:300px;font-weight:900;letter-spacing:-.05em;color:#1d1410;line-height:1">
+    <span>L</span><span>Y</span><span>I</span><span>N</span><span>G</span><span>.</span>
+  </div>
+  <div id="toyou" class="abs it" style="left:0;width:1920px;top:640px;text-align:center;font-size:110px;color:#fff">to you.</div>
+</div>
 
-  <!-- S3 -->
-  <div id="s3" class="scene center" style="background:var(--bg)">
-    <div id="stat">0</div>
-    <div id="statlbl">FPS OF PURE INTENT</div>
-    <div id="bars"></div>
+<!-- S3 thieves -->
+<div id="s3" class="scene flat">
+  <div class="mask" style="top:150px;height:90px"><div id="h31" class="hdr" style="position:relative;font-size:64px">Fees <span class="it" style="color:#6b5cff">ate</span></div></div>
+  <div class="mask" style="top:150px;height:90px"><div id="h32" class="hdr" style="position:relative;font-size:64px">Ads <span class="it" style="color:#2f7bff">burned</span></div></div>
+  <div class="mask" style="top:150px;height:90px"><div id="h33" class="hdr" style="position:relative;font-size:64px">Shipping <span class="it" style="color:#b8731c">took</span></div></div>
+  <div id="box" class="abs" style="left:800px;top:700px;width:320px;height:230px">
+    <div id="lidL" class="abs" style="left:0;top:0;width:160px;height:40px;background:#c98d4f;transform-origin:left bottom;border-radius:6px"></div>
+    <div id="lidR" class="abs" style="left:160px;top:0;width:160px;height:40px;background:#c98d4f;transform-origin:right bottom;border-radius:6px"></div>
+    <div class="abs" style="left:0;top:36px;width:320px;height:194px;background:linear-gradient(#e2b47c,#c98d4f);border-radius:8px;box-shadow:0 30px 50px -20px rgba(80,40,0,.4)"></div>
+    <div class="abs" style="left:100px;top:110px;width:120px;height:34px;border:3px solid #9a5f25;border-radius:4px;color:#9a5f25;font-size:16px;font-weight:700;letter-spacing:.15em;text-align:center;line-height:28px">SHIPPING</div>
   </div>
-  <div id="f3" class="flood" style="background:var(--bl);transform-origin:right"></div>
+  <div id="b3w" class="abs" style="left:780px;top:360px;width:360px;height:360px">
+    <div class="ball" style="inset:0"></div>
+    <div id="bite1" class="bite" style="left:-70px;top:90px;width:150px;height:150px"></div>
+    <div id="bite1b" class="bite" style="left:-40px;top:190px;width:110px;height:110px"></div>
+    <div id="bite2" class="bite" style="left:290px;top:40px;width:150px;height:150px"></div>
+    <div id="bite2b" class="bite" style="left:300px;top:150px;width:110px;height:110px"></div>
+    <div id="bite3" class="bite" style="left:120px;top:300px;width:150px;height:150px"></div>
+    <div id="b3n" class="num" style="font-size:80px">$1,284</div>
+  </div>
+  <div id="crumbs"></div>
+  <div id="mon" class="abs" style="left:380px;top:430px;width:220px;height:220px">
+    <div class="abs" style="inset:0;border-radius:50%;background:radial-gradient(circle at 34% 28%,#b9b0ff,#7b6bff 40%,#5a47f0 75%,#3a2bb8);box-shadow:0 40px 60px -25px rgba(60,40,200,.5)"></div>
+    <div class="eye" style="left:52px;top:56px;width:40px;height:46px"><i style="left:16px;top:14px"></i></div>
+    <div class="eye" style="left:120px;top:56px;width:40px;height:46px"><i style="left:16px;top:14px"></i></div>
+    <div class="abs" style="left:70px;top:140px;width:80px;height:34px;border-radius:0 0 40px 40px;background:#2a1f8f"></div>
+  </div>
+  <div id="flame" class="abs" style="left:1260px;top:400px;width:220px;height:300px">
+    <div id="flameIn" class="abs" style="left:30px;top:40px;width:160px;height:160px;border-radius:0 50% 50% 50%;transform:rotate(225deg) translate(-10px,-10px);background:radial-gradient(circle at 60% 60%,#bfe0ff,#4d9bff 45%,#1f5fe0);transform-origin:50% 50%"></div>
+    <div class="eye" style="left:68px;top:140px;width:30px;height:36px"><i style="left:10px;top:12px;width:14px;height:16px"></i></div>
+    <div class="eye" style="left:118px;top:140px;width:30px;height:36px"><i style="left:10px;top:12px;width:14px;height:16px"></i></div>
+  </div>
+  <div id="m1" class="minus" style="left:360px;top:690px;color:#6b5cff">−$164</div>
+  <div id="m2" class="minus" style="left:1240px;top:720px;color:#2f7bff">−$398</div>
+  <div id="m3" class="minus" style="left:1240px;top:460px;color:#d08a2c">−$310</div>
+</div>
 
-  <!-- S4 -->
-  <div id="s4" class="scene" style="background:var(--bl)">
-    <div id="ease">EASING IS EVERYTHING</div>
+<!-- S4 midnight -->
+<div id="s4" class="scene" style="background:radial-gradient(ellipse at 50% 50%,#15151f 0%,#07070b 70%)">
+  <div id="stars"></div>
+  <div id="s4h" class="hdr" style="top:170px;color:#fff;font-size:52px">And you only find out at</div>
+  <div id="clock" class="abs" style="left:820px;top:330px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffffff,#e9e9ee 70%,#cfcfd8);box-shadow:0 0 120px rgba(255,255,255,.25)">
+    <div id="hh" class="abs" style="left:136px;top:70px;width:8px;height:72px;background:#17171a;border-radius:4px;transform-origin:50% 100%"></div>
+    <div id="mh" class="abs" style="left:137px;top:36px;width:6px;height:106px;background:#17171a;border-radius:3px;transform-origin:50% 100%"></div>
+    <div id="dig" class="num" style="color:#17171a;font-size:84px;font-weight:600">11<span id="colon">:</span>47</div>
   </div>
+  <div id="midnight" class="abs it" style="left:0;width:1920px;text-align:center;top:660px;font-size:120px;color:#fff">midnight.</div>
+</div>
 
-  <!-- S5 -->
-  <div id="s5" class="scene center">
-    <div id="brag"><span>B</span><span>R</span><span>A</span><span>G</span><span style="color:var(--co)">.</span></div>
-    <div id="sub">MADE WITH HYPERFRAMES</div>
+<!-- S5 the real one -->
+<div id="s5" class="scene light">
+  <div class="abs" style="left:120px;top:90px;font-size:48px;font-weight:600">Overview <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#22c55e;margin-left:10px;vertical-align:middle"></span><span style="font-size:24px;color:#22c55e;vertical-align:middle"> Live</span></div>
+  <div id="s5l" class="abs" style="left:0;width:1920px;text-align:center;top:250px;font-size:44px;color:#77736e">What you <span class="it or" style="font-size:54px">actually</span> kept</div>
+  <div id="pill" class="abs" style="left:560px;top:360px;width:800px;height:220px;border-radius:110px;background:radial-gradient(ellipse at 35% 25%,#ff9a6a 0%,#ff5a22 40%,#e93d0d 80%,#c02e06);box-shadow:inset -20px -30px 50px rgba(110,20,0,.3),0 50px 80px -30px rgba(200,60,20,.5)">
+    <div id="pilln" class="num" style="font-size:150px;letter-spacing:-.03em">$412.00</div>
   </div>
-  <div id="bar"></div>
+  <svg class="abs" style="left:470px;top:300px" width="980" height="340" viewBox="0 0 980 340"><path id="circ" d="M490 20 C800 18 965 90 960 175 C955 265 760 325 470 322 C190 318 20 262 22 172 C24 82 220 30 520 26" fill="none" stroke="#17171a" stroke-width="5" stroke-linecap="round"/></svg>
+  <div id="real" class="abs" style="left:1270px;top:280px;padding:6px 26px;border:7px solid #ff4f1a;border-radius:14px;color:#ff4f1a;font-size:76px;font-weight:900;letter-spacing:.08em;background:rgba(255,255,255,.85)">REAL</div>
+  <div id="brk" class="abs" style="left:0;width:1920px;text-align:center;top:660px;font-size:30px;color:#9b9792;word-spacing:6px">Sales $1,284 &nbsp;·&nbsp; <span style="color:#6b5cff">Fees −$164</span> &nbsp;·&nbsp; <span style="color:#2f7bff">Ads −$398</span> &nbsp;·&nbsp; <span style="color:#d08a2c">Shipping −$310</span></div>
+  <div id="chip" class="abs" style="left:810px;top:740px;width:300px;height:76px;border-radius:38px;background:#17171a;color:#fff;font-size:34px;font-weight:700;text-align:center;line-height:76px">The real one.</div>
+  <div id="side"></div>
+</div>
+
+<!-- S6 end -->
+<div id="s6" class="scene light">
+  <div class="mask" style="top:360px;height:180px"><div id="fewer" style="font-size:150px;font-weight:800;letter-spacing:-.04em">Know the real number.</div></div>
+  <div class="mask" style="top:540px;height:170px"><div id="sleep" class="it or" style="font-size:140px">before midnight.</div></div>
+  <div id="logo" class="abs" style="left:0;width:1920px;top:400px;height:200px;display:flex;align-items:center;justify-content:center;gap:36px">
+    <div class="abs" style="left:0;top:0;width:1px;height:1px"></div>
+    <div style="position:relative;width:150px;height:150px">
+      <div class="tm abs" style="left:10px;top:10px;width:16px;height:130px;background:#17171a;border-radius:8px;transform-origin:50% 100%"></div>
+      <div class="tm abs" style="left:46px;top:10px;width:16px;height:130px;background:#17171a;border-radius:8px;transform-origin:50% 100%"></div>
+      <div class="tm abs" style="left:82px;top:10px;width:16px;height:130px;background:#17171a;border-radius:8px;transform-origin:50% 100%"></div>
+      <div class="tm abs" style="left:118px;top:10px;width:16px;height:130px;background:#17171a;border-radius:8px;transform-origin:50% 100%"></div>
+      <div id="slash" class="abs" style="left:-14px;top:66px;width:180px;height:18px;background:#ff4f1a;border-radius:9px;transform-origin:0 50%"></div>
+    </div>
+    <div id="word" style="font-size:170px;font-weight:800;letter-spacing:-.05em">Kept<span class="or">.</span></div>
+  </div>
+  <div id="made" class="abs" style="left:0;width:1920px;text-align:center;top:690px;font-size:46px;color:#77736e">Made with Claude. <span class="it or" style="font-size:54px">Every single frame.</span></div>
+</div>
+
 </div>
 <script>
-const W=1920,H=1080;
 const tl=gsap.timeline({paused:true});
 const $=s=>document.querySelector(s);
-const mk=(p,c,css)=>{const e=document.createElement("div");e.className=c;if(css)e.style.cssText=css;p.appendChild(e);return e};
+const mk=(p,c,css,html)=>{const e=document.createElement("div");e.className=c;if(css)e.style.cssText=css;if(html)e.innerHTML=html;(typeof p==="string"?$(p):p).appendChild(e);return e};
+const fmt=v=>"$"+Math.round(v).toLocaleString("en-US");
+const count=(sel,a,b,t,d,ease,f)=>{const o={v:a};tl.to(o,{v:b,duration:d,ease:ease||"power2.out",onUpdate(){$(sel).textContent=(f||fmt)(o.v)}},t)};
+const show=(id,t)=>tl.set(id,{opacity:1},t), hide=(id,t)=>tl.set(id,{opacity:0},t);
 
-// background dots
-const dots=$("#dots");
-for(let i=0;i<14*8;i++){const x=(i%14)*150,y=Math.floor(i/14)*150;mk(dots,"dot",`left:${x}px;top:${y}px`)}
-tl.fromTo("#dots",{x:0,y:0},{x:-150,y:-150,duration:15,ease:"none"},0);
-tl.fromTo("#bar",{scaleX:0},{scaleX:1,duration:15,ease:"none"},0);
+// ambient orange dots on light scenes (deterministic)
+const ambPts=[[140,260,26],[260,820,18],[90,560,14],[1760,300,22],[1820,700,16],[1650,900,12],[420,140,10],[1500,130,12],[1700,520,9],[210,980,10]];
+["#s2","#s3","#s5","#s6"].forEach((sc,k)=>{ambPts.forEach((p,i)=>{
+  const e=mk(sc,"amb",`left:${p[0]}px;top:${p[1]}px;width:${p[2]*2}px;height:${p[2]*2}px`);
+  tl.fromTo(e,{y:0},{y:(i%2?-1:1)*30,duration:2.5,ease:"sine.inOut",yoyo:true,repeat:5},0);
+});});
 
-// ---- S1 0–3
-tl.set("#s1",{opacity:1},0);
-tl.fromTo(".l1",{yPercent:115,rotate:6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.1);
-tl.fromTo(".l2",{yPercent:115,rotate:-6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.3);
-tl.fromTo(".l3",{yPercent:115,rotate:6},{yPercent:0,rotate:0,duration:.7,ease:"expo.out"},.5);
-tl.to(".l2",{x:60,duration:2,ease:"power1.inOut"},.9);
-tl.to("#s1",{scale:1.12,duration:2.2,ease:"power1.in"},.8);
-tl.to("#f1",{scaleX:1,duration:.55,ease:"expo.inOut"},2.45);
-tl.set("#s1",{opacity:0},3.0);
-
-// ---- S2 3–6
-const ring=$("#ring");const cols=["#0a0a10","#f5f5f7","#4d7cff"];const sqs=[];
-for(let i=0;i<24;i++){const e=mk(ring,"sq",`background:${cols[i%3]};border-radius:${i%2?"50%":"8px"}`);sqs.push(e)}
-tl.set("#s2",{opacity:1},3.0);
-tl.set("#f1",{transformOrigin:"right"},3.0);
-tl.to("#f1",{scaleX:0,duration:.01},3.0);
-sqs.forEach((e,i)=>{
-  const a=i/24*Math.PI*2;
-  tl.fromTo(e,{x:0,y:0,scale:0,rotate:0},{x:Math.cos(a)*420,y:Math.sin(a)*420,scale:1,rotate:360,duration:.9,ease:"back.out(2)"},3.1+i*.02);
-  tl.to(e,{x:Math.cos(a+Math.PI)*620,y:Math.sin(a+Math.PI)*620,duration:1.4,ease:"sine.inOut"},4.1+i*.01);
+/* ================= S1 0–3.1 ================= */
+show("#s1",0);
+const pearlPts=[[150,120,150],[1600,90,120],[1680,720,170],[260,760,110],[1380,860,70],[520,300,60],[1450,330,50],[80,470,80]];
+pearlPts.forEach((p,i)=>{const e=mk("#pearls","pearl",`left:${p[0]}px;top:${p[1]}px;width:${p[2]}px;height:${p[2]}px`);
+  tl.fromTo(e,{scale:0},{scale:1,duration:.8,ease:"back.out(2)"},.05+i*.05);
+  tl.to(e,{y:(i%2?-50:50),x:(i%3-1)*40,duration:2.6,ease:"sine.inOut"},.4);
 });
-tl.fromTo("#ring",{rotate:0},{rotate:200,duration:2.9,ease:"power2.inOut"},3.0);
-tl.fromTo("#prec",{scale:.2,opacity:0},{scale:1,opacity:1,duration:.9,ease:"expo.out"},3.3);
-tl.to("#prec",{scale:1.8,opacity:0,duration:.5,ease:"power3.in"},5.45);
-tl.set("#s2",{opacity:0},6.0);
+tl.fromTo("#dash",{y:140,scale:.85,rotate:-4,opacity:0},{y:0,scale:1,rotate:0,opacity:1,duration:.8,ease:"expo.out"},.1);
+count("#dashn",0,1284,.2,1.0,"power3.out",v=>"$"+v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}));
+const sp=$("#spark"),L=sp.getTotalLength();sp.style.strokeDasharray=L;
+tl.fromTo(sp,{strokeDashoffset:L},{strokeDashoffset:0,duration:1,ease:"power2.out"},.35);
+// glitch / lie
+tl.to("#dash",{keyframes:[{x:-18,rotate:-2},{x:16,rotate:2},{x:-10},{x:8},{x:0,rotate:0}],duration:.3,ease:"none"},1.25);
+tl.to("#dash",{scale:0,rotate:25,y:60,duration:.35,ease:"back.in(2)"},1.55);
+const ly=[...document.querySelectorAll("#lying span")];
+const lr=[-30,22,-14,34,-26,18];
+ly.forEach((s,i)=>tl.fromTo(s,{y:-700,rotate:lr[i]*2,opacity:0},{y:i%2?12:-8,rotate:lr[i]*.25,opacity:1,duration:.55,ease:"back.out(1.6)"},1.75+i*.05));
+tl.fromTo("#toyou",{y:40,opacity:0},{y:0,opacity:1,duration:.5,ease:"power3.out"},2.15);
+tl.to(["#lying","#toyou","#pearls"],{opacity:0,duration:.2},2.7);
+// orange collapses into the ball (match cut)
+tl.fromTo("#s1",{clipPath:"circle(130% at 50% 50%)"},{clipPath:"circle(180px at 50% 50%)",duration:.45,ease:"power3.in"},2.65);
+show("#s2",2.6);
+hide("#s1",3.1);
 
-// ---- S3 6–9
-const bars=$("#bars");const bc=["#ff3d5a","#4d7cff","#c6ff3d","#f5f5f7"];
-for(let i=0;i<13;i++){const h=80+Math.abs(Math.sin(i*1.7))*190;mk(bars,"b",`height:${h}px;background:${bc[i%4]}`)}
-tl.set("#s3",{opacity:1},6.0);
-tl.to("#f3",{scaleX:0,transformOrigin:"right",duration:.01},6.0);
-tl.fromTo(".b",{scaleY:0},{scaleY:1,duration:.9,ease:"elastic.out(1,.5)",stagger:.045},6.2);
-tl.to(".b",{scaleY:.35,duration:.8,ease:"sine.inOut",stagger:{each:.05,yoyo:true,repeat:1}},7.2);
-const c={v:0};
-tl.fromTo("#stat",{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:"power3.out"},6.1);
-tl.to(c,{v:120,duration:1.7,ease:"power3.out",onUpdate(){$("#stat").textContent=Math.round(c.v)}},6.2);
-tl.fromTo("#statlbl",{opacity:0,scaleX:1.6},{opacity:1,scaleX:1,duration:.9,ease:"expo.out"},6.5);
-tl.set("#f3",{transformOrigin:"left"},8.45);
-tl.to("#f3",{scaleX:1,duration:.55,ease:"expo.inOut"},8.45);
-tl.set("#s3",{opacity:0},9.0);
+/* ================= S2 3.1–5.6 ================= */
+tl.set(["#b2e1","#b2e2"],{scale:0},0);
+tl.set("#s2h2",{yPercent:110},0);
+tl.set("#puddle",{scaleX:0},0);
+tl.fromTo("#b2",{scale:1},{keyframes:[{scaleX:1.12,scaleY:.9,duration:.12},{scaleX:.96,scaleY:1.05,duration:.15},{scaleX:1,scaleY:1,duration:.2}]},3.1);
+tl.fromTo("#s2h1",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},3.15);
+tl.fromTo("#today",{y:50,opacity:0,rotate:-4},{y:0,opacity:1,rotate:0,duration:.6,ease:"expo.out"},3.35);
+tl.to("#s2h1",{yPercent:-110,duration:.4,ease:"power3.in"},4.0);
+tl.to("#s2h2",{yPercent:0,duration:.5,ease:"expo.out"},4.15);
+tl.to("#today",{opacity:0,y:30,duration:.3},4.05);
+// melt
+tl.to("#b2",{scaleY:.62,scaleX:1.25,y:60,duration:.55,ease:"power2.in",transformOrigin:"50% 100%"},4.2);
+tl.to("#puddle",{scaleX:1,duration:.6,ease:"expo.out"},4.6);
+count("#b2n",1284,412,4.2,.8,"power2.in");
+for(let i=0;i<5;i++){const d=mk("#drips","crumb",`left:${860+i*45}px;top:690px;width:${18+(i%3)*8}px;height:${26+(i%3)*10}px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%`);
+  tl.fromTo(d,{y:0,opacity:0},{y:100+(i%2)*20,opacity:1,duration:.4,ease:"power2.in"},4.45+i*.05);tl.to(d,{opacity:0,duration:.1},4.95+i*.04);}
+tl.to("#b2",{scaleY:.55,scaleX:.55,y:-20,duration:.5,ease:"back.out(2.5)",transformOrigin:"50% 50%"},4.75);
+tl.to("#b2n",{y:50,scale:.9,duration:.4},4.75);
+tl.to(["#b2e1","#b2e2"],{scale:1,duration:.35,ease:"back.out(3)"},4.9);
+tl.to(["#b2e1","#b2e2"],{keyframes:[{scaleY:.1,duration:.07},{scaleY:1,duration:.1}]},5.3);
+tl.fromTo("#sigh",{opacity:0,x:-20},{opacity:1,x:0,duration:.4},5.05);
+tl.to("#s2",{opacity:0,duration:.01},5.6);
 
-// ---- S4 9–12
-const eases=[["LINEAR","none","#f5f5f7"],["POWER4","power4.inOut","#c6ff3d"],["ELASTIC","elastic.out(1,.4)","#ff3d5a"],["BACK","back.inOut(2)","#0a0a10"],["BOUNCE","bounce.out","#f5f5f7"]];
-const s4=$("#s4");
-eases.forEach((e,i)=>{
-  const y=400+i*115;
-  mk(s4,"lane",`top:${y}px`);
-  const l=mk(s4,"lbl",`top:${y-17}px;color:${e[2]==="#0a0a10"?"#0a0a10":"#f5f5f7"}`);l.textContent=e[0];
-  const b=mk(s4,"ball",`top:${y}px;left:300px;background:${e[2]}`);b.id="ball"+i;
-  tl.fromTo(b,{x:0,scale:0},{scale:1,duration:.3,ease:"back.out(3)"},9.15+i*.05);
-  tl.to(b,{x:1256,duration:1.5,ease:e[1]},9.5+i*.03);
-  tl.to(b,{x:0,duration:.9,ease:"power3.inOut"},11.1);
-});
-tl.set("#s4",{opacity:1},9.0);
-tl.set("#f3",{scaleX:0},9.0);
-tl.fromTo("#ease",{y:-200,opacity:0,skewX:-20},{y:0,opacity:1,skewX:0,duration:.8,ease:"expo.out"},9.1);
-tl.to("#s4",{clipPath:"circle(0% at 50% 50%)",duration:.5,ease:"power3.in"},11.5);
-tl.set("#s4",{opacity:0},12.0);
+/* ================= S3 5.6–9.1 ================= */
+show("#s3",5.6);
+tl.set(["#h31","#h32","#h33"],{yPercent:110},0);
+tl.set(["#bite1","#bite1b","#bite2","#bite2b","#bite3"],{scale:0},0);
+tl.set(["#m1","#m2","#m3"],{opacity:0},0);
+tl.fromTo("#b3w",{scale:0},{scale:1,duration:.5,ease:"back.out(2)"},5.6);
+// monster: fees
+tl.fromTo("#mon",{x:-700,rotate:-30},{x:0,rotate:0,duration:.45,ease:"back.out(1.5)"},5.75);
+tl.to("#h31",{yPercent:0,duration:.4,ease:"expo.out"},5.75);
+tl.to("#mon",{x:150,scale:1.15,duration:.14,ease:"power3.in"},6.25);
+tl.to(["#bite1","#bite1b"],{scale:1,duration:.12,stagger:.08},6.38);
+tl.to("#b3w",{x:30,duration:.08,yoyo:true,repeat:1},6.38);
+count("#b3n",1284,1120,6.38,.4);
+tl.to("#mon",{x:0,scale:1,duration:.3,ease:"power2.out"},6.52);
+tl.fromTo("#m1",{opacity:0,y:40,scale:.6},{opacity:1,y:0,scale:1,duration:.4,ease:"back.out(3)"},6.45);
+const crumb=(x,y,t,c,dir)=>{for(let i=0;i<7;i++){const e=mk("#crumbs","crumb",`left:${x}px;top:${y}px;background:${c}`);
+  const a=(i/7)*Math.PI-Math.PI/2;tl.fromTo(e,{x:0,y:0,scale:1,opacity:1},{x:dir*Math.cos(a)*(120+i*15),y:Math.sin(a)*140+80,scale:0,duration:.6,ease:"power2.out"},t)}};
+crumb(790,500,6.4,"#ff5a22",-1);
+tl.to("#mon",{x:-700,rotate:-40,duration:.35,ease:"power3.in"},6.9);
+tl.to(["#h31"],{yPercent:-110,duration:.3,ease:"power3.in"},6.9);
+tl.to("#m1",{opacity:0,y:-30,duration:.25},6.95);
+// flame: ads
+tl.fromTo("#flame",{y:900},{y:0,duration:.45,ease:"back.out(1.6)"},7.0);
+tl.to("#h32",{yPercent:0,duration:.4,ease:"expo.out"},7.05);
+tl.to("#flameIn",{keyframes:[{scaleX:.9,scaleY:1.1},{scaleX:1.08,scaleY:.94},{scaleX:.95,scaleY:1.08},{scaleX:1,scaleY:1}],duration:.6,ease:"none"},7.2);
+tl.to("#flame",{x:-130,duration:.14,ease:"power3.in"},7.45);
+tl.to(["#bite2","#bite2b"],{scale:1,duration:.12,stagger:.08},7.58);
+tl.to("#b3w",{x:-30,duration:.08,yoyo:true,repeat:1},7.58);
+count("#b3n",1120,722,7.58,.4);
+tl.to("#flame",{x:0,duration:.3},7.72);
+tl.fromTo("#m2",{opacity:0,y:40,scale:.6},{opacity:1,y:0,scale:1,duration:.4,ease:"back.out(3)"},7.62);
+crumb(1130,440,7.6,"#ff5a22",1);
+tl.to("#flame",{y:900,duration:.35,ease:"power3.in"},8.05);
+tl.to("#h32",{yPercent:-110,duration:.3,ease:"power3.in"},8.05);
+tl.to("#m2",{opacity:0,y:-30,duration:.25},8.1);
+// box: shipping
+tl.fromTo("#box",{y:500},{y:0,duration:.4,ease:"back.out(1.6)"},8.1);
+tl.to("#h33",{yPercent:0,duration:.4,ease:"expo.out"},8.15);
+tl.fromTo("#lidL",{rotate:0},{rotate:-130,duration:.25,ease:"back.out(2)"},8.35);
+tl.fromTo("#lidR",{rotate:0},{rotate:130,duration:.25,ease:"back.out(2)"},8.35);
+tl.to("#bite3",{scale:1,duration:.14},8.5);
+tl.to("#b3w",{y:-20,duration:.08,yoyo:true,repeat:1},8.5);
+count("#b3n",722,412,8.5,.35);
+tl.fromTo("#m3",{opacity:0,y:40,scale:.6},{opacity:1,y:0,scale:1,duration:.4,ease:"back.out(3)"},8.55);
+tl.to(["#b3w","#box","#m3"],{scale:0,opacity:0,duration:.3,ease:"back.in(2)"},8.85);
+tl.to("#h33",{yPercent:-110,duration:.3},8.85);
+hide("#s3",9.15);
 
-// ---- S5 12–15
-tl.set("#s5",{opacity:1},12.0);
-document.querySelectorAll("#brag span").forEach((s,i)=>{
-  tl.fromTo(s,{y:-900,rotate:-40+i*20,scaleY:1.6},{y:0,rotate:0,scaleY:1,duration:.9,ease:"bounce.out"},12.05+i*.1);
-});
-tl.fromTo("#sub",{opacity:0,y:30},{opacity:1,y:0,duration:.7,ease:"power3.out"},12.9);
-const s5=$("#s5");const cc=["#ff3d5a","#4d7cff","#c6ff3d","#f5f5f7"];
-for(let i=0;i<48;i++){
-  const a=i*2.399, r=350+(i%7)*130, sz=14+(i%5)*8;
-  const e=mk(s5,"conf",`width:${sz}px;height:${sz}px;background:${cc[i%4]};border-radius:${i%3?"2px":"50%"}`);
-  tl.fromTo(e,{x:0,y:0,scale:0,rotate:0},{x:Math.cos(a)*r*1.5,y:Math.sin(a)*r*.9,scale:1,rotate:540,duration:1.1,ease:"expo.out"},12.4+(i%8)*.03);
-  tl.to(e,{y:"+=220",opacity:0,duration:1.2,ease:"power2.in"},13.4+(i%6)*.04);
-}
-tl.to("#s5",{opacity:0,duration:.45,ease:"power2.in"},14.55);
+/* ================= S4 9.15–10.8 ================= */
+show("#s4",9.15);
+for(let i=0;i<46;i++){const x=(i*397)%1900,y=(i*263)%1060,s=2+(i%3)*2;
+  const e=mk("#stars","star",`left:${x}px;top:${y}px;width:${s}px;height:${s}px`);
+  tl.fromTo(e,{opacity:.15},{opacity:.9,duration:.4+(i%5)*.15,yoyo:true,repeat:3,ease:"sine.inOut"},9.15+(i%7)*.05);}
+tl.fromTo("#s4h",{opacity:0,y:-20},{opacity:1,y:0,duration:.5,ease:"power3.out"},9.2);
+tl.fromTo("#clock",{scale:0},{scale:1,duration:.5,ease:"back.out(2)"},9.2);
+tl.set("#dig",{opacity:0},0);
+tl.fromTo("#mh",{rotate:0},{rotate:360*4+282,duration:.9,ease:"expo.inOut"},9.3);
+tl.fromTo("#hh",{rotate:0},{rotate:353,duration:.9,ease:"expo.inOut"},9.3);
+tl.to(["#mh","#hh"],{opacity:0,scale:.3,duration:.15},10.2);
+tl.fromTo("#dig",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.3,ease:"back.out(3)"},10.25);
+tl.to("#colon",{opacity:.1,duration:.15,yoyo:true,repeat:3},10.4);
+tl.fromTo("#midnight",{opacity:0,y:40},{opacity:1,y:0,duration:.5,ease:"expo.out"},10.3);
+
+/* ================= S5 10.85–12.9 ================= */
+show("#s5",10.85);
+tl.fromTo("#s5",{clipPath:"circle(140px at 50% 437px)"},{clipPath:"circle(1300px at 50% 437px)",duration:.55,ease:"power3.inOut"},10.85);
+hide("#s4",11.45);
+tl.fromTo("#pill",{scale:.3,rotate:-6},{scale:1,rotate:0,duration:.7,ease:"elastic.out(1,.55)"},10.95);
+count("#pilln",0,412,10.95,.6,"power3.out",v=>"$"+Math.round(v)+".00");
+tl.fromTo("#s5l",{opacity:0,y:20},{opacity:1,y:0,duration:.4},11.05);
+const ci=$("#circ"),CL=ci.getTotalLength();ci.style.strokeDasharray=CL;
+tl.fromTo(ci,{strokeDashoffset:CL},{strokeDashoffset:0,duration:.55,ease:"power2.inOut"},11.45);
+tl.fromTo("#real",{scale:3.5,rotate:-30,opacity:0},{scale:1,rotate:-12,opacity:1,duration:.3,ease:"power4.in"},11.85);
+tl.to("#pill",{y:10,duration:.06,yoyo:true,repeat:1},12.15);
+tl.fromTo("#brk",{opacity:0},{opacity:1,duration:.4},11.5);
+tl.fromTo("#chip",{y:40,opacity:0},{y:0,opacity:1,duration:.4,ease:"back.out(2)"},12.2);
+["#ff4f1a","#f5b301","#e93cac","#22c55e","#2f7bff","#6b5cff"].forEach((c,i)=>{const e=mk("#side","abs",`left:1720px;top:${330+i*70}px;width:30px;height:30px;border-radius:9px;background:${c}`);
+  tl.fromTo(e,{scale:0},{scale:1,duration:.3,ease:"back.out(3)"},11.2+i*.05);});
+
+/* ================= S6 12.9–15 ================= */
+show("#s6",12.9);
+tl.fromTo("#s6",{yPercent:100},{yPercent:0,duration:.45,ease:"expo.inOut"},12.85);
+hide("#s5",13.3);
+tl.fromTo("#fewer",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},13.15);
+tl.fromTo("#sleep",{yPercent:110},{yPercent:0,duration:.5,ease:"expo.out"},13.35);
+tl.to("#fewer",{yPercent:-110,duration:.3,ease:"power3.in"},13.9);
+tl.to("#sleep",{yPercent:-110,duration:.3,ease:"power3.in"},13.95);
+tl.set("#logo",{opacity:0},0);
+show("#logo",14.1);
+tl.fromTo(".tm",{scaleY:0},{scaleY:1,duration:.25,ease:"back.out(2)",stagger:.05},14.1);
+tl.fromTo("#slash",{scaleX:0,rotate:-28},{scaleX:1,rotate:-28,duration:.2,ease:"power3.out"},14.35);
+tl.fromTo("#word",{x:-40,opacity:0},{x:0,opacity:1,duration:.4,ease:"expo.out"},14.2);
+tl.fromTo("#made",{opacity:0,y:20},{opacity:1,y:0,duration:.4},14.35);
+tl.to("#s6",{opacity:0,duration:.25},14.75);
 
 window.__timelines["main"]=tl;
 tl.seek(0);
