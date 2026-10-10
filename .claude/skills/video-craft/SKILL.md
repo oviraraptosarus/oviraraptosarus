@@ -67,3 +67,5 @@ When the user or anyone else critiques a video, don't patch only that video. Ext
 - A video is weakest at the joins between scenes. Check that the story, the visuals and the audio agree at each cut.
 - Prefer motivated, designed motion over camera tricks. Don't use zoom in/out as a default effect.
 - Align by layout, never by guessed pixel offsets: centre with flex or measured bounds, then check every centred element's rendered centre numerically (logo, headline, button) before delivering.
+- Slow is a defect in sales video: cut every delay before the point (pre-roll, fades, waiting on exits), but give the payoff its full hold.
+- When the brief leaves out style, platform, voice or CTA, ask once up front rather than guess; a guessed style is the main source of generic output.
