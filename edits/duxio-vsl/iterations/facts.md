@@ -22,3 +22,4 @@ Additions (owner sources):
 - Positioning (site hero): "We build and run the follow up that moves serious buyers from first interest to a booked sales call."
 - The owner's vault describes the audit scope: inspect the offer, lead capture, booking flow, follow-up and pipeline, to find a real problem and decide fit.
 - General, verifiable context: a GoHighLevel "snapshot" is a pre-built template account setup.
+- The same HBR study (Oldroyd, McElheran and Elkington, 2011) also found firms that tried to contact leads within an hour were more than sixty times as likely to qualify them as firms that waited 24 hours or longer. (Verified across secondary reports: smartcompany.com.au 2011, crankwheel and others.)
