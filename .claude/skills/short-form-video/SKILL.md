@@ -8,6 +8,60 @@ version: 0.1.0
 
 Engineer a 9:16 video that survives the swipe. Short-form is not a small launch film — it is a retention machine: a hook that earns the first second, pattern interrupts that reset attention every few seconds, and often a loop that buys watch-time past 100%. The craft is timing, not polish.
 
+## House rules (this repo; read first, they override anything generic below)
+Build in HyperFrames, not Remotion: translate the code samples below into the GSAP timeline. Also load `make-video/editing-standard.md` and `make-video/attention-mechanics.md`.
+
+**Why these rules exist:** a 59s DUXIO reel looked stunning but felt flat. The narrator sounded serious and low-energy, there was no female voice and no enthusiasm, and the pacing was even. Visuals alone don't earn the scroll; the audio has to excite too.
+
+### Voice: energy is mandatory
+- **Default reel voice: an energetic, warm female voice** unless the brand or user says otherwise. Bright, smiling, conversational, like telling a friend something exciting, not reading. A serious, flat or "deep calm" narrator is for VSLs, never reels.
+- **ElevenLabs settings for reels** (the user records and uploads):
+  - Stability 30 to 45% (more emotional range)
+  - Similarity 75%
+  - Style exaggeration 25 to 45%
+  - Speaker boost on
+  - Speed 1.05 to 1.15
+  - Script tips: write in short bursts with punctuation that makes the voice move, and use question marks to lift pitch. Ask for one take per line, so lines can be re-cut.
+- **Delivery shape:** moderate-high and varied, never flat (engagement peaks at moderate-high speech rate, pitch and loudness):
+  - Average 3.0 to 3.4 words per second.
+  - Speed up through lists and setups (about 3.6 w/s).
+  - Slow down on the one key line (about 2.4 w/s) and leave 0.3 to 0.5s of air after it.
+  - Pitch moves on every line; end hooks on an upward or punchy note.
+- **Fallback with no uploaded voice:**
+  - Kokoro `af_heart` or `af_bella`, line by line.
+  - Vary the speed per line (1.12 to 1.3): fast for setups and lists, 1.05 for the key line.
+  - Keep gaps uneven: 0.05 to 0.15s inside a run, 0.35s before a payoff.
+  - Say in the delivery message that TTS can't reach real enthusiasm, and offer the ElevenLabs settings above.
+- Never ship a reel with a monotone male TTS unless the user asked for it.
+
+### Sound: the dopamine layer
+- **Frame 0 has sound:** a hit, whoosh or notification ping on the very first frame, with the voice starting within 0.15s.
+- **Music:** upbeat, 110 to 130 BPM, cut to the beat.
+  - It sits 14 to 18dB under the voice (louder than in a VSL).
+  - A filter or drop at the low point, a riser into each payoff, a full hit on the reveal and CTA.
+  - Swap or drop the energy every 8 to 12s so the bed itself is a pattern interrupt.
+- **SFX density:**
+  - A sound on every cut and every element that pops in, about 1 per second on average.
+  - Whooshes on transitions, pops or clicks on text and chips, ticks on counters (slot reels), a rising pitch ladder on lists, an impact plus sub on reveals.
+  - Warm, not harsh: low-pass at about 9 to 10kHz.
+- Never let the reel go silent for more than 0.4s unless the silence is the joke or the drop.
+
+### Pacing for the Reels algorithm
+- **Hook:** a moving, high-contrast visual and the hook text on frame 0. The spoken hook finishes within about 1.5s and opens a loop.
+- **Visual changes:** every 1.5 to 2.5s, deliberately uneven (e.g. 1.2, 2.4, 1.6, 3.0, 1.4).
+- **Payoffs:** a micro-payoff (number lands, check, reveal) every 3 to 6s.
+- **Length:** the shortest that fits the idea. Ideally 20 to 35s, at most 45 to 60s for an explainer. Every second must earn the next.
+- **Captions:**
+  - 2 to 4 words per chunk, bold, centred in the safe area.
+  - The active word scales to 1.06 to 1.1 and takes the accent colour; one keyword per chunk is coloured.
+  - Captions pop on the beat.
+- **Ending:** loop back to frame 0 or end on one CTA. No slow fade-outs.
+
+### Pre-render check (add to the Output checklist)
+- Would this voice make someone look up from their phone? If not, fix the voice before anything else.
+- Play muted: does it still pull? Play eyes closed: does the audio alone have energy and rhythm?
+- Is there a sound in the first 3 frames? Is anything silent or static for more than 1.2s?
+
 ## When to use
 
 - Reels / TikTok / YouTube Shorts (7–60s, vertical 9:16).

@@ -1,13 +1,13 @@
 # Editing standard: pacing, motion, sound, typography, detail
 
-The bar is a senior editor who cuts sales videos for a living. Sales-worthy means the viewer never waits and never strains. Too slow loses them, and so does anything that delays the point. This file is mandatory for every video built through `/make-video`. Brand skills (e.g. `duxio-vsl`) can change colours and fonts, never these standards.
+The bar is a senior editor who cuts sales videos for a living. Sales-worthy means the viewer never waits and never strains. Too slow loses them, and so does anything that delays the point. This file is mandatory for every video built through `/make-video`, together with `attention-mechanics.md` (anticipation, rolling reels, variable payoffs, pitch ladders, idle life). Brand skills (e.g. `duxio-vsl`) can change colours and fonts, never these standards.
 
 ## 1. Pacing: no waiting, no rushing
 **Voice rate**
 
 | Format | Words per second |
 |---|---|
-| Reel / ad | 2.8 to 3.2 |
+| Reel / ad | 3.0 to 3.4 average, varied: about 3.6 in lists, about 2.4 on the key line |
 | VSL | 2.4 to 2.7 |
 | Explainer | 2.2 to 2.5 |
 

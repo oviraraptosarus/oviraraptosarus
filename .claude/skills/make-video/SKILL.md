@@ -16,7 +16,7 @@ The user never has to type other skill names. This skill picks and loads them, a
 | Type | VSL, reel, ad, promo, explainer, demo, footage edit, logo sting | yes |
 | Platform, aspect, length | IG reel 9:16 ≤60s; YouTube/site 16:9; feed ad 4:5 | yes |
 | Visual style | see the style list below | yes |
-| Voice | uploaded ElevenLabs/mic file; built-in male/female TTS; none (music + captions) | yes |
+| Voice | uploaded ElevenLabs/mic file; built-in TTS (reels default: energetic female); none (music + captions). Reels and ads must sound energetic (see `short-form-video` house rules); VSLs calm and authoritative | yes |
 | CTA | the exact words and the action ("Book a Strategy Call", "link in bio") | yes |
 | Brand | logo, colours, fonts, a brand skill (DUXIO → `duxio-brand` + `duxio-vsl`) | infer |
 | Script source | user script, a site to read, or write it | infer |
@@ -39,12 +39,12 @@ The user never has to type other skill names. This skill picks and loads them, a
 
 ## Step 2. Auto-select the skills
 
-Load these with the Skill tool (or read their `SKILL.md`) before planning. Always load: `video-craft`, `video-formats`, this skill's `editing-standard.md`, and `hyperframes` + `hyperframes-core` + `hyperframes-animation` + `hyperframes-audio` for any HyperFrames build.
+Load these with the Skill tool (or read their `SKILL.md`) before planning. Always load: `video-craft`, `video-formats`, this skill's `editing-standard.md` and `attention-mechanics.md`, and `hyperframes` + `hyperframes-core` + `hyperframes-animation` + `hyperframes-audio` for any HyperFrames build.
 
 | Video type | Also load |
 |---|---|
 | VSL / sales video | `copywriting`, `marketing-psychology`, `storyteller`, `copy-editing`, `motion-art-direction`, `shot-composition`, `animation-principles`, `caption-animation`, `beat-sync-editing` |
-| Reel / short / TikTok | `short-form-video`, `video-content-strategist`, `storyteller`, `copywriting`, `caption-animation`, `beat-sync-editing`, `motion-design`, `shot-composition` |
+| Reel / short / TikTok | `short-form-video` (its house rules on voice energy, SFX density and pacing are mandatory), `video-content-strategist`, `storyteller`, `copywriting`, `caption-animation`, `beat-sync-editing`, `motion-design`, `shot-composition` |
 | Paid ad | `ad-creative`, `copywriting`, `marketing-psychology`, `short-form-video` (if vertical), `caption-animation`, `copy-editing` |
 | Promo / launch | `motion-art-direction`, `beat-sync-editing`, `logo-animation`, `color-motion`, `motion-design`; `/brag` if it's about this repo |
 | Explainer | `storyteller`, `animation-principles`, `motion-design`, `shot-composition`; `story-motion` if the character style was picked |

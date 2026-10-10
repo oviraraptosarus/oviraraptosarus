@@ -6,6 +6,7 @@
 | VSL v3 | `edits/duxio-vsl-v3/duxio-vsl-v3.mp4` (also on the site) | 16:9, 1:51, owner's ElevenLabs voice, "Book a Strategy Call" | Live, needs a redo: "five stage", "48 hour", "forty seconds", hyphens |
 | IG reel | `edits/duxio-reel/duxio-reel.mp4` | 9:16, 0:59, Kokoro am_michael | Off-look (violet glow and glass cards), hyphens, five-step rail |
 | Script iterations | `edits/duxio-vsl/iterations/` (v4 to v17, `grades.md`) | 1:57 VSL scripts graded by a Hormozi / Gadzhi / Charlie Morgan panel | Reference only; v17 still says "free audit" |
+| **VSL v4** | `edits/duxio-vsl-v4/duxio-vsl-v4.mp4` | 16:9, 2:41, owner's ElevenLabs "serious" voice, Apple-dark, four steps, Book a Strategy Call | Current. Built to `docs/vsl-v4-motion-sound-spec.md`; replace v3 on the site with it |
 | Master VSL script | `.claude/skills/duxio-vsl/SKILL.md` §4 | about 4 min, owner approved | Current |
 
 Reusable building blocks: `edits/duxio-*/src/tools/` (HyperFrames templates and build scripts), `brand/duxio/sfx/`, `brand/duxio/logo/svg/duxio-wordmark-parts.svg` (each letter and each X arm has its own id, for logo animations).

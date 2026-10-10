@@ -21,17 +21,26 @@ Load order: `duxio-brand` (rules every asset obeys) → this skill (what DUXIO v
 2. Visual format, one of:
    - **A (default):** editorial motion graphics, black on white in Plus Jakarta Sans, cut with fast, accurately rebuilt UI moments (inbox notifications, a 45s reply, a calendar invite, the 2-step form).
    - **B:** a screen recording of a diagram being drawn on a blank canvas (Excalidraw, Miro or Figma).
-3. Voice: deep, calm, authoritative, unhurried delivery (ElevenLabs Marcus or Adam, or a clean mic). If none is supplied, ask for the file once; otherwise fall back to Kokoro `am_michael` and say so.
+3. **Voice for the VSL:** deep, calm, authoritative; an operations partner across a desk, not a radio host.
+   - ElevenLabs: Adam or Marcus (or the owner's "serious" voice), Multilingual v2. Stability 65%, similarity 75%, style 0%, speaker boost on.
+   - **Voice for reels and ads:** the opposite. Energetic and warm, female by default, using the `short-form-video` house rules (stability 30 to 45%, style 25 to 45%, speed 1.05 to 1.15). Never use the serious VSL voice for a reel.
+   - If no file is supplied, ask for it once. Otherwise fall back to Kokoro (`am_michael` for the VSL, `af_heart` for reels) and say so.
 4. No pricing in any video. The CTA sends people to the short form and a **Strategy Call**.
 5. Calm voice, tight edit. The delivery is unhurried, but the cut never waits: follow the `make-video` editing standard (no dead air, a visual change every 2 to 4s, no slow fades).
 
 ## 3. The DUXIO video look (derived from the brand tokens)
-- **Base:** light editorial. Canvas `#FFFFFF` / `#F9FAFB`, ink `#111113`, secondary `#4B5563`. Plus Jakarta Sans 800 for statements (tracking -0.02 to -0.035em), 500 to 600 for support. Apple-like spacing: big type, wide margins, one idea per frame.
-- **Violet `#6F00FF`:** only the CTA button, the active step, and the one highlighted word per line.
+- **VSL base (owner direction, 2026-10-10): Apple Keynote dark.**
+  - Obsidian `#0D0E12` canvas with a faint radial lift.
+  - White `#F5F5F7` type in Plus Jakarta Sans 800 (tracking -0.03 to -0.035em); support lines `#9A9AA5`, 500 to 600.
+  - Subtle glass panels: `rgba(255,255,255,.04 to .06)` fill, a 1px `rgba(255,255,255,.1)` border, 28px radius.
+  - Big type, wide margins, one idea per frame.
+- **Website-style moments inside a video** (the form, the page) are shown light, exactly as the site looks.
+- **Reels and ads** may use the dark base or a light editorial base (`#FFFFFF`, ink `#111113`). Pick one per piece.
+- The full shot-by-shot build sheet, with motion, SFX and attention mechanics, is `brand/duxio/docs/vsl-v4-motion-sound-spec.md`; follow it for any VSL rebuild.
+- **Violet `#6F00FF`:** only the CTA button, the active step, glows, and the one highlighted phrase per line (on dark use `#B794FF` for violet text).
 - **Red `#F1283A`:** only problems, leaks, missed revenue, "too late".
-- **Obsidian `#0D0E12`:** one contrast scene (night, the leak, the cold lead), then back to light. Never a whole dark video.
 - UI is drawn the way the real thing looks: an Instagram DM thread, an iOS notification, a calendar invite, the real form. Thin `rgba(0,0,0,.08)` borders and soft shadows.
-- **Banned:** purple-pink gradient blobs, neon glassmorphism, floating particles, generic SaaS card grids, grey-on-grey text, zoom-as-filler.
+- **Banned:** purple-pink gradient blobs, neon glassmorphism, floating particles, generic SaaS card grids, grey-on-grey text, zoom-as-filler. Subtle glass panels are fine; neon blobs are not.
 - Logo:
   - `brand/duxio/logo/svg/duxio-wordmark-ink.svg` on light, `-white.svg` on dark.
   - For a build-up animation use `duxio-wordmark-parts.svg`: the four X arms (`x-tl x-tr x-bl x-br`) converge, then `d u i o` follow.
@@ -39,7 +48,9 @@ Load order: `duxio-brand` (rules every asset obeys) → this skill (what DUXIO v
 - Sound effects: `brand/duxio/sfx/`. Voice: `brand/duxio/voice/`. Fonts and tokens: `brand/duxio/fonts/`, `brand/duxio/tokens/tokens.css`.
 - Before a new video, check `brand/duxio/docs/content-library.md` so nothing gets rebuilt that already exists.
 
-## 4. Master VSL script (word for word, about 3.5 to 4 min)
+## 4. Master VSL script (word for word; voiced by the owner as v4, 2:36 at about 3 words/s, file `brand/duxio/voice/elevenlabs-vsl-v4-serious.mp3`)
+The v4 recording differs slightly from the text below: "while you were in a client call or asleep", "stop losing the ones who are already trying to talk to you", "Most buyers do not book on day one. We run a three week sequence ... real client stories so qualified people stay warm", and it ends "Fill out the form below and let us talk." Treat the recording as the source of truth.
+
 Zero dashes, zero jargon, zero freebies. Visual notes are for the build only.
 
 **[0:00 to 0:40] Bleeding-neck hook**
@@ -85,5 +96,6 @@ Visuals: the real 2-step form filled in, a cursor clicks "Book a Strategy Call",
 6. The `make-video` editing standard and the `video-craft` review pass (pacing, sound, typography, detail).
 
 ## 7. Earlier deliverables (repo history; fix these if reused)
+- `edits/duxio-vsl-v4/`: the current VSL (2:41), built on the v4 recording to the spec sheet. Apple-dark, four steps, Book a Strategy Call.
 - `edits/duxio-vsl-v3/`: the VO says "five-stage" (it's four steps), "48-hour sequence" (it's 24h, 2h, 10m) and "exactly forty seconds" (under sixty). Its on-screen text uses hyphens.
 - `edits/duxio-reel/`: violet aurora with glass cards (now off-brand per §3), "Re-engage", "re-opened", "high-ticket", "follow-up", "check-in" (dashes), and a five-pill rail.
