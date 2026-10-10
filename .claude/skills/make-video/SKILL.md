@@ -1,63 +1,48 @@
 ---
 name: make-video
-description: One entry point for making any video in this repo. Use when the user says "/make-video", "make a video", "make a reel", "launch video", "brag about this", "promo", "explainer", or "motion graphic". Picks between /brag (a launch video of the current project) and story-motion + HyperFrames (any other custom video), maps plain-language asks to the right flags, checks the plugins are present, and reports where the output lands.
+description: Single entry point for any content-creation job in this repo: reel, short, paid ad, promo, launch video, VSL, explainer, product demo, tutorial, testimonial, talking-head or podcast edit with B-roll, story, teaser, logo sting, lower thirds, or a launch video of the current project (/brag). Infers goal, format, length, source and tone; picks the right pipeline; builds, reviews against video-craft, renders, and delivers. Use for "make a video", "make an ad/promo/reel/VSL", "edit my footage", "turn this site into a video", "/make-video".
 ---
 
-# /make-video
+# /make-video: the whole content-creation journey
 
-Turn the user's ask into the right video pipeline. Don't interview the user; infer, then go.
+Don't interview. Infer, state your assumptions in one line, then build. Ask only if the subject or the source is missing.
 
-## 1. Pick the pipeline
+## 1. Load the standard first
+1. `video-craft`: the quality bar and the pre-render review. Always.
+2. `video-formats`: pick the format; take its structure, length, specs and loudness target.
+3. Then the pipeline below.
 
-| The ask is about… | Use |
+## 2. Pick the pipeline from what the user gives you
+
+| Input | Pipeline |
 |---|---|
-| **the current project/app/repo itself** ("brag about this", "launch video for what I built", "show off this app") | `/brag` (§2) |
-| **anything else**: a topic, a product story, a reel, an ad, an explainer, a motion piece, "show what you can do" | `story-motion` + `/hyperframes` (§3) |
-| Unclear | If the repo contains an app or website, use `/brag`; otherwise use story-motion. |
+| **Their own footage or audio** (talking head, screen recording, podcast, interview) and they want editing and B-roll | `footage-edit` |
+| **A website, product page or funnel** to sell or explain | read the site(s) first (WebFetch/browser; if blocked, ask for pasted copy or screenshots), extract offer, funnel steps, proof, brand colours and fonts, then build with the format playbook (VSL, ad, promo, explainer, demo) |
+| **The current project/repo itself**, "brag about this" | `/brag` (map "voice", "vertical", "N seconds", a tone, a title to its flags; default `--voice` on) |
+| **A topic, script, article or idea with no source** | write the script (`copywriting`, `storyteller`, `marketing-psychology`, `video-content-strategist`), then build in HyperFrames |
+| **A PR, music track, deck or Figma file** | the matching HyperFrames workflow (`pr-to-video`, `music-to-video`, `slideshow`, `figma`) |
+| **Existing video to improve** | `video-craft` review first, list what is wrong at the principle level, fix it, re-review |
 
-## 2. /brag route
+Style: choose from the message and tone (`motion-art-direction`). Character/metaphor storytelling lives in `story-motion`; typography-led, diagram-led and UI-led styles are equally valid and are usually right for sales, finance, B2B and VSLs.
 
-Translate the user's words into flags, then invoke the `brag` skill (plugin `brag@brag`) with them:
+## 3. Build
+1. **Brief** (inferred, written to `BRIEF.md`): goal and action, audience, single message, tone, format and channel, length, sources, proof available, brand (colours, fonts, logo).
+2. **Script** (VO, on-screen words, CTA) through the copy skills; every claim traceable to the source.
+3. **Beat sheet**: time | what the viewer must understand | visual | VO | sound.
+4. **Build** in HyperFrames (single paused GSAP timeline; `hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`). Vendor GSAP locally in cloud sessions.
+5. **Audio**: voiceover (`hyperframes tts`; `pip install kokoro-onnx soundfile` first), brag's bundled music and SFX, voice chain and carve (`hyperframes-audio`), loudness per `video-formats`.
+6. **Review** against `video-craft` section 4 using snapshots at every beat. Fix, then render, then re-check the final file's duration, specs and loudness with `ffprobe` and `ebur128`.
 
-| User says | Flag |
-|---|---|
-| voice, narration, voiceover, "talk over it" | `--voice` |
-| reel, TikTok, Shorts, story, vertical, phone | `--format vertical` |
-| square, Instagram post | `--format square` |
-| N seconds | `--duration N` |
-| chaotic / polished / deadpan / cinematic / App Store / YC parody, or any vibe ("fake Series A launch") | `--tone <that>` |
-| a product name | `--title "<name>"` |
-| no music / no sound effects | `--no-music` / `--no-sfx` |
+## 4. Variants and versions
+Always offer (and when it's cheap, produce) the platform versions the format implies: 16:9 master plus 9:16 and 4:5 recuts, hook variants for ads, a 15s cutdown for promos. Reframe by re-composing, not cropping.
 
-- **Default to `--voice`** unless the user says silent. On Opus 5.5, plain `/brag` switches to brag-slim, which has no voiceover; `--voice` keeps the full workflow.
-- Output goes to `brag-output/brag.mp4` (or `brag-output-<timestamp>/`), plus `brag.jpg` and share copy. Send the mp4 to the user when done.
+## 5. Preflight
+- `claude plugin list` shows `brag@brag` and `hyperframes@hyperframes` enabled. If missing, install them (`claude plugin marketplace add latent-spaces/brag` + `claude plugin install brag@brag --scope project`, and the same for `heygen-com/hyperframes`). Read newly installed skill files straight from `~/.claude/plugins/cache/...` instead of asking for a restart.
+- `node -v` (22+), `ffmpeg`, `npx hyperframes doctor`.
+- Cloud network limits: some hosts (CDNs, model hosts, user websites) may be blocked. Say which, and give the user the exact fix (allow the domain in the environment's network settings, or paste the content).
 
-## 3. story-motion route
+## 6. Generated media (AI B-roll, images, voices)
+Only use a generation provider that is actually connected and signed in. Never fake or imply generated footage. If none is available, build the B-roll as designed motion graphics or use the user's own material, and say so in one line.
 
-Load `.claude/skills/story-motion/SKILL.md` and follow it end to end, with HyperFrames as the framework:
-
-- concept → script → beat sheet → build → `npx hyperframes check` → snapshot review → render
-- companion skills per its section 0 table
-- audio: voiceover, plus brag's bundled music and SFX first, plus the synth kit as fallback
-- format: vertical 1080×1920 for reels/TikTok/Shorts, otherwise 1920×1080
-
-## 4. Preflight (both routes)
-
-1. **Plugins.** Run `claude plugin list`. Both `brag@brag` and `hyperframes@hyperframes` must be enabled. If either is missing:
-   ```bash
-   claude plugin marketplace add latent-spaces/brag --scope project && claude plugin install brag@brag --scope project
-   claude plugin marketplace add heygen-com/hyperframes --scope project && claude plugin install hyperframes@hyperframes --scope project
-   ```
-   Plugin skills load at session start. If you just installed them, read the skill file straight from `~/.claude/plugins/cache/<plugin>/<plugin>/<version>/skills/<skill>/SKILL.md` and follow it, rather than asking the user to restart.
-2. **Tools.** Check `node -v` (22+), `ffmpeg -version` and `npx hyperframes doctor`. For `--voice`, run `pip install kokoro-onnx soundfile` if `hyperframes tts` complains.
-3. **Cloud sandbox.** jsDelivr is blocked, so vendor `gsap.min.js` locally (see story-motion §6).
-
-## 5. Pro review gate (both routes)
-
-Before rendering, read `story-motion` section 5b and check the snapshots against every rule. Fix violations first. Don't wait for the user to point them out.
-
-## 6. Deliver
-
-- Send the mp4 with `SendUserFile` (`display: render`).
-- Give one line on what was made: route, length, format, voice on or off.
-- If the work lives in a git repo, commit the source (not `node_modules` or render caches) and push to the session's branch.
+## 7. Deliver
+Send the mp4 (`SendUserFile`, render), one line on what it is (format, length, voice), plus the script and any variants. Commit the source and render to the session's branch.

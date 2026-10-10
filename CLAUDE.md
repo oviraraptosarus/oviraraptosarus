@@ -1,13 +1,21 @@
-# Video work in this repo
+# Content creation in this repo
 
-For any video request, start with `/make-video` (`.claude/skills/make-video/SKILL.md`): it picks `/brag` or story-motion. Otherwise load the `story-motion` skill (`.claude/skills/story-motion/SKILL.md`) together with `/hyperframes`. It sets the required caliber: a character-driven story, match cuts, a voiceover, SFX on every action, and a music bed. The reference implementation is `motion-reel-src/`.
+Entry point for any video, motion graphic, ad, promo, reel, VSL, explainer, demo, testimonial, footage edit or B-roll job: `/make-video` (`.claude/skills/make-video/SKILL.md`). It loads:
+- **`video-craft`**: the quality standard, from principles (what makes a motion graphic good or bad, the pre-render review, how to learn from feedback). Always applied.
+- **`video-formats`**: playbooks and specs for each deliverable (reel, ad, promo, VSL, explainer, demo, testimonial, long-form, clips, stories, brand pieces).
+- **`footage-edit`**: the workflow when the user supplies footage and AI does the editing and the B-roll.
+- **`story-motion`**: the character and metaphor storytelling style plus the build and audio pipeline.
 
-`story-motion` section 0 routes to the vendored companion skills in `.claude/skills/` (MIT, with sources in each `SOURCE.md`):
-- **Story:** storyteller, marketing-psychology
-- **Copy:** copywriting, copy-editing, ad-creative
-- **Reels:** short-form-video, video-content-strategist, caption-animation, lower-thirds
-- **Motion:** motion-art-direction, animation-principles, motion-design, beat-sync-editing, shot-composition, color-motion, logo-animation, motion-background
+Companion skills in `.claude/skills/` (MIT, sources in each `SOURCE.md`):
+- **Story and copy:** storyteller, marketing-psychology, copywriting, copy-editing, ad-creative, video-content-strategist
+- **Reels and captions:** short-form-video, caption-animation, lower-thirds
+- **Motion and design:** motion-art-direction, animation-principles, motion-design, beat-sync-editing, shot-composition, color-motion, logo-animation, motion-background
 
 ## Plugins (auto-installed from `.claude/settings.json`)
 - `hyperframes@hyperframes` (heygen-com/hyperframes): the HTML-to-video framework and its skills.
-- `brag@brag` (latent-spaces/brag): `/brag` turns the current project into a ~20s launch video (`--voice`, `--tone`, `--format vertical`). It also bundles real music and SFX that `story-motion` uses.
+- `brag@brag` (latent-spaces/brag): `/brag` makes a launch video of the current project. It also bundles real music and SFX.
+
+## User preferences for video
+- Don't use zoom in/out as default filler. Use designed motion graphics and motivated moves only.
+- Work autonomously and show results; don't narrate options or ask for approval on routine choices.
+- Exemplars: `motion-reel-v2-src/` (16:9 story piece) and `kept-reel-src/` (9:16 reel).
