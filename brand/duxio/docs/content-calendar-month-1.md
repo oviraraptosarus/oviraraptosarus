@@ -181,7 +181,7 @@ Format for each: hook on screen at frame 0 · VO (word for word) · story beat �
 
 **R4 · Thu Oct 22 · "The Empty Chair" · about 16s**
 - **Frame 0:** a video call tile with an empty chair, and a timer reading 00:07.
-- **VO:** "They booked the call. Then they didn't show. Usually they just forgot. A call booked days out needs reminders. Twenty four hours before. Two hours before. Ten minutes before. Send this to a coach staring at an empty call."
+- **VO:** "They booked the call. Then, something came up. Usually they just forgot. A call booked days out needs reminders. Twenty four hours before. Two hours before. Ten minutes before. Send this to a coach staring at an empty call."
 - **Story:** a near miss, then a rewind.
 - **Motion:**
   - The timer rolls 00:07 → 10:00 (waiting).
@@ -438,8 +438,8 @@ The four-node track (01 Answer · 02 Sort · 03 Follow up · 04 Reopen) stays at
   - 7:40 Book a Strategy Call
 - **Visual spine:** the four-node track carries the whole video. Dot travels it chapter by chapter.
 
-**YT4 · Sat Nov 14 · "How to Reduce No Shows on Sales Calls: The 24h, 2h, 10m Rule"**
-- **Keyword:** reduce no shows sales calls
+**YT4 · Sat Nov 14 · "How to Stop Discovery Call No Shows: The 24h, 2h, 10m Rule"**
+- **Keyword:** discovery call no shows (the coaches' own term, from `source-material/coach-pain-points-reddit.md`)
 - **Thumbnail text:** "Nobody reminded them"
 - **Chapters:**
   - 0:00 The empty call
@@ -463,7 +463,7 @@ The four-node track (01 Answer · 02 Sort · 03 Follow up · 04 Reopen) stays at
 | Sat | "New video" link sticker to the YouTube upload |
 | Sun | Off (batch day) |
 
-Poll and question answers feed next month's hooks: copy the coaches' exact words into `brand/duxio/source-material/`.
+Coach language from `source-material/coach-pain-points-reddit.md` (Reddit research) is already folded into R4 and YT4; its §7 is the month 2 hook bank. Poll and question answers feed next month's hooks: copy the coaches' exact words into `brand/duxio/source-material/`.
 
 ## 7. Weekly operating loop
 

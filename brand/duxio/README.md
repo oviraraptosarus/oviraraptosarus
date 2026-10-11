@@ -27,7 +27,7 @@ Everything about DUXIO in one place, so no session has to ask for it again. The 
 | `sfx/` | The sound effects used across the videos, with licences |
 | `voice/` | The owner's ElevenLabs VO and voice notes |
 | `docs/` | `owner-spec-parts-1-to-5.md` (the master spec, verbatim), `facts-and-owner-answers.md`, `site-copy.md` (live site text), `website.md` (repo, stack, known issues), `content-library.md` (every video made so far and its status), `content-strategy.md` (the organic IG, FB and YouTube plan) |
-| `source-material/` | Raw pasted research and scripts: the VSL script library, Reddit pain phrases and objections, the outcomes from the vault, the Evergreen VSL framework, the ElevenLabs Masterclass script |
+| `source-material/` | Raw pasted research and scripts: the VSL script library, Reddit pain phrases and objections, the outcomes from the vault, the Evergreen VSL framework, the ElevenLabs Masterclass script, `coach-pain-points-reddit.md` (coach complaints mapped to the four steps, keywords, month 2 hooks) |
 
 ## Missing (add when available)
 - The real booking calendar link.
