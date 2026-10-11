@@ -1,47 +1,91 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Status-Building_Execution_OS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="Status" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=200&section=header&text=VRK&fontSize=80&fontAlignY=35&desc=Building%20systems%20that%20don't%20break%20at%202am&descAlignY=58&descSize=18&fontColor=ffffff&animation=twinkling" width="100%" />
 </div>
 
-<h1 align="center">Hi, I'm VRK (@oviraraptosarus)</h1>
-
-<p align="center">
-  <strong>Hunting for absolute cutthroat precision in code and design.</strong>
-</p>
-
 <div align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow Line" width="100%" />
+  <a href="https://github.com/oviraraptosarus">
+    <img src="https://komarev.com/ghpvc/?username=oviraraptosarus&style=for-the-badge&color=0d1017&label=PROFILE+VIEWS" alt="Profile views" />
+  </a>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Status-Shipping-00ff41?style=for-the-badge&logo=statuspage&logoColor=white" alt="Status" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Based_in-India-FF9933?style=for-the-badge&logo=india&logoColor=white" alt="India" />
 </div>
 
-<br />
+<br/>
 
-## 🧠 About Me
+---
 
-I don't tolerate "digital junk." I build software with an uncompromising standard for premium, Apple-tier UI/UX and bulletproof underlying architecture. Whether I'm diving deep into browser event state machines or designing seamless glassmorphic interfaces, my philosophy remains the same: **Zero clutter, absolute precision, and root-cause solutions only.**
+## What I Build
 
-- 🔭 **Currently Building:** [Workout OS (Execution OS)](https://github.com/oviraraptosarus/workoutos-v2) — A complex, voice-first, AI-powered life and fitness operating system.
-- 🎯 **Design Philosophy:** Premium iOS aesthetics (glassmorphism, micro-animations, strict typography) combined with flawless technical execution.
-- 💡 **Tech Arsenal:** Next.js, TypeScript, Tailwind CSS, Supabase, and Multi-Provider AI Orchestration (OpenRouter, Gemini).
-- 🧬 **Mindset:** "Do not patch the symptom. Find the actual root cause."
+**AI-powered systems and premium web products** — specifically the kind where the architecture has to be solid because the UX demands it. I care about root-cause solutions, not patches. If it's clumsy, it gets rejected.
 
-## ⚡ Technical Specialties
+- 🏗️ **Right now:** [Workout OS](https://github.com/oviraraptosarus/workoutos-v2) — voice-first, AI-powered fitness & life tracking system. Built around state machines that actually handle Android Web Speech API edge cases, not around them.
+- 🤖 **Also shipping:** [Duxio](https://github.com/oviraraptosarus/duxio-client-acquisition-os) — B2B client acquisition engine. Autonomous outreach, real pipeline.
+- ⚙️ **Philosophy:** Trillion-dollar co design standards or nothing. Zero clutter. Zero workarounds.
 
-- **Voice-First Architectures:** Engineering platform-aware state machines that bypass native browser limitations (like the Android Web Speech API buffer bugs) to deliver flawless dictation.
-- **AI Integration:** Building cascading orchestrator fallbacks armed with strict Anti-Hallucination grounding.
-- **Premium Frontend Engineering:** Translating the exactness of trillion-dollar company design principles into highly functional, reactive web applications.
+---
 
-## 🛠️ Stack
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-</p>
+## Stack
 
 <div align="center">
-  <br />
-  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow Line" width="100%" />
-  <br /><br />
+  <img src="https://skillicons.dev/icons?i=ts,nextjs,react,tailwind,supabase,python,nodejs,postgres,redis,docker&theme=dark&perline=10" alt="Tech Stack" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,linux,bash&theme=dark&perline=10" alt="Tools" />
+</div>
+
+---
+
+## Stats
+
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=oviraraptosarus&theme=github-dark-blue&hide_border=true&date_format=j%20M%5B%20Y%5D&mode=weekly&card_width=500" alt="GitHub Streak" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=oviraraptosarus&show_icons=true&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&rank_icon=percentile&card_width=500" alt="GitHub Stats" />
+  &nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=oviraraptosarus&theme=github_dark&hide_border=true&layout=compact&langs_count=8&card_width=300" alt="Top Languages" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=oviraraptosarus&theme=darkhub&no-frame=true&no-bg=true&row=1&column=6" alt="Trophies" />
+</div>
+
+---
+
+## Metrics
+
+<div align="center">
+  <img src="metrics.svg" alt="Metrics" width="100%" />
+</div>
+
+---
+
+## Contribution Map
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.svg" />
+    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.gif" />
+  </picture>
+</div>
+
+---
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer&animation=twinkling" width="100%" />
+</div>
+
+<div align="center">
   <i>"Is this something a multi-trillion dollar company would do? If it's clumsy, it's rejected."</i>
 </div>
