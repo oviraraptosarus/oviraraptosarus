@@ -53,7 +53,7 @@ Load these with the Skill tool (or read their `SKILL.md`) before planning. Alway
 | Video type | Also load |
 |---|---|
 | VSL / sales video | `copywriting`, `marketing-psychology`, `storyteller`, `copy-editing`, `motion-art-direction`, `shot-composition`, `animation-principles`, `caption-animation`, `beat-sync-editing` |
-| Reel / short / TikTok | `short-form-video` (its house rules on voice energy, SFX density and pacing are mandatory), `video-content-strategist`, `storyteller`, `copywriting`, `caption-animation`, `beat-sync-editing`, `motion-design`, `shot-composition` |
+| Reel / short / TikTok | `reel-ideation` (first), `adhd`, `short-form-video` (its house rules on voice energy, SFX density and pacing are mandatory), `video-content-strategist`, `storyteller`, `copywriting`, `caption-animation`, `beat-sync-editing`, `motion-design`, `shot-composition` |
 | Paid ad | `ad-creative`, `copywriting`, `marketing-psychology`, `short-form-video` (if vertical), `caption-animation`, `copy-editing` |
 | Promo / launch | `motion-art-direction`, `beat-sync-editing`, `logo-animation`, `color-motion`, `motion-design`; `/brag` if it's about this repo |
 | Explainer | `storyteller`, `animation-principles`, `motion-design`, `shot-composition`; `story-motion` if the character style was picked |
@@ -67,6 +67,9 @@ Load these with the Skill tool (or read their `SKILL.md`) before planning. Alway
 **Brand overrides (load first, they win on conflicts):** a DUXIO job loads `duxio-brand` and `duxio-vsl` and takes logos, fonts, tokens, SFX and voice from `brand/duxio/`. Any brand with a `brand/<name>/` kit works the same way: its files answer the brand questions. The brand's look, words and CTA replace the generic style choice.
 
 Say in one line which skills were loaded, then go.
+
+## Step 2b. Ideate before you script (reels, shorts, ads, any hook or b-roll plan)
+Load `reel-ideation` (it uses the vendored `adhd` skill). Diverge on hook, story and per-beat visuals with isolated parallel branches, apply its gates, and write `CONCEPT.md`. No script, no build until the Concept Card exists. Long videos run it for the hook and the visual treatment of each chapter.
 
 ## Step 3. Build
 1. **Script** through the copy skills (or the user's script, cleaned with `copy-editing`). Every claim traces to a source; no invented proof.

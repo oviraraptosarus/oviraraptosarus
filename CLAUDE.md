@@ -3,6 +3,7 @@
 ## Automatic skill routing
 A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.claude/settings.json`) reads each prompt and tells Claude which skills to load. The user never has to type skill names. Follow its instruction before anything else. Without the hook, route the same way:
 - any video job (short or long) → `make-video`, which always asks the missing brief questions first (one round), then logs the answers in `.claude/skills/make-video/preferences.md` so later videos ask less
+- reel, short, ad, hook, b-roll, or the owner saying a video looks bad → `reel-ideation` first (vendored `adhd` divergent skill, gates, Concept Card), then `make-video`
 - VSL, sales video, sales script, hook → `vsl-script-writing` (Brunson frame plus the 10 tips; DUXIO rules override it)
 - DUXIO anything → `duxio-brand` first
 - DUXIO video → plus `duxio-vsl`

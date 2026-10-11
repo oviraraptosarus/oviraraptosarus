@@ -37,6 +37,10 @@ if duxio:
 vsl = has(r"vsls?", r"video sales letters?", r"sales video", r"sales script", r"sales letter", r"hook", r"epiphany", r"offer stack")
 if vsl:
     load.append("vsl-script-writing")
+short = has(r"reels?", r"shorts?", r"tiktoks?", r"ads?", r"hooks?", r"b-?roll", r"stories", r"clips?", r"ideas?", r"brainstorm", r"ideate", r"ideation", r"concepts?")
+unhappy = has(r"suck", r"sucks", r"bad", r"boring", r"generic", r"shit", r"crappy", r"ugly", r"cringe", r"flat", r"meh")
+if video and (short or unhappy):
+    load.append("reel-ideation")
 if video:
     load.append("make-video")
 
@@ -59,4 +63,8 @@ if "make-video" in out:
             "user said 'you decide', 'no questions' or 'just do it'. Skip the round for a revision of a video already "
             "built in this conversation. After the user answers, append the answers to make-video/preferences.md so "
             "the next video asks fewer, sharper questions.")
+if "reel-ideation" in out:
+    msg += (" IDEATION GATE: reel-ideation runs BEFORE any script or build. Use the adhd skill's parallel isolated "
+            "divergent branches for hook, story and per-beat visuals, apply the gates, write the Concept Card, and "
+            "only then build. Never ship a stand-in voice as final, and review real frames and playback, not just lint.")
 print(json.dumps({"hookSpecificOutput": {"hookEventName": "UserPromptSubmit", "additionalContext": msg}}))
