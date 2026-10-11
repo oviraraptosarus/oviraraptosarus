@@ -17,6 +17,8 @@ A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.clau
 - It learns from the owner's words and saves to `.claude/skill-prefs.json`: "always use X", "never use X", "stop using X", "use X for <topic>".
 - `log-skill.py` logs each Skill load (`.claude/skills-used.log`, not committed). End every finished task with one line: `Skills used: a, b, c`.
 
+- Skills on the owner's local machine are not visible in cloud sessions. The repo's `.claude/skills/` is the single source of truth: run `.claude/sync-skills.sh` locally, then commit and push.
+
 ## Video
 Entry point for any video, motion graphic, ad, promo, reel, VSL, explainer, demo, testimonial, footage edit or B-roll job: `/make-video` (`.claude/skills/make-video/SKILL.md`). It runs a one-round intake, asking only for the brief fields the request left out (type, platform and length, style, voice, CTA). It auto-selects the specialist skills for that video type, and holds every build to `make-video/editing-standard.md` (pacing, motion, sound, Apple-style typography, detail). It loads:
 - **`video-craft`**: the quality standard, from principles (what makes a motion graphic good or bad, the pre-render review, how to learn from feedback). Always applied.
