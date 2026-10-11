@@ -9,6 +9,8 @@ The user never has to type other skill names. This skill picks and loads them, a
 
 ## Step 1. Intake: ask what's missing, once
 
+**Read `OWNER-RULES.md` (repo root) first: the question round is ONE plain message with all its questions (no AskUserQuestion popups), written in simple kid-style words, and it covers niche, topic, ending, length, reference look, character, voice, captions, music, image source and on camera or faceless. Show the open items from `NEEDS-FROM-OWNER.md` (2 to 4 lines) in the same message.** The rest of this step describes the fields; ask them in that one message, not via popup.
+
 **This round is mandatory for every new video, short or long.** Do not plan or build until it is done, unless the user said "you decide", "no questions" or "just do it". Revisions of a video already built in this conversation skip it.
 
 0. Read `preferences.md` (next to this file). Anything the user already decided there counts as answered, and is stated back in one line ("Using: energetic female voice, violet on dark, Book a Strategy Call") instead of asked.
@@ -28,7 +30,7 @@ The user never has to type other skill names. This skill picks and loads them, a
 | Reference | a video they like | optional |
 
 2. Anything already answered by the message, the conversation or a brand skill counts as answered. **Don't re-ask it.**
-3. For every **required** field still unknown, ask with **one** `AskUserQuestion` call (up to 4 questions; 2 to 4 options each; put the recommended option first, marked "(Recommended)"; use `preview` to show what a style looks like). If more than 4 are missing, ask the 4 that change the build most and default the rest.
+3. For every field still unknown, ask in **one plain message** (all questions together, short, kid-style, with a recommended answer each so the owner can reply "you decide"). Never use popups; the owner has said no to them.
 4. Skip the questions entirely when the user says "you decide", "just do it", "no questions", or the brand skill fixes everything. Then pick sensible defaults and state them in one line.
 5. Write the brief to `BRIEF.md` in the build directory. No further check-ins on routine choices: build.
 

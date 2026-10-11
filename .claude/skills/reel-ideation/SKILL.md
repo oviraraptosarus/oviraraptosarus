@@ -54,3 +54,4 @@ Score every survivor 0 to 10 on novelty, viability, fit, then run the hard gates
 
 ## Lessons log (append after every owner reaction)
 - 2026-10-11 · Reel 4 "Loading %": rejected as "looks like shit". Cause: first idea built, generic UI cards, empty frame, flat Kokoro voice shipped as if final, only lint and loudness reviewed. Rule added: Concept Card and the gates above.
+- 2026-10-12 · Budget rule from the owner: ideate lightly (2 branches for a quick reel, no more than 3 agents), get the Concept Card approved, then build once. See `OWNER-RULES.md` §3.

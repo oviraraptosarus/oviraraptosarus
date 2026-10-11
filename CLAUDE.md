@@ -1,5 +1,7 @@
 # Content creation in this repo
 
+**Read `OWNER-RULES.md` first every session** (how to ask, cost limits, quality bar, mistake log) and show the open items in `NEEDS-FROM-OWNER.md` at the start of every video job.
+
 ## Automatic skill routing
 A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.claude/settings.json`) reads each prompt and tells Claude which skills to load. The user never has to type skill names. Follow its instruction before anything else. Without the hook, route the same way:
 - any video job (short or long) → `make-video`, which always asks the missing brief questions first (one round), then logs the answers in `.claude/skills/make-video/preferences.md` so later videos ask less
@@ -39,7 +41,7 @@ Companion skills in `.claude/skills/` (MIT, sources in each `SOURCE.md`):
 ## User preferences for video
 - B-roll and visuals are built with the tools in this repo (HyperFrames motion graphics, registry blocks, the user's own material, stock via media-use). No AI-generated video or images.
 - Don't use zoom in/out as default filler. Use designed motion graphics and motivated moves only.
-- Ask once, up front, for missing brief fields (via the `make-video` intake). After that, work autonomously and show results; don't narrate options or ask for approval on routine choices.
+- Ask the full question round in one plain message (no popups) before every new video, then build cheaply. Rules and the list of questions: `OWNER-RULES.md`. After the concept card is approved, work autonomously; don't narrate options.
 - Pacing is sales-tight: no dead air, no slow fades, nothing that delays the point. Apple-style type and spacing, a sound for every action. See `make-video/editing-standard.md`.
 - Exemplars: `motion-reel-v2-src/` (16:9 story piece) and `kept-reel-src/` (9:16 reel).
 
