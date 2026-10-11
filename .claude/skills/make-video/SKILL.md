@@ -75,7 +75,7 @@ Load `reel-ideation` (it uses the vendored `adhd` skill). Diverge on hook, story
 1. **Script** through the copy skills (or the user's script, cleaned with `copy-editing`). Every claim traces to a source; no invented proof.
 2. **Beat sheet:** time | what the viewer must understand | visual | VO | SFX | music cue. Plan to `editing-standard.md` pacing.
 3. **Build** in HyperFrames: one paused GSAP timeline at `window.__timelines.main`, scenes as absolute layers. Vendor GSAP and fonts locally (CDNs are blocked in cloud sessions).
-4. **Voice:**
+4. **Voice** (write and direct it with `voiceover-pacing`: breath sized phrases, hand placed pauses, one stress per phrase, numbers as words; use `director.py` only as the fallback when no real voice exists):
    - If the user uploaded a voiceover, use it, and transcribe it for word timings.
    - Otherwise use `npx hyperframes tts` (Kokoro, after `pip install kokoro-onnx soundfile`): `am_michael` for male, `af_heart` for female.
    - Align visuals to word timestamps, so each key word lands on its visual action.

@@ -1,0 +1,165 @@
+{
+  "name": "E2 2:07 AM Draft",
+  "voice": {
+    "af_kore": 0.55,
+    "af_jessica": 0.45
+  },
+  "base_speed": 1.06,
+  "k": 1.15,
+  "seed": 11,
+  "phrases": [
+    {
+      "t": "It's two oh seven in the morning.",
+      "speed": 1.12,
+      "reset": 2.2,
+      "st": 0.3,
+      "fall": 1.2,
+      "pause": 300
+    },
+    {
+      "t": "And you're answering a lead.",
+      "speed": 0.96,
+      "st": -0.8,
+      "fall": 3.0,
+      "gain": 0.5,
+      "pause": 650
+    },
+    {
+      "t": "You write four sentences.",
+      "speed": 1.08,
+      "reset": 1.2,
+      "fall": 0.4,
+      "pause": 190
+    },
+    {
+      "t": "Apologize twice.",
+      "speed": 1.04,
+      "st": 0.5,
+      "fall": 0.4,
+      "pause": 190
+    },
+    {
+      "t": "And hit send.",
+      "speed": 0.98,
+      "st": -0.6,
+      "fall": 3.0,
+      "pause": 620
+    },
+    {
+      "t": "Now that lead knows",
+      "speed": 1.0,
+      "st": -0.4,
+      "reset": 1.0,
+      "pause": 70
+    },
+    {
+      "t": "you answer at two in the morning.",
+      "speed": 0.97,
+      "st": -0.5,
+      "fall": 1.8,
+      "pause": 330
+    },
+    {
+      "t": "And some of them",
+      "speed": 0.94,
+      "st": -1.2,
+      "pause": 60
+    },
+    {
+      "t": "will expect it.",
+      "speed": 0.86,
+      "st": -2.0,
+      "fall": 3.4,
+      "gain": 1.0,
+      "pause": 800
+    },
+    {
+      "t": "Instead,",
+      "speed": 1.12,
+      "reset": 2.4,
+      "st": 0.8,
+      "rise": 0.8,
+      "pause": 130
+    },
+    {
+      "t": "write it in your notes.",
+      "speed": 1.12,
+      "reset": 1.4,
+      "fall": 1.0,
+      "pause": 280
+    },
+    {
+      "t": "Draft it at night.",
+      "speed": 1.04,
+      "st": 0.4,
+      "fall": 0.5,
+      "pause": 230
+    },
+    {
+      "t": "Send it at seven fifty,",
+      "speed": 1.08,
+      "st": 0.6,
+      "rise": 1.0,
+      "pause": 150
+    },
+    {
+      "t": "before your first client.",
+      "speed": 1.0,
+      "st": -0.2,
+      "fall": 2.6,
+      "pause": 650
+    },
+    {
+      "t": "Same reply.",
+      "speed": 1.06,
+      "reset": 1.6,
+      "st": 0.4,
+      "pause": 230
+    },
+    {
+      "t": "Better words.",
+      "speed": 1.02,
+      "st": 0.8,
+      "fall": 0.8,
+      "pause": 380
+    },
+    {
+      "t": "And they learn when you answer,",
+      "speed": 0.98,
+      "st": -0.6,
+      "rise": 0.6,
+      "pause": 140
+    },
+    {
+      "t": "so they wait for it.",
+      "speed": 0.92,
+      "st": -1.4,
+      "fall": 3.2,
+      "gain": 0.6,
+      "pause": 720
+    },
+    {
+      "t": "Comment DRAFT,",
+      "speed": 1.12,
+      "reset": 2.6,
+      "st": 1.4,
+      "gain": 1.0,
+      "pause": 210
+    },
+    {
+      "t": "and I'll D M you the notes template",
+      "speed": 1.12,
+      "st": 0.8,
+      "rise": 0.5,
+      "pause": 120
+    },
+    {
+      "t": "and three morning replies.",
+      "speed": 1.06,
+      "st": 0.4,
+      "fall": 2.0,
+      "pause": 200
+    }
+  ],
+  "strength": 0.75
+}
