@@ -41,6 +41,10 @@ short = has(r"reels?", r"shorts?", r"tiktoks?", r"ads?", r"hooks?", r"b-?roll", 
 unhappy = has(r"suck", r"sucks", r"bad", r"boring", r"generic", r"shit", r"crappy", r"ugly", r"cringe", r"flat", r"meh")
 if video and (short or unhappy):
     load.append("reel-ideation")
+audio = has(r"music", r"songs?", r"tracks?", r"beats?", r"sfx", r"sound effects?", r"soundtrack", r"audio", r"voice ?over", r"vo")
+if video and audio:
+    load.append("voiceover-pacing")
+    load.append("music-director")
 if video:
     load.append("make-video")
 

@@ -94,7 +94,7 @@ def build(script, out_mp3, report=False):
                   rise=p.get("rise", 0) * S, reset=p.get("reset", 0) * S, gain_db=p.get("gain", 0))
         a = fade(a)
         dur = len(a) / SR
-        timings.append({"text": p["t"], "start": round(t, 3), "end": round(t + dur, 3)})
+        timings.append({"text": p["t"], "start": round(t, 3), "end": round(t + dur, 3), "e": p.get("e", 0.6)})
         track.append(a)
         pause = p.get("pause", 300) * (1 + rng.uniform(-wob, wob) * 1.5)
         track.append(np.zeros(int(pause / 1000 * SR)))

@@ -80,6 +80,7 @@ Load `reel-ideation` (it uses the vendored `adhd` skill). Diverge on hook, story
    - Otherwise use `npx hyperframes tts` (Kokoro, after `pip install kokoro-onnx soundfile`): `am_michael` for male, `af_heart` for female.
    - Align visuals to word timestamps, so each key word lands on its visual action.
 5. **Sound:**
+   - Music: run `music-director` on the finished voice (energy per phrase, drums, risers, impacts, ducking). Library and credits: `brand/duxio/music/`. Extra SFX: `brand/duxio/sfx/elements/`.
    - Real SFX and music beds first: brag's bundled assets (`~/.claude/plugins/cache/brag/.../assets`), then synth.
    - Voice chain, SFX bus, music carve under the voice (`hyperframes-audio`).
    - Master to the platform loudness.
