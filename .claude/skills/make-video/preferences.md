@@ -11,3 +11,4 @@ make-video reads this before asking questions and appends the user's answers aft
 
 ## Log
 - 2026-10-11 · VSL 16:9 · ElevenLabs voice supplied · Apple dark look · CTA: Book a Strategy Call
+- 2026-10-11 · content strategy · pages brand new (0 to 100) · faceless with voiceover · 5 reels + 1 YouTube a week · no ads: pain point content for coaches and consultants, edited to also hook the fast scrolling Instagram crowd · plan in brand/duxio/docs/content-strategy.md

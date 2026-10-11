@@ -58,7 +58,7 @@ DUXIO builds and runs the follow-up that turns interested leads into booked sale
 Where each thing lives:
 - `brand/duxio/README.md`: index and quick facts.
 - `brand/duxio/logo/` (svg, png, original, social), `fonts/`, `tokens/`, `sfx/` (with `LICENSES.md`), `voice/`.
-- `brand/duxio/docs/`: `owner-spec-parts-1-to-5.md` (the owner's master spec, verbatim), `facts-and-owner-answers.md` (every claim must trace here), `site-copy.md`, `website.md`, `content-library.md`, `vsl-v4-motion-sound-spec.md`.
+- `brand/duxio/docs/`: `owner-spec-parts-1-to-5.md` (the owner's master spec, verbatim), `facts-and-owner-answers.md` (every claim must trace here), `site-copy.md`, `website.md`, `content-library.md`, `vsl-v4-motion-sound-spec.md`, `content-strategy.md` (the IG, FB and YouTube plan).
 - `brand/duxio/source-material/`: raw research, VSL script library, Reddit pain phrases, objections.
 
 ## 3. The skills and what each does (`.claude/skills/`)
@@ -121,7 +121,8 @@ Offered, not yet requested (do only when asked):
 4. **Fix the live site** (`duxio-website-for-coaches`): the chatbot `SalesChatbot.tsx` uses "Growth Expert", an emoji, "lead generation", "custom blueprint" and a placeholder Calendly link. Needs the real booking link.
 5. **Replace VSL v3 with v4.1 on the site** (v3 says "five stage", "48 hour sequence", "forty seconds" and has hyphens).
 6. **Cutdown and other formats** of the VSL (1:57 cutdown, ads, more reels) once the reel rebuild sets the short-form standard.
-7. Not verified end to end: the updated routing hook has been tested on sample prompts only, not on a live new-video request with the intake round.
+7. **Execute the content strategy** (`brand/duxio/docs/content-strategy.md`): profile setup copy, our own comment keyword backend, the first 10 banked reels from the hook bank, YouTube #1 and #2. Nothing built yet.
+8. Not verified end to end: the updated routing hook has been tested on sample prompts only, not on a live new-video request with the intake round.
 
 Older assets and their status are in `brand/duxio/docs/content-library.md` (v1 to v3 and the first reel are older or off-brand; v4.1 is current).
 
