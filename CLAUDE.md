@@ -5,6 +5,7 @@ A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.clau
 - any video job (short or long) → `make-video`, which always asks the missing brief questions first (one round), then logs the answers in `.claude/skills/make-video/preferences.md` so later videos ask less
 - reel, short, ad, hook, b-roll, or the owner saying a video looks bad → `reel-ideation` first (vendored `adhd` divergent skill, gates, Concept Card), then `make-video`
 - any music, soundtrack or SFX → `music-director` (after the voiceover); asset sources in `brand/duxio/docs/asset-sources.md`
+- machine learning, neural networks, deep learning, PyTorch, transformers → `deep-learning` (refs: nn-zero-to-hero, LLMs-from-scratch; more via fetch-more.sh)
 - any voiceover → `voiceover-pacing` (human pacing rules + `director.py`)
 - VSL, sales video, sales script, hook → `vsl-script-writing` (Brunson frame plus the 10 tips; DUXIO rules override it)
 - DUXIO anything → `duxio-brand` first
