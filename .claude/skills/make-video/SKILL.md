@@ -9,6 +9,9 @@ The user never has to type other skill names. This skill picks and loads them, a
 
 ## Step 1. Intake: ask what's missing, once
 
+**This round is mandatory for every new video, short or long.** Do not plan or build until it is done, unless the user said "you decide", "no questions" or "just do it". Revisions of a video already built in this conversation skip it.
+
+0. Read `preferences.md` (next to this file). Anything the user already decided there counts as answered, and is stated back in one line ("Using: energetic female voice, violet on dark, Book a Strategy Call") instead of asked.
 1. Read the request, the conversation, attachments and the repo. Fill this brief:
 
 | Field | Examples | Required? |
@@ -28,6 +31,12 @@ The user never has to type other skill names. This skill picks and loads them, a
 3. For every **required** field still unknown, ask with **one** `AskUserQuestion` call (up to 4 questions; 2 to 4 options each; put the recommended option first, marked "(Recommended)"; use `preview` to show what a style looks like). If more than 4 are missing, ask the 4 that change the build most and default the rest.
 4. Skip the questions entirely when the user says "you decide", "just do it", "no questions", or the brand skill fixes everything. Then pick sensible defaults and state them in one line.
 5. Write the brief to `BRIEF.md` in the build directory. No further check-ins on routine choices: build.
+
+**Extra questions by length (pick the ones still unknown, they replace weaker ones when the 4-question cap bites):**
+- **Short (reel, short, TikTok, ad, ≤60s):** the hook angle (pain, curiosity, result, contrarian), voice energy, caption style, loop or hard ending, trending sound or original music, one idea or a mini list.
+- **Long (VSL, explainer, YouTube, demo, over 60s):** the viewer's starting belief and the action to end on, chapters or one continuous flow, voice pace, B-roll or full motion graphics, whether a cutdown is also needed.
+
+**Learn from the answers.** After the user answers, append one dated line per decision to `preferences.md` (e.g. "2026-10-11 · reel · voice: energetic female · style: kinetic typography · CTA: Book a Strategy Call"). Next time, reuse those as defaults and only ask what is new. Never store anything private beyond creative choices.
 
 **Style options to offer** (pick the 3 or 4 that fit the type):
 - **Editorial light (Apple-like):** white canvas, near-black type, one accent, big type with generous spacing. Best for VSLs, B2B, premium.
