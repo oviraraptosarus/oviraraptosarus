@@ -1,5 +1,7 @@
 # DUXIO content strategy: Instagram, Facebook, YouTube (organic, faceless)
 
+Month 1, scripted day by day: `content-calendar-month-1.md`.
+
 Brief (owner answers, 2026-10-11):
 - **Starting point:** brand new pages, 0 to 100 followers.
 - **Format:** faceless, with a voiceover.
