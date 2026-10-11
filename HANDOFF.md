@@ -139,3 +139,31 @@ Older assets and their status are in `brand/duxio/docs/content-library.md` (v1 t
 - `brand/duxio/docs/reels-30-plan.md` is the 6 week plan of 30 reels (50 ideas diverged, 30 chosen, 20 on the bench). Raw ideas: `brand/duxio/source-material/reel-ideas-raw-2026-10-11.json`.
 - Reel 4 "Loading %" was rejected (generic cards, flat stand-in voice). It is not to be reused. Pilot 3 reels next: Dots That Stopped, Silence Tier List, Domino Chain.
 - Blocked on the owner: ElevenLabs female voice, comment to DM automation and the 30 DMs, booking link, Instagram handle, reference videos.
+
+
+## Update 2026-10-11 (end of session): voice, skills, kit, local move
+**Owner rules reaffirmed:** do only what was asked (the owner stopped a reel I built when they asked for the kit). No ElevenLabs (owner will not provide a key). Minimal chatter. End finished tasks with `Skills used: ...`.
+
+**Voice (local, Kokoro)**
+- Female: `af_heart` is the chosen voice. `voiceover-pacing/director.py` now renders each phrase 6 times and keeps the cleanest (glitch filter), with no per-phrase pitch shifting (that caused the raspy switching). Sample: `edits/duxio-reel-kit/vo/E2-v3-heart.mp3`.
+- Male: tuned to the owner's reference (ElevenLabs sample, pitch about 114 Hz, brighter, faster ~3.1 words/s) by ffmpeg band measurement. Candidates `Male-C-michael-adam-v2.mp3` and `Male-D-adam-v2.mp3`; owner has not picked. `director.py` supports `chain` (custom EQ) and `global_st` (one formant safe shift for the whole read).
+- Not verified by ear (no audio playback here). `voiceover-pacing/SKILL.md` still describes WORLD shaping as the default; update it (clean best of N path is the default).
+
+**Skills and routing**
+- Added `deep-learning` (vendored nn-zero-to-hero MIT and LLMs-from-scratch Apache 2.0; d2l and fastbook via `fetch-more.sh`).
+- Added `site-design-gate` (30 vibecoded tells from the owner's reference reel, plus an audit); wired into `duxio-website`, the router and `CLAUDE.md`.
+- `hooks/skill-select.py` scores all local skills against each prompt, learns "always/never/use X for Y" into `.claude/skill-prefs.json`; `hooks/log-skill.py` logs Skill loads; every finished task ends with `Skills used: ...`.
+- Skill sync: repo is the source of truth. `.claude/sync-skills.sh` (one way), `.claude/sync-daily.sh` and `install-sync-schedule.sh` (two way, daily cron, run locally). None of these has been run.
+
+**Reel kit** (`edits/duxio-reel-kit/`, see its README)
+- `kit/build.py` (reel.json to a HyperFrames project: voice, music via music-director, SFX map, captions), `kit/scenes.js` (12 scenes + captions), `kit/kit.css`, `kit/sfx-map.json`, `reels/_example-e2-draft/` (config only).
+- UNTESTED: `build.py` ran once through voice, music and HTML generation, but `hyperframes check`, snapshot and render were never run, so layout, overlaps and caption position are unverified. Fix whatever the first check and snapshot show before building real reels.
+- Known risks: caption block sits at y 1330 and the phone scene is shortened for it; scene timings assume phrase anchored cues; `beat.layers` allows several scenes per beat.
+
+**Local move:** `LOCAL-SETUP.md` and `bootstrap-local.sh` (unrun). Uploads are not in git; put them in `input/`.
+
+**Next, in order**
+1. Owner picks the male voice (C or D) and confirms the female take by ear.
+2. Run `check` and `snapshot` on the kit with one pilot reel, only when the owner asks for a reel. Pilots per plan: Dots That Stopped, Silence Tier List, Domino Chain.
+3. Owner will send reference reels; extract pacing, sound, visuals, hooks into the skills without building.
+4. Still waiting on the owner: booking link, Instagram handle, comment to DM automation, the 30 DMs, music bed choice.
