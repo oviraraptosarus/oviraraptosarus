@@ -145,10 +145,12 @@ def build(script, out_mp3, report=False):
         track.append(np.zeros(int(pause / 1000 * SR)))
         t += dur + pause / 1000
     y = np.concatenate(track)
+    if script.get("global_st"):           # one formant-safe shift over the whole read, never per phrase
+        y = nudge(y, script["global_st"], 0)
     tmp = tempfile.mkdtemp()
     raw = os.path.join(tmp, "raw.wav")
     sf.write(raw, y.astype(np.float32), SR)
-    chain = ("highpass=f=80,bass=g=1.5:f=170:w=0.8,"
+    chain = script.get("chain") or ("highpass=f=80,bass=g=1.5:f=170:w=0.8,"
              "deesser=i=0.5:m=0.5:f=0.5,equalizer=f=7500:t=h:w=0.7:g=-2.5,"
              "acompressor=threshold=0.14:ratio=2.2:attack=10:release=160:makeup=1.5,"
              "loudnorm=I=-16:TP=-1.5:LRA=9")
