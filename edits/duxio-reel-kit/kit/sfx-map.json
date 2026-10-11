@@ -117,5 +117,44 @@
   "files": "swell.wav",
   "v": 0.25,
   "max": 1.2
+ },
+ "hookhit": {
+  "files": "hookhit.wav",
+  "v": 0.5,
+  "max": 1.6
+ },
+ "pulse": {
+  "files": "pulse.wav",
+  "v": 0.3,
+  "max": 0.7
+ },
+ "plink": {
+  "files": [
+   "plink-1.wav",
+   "plink-2.wav",
+   "plink-3.wav"
+  ],
+  "v": 0.22,
+  "max": 0.25
+ },
+ "wood-c5": {
+  "files": "pluck-wood-c5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-e5": {
+  "files": "pluck-wood-e5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-g5": {
+  "files": "pluck-wood-g5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-c6": {
+  "files": "pluck-wood-c6.wav",
+  "v": 0.22,
+  "max": 0.6
  }
 }

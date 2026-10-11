@@ -16,8 +16,8 @@ import numpy as np, soundfile as sf, pyworld as pw
 from kokoro_onnx import Kokoro
 
 SR = 24000
-MODEL = "/root/.cache/hyperframes/tts/models/kokoro-v1.0.onnx"
-VOICES = "/root/.cache/hyperframes/tts/voices/voices-v1.0.bin"
+MODEL = os.path.expanduser("~/.cache/hyperframes/tts/models/kokoro-v1.0.onnx")
+VOICES = os.path.expanduser("~/.cache/hyperframes/tts/voices/voices-v1.0.bin")
 
 
 def voice_vec(k, spec):

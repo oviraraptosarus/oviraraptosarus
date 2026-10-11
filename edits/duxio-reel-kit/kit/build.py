@@ -41,7 +41,7 @@ def main():
     phrases = timings["phrases"]
     for i, ph in enumerate(phrases):
         ph["cap"] = script["phrases"][i].get("cap", ph["text"])
-    total = round(phrases[-1]["end"] + 0.7, 2)
+    total = round(phrases[-1]["end"] + reel.get("tail", 0.7), 2)
 
     # music + premix (voice + bed, ducked)
     mix = os.path.join(rdir, "audio", "mix.mp3"); os.makedirs(os.path.dirname(mix), exist_ok=True)
@@ -68,7 +68,8 @@ def main():
         for s in b.get("sfx", []): audio.append((s["name"], ph_t(s["p"], s.get("dt", 0)), s.get("v")))
         if bi > 0 and b.get("cut", True): audio.append(("cut", start - 0.04, None))
         cues_out.append({"bg": b.get("bg", "paper"), "start": start, "end": end, "layers": lay_out})
-    if reel.get("hit", True): audio.append(("hit", 0.0, None))
+    hit = reel.get("hit", True)
+    if hit: audio.append((hit if isinstance(hit, str) else "hit", 0.0, None))
 
     # sfx files
     rnd = random.Random(3); tags = []; used = {}
@@ -79,7 +80,13 @@ def main():
         d = min(dur(src), e.get("max", 1.5)); vol = round((v if v is not None else e["v"]), 3)
         tags.append(f'<audio id="sfx{n}" src="assets/sfx/{base}" data-start="{max(0,t):.3f}" data-duration="{d:.3f}" data-track-index="{20+n}" data-volume="{vol}" data-audio-group="sfx"></audio>')
 
-    shutil.copy(mix, os.path.join(assets, "mix.mp3"))
+    # optional hard cut to silence (a "silence beat"): {"from": {"p", "dt"}, "to": {"p", "dt"}}
+    if reel.get("silence"):
+        a, b = (ph_t(reel["silence"][k]["p"], reel["silence"][k].get("dt", 0)) for k in ("from", "to"))
+        run("ffmpeg", "-y", "-loglevel", "error", "-i", mix, "-af",
+            f"volume='if(between(t,{a},{b}),0,1)':eval=frame", "-b:a", "256k", os.path.join(assets, "mix.mp3"))
+    else:
+        shutil.copy(mix, os.path.join(assets, "mix.mp3"))
     for f in glob.glob(os.path.join(FONTS, "plus-jakarta-sans-latin-*.woff2")) + [os.path.join(FONTS, "instrument-serif-latin-400-italic.woff2")]:
         shutil.copy(f, os.path.join(assets, "fonts"))
     gsap = next(p for p in [os.path.join(REPO, "kept-reel-src", "gsap.min.js")] if os.path.exists(p)); shutil.copy(gsap, os.path.join(out, "gsap.min.js"))
@@ -88,10 +95,10 @@ def main():
 
     fonts = "".join(f"@font-face{{font-family:'Plus Jakarta Sans';font-weight:{w};src:url('assets/fonts/plus-jakarta-sans-latin-{w}-normal.woff2') format('woff2')}}" for w in (400, 500, 600, 700, 800))
     fonts += "@font-face{font-family:'Instrument Serif';font-style:italic;src:url('assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2')}"
-    css = open(os.path.join(HERE, "kit.css")).read(); js = open(os.path.join(HERE, "scenes.js")).read()
-    data = {"beats": cues_out, "phrases": phrases, "total": total, "captionLight": reel.get("captionLight", False)}
+    css = open(os.path.join(HERE, "kit.css"), encoding="utf-8").read(); js = open(os.path.join(HERE, "scenes.js"), encoding="utf-8").read()
+    data = {"beats": cues_out, "phrases": phrases, "total": total, "captionLight": reel.get("captionLight", False), "capChunk": reel.get("capChunk", 0)}
     html = f"""<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
-<script src="gsap.min.js"></script><style>{fonts}{css}</style></head><body>
+<script src="gsap.min.js"></script><style>{fonts}{css}{":root{" + ";".join(f"{k}:{v}" for k, v in reel.get("vars", {}).items()) + "}"}</style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total}" data-width="1080" data-height="1920">
 <audio id="mix" src="assets/mix.mp3" data-start="0" data-duration="{total}" data-track-index="5" data-volume="1" data-audio-group="voiceover"></audio>
 {chr(10).join(tags)}
@@ -103,11 +110,11 @@ R.beats.forEach((b,i)=>{{
   const el=$(root,"scene "+b.bg); tl.set(el,{{visibility:"visible"}},b.start); tl.set(el,{{visibility:"hidden"}},b.end);
   b.layers.forEach(L=>S[L.scene]({{tl,el,props:L.props,cue:(k)=>L.cues[k]?L.cues[k].t:undefined,start:b.start,end:b.end}}));
 }});
-buildCaptions(tl,root,R.phrases,R.captionLight);
+buildCaptions(tl,root,R.phrases,R.captionLight,R.capChunk);
 tl.set({{}},{{}},R.total);
 window.__timelines=window.__timelines||{{}}; window.__timelines["main"]=tl;
 </script></body></html>"""
-    open(os.path.join(out, "index.html"), "w").write(html)
+    open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(html)
     print("built", out, "duration", total)
     if "--check" in args: run("npx", "-y", "hyperframes", "check", cwd=out)
     if "--render" in args: run("npx", "-y", "hyperframes", "render", "--output", os.path.join(out, rid + ".mp4"), cwd=out)

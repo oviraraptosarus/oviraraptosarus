@@ -149,15 +149,105 @@ S.cta = (c) => {
   tl.fromTo(post, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: EASE }, c.cue(1) ?? c.cue(0) + 0.4);
 };
 
-/* captions: one block per phrase, word highlight as spoken. phrases: [{cap,start,end}] */
-function buildCaptions(tl, root, phrases, lightText) {
+/* thread: one continuous DM thread world for "the dots that stopped". The three typing dots are physical objects:
+   they pulse, fall out of the bubble when the lead stops typing, and hop back into a new bubble at the end.
+   props {name:"Sam", time:"11:47 PM", reply:"No rush. Anything I can clear up?", statement:["That's not","a *no.*"], ring:20, save:"Save this for the next one."}
+   cues: 0 start · 1 dots freeze · 2 statement in · 3 strike · 4 ring in · 5 ring draws · 6 type part 1 · 7 type part 2 ·
+         8 send · 9,10,11 dot hops · 12 save line */
+S.thread = (c) => {
+  const { tl, el, props: p } = c, T = (k) => c.cue(k), END = c.end;
+  const FLOOR = 1240, D = 104, GAP = 56;
+  $(el, "grain"); $(el, "vig");
+  // header
+  const hd = $(el, "th-head"); $(hd, "th-av", "", (p.name || "Sam")[0]); const nm = $(hd, "th-nm"); $(nm, "th-name", "", p.name || "Sam");
+  const st = $(nm, "th-status", "", "typing…"); $(hd, "th-ex", "", "Example");
+  $(el, "th-stamp", "", p.time || "11:47 PM");
+  const setStatus = (t, txt, col) => tl.call(() => { st.textContent = txt; st.style.color = col; }, null, t);
+  setStatus(0, "typing…", "#B794FF"); setStatus(T(1) + 0.05, "Active now", "#9A9AA5"); setStatus(T(9), "typing…", "#B794FF");
+  // first typing bubble (frame 0)
+  const b1 = $(el, "th-bub", "left:160px;top:720px;width:760px;height:300px");
+  const tails = [$(el, "th-tail", "left:150px;top:978px;width:58px;height:58px"), $(el, "th-tail", "left:108px;top:1046px;width:28px;height:28px")];
+  const dx0 = 160 + (760 - (3 * D + 2 * GAP)) / 2, dy0 = 720 + (300 - D) / 2;
+  const dots = [0, 1, 2].map((i) => $(el, "th-dot", `left:${dx0 + i * (D + GAP)}px;top:${dy0}px;width:${D}px;height:${D}px`));
+  tl.fromTo([b1, ...tails], { scale: 0.94 }, { scale: 1, duration: 0.35, ease: "back.out(2)" }, 0);
+  const pulse = (t0, t1, base) => { for (let t = t0; t < t1 - 0.3; t += 0.55) dots.forEach((d, i) => {
+    tl.to(d, { y: base - 26, backgroundColor: "#D7D7DE", duration: 0.18, ease: "sine.out" }, t + i * 0.12);
+    tl.to(d, { y: base, backgroundColor: "#8E8E98", duration: 0.2, ease: "sine.in" }, t + i * 0.12 + 0.18); }); };
+  pulse(0, T(1), 0);
+  // stop: freeze, bubble collapses, dots fall and bounce on the floor
+  const floor = $(el, "th-floor", `top:${FLOOR}px`);
+  tl.to(dots, { y: 0, backgroundColor: "#8E8E98", duration: 0.08 }, T(1));
+  tl.to([b1, ...tails], { scale: 0, opacity: 0, duration: 0.22, ease: "power3.in", stagger: 0.03 }, T(1) + 0.1);
+  tl.fromTo(floor, { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: 0.4, ease: "power2.out" }, T(1) + 0.15);
+  const fall = FLOOR - D - dy0;
+  dots.forEach((d, i) => tl.to(d, { y: fall, rotation: [-24, 12, 30][i], duration: 0.62, ease: "bounce.out" }, T(1) + 0.2 + i * 0.06));
+  // statement: That's not a no.
+  const box = $(el, "stmt", "top:470px;font-size:150px;color:#F5F5F7;visibility:hidden"); let strike = null;
+  tl.set(box, { visibility: "visible" }, T(2) - 0.02); tl.set(box, { visibility: "hidden" }, T(4) + 0.15);
+  (p.statement || ["That's not", "a *no.*"]).forEach((ln, li) => { const row = $(box, "line");
+    ln.split(" ").forEach((w, wi) => { const em = w.startsWith("*") && w.endsWith("*"); const m = $(row, "mk", "position:relative"), i = $(m, "", em ? "color:#F1283A" : "", em ? w.slice(1, -1) : w);
+      if (em) strike = $(m, "th-strike"); tl.fromTo(i, rise, { yPercent: 0, duration: 0.42, ease: EASE }, T(2) + (li * 2 + wi) * 0.08); }); });
+  if (strike) tl.fromTo(strike, { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, T(3));
+  dots.forEach((d, i) => { tl.to(d, { y: fall - 34, duration: 0.14, ease: "power2.out" }, T(3) + 0.1 + i * 0.05); tl.to(d, { y: fall, duration: 0.2, ease: "bounce.out" }, T(3) + 0.24 + i * 0.05); });
+  tl.to(box, { y: -90, opacity: 0, duration: 0.25, ease: "power2.in" }, T(4) - 0.12);
+  // twenty minute ring
+  const R = 290, C = 2 * Math.PI * R;
+  const ring = $(el, "th-ring", "", `<svg width="660" height="660" viewBox="0 0 660 660"><circle cx="330" cy="330" r="${R}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="26"/><circle class="arc" cx="330" cy="330" r="${R}" fill="none" stroke="#6F00FF" stroke-width="26" stroke-linecap="round" transform="rotate(-90 330 330)" stroke-dasharray="${C}" stroke-dashoffset="${C}"/></svg>`);
+  const num = $(ring, "th-num", "", "0"); $(ring, "th-min", "", "minutes");
+  const arc = ring.querySelector(".arc"), cnt = { n: 0 };
+  tl.fromTo(ring, { opacity: 0, scale: 0.86 }, { opacity: 1, scale: 1, duration: 0.4, ease: EASE }, T(4));
+  tl.fromTo(arc, { attr: { "stroke-dashoffset": C } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.75, ease: "power3.out" }, T(5));
+  tl.fromTo(cnt, { n: 0 }, { n: p.ring || 20, duration: 0.75, ease: "power3.out", onUpdate: () => { num.textContent = Math.round(cnt.n); } }, T(5));
+  tl.fromTo(num, { scale: 1 }, { scale: 1.07, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, T(5) + 0.75);
+  tl.to(ring, { opacity: 0, scale: 0.9, duration: 0.2, ease: "power2.in" }, T(6) - 0.48);
+  // composer types the reply, then sends it as a violet bubble
+  const reply = p.reply || "No rush. Anything I can clear up?", cut = reply.indexOf(".") + 1 || reply.length;
+  const comp = $(el, "th-comp"); const txt = $(comp, "", "display:inline"); const car = $(comp, "caret th-caret"); const send = $(el, "th-send", "", "&#8593;");
+  const typed = { n: 0 }, upd = () => { txt.textContent = reply.slice(0, Math.round(typed.n)); };
+  tl.fromTo([comp, send], { y: 260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: EASE }, T(6) - 0.26);
+  tl.fromTo(typed, { n: 0 }, { n: cut, duration: 0.42, ease: "none", onUpdate: upd }, T(6));
+  tl.to(typed, { n: reply.length, duration: 0.9, ease: "none", onUpdate: upd }, T(7));
+  tl.fromTo(car, { opacity: 1 }, { opacity: 0, duration: 0.01, repeat: 7, repeatDelay: 0.2, yoyo: true }, T(6) - 0.3);
+  const me = $(el, "th-me", "", reply);
+  tl.fromTo(send, { scale: 1 }, { scale: 0.82, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, T(8));
+  tl.to(typed, { n: 0, duration: 0.01, onUpdate: upd }, T(8) + 0.06);
+  tl.fromTo(me, { y: 520, scale: 0.86, opacity: 0, transformOrigin: "100% 100%" }, { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: EASE }, T(8));
+  tl.to([comp, send], { y: 260, opacity: 0, duration: 0.25, ease: "power2.in" }, T(8) + 0.12);
+  // the dots come back: a new bubble, each dot hops in on its own word
+  const b2 = $(el, "th-bub", "left:60px;top:700px;width:760px;height:300px;opacity:0");
+  const t2 = [$(el, "th-tail", "left:50px;top:958px;width:58px;height:58px;opacity:0"), $(el, "th-tail", "left:8px;top:1026px;width:28px;height:28px;opacity:0")];
+  tl.fromTo([b2, ...t2], { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.38, ease: "back.out(1.8)", stagger: 0.04 }, T(9) - 0.42);
+  const dx1 = 60 + (760 - (3 * D + 2 * GAP)) / 2, dy1 = 700 + (300 - D) / 2, back = dy1 - dy0;
+  dots.forEach((d, i) => { const k = T(9 + i);
+    tl.to(d, { x: dx1 - dx0, rotation: 0, duration: 0.34, ease: "power2.out" }, k);
+    tl.to(d, { y: back - 70, duration: 0.2, ease: "power2.out" }, k); tl.to(d, { y: back, duration: 0.16, ease: "power2.in" }, k + 0.2);
+    tl.to(d, { scaleY: 0.82, scaleX: 1.12, duration: 0.06, yoyo: true, repeat: 1 }, k + 0.36); });
+  tl.to(floor, { opacity: 0, duration: 0.4 }, T(11));
+  pulse(T(11) + 0.45, END, back);
+  const save = $(el, "th-save", "", p.save || "Save this for the next one.");
+  tl.fromTo(save, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: EASE }, T(12));
+  tl.fromTo(el.querySelector(".grain"), { backgroundPosition: "0px 0px" }, { backgroundPosition: "480px 360px", duration: END, ease: "steps(240)" }, 0);
+};
+
+/* captions: one block per phrase (or per chunk of <= chunk words when chunk > 0), word highlight as spoken.
+   phrases: [{cap,start,end}]; cap "" hides the caption (use when the line is already on screen). */
+function buildCaptions(tl, root, phrases, lightText, chunk) {
   const cap = $(root, "", ""); cap.id = "cap"; if (lightText) cap.className = "paper-cap";
+  const HL = getComputedStyle(document.documentElement).getPropertyValue("--hl").trim() || "#F1283A";
   phrases.forEach((p) => {
-    const words = (p.cap || p.text).split(/\s+/).filter(Boolean), tot = words.reduce((s, w) => s + w.length + 1.5, 0), dur = p.end - p.start; let t = p.start;
-    const ln = $(cap, "cl"); const pill = $(ln, "cp"); const spans = words.map((w) => $(pill, "cw", "", w));
-    tl.set(ln, { visibility: "visible" }, p.start - 0.02); tl.set(ln, { visibility: "hidden" }, p.end + 0.06);
-    words.forEach((w, i) => { const wd = dur * ((w.length + 1.5) / tot);
-      tl.fromTo(spans[i], { opacity: 0, y: 26, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "power3.out" }, t);
-      tl.to(spans[i], { color: "#F1283A", duration: 0.05 }, t); tl.to(spans[i], { color: "#fff", duration: 0.05 }, t + wd); t += wd; });
+    const words = (p.cap ?? p.text).split(/\s+/).filter(Boolean); if (!words.length) return;
+    const wt = (w) => w.length + 1.5, tot = words.reduce((s, w) => s + wt(w), 0), dur = p.end - p.start;
+    const groups = [];
+    if (chunk > 0) { let g = []; words.forEach((w, i) => { g.push(w); if (g.length >= chunk || /[.,?!:]$/.test(w) || i === words.length - 1) { groups.push(g); g = []; } }); }
+    else groups.push(words);
+    let t = p.start;
+    groups.forEach((g, gi) => {
+      const ln = $(cap, "cl"); const pill = $(ln, "cp"); const spans = g.map((w) => $(pill, "cw", "", w));
+      const gDur = dur * g.reduce((s, w) => s + wt(w), 0) / tot, g0 = t;
+      tl.set(ln, { visibility: "visible" }, g0 - 0.02); tl.set(ln, { visibility: "hidden" }, gi === groups.length - 1 ? p.end + 0.06 : g0 + gDur);
+      g.forEach((w, i) => { const wd = dur * (wt(w) / tot);
+        tl.fromTo(spans[i], { opacity: 0, y: 26, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.14, ease: "power3.out" }, t);
+        tl.to(spans[i], { color: HL, duration: 0.05 }, t); tl.to(spans[i], { color: "#fff", duration: 0.05 }, t + wd); t += wd; });
+    });
   });
 }
