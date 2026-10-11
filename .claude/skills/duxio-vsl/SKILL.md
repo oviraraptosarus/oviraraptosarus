@@ -88,6 +88,7 @@ Visuals: the real 2-step form filled in, a cursor clicks "Book a Strategy Call",
 
 ## 5. Other DUXIO video formats (same rules, same look)
 - **1:57 cutdown (16:9):** hook (0 to 15s) → old way vs backend (15 to 35s) → the four steps (35 to 85s, about 12s each) → math (85 to 100s) → fit and CTA (100 to 117s). About 290 words max.
+- **Organic reels (owner rule, 2026-10-11):** build on formats trending that month (research first), value first, one soft mention of us, CTA "Comment WORD and I'll DM you". Each keyword gets a written DM: deliver the promised thing, then one question, then a Strategy Call invite only if they have lead volume. Never the word "free". Model: `brand/duxio/docs/reels-launch-7.md`.
 - **Reel / short (9:16, 30 to 60s):** a hook line and the pain visual on frame 0 → the HBR stat or the old way → the four steps as four fast beats → "you just show up to calls" → "Book a Strategy Call, link in bio" → loop back to frame 0. About 3 words/s. Captions on everything.
 - **Paid ad (9:16 or 4:5, 15 to 30s):** three hook variants (missed DM at night / "you don't need more leads" / the HBR stat), one mechanism beat, the CTA.
 - The mechanism is always the four steps; never invent a fifth.

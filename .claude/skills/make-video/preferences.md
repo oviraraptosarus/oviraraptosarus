@@ -12,3 +12,4 @@ make-video reads this before asking questions and appends the user's answers aft
 ## Log
 - 2026-10-11 · VSL 16:9 · ElevenLabs voice supplied · Apple dark look · CTA: Book a Strategy Call
 - 2026-10-11 · content strategy · pages brand new (0 to 100) · faceless with voiceover · 5 reels + 1 YouTube a week · no ads: pain point content for coaches and consultants, edited to also hook the fast scrolling Instagram crowd · plan in brand/duxio/docs/content-strategy.md
+- 2026-10-11 · reels · owner direction: script on the formats trending right now (research them first), think like a pro creator: value first, one soft mention of us, never salesy · CTA is "Comment WORD and I'll DM you" with a written DM that delivers the promised thing first, a question second, a Strategy Call invite only after they show lead volume · never the word "free" · example set: brand/duxio/docs/reels-launch-7.md

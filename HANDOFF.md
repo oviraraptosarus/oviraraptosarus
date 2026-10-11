@@ -121,7 +121,7 @@ Offered, not yet requested (do only when asked):
 4. **Fix the live site** (`duxio-website-for-coaches`): the chatbot `SalesChatbot.tsx` uses "Growth Expert", an emoji, "lead generation", "custom blueprint" and a placeholder Calendly link. Needs the real booking link.
 5. **Replace VSL v3 with v4.1 on the site** (v3 says "five stage", "48 hour sequence", "forty seconds" and has hyphens).
 6. **Cutdown and other formats** of the VSL (1:57 cutdown, ads, more reels) once the reel rebuild sets the short-form standard.
-7. **Execute month 1** (`brand/duxio/docs/content-calendar-month-1.md`, 20 reels + 4 YouTube scripted, launch Oct 19, prep week Oct 12 to 18) under the strategy in `content-strategy.md`: profile setup copy, our own comment keyword backend, the first 10 banked reels from the hook bank, YouTube #1 and #2. Nothing built yet.
+7. **Build the 7 launch reels** (`brand/duxio/docs/reels-launch-7.md`: scripts, voice direction, DMs done; nothing rendered). Then **execute month 1** (`brand/duxio/docs/content-calendar-month-1.md`, 20 reels + 4 YouTube scripted, launch Oct 19, prep week Oct 12 to 18) under the strategy in `content-strategy.md`: profile setup copy, our own comment keyword backend, the first 10 banked reels from the hook bank, YouTube #1 and #2. Nothing built yet.
 8. Not verified end to end: the updated routing hook has been tested on sample prompts only, not on a live new-video request with the intake round.
 
 Older assets and their status are in `brand/duxio/docs/content-library.md` (v1 to v3 and the first reel are older or off-brand; v4.1 is current).

@@ -1,5 +1,7 @@
 # DUXIO content calendar, month 1 (Oct 12 to Nov 15, 2026)
 
+**Launch week is now `reels-launch-7.md`** (7 trend format reels with keyword DMs). The Dot series below follows it, so every date after week 0 shifts one week later.
+
 This builds on `content-strategy.md` and uses the brief already on file:
 - brand new pages
 - faceless with a voiceover
