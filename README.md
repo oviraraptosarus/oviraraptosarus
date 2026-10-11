@@ -62,19 +62,19 @@
 
 ---
 
-## Metrics
+## 3D Contribution Map
 
 <div align="center">
-  <img src="metrics.svg" alt="Metrics" width="100%" />
+  <img src="profile-3d-contrib/profile-night-rainbow.svg" alt="3D Profile Graph" width="100%" />
 </div>
 
 ---
 
-## Contribution Map
+## Contribution Snake
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.svg" />
     <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/oviraraptosarus/oviraraptosarus/output/github-snake.gif" />
   </picture>
