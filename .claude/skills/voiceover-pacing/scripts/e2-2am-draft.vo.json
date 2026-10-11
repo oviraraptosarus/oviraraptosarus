@@ -1,10 +1,10 @@
 {
   "name": "E2 2:07 AM Draft",
   "voice": {
-    "af_kore": 0.55,
-    "af_jessica": 0.45
+    "af_nova": 0.5,
+    "af_sarah": 0.5
   },
-  "base_speed": 1.06,
+  "base_speed": 1.1,
   "k": 1.15,
   "seed": 11,
   "phrases": [
@@ -182,5 +182,8 @@
       "e": 0.9
     }
   ],
-  "strength": 0.75
+  "strength": 0.75,
+  "shape": false,
+  "pause_scale": 0.6,
+  "pause_max": 480
 }

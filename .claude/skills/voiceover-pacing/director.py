@@ -65,6 +65,19 @@ def shape(a, k=1.3, st=0.0, fall=0.0, rise=0.0, reset=0.0, gain_db=0.0, cap=(-9.
     return y * (10 ** (gain_db / 20.0))
 
 
+def nudge(a, st, gain_db):
+    """Small register shift with rubberband (formants preserved), no resynthesis, so no buzz."""
+    if abs(st) >= 0.4:
+        tmp = tempfile.mkdtemp()
+        i, o = os.path.join(tmp, "i.wav"), os.path.join(tmp, "o.wav")
+        sf.write(i, a.astype(np.float32), SR)
+        r = 2 ** (st / 12.0)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", i, "-af",
+                        f"rubberband=pitch={r:.4f}:formant=preserved:pitchq=quality", o], check=True)
+        a, _ = sf.read(o)
+    return a * (10 ** (gain_db / 20.0))
+
+
 def fade(a, ms=8):
     n = int(ms / 1000 * SR)
     if len(a) > 2 * n:
@@ -90,23 +103,26 @@ def build(script, out_mp3, report=False):
         a, _ = k.create(p["t"], voice=vec, speed=float(np.clip(sp, 0.6, 1.5)), lang="en-us")
         a = trim(a)
         S = script.get("strength", 0.7)
-        a = shape(a, k=p.get("k", base_k), st=p.get("st", 0) * S, fall=p.get("fall", 0) * S,
-                  rise=p.get("rise", 0) * S, reset=p.get("reset", 0) * S, gain_db=p.get("gain", 0))
+        if script.get("shape", False):      # WORLD vocoder contour shaping: expressive but can sound raspy
+            a = shape(a, k=p.get("k", base_k), st=p.get("st", 0) * S, fall=p.get("fall", 0) * S,
+                      rise=p.get("rise", 0) * S, reset=p.get("reset", 0) * S, gain_db=p.get("gain", 0))
+        else:                                # clean path: no vocoder, formant safe pitch nudge only
+            a = nudge(a, p.get("st", 0) * S, p.get("gain", 0))
         a = fade(a)
         dur = len(a) / SR
         timings.append({"text": p["t"], "start": round(t, 3), "end": round(t + dur, 3), "e": p.get("e", 0.6)})
         track.append(a)
-        pause = p.get("pause", 300) * (1 + rng.uniform(-wob, wob) * 1.5)
+        pause = min(p.get("pause", 300) * script.get("pause_scale", 0.6), script.get("pause_max", 480)) * (1 + rng.uniform(-wob, wob) * 1.5)
         track.append(np.zeros(int(pause / 1000 * SR)))
         t += dur + pause / 1000
     y = np.concatenate(track)
     tmp = tempfile.mkdtemp()
     raw = os.path.join(tmp, "raw.wav")
     sf.write(raw, y.astype(np.float32), SR)
-    chain = ("highpass=f=75,bass=g=2.5:f=170:w=0.8,equalizer=f=3200:t=q:w=1.1:g=1.8,"
-             "deesser=i=0.35:m=0.5:f=0.5,"
-             "acompressor=threshold=0.1:ratio=3:attack=8:release=120:makeup=2.5,"
-             "loudnorm=I=-16:TP=-1.5:LRA=7")
+    chain = ("highpass=f=80,bass=g=1.5:f=170:w=0.8,"
+             "deesser=i=0.5:m=0.5:f=0.5,equalizer=f=7500:t=h:w=0.7:g=-2.5,"
+             "acompressor=threshold=0.14:ratio=2.2:attack=10:release=160:makeup=1.5,"
+             "loudnorm=I=-16:TP=-1.5:LRA=9")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af", chain, "-ar", "44100",
                     "-codec:a", "libmp3lame", "-b:a", "192k", out_mp3], check=True)
     wav = out_mp3.rsplit(".", 1)[0] + ".wav"
