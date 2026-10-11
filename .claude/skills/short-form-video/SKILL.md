@@ -9,7 +9,7 @@ version: 0.1.0
 Engineer a 9:16 video that survives the swipe. Short-form is not a small launch film — it is a retention machine: a hook that earns the first second, pattern interrupts that reset attention every few seconds, and often a loop that buys watch-time past 100%. The craft is timing, not polish.
 
 ## House rules (this repo; read first, they override anything generic below)
-Build in HyperFrames, not Remotion: translate the code samples below into the GSAP timeline. Also load `make-video/editing-standard.md` and `make-video/attention-mechanics.md`.
+Build in HyperFrames, not Remotion: translate the code samples below into the GSAP timeline. Also load `make-video/framework.md` (first; the owner's reference-reel framework wins on conflicts), `make-video/editing-standard.md` and `make-video/attention-mechanics.md`.
 
 **Why these rules exist:** a 59s DUXIO reel looked stunning but felt flat. The narrator sounded serious and low-energy, there was no female voice and no enthusiasm, and the pacing was even. Visuals alone don't earn the scroll; the audio has to excite too.
 
@@ -23,7 +23,7 @@ Build in HyperFrames, not Remotion: translate the code samples below into the GS
   - Speed 1.05 to 1.15
   - Script tips: write in short bursts with punctuation that makes the voice move, and use question marks to lift pitch. Ask for one take per line, so lines can be re-cut.
 - **Delivery shape:** moderate-high and varied, never flat (engagement peaks at moderate-high speech rate, pitch and loudness):
-  - Average 3.0 to 3.4 words per second.
+  - Average by spine (`make-video/framework.md` §5): story 3.3 to 3.5, explainer or list up to 4.3, confession about 2.7 words per second.
   - Speed up through lists and setups (about 3.6 w/s).
   - Slow down on the one key line (about 2.4 w/s) and leave 0.3 to 0.5s of air after it.
   - Pitch moves on every line; end hooks on an upward or punchy note.

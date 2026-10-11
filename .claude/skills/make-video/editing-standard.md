@@ -7,7 +7,7 @@ The bar is a senior editor who cuts sales videos for a living. Sales-worthy mean
 
 | Format | Words per second |
 |---|---|
-| Reel / ad | 3.0 to 3.4 average, varied: about 3.6 in lists, about 2.4 on the key line |
+| Reel / ad | by spine (`framework.md` §5): story 3.3 to 3.5, explainer or list up to 4.3, confession about 2.7; always varied, slower on the key line |
 | VSL | 2.4 to 2.7 |
 | Explainer | 2.2 to 2.5 |
 
@@ -18,7 +18,7 @@ A calm voice is fine; a slow edit is not.
 - Never more than 0.8s of dead air, unless a silence beat is deliberate (at most one per minute).
 
 **Visual change**
-- Reels and ads: every 1.5 to 3s.
+- Reels and ads: the frame changes state every 1.5 to 3s (a cut is optional; montage mode cuts every 0.4 to 1.3s, see `framework.md` §5).
 - VSL: every 2.5 to 5s.
 - Nothing sits fully still for more than about 1.2s: give it a counter, a highlight, a progress fill or a secondary move.
 - Uneven intervals read as momentum; a metronome reads as boring.
@@ -156,7 +156,7 @@ A calm voice is fine; a slow edit is not.
 - Reels: the last frame matches the first, for a clean loop.
 
 **Captions**
-- Word-synced, 4 to 7 words a line, never covering the hero.
+- Word-synced, 1 to 3 word beats styled to the video's visual world (`framework.md` §4), never covering the hero.
 - Hidden where the on-screen headline already says the same line.
 
 **Final pass**

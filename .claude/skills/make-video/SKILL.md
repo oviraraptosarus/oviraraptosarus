@@ -48,7 +48,7 @@ The user never has to type other skill names. This skill picks and loads them, a
 
 ## Step 2. Auto-select the skills
 
-Load these with the Skill tool (or read their `SKILL.md`) before planning. Always load: `video-craft`, `video-formats`, this skill's `editing-standard.md` and `attention-mechanics.md`, and `hyperframes` + `hyperframes-core` + `hyperframes-animation` + `hyperframes-audio` for any HyperFrames build.
+Load these with the Skill tool (or read their `SKILL.md`) before planning. Always load: this skill's `framework.md` first (the owner's reference-reel framework: five senses, hook shapes, story spines, one visual world, pacing modes; it wins over `editing-standard.md` where they differ), `video-craft`, `video-formats`, this skill's `editing-standard.md` and `attention-mechanics.md`, and `hyperframes` + `hyperframes-core` + `hyperframes-animation` + `hyperframes-audio` for any HyperFrames build.
 
 | Video type | Also load |
 |---|---|
