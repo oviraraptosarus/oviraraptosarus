@@ -73,3 +73,41 @@ bed=bed/np.max(np.abs(bed))*.5
 bed*=np.minimum(1,t/1.0)*np.minimum(1,(D-t)/2.0)
 sf.write(R+"music/bed.wav",np.stack([bed,np.roll(bed,int(.012*SR))],1).astype(np.float32),SR)
 print("ok")
+
+# ---------- v4.1 additions: hook impacts, soft plucks (replace bells), coin counter, cash land ----------
+rng=np.random.default_rng(11)
+# cinematic hook hit: sub boom + body thump + short air burst, long tail
+n=int(SR*2.6);t=np.arange(n)/SR
+boom=np.sin(2*np.pi*(62*np.exp(-t*2.2)+34)*t)*env(n,.004,.9)
+body=np.sin(2*np.pi*(140*np.exp(-t*14)+70)*t)*env(n,.002,.12)
+air=lp(hp(rng.standard_normal(n),200),3000)*env(n,.003,.25)*.35
+save("hookhit",lp(boom+.6*body+air,7000),.95)
+# tension swell (reverse-style) 1.4s
+n=int(SR*1.4);t=np.arange(n)/SR;x=t/1.4
+sw=(lp(rng.standard_normal(n),900)*(1-x)+lp(rng.standard_normal(n),2600)*x)*x**3+.5*np.sin(2*np.pi*(55+40*x)*t)*x**2
+save("swell",sw,.7)
+# heartbeat-like low pulse (two thumps)
+def thump(f,d):
+    n=int(SR*d);t=np.arange(n)/SR;return np.sin(2*np.pi*(f*np.exp(-t*10)+f*.5)*t)*env(n,.002,.07)
+hb=np.zeros(int(SR*.6));a=thump(90,.25);hb[:len(a)]+=a;o=int(SR*.2);b=thump(80,.3);hb[o:o+len(b)]+=b*.7
+save("pulse",lp(hb,600),.8)
+# soft wooden plucks (low, short) for ladders: C4 E4 G4 C5
+for name,f in [("tap1",261.63),("tap2",329.63),("tap3",392.0),("tap4",523.25)]:
+    n=int(SR*.35);t=np.arange(n)/SR
+    x=(np.sin(2*np.pi*f*t)+.25*np.sin(2*np.pi*f*4*t)*np.exp(-t*60))*env(n,.002,.07)
+    save(name,lp(x,4500),.55)
+# low confirm: warm whoomp + soft pluck
+n=int(SR*.8);t=np.arange(n)/SR
+cf=np.sin(2*np.pi*(180*np.exp(-t*8)+110)*t)*env(n,.004,.15)
+p=np.zeros(n);pl=np.sin(2*np.pi*392*t[:int(SR*.3)])*env(int(SR*.3),.002,.06);o=int(SR*.06);p[o:o+len(pl)]=pl
+save("confirm2",lp(cf+.5*p,5000),.7)
+# coin tick (metallic but rolled off) and cash land
+n=int(SR*.09);t=np.arange(n)/SR
+coin=(np.sin(2*np.pi*2350*t)+.6*np.sin(2*np.pi*3170*t)+.3*np.sin(2*np.pi*4420*t))*env(n,.0005,.018)
+save("coin",lp(coin,7000),.5)
+n=int(SR*1.6);t=np.arange(n)/SR
+bell=(np.sin(2*np.pi*1318.5*t)+.5*np.sin(2*np.pi*1975.5*t)+.3*np.sin(2*np.pi*2637*t))*env(n,.002,.35)
+drawer=lp(rng.standard_normal(n),1200)*env(n,.002,.04)+np.sin(2*np.pi*(120*np.exp(-t*20)+60)*t)*env(n,.002,.12)
+cash=np.zeros(n);cash+=drawer*.9;o=int(SR*.05);cash[o:]+=bell[:n-o]*.55
+save("cash",lp(cash,7000),.85)
+print("v41 ok")

@@ -31,6 +31,16 @@ Load with `editing-standard.md` for every video. These are the slot-machine and 
 9. **Match sound energy to the cut.** Faster sections get denser SFX and a busier bed; reflective lines get air. Audio arousal and visual change move together.
 10. **Warm, not harsh.** Low-pass SFX at about 9kHz. Prefer soft clicks, thunks and bells over bright clicks and white-noise hits. Harsh highs lower likes.
 
+## Owner feedback that refines the above
+- Ladders use **soft, low wooden plucks** (C4 → C5, short decay, quiet), never bright bells. Bells and chimes stick out over the voice and read as cheap.
+- The **hook needs weight**:
+  - A sub impact and air on frame 0.
+  - A low pulse under the tension.
+  - A swell into the turn, then a hit.
+  - A small chime is not a hook.
+- **Money is a counter**, not a word: count up from $0 with coin ticks that slow down, then land with a soft register "cha-ching" and a 7% pop.
+- **Measure, don't guess:** render voice-only and SFX-only passes. Then compare 400ms loudness. During speech, every SFX must sit at least 7 to 8dB under the voice median. Only the frame 0 hook hit may come closer.
+
 ## Guardrails
 - No fake scarcity, fake countdowns, fake wins or invented numbers. Example data is labelled "Example".
 - Don't flash or strobe, and don't use more than 3 SFX within 100ms.

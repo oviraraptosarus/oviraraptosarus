@@ -74,6 +74,11 @@ A calm voice is fine; a slow edit is not.
 - Never stack more than 2 or 3 sounds within 100ms.
 - Vary the samples, so repeats don't sound looped.
 
+**Measure the balance before the final render**
+- Render a voice-only and an SFX-only audio pass (a stripped composition renders in about 1.5 min).
+- Compare 400ms windows: SFX at least 7 to 8dB under the voice median wherever words play.
+- Also check the music: when a value is set in a `data-automation` volume lane, it is the absolute gain. It replaces `data-volume`, so scale the lane values themselves.
+
 **Music**
 - Carved under the voice (`hyperframes-audio` carve, strength about 0.6). It sits 18 to 24dB under the voice while words play.
 - Structure matters:

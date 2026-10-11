@@ -78,13 +78,13 @@ This is the build sheet for the VSL on the owner's ElevenLabs recording (`brand/
 | 105.5 | Pure black. "Think about the math." | music thins out (uncertainty beat) |
 | 107.3 | "80" rolls up like a reel: *leads reach out* | rolling ticks, land |
 | 111.0 | Arrow → "1 or 2" *rescued sales* | riser |
-| 114.5 | Arrow → "+$3,000 to $6,000" with a violet light sweep; small label "Example at a $3,000 offer. Not a forecast." | big hit: sub + sparkle, music swells |
+| 114.5 | Arrow → a money counter rolls "+$0" → "+$6,000" (extra revenue) and pops 7%, then a violet light sweep; label "Example: two clients at a $3,000 offer. Just an estimate." | coin ticks slowing down, soft register land, music swells |
 | 118.7 | Two rows check: "$0 more on ads", "0 evenings typing" | two checks rising |
 
 ### 5. Fit and CTA (125.1 to 161)
 | Time | Visual | Sound |
 |---|---|---|
-| 125.1 | Fit list: "Beginners with no offer and no audience" in grey with an x; then "Active coaches and consultants", "People already reaching out", "No backend to capture and close them" check in violet | thud; ladder of three checks |
+| 125.1 | "Who this is ideal for." Fit list: "Beginners with no offer and no audience" in grey with an x; then "Active coaches and consultants", "People already reaching out", "No backend to capture and close them" check in violet | thud; ladder of three checks |
 | 137.9 | The camera tilts "down the page": below a video frame sits the 2-step form | glass whoosh down |
 | 140.9 | A cursor fills step 1 (Name, Instagram), clicks Next, picks step 2 chips | soft key clicks, clicks |
 | 141.6 | "Book a Strategy Call" button presses (scale 0.96 → 1) with a violet ripple | click + haptic thump |

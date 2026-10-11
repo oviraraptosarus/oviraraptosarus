@@ -34,37 +34,40 @@ tags=[f'<audio id="vo" src="assets/vo/vo.wav" data-start="{OFF}" data-duration="
 # ---- reel tick helper (power3.out deceleration) ----
 def reel_ticks(t,d,n=12,v=.32):
     return [("rtick",t+d*(1-(1-k/n)**(1/3)),v) for k in range(n)]+[("land",t+d,.55)]
-S=[]
-S+=[("haptic",T["notif"]-.02,.5),("ping",T["notif"],.42)]
+S=[("hookhit",0.0,.85),("gwhoosh",0.0,.25)]
+S+=[("haptic",T["notif"]-.02,.4),("ping",T["notif"],.26)]
+S+=[("pulse",T["h3"]+k*.9,.4) for k in range(int((T["gone"]-T["h3"])/.9))]
+S+=[("swell",T["gone"]-1.35,.25),("hookhit",T["gone"]-.03,.42)]
 S+=[("swish",T["s2"]-.15,.25),("select_008",T["call"],.18),("select_008",T["asleep"],.18)]
 S+=reel_ticks(T["h3"]-.05,1.5)
-S+=[("thud",T["gone"]-.03,.6)]
+
 S+=[("gwhoosh",T["zoom"]-.25,.4)]+reel_ticks(T["z45"]-.2,1.8,14,.28)
-S+=[("thud",T["fit"]-.02,.65),("land",T["fit"]-.02,.4)]
-S+=[("card-slide-1",T["post"]-.12,.3),("lad1",T["post"]-.05,.18),("card-slide-2",T["ads"]-.12,.3),("lad2",T["ads"]-.05,.18),("card-slide-1",T["spend"]-.05,.3),("lad3",T["spend"]+.02,.18)]
+S+=[("thud",T["fit"]-.02,.4),("land",T["fit"]-.02,.2)]
+S+=[("card-slide-1",T["post"]-.12,.3),("tap1",T["post"]-.05,0.216),("card-slide-2",T["ads"]-.12,.3),("tap2",T["ads"]-.05,0.216),("card-slide-1",T["spend"]-.05,.3),("tap3",T["spend"]+.02,0.216)]
 S+=[("gwhoosh",T["old"]-.3,.35)]+[("rtick",T["old"]+.1+k*.11,.25) for k in range(10)]
 S+=[("keypress-00%d"%(1+k%4),T["old"]+.4+k*.13,.1) for k in range(14)]
 S+=[("switch2",T["employee"],.35)]
-S+=[("thud",T["need"]-.05,.35),("swish",T["stop"]-.1,.3),("confirm",T["stop"]+1.4,.4)]
-S+=[("vriser",T["duxio"]-1.1,.3),("bighit",T["duxio"]+.1,.45)]+[(f"lad{i+1}",T["four"]+.35+i*.14,.22) for i in range(4)]
+S+=[("thud",T["need"]-.05,.35),("swish",T["stop"]-.1,.3),("confirm2",T["stop"]+1.4,.4)]
+S+=[("vriser",T["duxio"]-1.1,.3),("bighit",T["duxio"]+.1,.28)]+[(f"tap{i+1}",T["four"]+.35+i*.14,.22) for i in range(4)]
 for k in ("st1","st2","st3","st4"): S+=[("gwhoosh",T[k]-.45,.35),("select_008",T[k]+.1,.2)]
-S+=[("drop_003",T["reply"]-.6,.3)]+reel_ticks(T["reply"]-.1,1.3,10,.26)+[("send",T["sixty"]+.35,.35),("lad4",T["sixty"]+.6,.18)]
+S+=[("drop_003",T["reply"]-.6,.3)]+reel_ticks(T["reply"]-.1,1.3,10,.26)+[("send",T["sixty"]+.35,.35),("tap4",T["sixty"]+.6,0.216)]
 S+=[("drop_002",T["spam"]-.2,.25),("swish",T["spam"]+.9,.3),("thud",T["spam"]+.9,.25)]
-S+=[("keypress-001",T["voice"]-.4+k*.12,.08) for k in range(4)]+[("drop_003",T["heard"]-.1,.3),("lad3",T["heard"],.15)]
-S+=[("card-slide-2",T["st2"]+.3,.25),("lad1",T["questions"]+.05,.25),("lad2",T["situation"]+.05,.25),("lad3",T["goals"]+.05,.25)]
-S+=[("swish",T["directed"]-.1,.22),("swish",T["serious"]+.1,.22),("click3",T["pick"]-.05,.3),("confirm",T["pick"]+.15,.4)]
+S+=[("keypress-001",T["voice"]-.4+k*.12,.08) for k in range(4)]+[("drop_003",T["heard"]-.1,.3),("tap3",T["heard"],0.18)]
+S+=[("card-slide-2",T["st2"]+.3,.25),("tap1",T["questions"]+.05,0.3),("tap2",T["situation"]+.05,0.3),("tap3",T["goals"]+.05,0.3)]
+S+=[("swish",T["directed"]-.1,.22),("swish",T["serious"]+.1,.22),("click3",T["pick"]-.05,.3),("confirm2",T["pick"]+.15,.4)]
 S+=[("swish",T["st3"]+.35,.2),("thud",T["most"]+.2,.2)]
-for i,k in enumerate([0,1,2,3]): S+=[("ping",T["checkins"]-.3+i*.75,.18),(f"lad{i+1}",T["checkins"]-.28+i*.75,.12)]
-S+=[("card-slide-1",T["once"],.3),("chime",T["once"]+.25,.35)]+[(f"lad{i+1}",T["reminders"]+.4+i*.45,.22) for i in range(3)]+[("join",T["showup"],.4)]
-S+=[("card-slide-2",T["st4"]+.3,.25),("send",T["checkin"]-.1,.35),("confirm",T["restarts"],.45),("drop_003",T["ready"]+.35,.3)]
-S+=[("gwhoosh",T["math"]-.35,.3)]+reel_ticks(T["n80"]-.05,1.4,12,.3)+[("vriser",T["thousands"]-1.4,.35),("swish",T["rescues"],.25),("bighit",T["thousands"]-.08,.6)]
-S+=[("lad3",T["noads"]+.1,.25),("lad4",T["typing"]-.2,.25)]
-S+=[("thud",T["fit0"]+.1,.3),("lad1",T["active"],.25),("lad2",T["reach"],.25),("lad3",T["capture"],.25)]
+for i,k in enumerate([0,1,2,3]): S+=[("ping",T["checkins"]-.3+i*.75,.08),(f"tap{i+1}",T["checkins"]-.28+i*.75,.12)]
+S+=[("card-slide-1",T["once"],.3),("confirm2",T["once"]+.25,.3)]+[(f"tap{i+1}",T["reminders"]+.4+i*.45,.22) for i in range(3)]+[("join",T["showup"],.4)]
+S+=[("card-slide-2",T["st4"]+.3,.25),("send",T["checkin"]-.1,.35),("confirm2",T["restarts"],.45),("drop_003",T["ready"]+.35,.3)]
+S+=[("gwhoosh",T["math"]-.35,.3)]+reel_ticks(T["n80"]-.05,1.4,12,.3)+[("vriser",T["thousands"]-1.4,.35),("swish",T["rescues"],.25),("cash",T["thousands"]-.08+1.6,.45)]
+S+=[("coin",T["thousands"]-.08+1.6*(1-(1-k/14)**(1/3)),.3) for k in range(14)]
+S+=[("tap3",T["noads"]+.1,0.3),("tap4",T["typing"]-.2,0.3)]
+S+=[("thud",T["fit0"]+.1,.3),("tap1",T["active"],0.3),("tap2",T["reach"],0.3),("tap3",T["capture"],0.3)]
 S+=[("gwhoosh",T["below"]-.3,.45)]+[("keypress-00%d"%(1+k%4),T["fill"]+.05+k*.085,.12) for k in range(12)]
 S+=[("mouseclick1",T["fill"]+1.25,.4)]+[("click3",T["fill"]+1.55+i*.28,.25) for i in range(3)]
-S+=[("mouseclick1",T["strategy"]-.05,.55),("haptic",T["strategy"]-.03,.4)]
-S+=[("lad1",T["inspect"],.25),("lad2",T["leaking"],.25),("lad3",T["runs"],.25)]
-S+=[("gwhoosh",T["endc"]-.35,.35),("bighit",T["endc"]+.05,.45)]
+S+=[("mouseclick1",T["strategy"]-.05,.3),("haptic",T["strategy"]-.03,.25)]
+S+=[("tap1",T["inspect"],0.3),("tap2",T["leaking"],0.3),("tap3",T["runs"],0.3)]
+S+=[("gwhoosh",T["endc"]-.35,.25),("bighit",T["talk"]+.75,.6)]
 for k,(f,t,v) in enumerate(S):
     ext="ogg" if os.path.exists(R+f"assets/sfx/{f}.ogg") else "wav"
     t=max(0,t); d=min(dur(f"assets/sfx/{f}.{ext}"),D-t-.01)
@@ -79,8 +82,8 @@ vchain={"version":1,"nodes":[{"type":"highpass","id":"v1","params":{"frequency":
  {"type":"compressor","id":"v3","params":{"threshold":-20,"ratio":2.5,"attack":10,"release":150,"makeup":2}},
  {"type":"peaking","id":"v4","params":{"frequency":3500,"gain":1.5,"q":0.9}},
  {"type":"limiter","id":"v5","params":{"limit":-1}}]}
-schain={"version":1,"nodes":[{"type":"highpass","id":"s1","params":{"frequency":80,"q":0.707,"poles":"2"}},{"type":"lowpass","id":"s3","params":{"frequency":9000,"q":0.707,"poles":"2"}},{"type":"limiter","id":"s2","params":{"limit":-6}}]}
+schain={"version":1,"nodes":[{"type":"highpass","id":"s1","params":{"frequency":80,"q":0.707,"poles":"2"}},{"type":"lowpass","id":"s3","params":{"frequency":9000,"q":0.707,"poles":"2"}},{"type":"limiter","id":"s2","params":{"limit":-9}}]}
 groups=f"""<hf-audio-group id="voiceover" data-label="Voiceover" data-volume="1" data-fx-chain="{q(vchain)}"></hf-audio-group>
-<hf-audio-group id="sfx" data-label="SFX" data-volume="0.8" data-fx-chain="{q(schain)}"></hf-audio-group>"""
+<hf-audio-group id="sfx" data-label="SFX" data-volume="0.3" data-fx-chain="{q(schain)}"></hf-audio-group>"""
 s=s.replace("<!--AUDIO-->","<!--AUDIO-->\n"+groups+"\n"+"\n".join(tags))
 open(R+"index.html","w").write(s); print(len(tags),"audio tags")

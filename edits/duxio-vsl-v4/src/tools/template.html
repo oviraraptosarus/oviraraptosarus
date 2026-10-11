@@ -268,8 +268,8 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#0D0E12}
   <svg class="arrow" id="ar1" style="left:620px" viewBox="0 0 80 40"><path d="M4 20h66M56 8l14 12-14 12" fill="none" stroke="#6c6c78" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   <div class="mcol" id="mc2" style="left:710px"><div class="mnum">1 or 2</div><div class="mlab">sales rescued</div></div>
   <svg class="arrow" id="ar2" style="left:1220px" viewBox="0 0 80 40"><path d="M4 20h66M56 8l14 12-14 12" fill="none" stroke="#6c6c78" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  <div class="mcol" id="mc3" style="left:1270px;width:560px;overflow:hidden"><div class="mnum v" style="font-size:96px;line-height:1.36">Thousands</div><div class="mlab">in profit you keep</div><div id="sheen" class="abs"></div></div>
-  <div id="mex" class="abs" style="left:0;width:1920px;top:640px;text-align:center;font-size:22px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6c6c78">Example: at a $3,000 offer, that's $3,000 to $6,000. Not a forecast.</div>
+  <div class="mcol" id="mc3" style="left:1270px;width:560px;overflow:hidden"><div class="mnum v tn" id="money" style="font-size:112px;line-height:1.17">+$0</div><div class="mlab">extra revenue</div><div id="sheen" class="abs"></div></div>
+  <div id="mex" class="abs" style="left:0;width:1920px;top:640px;text-align:center;font-size:22px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6c6c78">Example: two clients at a $3,000 offer. Just an estimate.</div>
   <div class="row" id="mr1" style="top:740px"><div class="ck"><i></i><svg viewBox="0 0 22 20"><path d="M3 10l5 5L19 4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>No extra ad spend</div>
   <div class="row" id="mr2" style="top:810px"><div class="ck"><i></i><svg viewBox="0 0 22 20"><path d="M3 10l5 5L19 4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>No evenings typing replies</div>
 </div>
@@ -293,7 +293,7 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#0D0E12}
       <div class="fld" style="top:296px"><small>Instagram or phone</small><span id="fi"></span></div>
     </div>
     <div id="fs2">
-      <div class="opt" id="o1" style="top:180px">Offer price<em>$3,000 to $5,000</em></div>
+      <div class="opt" id="o1" style="top:180px">Offer price<em>$1,000 to $3,000</em></div>
       <div class="opt" id="o2" style="top:268px">Leads a month<em>30 to 80</em></div>
       <div class="opt" id="o3" style="top:356px">Biggest bottleneck<em>Slow replies</em></div>
     </div>
@@ -521,15 +521,17 @@ tl.to("#mc1",{opacity:1,duration:.3},T.n80-.15);REEL("#n1",0,8,T.n80-.05,1.4,1,1
 tl.fromTo("#ar1",{opacity:0,x:-20},{opacity:1,x:0,duration:.4,ease},T.rescues-.2);
 tl.fromTo("#mc2",{opacity:0,y:40},{opacity:1,y:0,duration:.5,ease:land},T.rescues);
 tl.fromTo("#ar2",{opacity:0,x:-20},{opacity:1,x:0,duration:.4,ease},T.thousands-.45);
-tl.fromTo("#mc3",{opacity:0,scale:.85},{opacity:1,scale:1,duration:.55,ease:land},T.thousands-.08);
-tl.fromTo("#sheen",{x:-220},{x:700,duration:.9,ease:"power2.inOut"},T.thousands+.25);
+tl.fromTo("#mc3",{opacity:0,scale:.9},{opacity:1,scale:1,duration:.4,ease:land},T.thousands-.3);
+TXT("#money",0,"+$0");{const d=1.6,t0=T.thousands-.08,n=48;for(let k=1;k<=n;k++){const x=k/n,v=Math.round(6000*(1-Math.pow(1-x,3))/50)*50;TXT("#money",t0+x*d,"+$"+v.toLocaleString("en-US"));}
+ tl.fromTo("#money",{scale:1},{scale:1.07,duration:.12,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},t0+d);}
+tl.fromTo("#sheen",{x:-220},{x:700,duration:.9,ease:"power2.inOut"},T.thousands+1.6);
 tl.to("#mex",{opacity:1,duration:.4},T.profit+.2);
 tl.to("#mr1",{opacity:1,duration:.3},T.noads);CK("#mr1",T.noads+.05);
 tl.to("#mr2",{opacity:1,duration:.3},T.typing-.3);CK("#mr2",T.typing-.25);
 
 /* ==================== FIT ==================== */
 VIS("#sF",T.fit0-.3,T.below-.2);
-HL("#fh","Who this is for.",T.fit0-.2);
+HL("#fh","Who this is ideal for.",T.fit0-.2);
 tl.set(["#f0","#f1","#f2","#f3"],{opacity:0},0);
 IN("#f0",T.fit0+.1,{from:{x:-30,y:0}});
 const fx=mk("#f0t","abs","left:0;top:50%;width:100%;height:4px;background:#6c6c78;transform-origin:0 50%",null);$("#f0t").style.position="relative";

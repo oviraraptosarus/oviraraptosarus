@@ -69,4 +69,5 @@ When the user or anyone else critiques a video, don't patch only that video. Ext
 - Align by layout, never by guessed pixel offsets: centre with flex or measured bounds, then check every centred element's rendered centre numerically (logo, headline, button) before delivering.
 - Slow is a defect in sales video: cut every delay before the point (pre-roll, fades, waiting on exits), but give the payoff its full hold.
 - When the brief leaves out style, platform, voice or CTA, ask once up front rather than guess; a guessed style is the main source of generic output.
+- The voice is the hero of the mix. If any effect competes with it, the mix is wrong; measure voice and SFX stems instead of trusting the ear in a dense timeline. Cheap-sounding chimes are a tell; prefer weighty, warm, low sounds.
 - Sound energy is judged as hard as visuals: a beautiful reel with a flat narrator fails. Match the voice's energy to the platform (energetic and varied for reels, calm authority for VSLs) and give the audio its own rewards (hits, ladders, drops).

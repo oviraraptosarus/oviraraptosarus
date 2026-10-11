@@ -36,6 +36,15 @@ DUXIO builds and runs the follow up that moves serious buyers from first interes
 | AI chatbot, automated bot | an instant reply in your voice |
 | "Coaches who already get leads" (in a hero) | keep the hero on the upside: "Turn interested leads into paying clients." |
 
+**Plain words over stiff ones (they read as AI):**
+- "estimate", not "forecast"
+- "use", not "utilize"
+- "help", not "facilitate"
+- "start", not "commence"
+- "about", not "approximately"
+
+When labelling an example number, write "Example. Just an estimate." or "Your numbers will vary."
+
 **Anti-AI blacklist:** delve, tapestry, elevate, streamline, leverage, game-changer, seamless, cutting-edge, revolutionize, robust, paramount, unleash, bespoke. No rhythmic triples ("faster, smarter, better") and no empty filler adjectives. No fake hype, no melodrama.
 
 ## 4. The mechanism: always these four steps
@@ -59,6 +68,8 @@ Filter by situation, never by income. Approved wording:
 > "To be clear, this is not for someone who hasn't launched yet and has nobody to talk to. It's for active coaches and consultants who already have people reaching out, commenting or asking about their help, but don't have a dedicated backend to capture and close them."
 
 Form questions (offer price point, monthly inquiries, biggest bottleneck) are operational fit, never a financial status check.
+- Fit headings read **"Who this is ideal for"**, never "Who this is for", which sounds like gatekeeping.
+- Keep it accessible: offers from about $1,000 and up are welcome. Wherever a demo shows the form, select the "$1,000 to $3,000" option, not a high bracket.
 
 ## 7. Claims that may be made (everything else needs the owner's confirmation)
 - Reply in under sixty seconds, in the coach's voice; the coach approves the messages before anything goes out.

@@ -41,6 +41,11 @@ Load order: `duxio-brand` (rules every asset obeys) → this skill (what DUXIO v
 - **Red `#F1283A`:** only problems, leaks, missed revenue, "too late".
 - UI is drawn the way the real thing looks: an Instagram DM thread, an iOS notification, a calendar invite, the real form. Thin `rgba(0,0,0,.08)` borders and soft shadows.
 - **Banned:** purple-pink gradient blobs, neon glassmorphism, floating particles, generic SaaS card grids, grey-on-grey text, zoom-as-filler. Subtle glass panels are fine; neon blobs are not.
+- **Sound (owner feedback, 2026-10-11):**
+  - The voice must never be covered. Measure it with stems: SFX at least 7 to 8dB under the voice wherever it speaks.
+  - No bell or chime ladders; they read cheap and they mask the voice. Use soft, low wooden plucks or none.
+  - The hook needs a real hook sound: a cinematic sub impact on frame 0, a low pulse under the tension, a swell into the turn and a hit on it. Small chimes are not a hook.
+  - Money counts up like a counter ($0 → $6,000), with coin ticks that slow down and a soft register land. Never show a static word like "Thousands".
 - Logo:
   - `brand/duxio/logo/svg/duxio-wordmark-ink.svg` on light, `-white.svg` on dark.
   - For a build-up animation use `duxio-wordmark-parts.svg`: the four X arms (`x-tl x-tr x-bl x-br`) converge, then `d u i o` follow.

@@ -20,14 +20,14 @@ Built on the owner's ElevenLabs recording of the master script to `brand/duxio/d
    - Sort: Goal, Timeline, Readiness checks on a rising pitch ladder; routed to free content or a calendar slot
    - Follow up: 21-day timeline pings, booked invite, 24h/2h/10m reminders, "Joined"
    - Reopen: a Day 60 lead lights up violet
-6. The math: 80 → 1 or 2 → Thousands, with a light sweep. Labelled as an example.
-7. Fit list.
+6. The math: 80 → 1 or 2 → a money counter rolling from +$0 to +$6,000 in extra revenue, with coin ticks and a register land. Labelled "Example: two clients at a $3,000 offer. Just an estimate."
+7. "Who this is ideal for" list.
 8. The page tilts down to the real 2-step form, a cursor fills it, and "Book a Strategy Call" is pressed.
 9. End card.
 
 **Sound:**
 - Synth ambient bed (`src/tools/synth.py`): a dark pad, an arpeggio for the steps, and it opens for the math and the CTA. It sits about 22dB under the voice.
-- Warm low-passed SFX: reel ticks with landing thunks, a C-E-G-C pitch ladder, confirm chimes, glass whooshes and sub hits.
+- Warm low-passed SFX: a cinematic sub impact on frame 0, a low pulse under the tension, a swell into "already gone", reel ticks with landing thunks, soft wooden plucks (no bells), coin ticks and a register land, glass whooshes and sub hits. Measured with stems: SFX sit at least 7dB under the voice wherever it speaks.
 - Master: about -15.7 LUFS, -1.9 dBTP.
 
 **Rebuild:**
