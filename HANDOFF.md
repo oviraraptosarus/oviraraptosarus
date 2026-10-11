@@ -132,3 +132,10 @@ Older assets and their status are in `brand/duxio/docs/content-library.md` (v1 t
 - Send finished videos with `SendUserFile`. Commit and push to the branch after each deliverable. No new PR; PR #1 already exists and updates on push.
 - Ask questions only through the make-video intake round for new videos. Never narrate options for routine choices.
 - Never invent proof, scarcity, prices, or numbers. Example data is labelled "Example".
+
+
+## Update 2026-10-11 (late): 30 reel plan
+- `.claude/skills/adhd/` (vendored from GitHub UditAkhourii/adhd) and `.claude/skills/reel-ideation/` (gates, Concept Card, 12 reel frames) are now mandatory before any reel is scripted or built. The prompt hook routes to them.
+- `brand/duxio/docs/reels-30-plan.md` is the 6 week plan of 30 reels (50 ideas diverged, 30 chosen, 20 on the bench). Raw ideas: `brand/duxio/source-material/reel-ideas-raw-2026-10-11.json`.
+- Reel 4 "Loading %" was rejected (generic cards, flat stand-in voice). It is not to be reused. Pilot 3 reels next: Dots That Stopped, Silence Tier List, Domino Chain.
+- Blocked on the owner: ElevenLabs female voice, comment to DM automation and the 30 DMs, booking link, Instagram handle, reference videos.
