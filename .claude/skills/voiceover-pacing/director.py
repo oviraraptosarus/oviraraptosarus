@@ -78,6 +78,35 @@ def nudge(a, st, gain_db):
     return a * (10 ** (gain_db / 20.0))
 
 
+def roughness(a):
+    """Lower is cleaner. Counts pitch jumps and breathy/noisy voiced frames (the raspy glitches)."""
+    x = a.astype(np.float64)
+    f0, t = pw.harvest(x, SR, f0_floor=70, f0_ceil=500, frame_period=5)
+    v = f0 > 0
+    if v.sum() < 8:
+        return 9.0
+    st = 12 * np.log2(np.where(v, f0, 1))
+    both = v[1:] & v[:-1]
+    jumps = (np.abs(np.diff(st))[both] > 3.0).mean()
+    ap = pw.d4c(x, f0, t, SR)
+    hf = ap[:, 40:][v].mean()              # aperiodicity in the upper band while voiced
+    env = np.abs(x[::int(0.005 * SR)])[:len(v)]
+    unv = (~v[:len(env)] & (env > 0.05)).mean()
+    return float(jumps * 10 + hf * 2 + unv * 3)
+
+
+def clean_take(k, text, vec, speed, rng, tries):
+    best = None
+    for i in range(tries):
+        sp = float(np.clip(speed * (1 + (0 if i == 0 else rng.uniform(-0.05, 0.05))), 0.6, 1.5))
+        a, _ = k.create(text, voice=vec, speed=sp, lang="en-us")
+        a = trim(a)
+        r = roughness(a)
+        if best is None or r < best[0]:
+            best = (r, a)
+    return best
+
+
 def fade(a, ms=8):
     n = int(ms / 1000 * SR)
     if len(a) > 2 * n:
@@ -100,14 +129,14 @@ def build(script, out_mp3, report=False):
     timings = []
     for p in script["phrases"]:
         sp = base_speed * p.get("speed", 1.0) * (1 + rng.uniform(-wob, wob) * 0.5)
-        a, _ = k.create(p["t"], voice=vec, speed=float(np.clip(sp, 0.6, 1.5)), lang="en-us")
-        a = trim(a)
+        r, a = clean_take(k, p["t"], vec, sp, rng, script.get("takes", 6))
+        if report: print(f"  rough {r:.2f}  {p['t']}")
         S = script.get("strength", 0.7)
         if script.get("shape", False):      # WORLD vocoder contour shaping: expressive but can sound raspy
             a = shape(a, k=p.get("k", base_k), st=p.get("st", 0) * S, fall=p.get("fall", 0) * S,
                       rise=p.get("rise", 0) * S, reset=p.get("reset", 0) * S, gain_db=p.get("gain", 0))
-        else:                                # clean path: no vocoder, formant safe pitch nudge only
-            a = nudge(a, p.get("st", 0) * S, p.get("gain", 0))
+        else:                                # clean path: best of N takes, no resynthesis, no pitch shifting
+            a = a * (10 ** (p.get("gain", 0) / 20.0))
         a = fade(a)
         dur = len(a) / SR
         timings.append({"text": p["t"], "start": round(t, 3), "end": round(t + dur, 3), "e": p.get("e", 0.6)})

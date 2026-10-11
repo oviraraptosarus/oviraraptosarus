@@ -1,0 +1,102 @@
+{
+ "name": "Male VSL sample",
+ "duration": 30.8,
+ "phrases": [
+  {
+   "text": "You booked the call.",
+   "start": 0.06,
+   "end": 1.251,
+   "e": 0.5
+  },
+  {
+   "text": "They never showed.",
+   "start": 1.458,
+   "end": 2.642,
+   "e": 0.5
+  },
+  {
+   "text": "Not because they changed their mind.",
+   "start": 3.0,
+   "end": 5.09,
+   "e": 0.5
+  },
+  {
+   "text": "Because nobody followed up.",
+   "start": 5.272,
+   "end": 7.198,
+   "e": 0.5
+  },
+  {
+   "text": "Here's what actually happens.",
+   "start": 7.648,
+   "end": 9.25,
+   "e": 0.5
+  },
+  {
+   "text": "A lead messages you at nine at night.",
+   "start": 9.477,
+   "end": 11.771,
+   "e": 0.5
+  },
+  {
+   "text": "You're with a client.",
+   "start": 11.897,
+   "end": 13.101,
+   "e": 0.5
+  },
+  {
+   "text": "By the time you reply,",
+   "start": 13.238,
+   "end": 14.638,
+   "e": 0.5
+  },
+  {
+   "text": "they've already moved on.",
+   "start": 14.703,
+   "end": 16.144,
+   "e": 0.5
+  },
+  {
+   "text": "That's not a content problem.",
+   "start": 16.543,
+   "end": 18.29,
+   "e": 0.5
+  },
+  {
+   "text": "That's a follow up problem.",
+   "start": 18.46,
+   "end": 20.212,
+   "e": 0.5
+  },
+  {
+   "text": "DUXIO answers every lead, day or night,",
+   "start": 20.735,
+   "end": 23.352,
+   "e": 0.5
+  },
+  {
+   "text": "sorts the serious ones,",
+   "start": 23.443,
+   "end": 24.919,
+   "e": 0.5
+  },
+  {
+   "text": "and books them onto your calendar.",
+   "start": 25.011,
+   "end": 26.891,
+   "e": 0.5
+  },
+  {
+   "text": "You take the calls that matter.",
+   "start": 27.228,
+   "end": 28.983,
+   "e": 0.5
+  },
+  {
+   "text": "Book a Strategy Call.",
+   "start": 29.155,
+   "end": 30.8,
+   "e": 0.5
+  }
+ ]
+}
