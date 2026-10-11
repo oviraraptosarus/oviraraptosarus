@@ -7,7 +7,7 @@ description: Build, edit, redesign or review the DUXIO website and funnel (landi
 
 Brand files: `brand/duxio/` (logos, fonts, tokens, live site copy in `docs/site-copy.md`, repo facts and known issues in `docs/website.md`).
 
-First load `duxio-brand` (voice, banned words, zero dashes, offer, claims). This skill adds the website-only rules. Videos live in `duxio-vsl`; never mix the two.
+First load `duxio-brand`, then `site-design-gate` (the 30 vibecoded tells and the audit; run it before and after building) (voice, banned words, zero dashes, offer, claims). This skill adds the website-only rules. Videos live in `duxio-vsl`; never mix the two.
 
 Standard: eight-figure editorial direct response. Clean, light, high contrast, honest. Reject AI slop: no floating purple-pink gradients, no neon glassmorphism blobs, no generic SaaS card grids, no low-contrast grey on dark grey.
 
@@ -75,6 +75,7 @@ Paragraphs of two to three lines max. Spacing on an 8px grid.
 - Label it as an illustration, not a forecast.
 
 ## 6. Pre-launch checklist (all must pass)
+- `site-design-gate` audit passed: none of the 30 tells, Terms and Privacy linked, skeleton loaders, no fake testimonials.
 1. `duxio-brand` pre-flight (§9): zero dashes, no banned words, no freebies, no income gate, four steps, claims allowed.
 2. 360px viewport: no horizontal overflow; nav CTA on one line; logo proportioned.
 3. Video container: truthful placeholder, or the real embed; no fake counters.

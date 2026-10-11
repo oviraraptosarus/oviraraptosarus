@@ -35,6 +35,8 @@ if duxio:
     if video:
         load.append("duxio-vsl")
 vsl = has(r"vsls?", r"video sales letters?", r"sales video", r"sales script", r"sales letter", r"hook", r"epiphany", r"offer stack")
+if site:
+    load.append("site-design-gate")
 if vsl:
     load.append("vsl-script-writing")
 short = has(r"reels?", r"shorts?", r"tiktoks?", r"ads?", r"hooks?", r"b-?roll", r"stories", r"clips?", r"ideas?", r"brainstorm", r"ideate", r"ideation", r"concepts?")

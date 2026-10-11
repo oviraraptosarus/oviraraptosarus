@@ -10,6 +10,7 @@ A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.clau
 - VSL, sales video, sales script, hook → `vsl-script-writing` (Brunson frame plus the 10 tips; DUXIO rules override it)
 - DUXIO anything → `duxio-brand` first
 - DUXIO video → plus `duxio-vsl`
+- any website, page, UI or web design → `site-design-gate` (30 vibecoded tells + audit)
 - DUXIO website → plus `duxio-website` (the website and the videos stay separate)
 
 ## Skill selection and reporting
