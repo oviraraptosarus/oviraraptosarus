@@ -101,7 +101,15 @@ Visuals: the real 2-step form filled in, a cursor clicks "Book a Strategy Call",
 5. Example names, messages and numbers are labelled "Example". The HBR stat is cited on screen.
 6. The `make-video` editing standard and the `video-craft` review pass (pacing, sound, typography, detail).
 
-## 7. Earlier deliverables (repo history; fix these if reused)
+## 7. Reference lessons (the 10 tip VSL training; full list in `vsl-script-writing`)
+Load `vsl-script-writing` for any VSL script. The DUXIO application of it:
+- **Order:** the buyer's problem in their own words, then the four steps taught as "the solution" anyone could follow, then the alternatives they are silently comparing (doing it by hand, an assistant, a plain booking link, a chatbot, more ads), then two paths ("do it yourself" or "let DUXIO build and run it"), then the CTA "Book a Strategy Call". No price, guarantee or scarcity.
+- **Analogies:** one or two honest "it's kind of like" lines, not stacked.
+- **Format:** presentation style type that changes every 2 to 3 seconds to mirror the voice, no face on camera, B-roll and UI moments on top.
+- **Length:** the training says 5 to 10 minutes; ours is 2:41 by the owner's choice. A longer, more detailed cut is a later test, only if the owner asks.
+- **After launch:** act on data only after 50 to 100 viewers. Targets: about 80% still watching after the first minute, about 25% reaching the end. Cut or rewrite any sharp drop off. Keep the lines people quote back on calls, fix the ones they did not understand. Change one thing per version.
+
+## 8. Earlier deliverables (repo history; fix these if reused)
 - `edits/duxio-vsl-v4/`: the current VSL (2:41), built on the v4 recording to the spec sheet. Apple-dark, four steps, Book a Strategy Call.
 - `edits/duxio-vsl-v3/`: the VO says "five-stage" (it's four steps), "48-hour sequence" (it's 24h, 2h, 10m) and "exactly forty seconds" (under sixty). Its on-screen text uses hyphens.
 - `edits/duxio-reel/`: violet aurora with glass cards (now off-brand per §3), "Re-engage", "re-opened", "high-ticket", "follow-up", "check-in" (dashes), and a five-pill rail.
