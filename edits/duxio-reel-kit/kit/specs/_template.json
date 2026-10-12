@@ -1,0 +1,19 @@
+{
+ "_help": "Copy to kit/specs/<id>.json and edit. id = folder name. Voice phrases: one idea each, numbers as words (put the digits in cap), phrases ending in ? get the rising question tone automatically. Slides: p = phrase index, hw = word index where each headline line is revealed, xw = word indexes where the element's cues fire (see kit/ELEMENTS.md). Refs: 3 | '3+0.1' | 'end' | 'end-0.12' | [phraseIndex, word, offset].",
+ "id": "my-reel",
+ "voice": {
+  "phrases": [
+   {"t": "Stop calling strangers.", "speed": 1.08, "pause": 180, "e": 0.95},
+   {"t": "Does it sound like a robot?", "e": 0.55},
+   {"t": "No. It writes in your voice.", "speed": 1.1, "pause": 420, "e": 0.75},
+   {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95}
+  ]
+ },
+ "silence_before": 3,
+ "slides": [
+  {"p": 0, "x": "call", "gr": "red", "hl": ["Stop calling", "*strangers.*"], "hw": [0, 2], "xw": [0, "end-0.12"]},
+  {"p": 1, "x": "typing", "eye": "Objection 1 of 1", "hl": ["Does it sound", "like a *robot?*"], "hw": [0, 3], "xw": ["0+0.1"]},
+  {"p": 2, "x": "appr", "eye": "The answer", "hl": ["No. It writes in", "*your* *voice.*"], "hw": [0, 4], "xw": ["0+0.15", 3, 4, 5]},
+  {"p": 3, "x": "cta", "hl": ["Book a", "*Strategy* *Call.*"], "hw": [0, 2], "xw": ["0+0.3", "end-0.35"]}
+ ]
+}

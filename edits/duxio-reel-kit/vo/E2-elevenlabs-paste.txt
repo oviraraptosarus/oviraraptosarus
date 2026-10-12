@@ -1,0 +1,24 @@
+PASTE INTO ELEVENLABS (model: Multilingual v2). Voice for a female reel: Jessica, or Laura, or Aria. Settings: Stability 38, Similarity 75, Style 35, Speaker boost on, Speed 1.08.
+For Marcus (male VSL): Stability 65, Similarity 75, Style 0, Speaker boost on, Speed 1.0.
+
+It's two oh seven in the morning. <break time="0.2s" />
+And you're answering a lead. <break time="0.4s" />
+You write four sentences.
+Apologize twice.
+And hit send. <break time="0.4s" />
+Now that lead knows
+you answer at two in the morning. <break time="0.2s" />
+And some of them
+will expect it. <break time="0.5s" />
+Instead,
+write it in your notes. <break time="0.2s" />
+Draft it at night.
+Send it at seven fifty,
+before your first client. <break time="0.4s" />
+Same reply.
+Better words. <break time="0.2s" />
+And they learn when you answer,
+so they wait for it. <break time="0.4s" />
+Comment DRAFT,
+and I'll DM you the notes template
+and three morning replies.

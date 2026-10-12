@@ -1,0 +1,385 @@
+{
+ "id": "e2-draft",
+ "voice": {
+  "script": "voice.vo.json"
+ },
+ "music": {
+  "track": "thugs",
+  "seed": 7
+ },
+ "beats": [
+  {
+   "at": 0,
+   "scene": "phone",
+   "bg": "dark",
+   "props": {
+    "time": "2:07 AM",
+    "battery": "14%",
+    "battery2": "13%",
+    "text": "Hey, so sorry for the late reply, I know it's 2 AM",
+    "ops": [
+     [
+      1,
+      1.5
+     ],
+     [
+      0.3,
+      0.45
+     ],
+     [
+      1,
+      1.6
+     ]
+    ]
+   },
+   "cues": [
+    {
+     "p": 0,
+     "dt": 0.3
+    },
+    {
+     "p": 1,
+     "dt": 0.4
+    }
+   ],
+   "sfx": [
+    {
+     "p": 0,
+     "dt": 0.35,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 0.48,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 0.61,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 0.74,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 0.87,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 1.0,
+     "name": "key",
+     "v": 0.2
+    },
+    {
+     "p": 0,
+     "dt": 1.13,
+     "name": "key",
+     "v": 0.2
+    }
+   ]
+  },
+  {
+   "at": 2,
+   "bg": "dark",
+   "layers": [
+    {
+     "scene": "wall",
+     "props": {
+      "top": 230,
+      "size": 56,
+      "step": 0.42,
+      "lines": [
+       "Hey! So sorry for the late reply,",
+       "I know it's super late, I hope",
+       "I didn't wake you. I'm just seeing",
+       "this now. Sorry again about that.",
+       "Yes I'd love to chat about working",
+       "together. Sorry for all the text.",
+       "Does tomorrow work, or tonight?",
+       "Sorry, whenever suits you best."
+      ]
+     },
+     "cues": [
+      {
+       "p": 2,
+       "dt": 0.05
+      }
+     ]
+    },
+    {
+     "scene": "stamp",
+     "props": {
+      "text": "SENT 2:11 AM",
+      "size": 118,
+      "top": 1010,
+      "rot": -6
+     },
+     "cues": [
+      {
+       "p": 4,
+       "dt": 0.5,
+       "sfx": "stamp",
+       "v": 0.5
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "p": 4,
+     "dt": 0.1,
+     "name": "send"
+    }
+   ]
+  },
+  {
+   "at": 5,
+   "scene": "statement",
+   "bg": "dark",
+   "props": {
+    "size": 118,
+    "top": 560,
+    "lines": [
+     "Now that lead knows",
+     "you answer at *2 AM*",
+     "Some will *expect it*"
+    ]
+   },
+   "cues": [
+    {
+     "p": 5,
+     "dt": 0.0
+    },
+    {
+     "p": 6,
+     "dt": 0.05
+    },
+    {
+     "p": 7,
+     "dt": 0.0
+    }
+   ],
+   "sfx": [
+    {
+     "p": 8,
+     "dt": 0.0,
+     "name": "sub",
+     "v": 0.4
+    }
+   ]
+  },
+  {
+   "at": 9,
+   "bg": "dark",
+   "layers": [
+    {
+     "scene": "statement",
+     "props": {
+      "size": 96,
+      "top": 230,
+      "lines": [
+       "Write it in your *notes*"
+      ]
+     },
+     "cues": [
+      {
+       "p": 10,
+       "dt": 0.0
+      }
+     ]
+    },
+    {
+     "scene": "clock",
+     "props": {
+      "from": 127,
+      "to": 470,
+      "top": 640,
+      "size": 400,
+      "bgFrom": "#0D0E12",
+      "bgTo": "#F3F0EA",
+      "ink": "#ffffff",
+      "inkTo": "#111113"
+     },
+     "cues": [
+      {
+       "p": 11,
+       "dt": 0.0
+      },
+      {
+       "p": 12,
+       "dt": 0.75,
+       "sfx": "pop",
+       "v": 0.35
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "p": 11,
+     "dt": 0.0,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.11,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.232,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.366,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.512,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.67,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 0.84,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 1.022,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 1.216,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 1.422,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 1.64,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 1.87,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 2.112,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 11,
+     "dt": 2.366,
+     "name": "tick",
+     "v": 0.22
+    },
+    {
+     "p": 9,
+     "dt": -0.1,
+     "name": "riser",
+     "v": 0.18
+    }
+   ]
+  },
+  {
+   "at": 14,
+   "bg": "paper",
+   "props": {
+    "top": 300,
+    "items": [
+     {
+      "s": "me",
+      "t": "Hey Sam, thanks for waiting. What made you reach out?",
+      "meta": "Sent 7:50 AM"
+     },
+     {
+      "s": "them",
+      "t": "Morning! I'd love to chat."
+     }
+    ]
+   },
+   "scene": "msg",
+   "cues": [
+    {
+     "p": 14,
+     "dt": 0.0
+    },
+    {
+     "p": 16,
+     "dt": 0.55
+    }
+   ],
+   "sfx": [
+    {
+     "p": 14,
+     "dt": 0.05,
+     "name": "send"
+    },
+    {
+     "p": 16,
+     "dt": 0.6,
+     "name": "ping"
+    }
+   ]
+  },
+  {
+   "at": 18,
+   "scene": "cta",
+   "bg": "paper",
+   "props": {
+    "word": "DRAFT",
+    "pre": "Comment",
+    "size": 230,
+    "top": 560,
+    "post": "and I'll DM you the notes template and three morning replies"
+   },
+   "cues": [
+    {
+     "p": 18,
+     "dt": 0.0,
+     "sfx": "pop",
+     "v": 0.45
+    },
+    {
+     "p": 19,
+     "dt": 0.0
+    }
+   ]
+  }
+ ]
+}
