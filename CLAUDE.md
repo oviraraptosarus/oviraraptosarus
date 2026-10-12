@@ -1,6 +1,8 @@
 # Content creation in this repo
 
-**Read `OWNER-RULES.md` first every session** (how to ask, cost limits, quality bar, mistake log) and show the open items in `NEEDS-FROM-OWNER.md` at the start of every video job.
+**Session start:** a hook prints `OWNER-RULES.md`, `CONTEXT.md` and `NEEDS-FROM-OWNER.md`; continue from `CONTEXT.md` "Next" without asking the owner to re-explain. **After every finished step, update `CONTEXT.md`** (state, done, next) and any other living file you touched (`NEEDS-FROM-OWNER.md`, the mistake log in `OWNER-RULES.md`, `brand/<name>/DESIGN.md`). New brand or niche: copy `brand/_template/DESIGN.md`.
+
+**Read `OWNER-RULES.md` every session** (how to ask, cost limits, quality bar, mistake log) and show the open items in `NEEDS-FROM-OWNER.md` at the start of every video job.
 
 ## Automatic skill routing
 A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.claude/settings.json`) reads each prompt and tells Claude which skills to load. The user never has to type skill names. Follow its instruction before anything else. Without the hook, route the same way:

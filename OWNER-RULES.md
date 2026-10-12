@@ -33,6 +33,9 @@ The owner has seen a full video cost about $4 with a strong result. That is the 
 - Don't redo a delivered video unless asked. "Don't redo it" means don't.
 - Concept card first, kept short. Wait for approval, then build.
 
+## 3b. Keep the files current
+After every step, update `CONTEXT.md` before replying. Log new mistakes in §5 as they happen. Update `NEEDS-FROM-OWNER.md` whenever an item opens or closes. Each brand has a `DESIGN.md`.
+
 ## 4. Quality bar
 - Output must look like the 7 reference reels: layered, textured, one world, a character or recurring object, a travelling camera, sound on every action. A reel made only of text and boxes on a dark gradient is rejected. See `.claude/skills/make-video/visual-breakdown.md` and `framework.md`.
 - Built for the Instagram algorithm: strong hook in the first second, short pacing, a reason to watch to the end. Not a stack of slides.
