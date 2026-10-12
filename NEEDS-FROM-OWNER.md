@@ -9,7 +9,7 @@ Remove an item only when the owner gives it. Don't carry on silently without it.
 | 3 | Pick the male voice (Male-C or Male-D in `edits/duxio-reel-kit/vo/`) | male voiceovers | open |
 | 4 | Confirm the female voice by ear (`af_heart`) | all reels | open |
 | 5 | Music track they want, or confirm the licensed library | every video | open |
-| 6 | Approved image source: they download the best pictures, or give a stock site | reels with real imagery | open |
+| 6 | Visuals, images, footage: the owner provides them per video. I list the exact assets each concept needs and ask in the question round | every reel | standing (answered 2026-10-12) |
 | 7 | Comment-to-DM automation and the written DMs | comment keyword endings | open |
 | 8 | Any client result or testimonial they have permission to use | proof in videos | open |
 | 9 | Niche, tone and reference look for the new faceless channel | second channel | open |
