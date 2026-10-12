@@ -11,6 +11,8 @@ Engineer a 9:16 video that survives the swipe. Short-form is not a small launch 
 ## House rules (this repo; read first, they override anything generic below)
 Build in HyperFrames, not Remotion: translate the code samples below into the GSAP timeline. Also load `make-video/framework.md` (first; the owner's reference-reel framework wins on conflicts), `make-video/editing-standard.md` and `make-video/attention-mechanics.md`.
 
+**Owner approved look (2026-10-12), applies to every reel:** read `make-video/preferences.md` "Short form defaults" before ideating: built Apple style UI elements on every beat, Inter + Instrument Serif italic, gradient only on highlight words, questions with a rising voice tone, outcome first. Reference build `edits/duxio-reel-kit/reels/cold-call-ai-v2/`.
+
 **Why these rules exist:** a 59s DUXIO reel looked stunning but felt flat. The narrator sounded serious and low-energy, there was no female voice and no enthusiasm, and the pacing was even. Visuals alone don't earn the scroll; the audio has to excite too.
 
 ### Voice: energy is mandatory

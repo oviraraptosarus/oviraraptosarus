@@ -9,9 +9,21 @@ make-video reads this before asking questions and appends the user's answers aft
 - CTA: "Book a Strategy Call". Never a free audit. No price or scarcity in videos.
 - Words: plain and human ("estimate", not "forecast"). Zero dashes in customer-facing text.
 
+## Short form defaults (owner approved reel `cold-call-ai-v2`, 2026-10-12: "awesome, i love it")
+Apply to every reel, short and TikTok unless the owner says otherwise. Reference build: `edits/duxio-reel-kit/reels/cold-call-ai-v2/`, scene library `kit/ap.js`.
+- **Show, don't just say:** every beat has a built visual element (iOS notifications, call screen, chat bubbles, toggles, calendar, lock screen, progress bars, counters), not only text. Think Apple. Reels of text only are rejected.
+- **Type:** Inter variable (display 760, light 250 for big numbers) plus Instrument Serif italic on the highlighted words. Eyebrow labels small, uppercase, tracked. Not Plus Jakarta Sans.
+- **Gradient only on highlight words** (violet; red for loss words). Body type stays solid. Soft violet bloom behind the frame, glass cards, grain, slow camera push, blur whips between beats.
+- **Questions must sound like questions:** objection lines are real questions and the voice ends on a rising pitch (`q` in the voice script, about 8 semitones). Check the pitch contour after rendering the voice.
+- **Outcome first** (`duxio-brand` §0): money, call quality, show rate, time back. Not "saving leads". Objection then answer, each answered with an element.
+- **Length and sound:** under 60 s (35 s worked well), energetic female `af_heart`, music "thugs" ducked under the voice, an SFX on every visible action, a short silence before the CTA, word synced captions in a dark pill at the bottom, nothing important under the caption zone (y 1452).
+- **Assets:** the owner supplies visuals and photos; ask by name every video. With none supplied, vector elements built in code, labelled "Example" where names, messages or numbers are illustrative.
+- **Process:** "you decide" means skip the questions and concept approval, build once, check frames, render once.
+
 ## Log
 - 2026-10-11 · VSL 16:9 · ElevenLabs voice supplied · Apple dark look · CTA: Book a Strategy Call
 - 2026-10-11 · content strategy · pages brand new (0 to 100) · faceless with voiceover · 5 reels + 1 YouTube a week · no ads: pain point content for coaches and consultants, edited to also hook the fast scrolling Instagram crowd · plan in brand/duxio/docs/content-strategy.md
 - 2026-10-11 · reels · owner direction: script on the formats trending right now (research them first), think like a pro creator: value first, one soft mention of us, never salesy · CTA is "Comment WORD and I'll DM you" with a written DM that delivers the promised thing first, a question second, a Strategy Call invite only after they show lead volume · never the word "free" · example set: brand/duxio/docs/reels-launch-7.md
 
 - 2026-10-11 · all reels · Ideation is mandatory before scripting (`reel-ideation` + `adhd`). Concept Card first. Generic dark UI cards, flat stand-in voices shipped as final, and lint-only reviews are rejected. Owner wants kid-like, playful, scroll-stopping ideas.
+- 2026-10-12 · short form · owner loved cold-call-ai-v2 and asked to remember it: Apple style UI elements, Inter + Instrument Serif italic, gradient on highlight words only, rising tone on questions, outcome first, 35 s · saved as 'Short form defaults' above
