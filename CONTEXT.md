@@ -8,6 +8,7 @@
 - **Mode:** the owner wants me to ask the question round (one plain message) before every video, then build cheaply. See `OWNER-RULES.md`.
 
 ## Done so far (newest first)
+- 2026-10-12 Long form: installed NextWork `creator-teardown` + `ai-editor` plugins (user scope, NOT set up or tested; run the `ai-editor` setup skill once before first use), added `.claude/skills/long-form-video` (auto-routed by `route-skills.py` on YouTube, long form, raw footage, tutorial prompts). OpenScreen NOT installed (284 MB recorder, ask first). Router no longer uses popups. Bad commands in the pasted guides are listed in the skill.
 - 2026-10-12 Studied Christian Peverelli's "I Fully Automated My Video Editing Using Claude Code" (YouTube HzXD4GVqXwM). Real cost there is about $24 to $27 per video, not $4. Takeaways saved in `OWNER-RULES.md` §3c: feedback becomes a numbered rule at once, tune sound separately, keep a reusable element library, strong model for setup and cheaper for routine builds.
 - 2026-10-12 Session update setup: `CONTEXT.md`, session-start hook, `brand/duxio/DESIGN.md`, `brand/_template/DESIGN.md`.
 - 2026-10-12 `OWNER-RULES.md` (question round, cost rules, quality bar, mistake log) and `NEEDS-FROM-OWNER.md`.

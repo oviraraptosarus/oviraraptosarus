@@ -63,6 +63,7 @@ Load these with the Skill tool (or read their `SKILL.md`) before planning. Alway
 | Footage edit / talking head / podcast clip | `footage-edit`, `caption-animation`, `lower-thirds`, `beat-sync-editing`, `media-use` |
 | Testimonial / case study | `footage-edit`, `lower-thirds`, `caption-animation`, `storyteller` |
 | Logo sting / brand piece | `logo-animation`, `motion-design`, `color-motion` |
+| Long form (YouTube, tutorials, over 60s, footage or faceless) | `long-form-video` (free stack, NextWork plugins), plus the matching rows above |
 | Any piece with an animated backdrop | `motion-background` (subtle, and never against a brand's "no blobs" rule) |
 | Free-form / montage | `general-video`, `hyperframes-creative` |
 

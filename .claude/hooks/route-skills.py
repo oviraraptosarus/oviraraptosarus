@@ -47,8 +47,12 @@ audio = has(r"music", r"songs?", r"tracks?", r"beats?", r"sfx", r"sound effects?
 if video and audio:
     load.append("voiceover-pacing")
     load.append("music-director")
+longform = has(r"long ?form", r"youtube", r"yt", r"tutorials?", r"raw footage", r"talking head", r"podcasts?", r"webinar", r"chapters?",
+               r"youtube automation", r"faceless youtube", r"dead air", r"jump ?cuts?", r"walkthrough", r"screen recording", r"recording")
 if video:
     load.append("make-video")
+if longform:
+    load.append("long-form-video")
 
 seen, out = set(), []
 for s in load:
@@ -62,15 +66,15 @@ msg = ("Skill router: before doing anything else, load these skills with the Ski
 if duxio:
     msg += " DUXIO brand kit (logos, fonts, tokens, SFX, voice, spec, facts): brand/duxio/README.md."
 if "make-video" in out:
-    msg += (" MANDATORY for every NEW video, short or long: make-video auto-selects the specialist skills, then asks "
-            "the user, in one AskUserQuestion round, for every required brief field the prompt, the conversation, "
-            "make-video/preferences.md and the brand kit did not already answer (type, platform and length, style, "
-            "voice, CTA, plus the short-form or long-form extras). Do not start building before that round, unless the "
-            "user said 'you decide', 'no questions' or 'just do it'. Skip the round for a revision of a video already "
-            "built in this conversation. After the user answers, append the answers to make-video/preferences.md so "
-            "the next video asks fewer, sharper questions.")
+    msg += (" MANDATORY for every NEW video, short or long: read OWNER-RULES.md and CONTEXT.md, then make-video auto-selects "
+            "the specialist skills and the owner is asked ONE plain-text message of kid-style questions (niche, topic, "
+            "ending, length, reference look, character, voice, captions, music, image source, face or faceless), with the "
+            "open items from NEEDS-FROM-OWNER.md. NO popups, no AskUserQuestion. Do not build before the owner answers "
+            "or says 'you decide', 'no questions' or 'just do it'. Skip the round for a revision of a video already "
+            "built in this conversation. Then show a short Concept Card, build cheaply, and save the answers to "
+            "make-video/preferences.md.")
 if "reel-ideation" in out:
-    msg += (" IDEATION GATE: reel-ideation runs BEFORE any script or build. Use the adhd skill's parallel isolated "
-            "divergent branches for hook, story and per-beat visuals, apply the gates, write the Concept Card, and "
+    msg += (" IDEATION GATE: reel-ideation runs BEFORE any script or build. Keep it cheap: 2 isolated branches for a quick reel (adhd skill), "
+            "not a big fan-out; the owner watches the session budget. Use the adhd skill's method for hook, story and per-beat visuals, apply the gates, write the Concept Card, and "
             "only then build. Never ship a stand-in voice as final, and review real frames and playback, not just lint.")
 print(json.dumps({"hookSpecificOutput": {"hookEventName": "UserPromptSubmit", "additionalContext": msg}}))
