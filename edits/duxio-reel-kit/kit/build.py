@@ -87,6 +87,7 @@ def main():
             f"volume='if(between(t,{a},{b}),0,1)':eval=frame", "-b:a", "256k", os.path.join(assets, "mix.mp3"))
     else:
         shutil.copy(mix, os.path.join(assets, "mix.mp3"))
+    for a in reel.get("assets", []): shutil.copy(os.path.join(REPO, a), os.path.join(assets, os.path.basename(a)))
     for f in glob.glob(os.path.join(FONTS, "plus-jakarta-sans-latin-*.woff2")) + [os.path.join(FONTS, "instrument-serif-latin-400-italic.woff2")]:
         shutil.copy(f, os.path.join(assets, "fonts"))
     gsap = next(p for p in [os.path.join(REPO, "kept-reel-src", "gsap.min.js")] if os.path.exists(p)); shutil.copy(gsap, os.path.join(out, "gsap.min.js"))

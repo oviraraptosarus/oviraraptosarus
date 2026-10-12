@@ -229,6 +229,66 @@ S.thread = (c) => {
   tl.fromTo(el.querySelector(".grain"), { backgroundPosition: "0px 0px" }, { backgroundPosition: "480px 360px", duration: END, ease: "steps(240)" }, 0);
 };
 
+/* slab: the giant type world. Every slide is a full frame of type; a camera pushes in and drifts while a ghost word slides
+   behind it (parallax), and slides whip into each other through blur. A hand drawn handset is the recurring object.
+   props {slides:[{c0:cue idx the slide starts on, eyebrow, ghost, gs:ghost size, top, acc:accent colour,
+     lines:[{t,size,c:cue idx,color,outline,slam,lc,gap,strike:cue idx}], x:"phone"|"inbox"|"bar"|"logo"|"cta", xc:[cue idx...], ring:[from,to,hang], pills:[...], logo:"assets/x.svg"}]}
+   *word* in a line = Instrument Serif italic accent. */
+S.slab = (c) => {
+  const { tl, el, props: p } = c, T = (k) => c.cue(k), END = c.end, N = p.slides.length;
+  $(el, "grain"); $(el, "vig");
+  const handset = (par, css, col) => $(par, "sl-ph", css, `<svg viewBox="0 0 24 24" width="100%" height="100%"><g class="ar" fill="none" stroke="${col}" stroke-width="1.5" stroke-linecap="round"><path d="M14.2 3.2a7.2 7.2 0 0 1 6.6 6.6"/><path d="M14.2 6.6a3.8 3.8 0 0 1 3.2 3.2"/></g><path class="hs" fill="${col}" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>`);
+  const ring = (w, a, b) => { for (let t = a; t < b - 0.1; t += 0.95) { for (let k = 0; k < 6; k++) tl.to(w, { rotation: k % 2 ? 13 : -13, duration: 0.07, ease: "sine.inOut" }, t + k * 0.07); tl.to(w, { rotation: 0, duration: 0.08 }, t + 0.42); tl.fromTo(w.querySelector(".ar"), { opacity: 0.15 }, { opacity: 1, duration: 0.2, yoyo: true, repeat: 1 }, t); } };
+  const st = p.slides.map((s) => T(s.c0) - 0.06);
+  p.slides.forEach((s, si) => {
+    const t0 = si === 0 ? 0 : st[si], t1 = si + 1 < N ? st[si + 1] : END, dur = t1 - t0;
+    const sl = $(el, "sl"), cam = $(sl, "sl-cam"), push = $(cam, "sl-push");
+    tl.set(sl, { visibility: "visible" }, t0); tl.set(sl, { visibility: "hidden" }, t1 + 0.01);
+    if (si > 0) tl.fromTo(cam, { y: 150, scale: 1.05, opacity: 0, filter: "blur(20px)" }, { y: 0, scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, t0);
+    if (si + 1 < N) tl.to(cam, { y: -110, scale: 1.08, opacity: 0, filter: "blur(14px)", duration: 0.16, ease: "power2.in" }, t1 - 0.14);
+    tl.fromTo(push, { scale: 1, rotation: 0 }, { scale: 1.07, rotation: si % 2 ? 0.9 : -0.9, duration: dur, ease: "none", transformOrigin: "50% 45%" }, t0);
+    if (s.ghost) { const g = $(cam, "sl-ghost", `font-size:${s.gs || 900}px`); g.dataset.t = s.ghost; tl.fromTo(g, { xPercent: -50, yPercent: -50, rotation: -90, x: 160 }, { x: -160, duration: dur, ease: "none" }, t0); }
+    if (s.eyebrow) { const e = $(cam, "sl-eb", "", s.eyebrow); tl.fromTo(e, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: EASE }, t0 + 0.05); }
+    const col = $(push, "sl-col", `top:${s.top ?? 200}px`);
+    s.lines.forEach((l) => {
+      const row = $(col, "sl-line" + (l.outline ? " ol" : ""), `font-size:${l.size}px;${l.color ? "color:" + l.color + ";" : ""}${l.gap != null ? "margin-top:" + l.gap + "px;" : ""}${l.lc ? "text-transform:none;letter-spacing:-.03em;font-weight:700;" : ""}`);
+      l.t.split(" ").forEach((w, wi) => {
+        const em = w.startsWith("*") && w.endsWith("*"), txt = em ? w.slice(1, -1) : w;
+        const m = $(row, "mk" + (l.slam ? " sv" : ""), l.strike ? "position:relative" : ""), i = $(m, em ? "serif" : "", em ? `color:${s.acc || "#B794FF"};font-size:${l.size * 1.18}px;text-transform:none;letter-spacing:-.03em` : "", txt);
+        if (l.slam) tl.fromTo(i, { scale: 1.4, opacity: 0, transformOrigin: "30% 70%" }, { scale: 1, opacity: 1, duration: 0.26, ease: "power4.out" }, T(l.c) + wi * 0.07);
+        else tl.fromTo(i, rise, { yPercent: 0, duration: 0.42, ease: EASE }, T(l.c) + wi * 0.07);
+        if (l.strike != null) { const k = $(m, "th-strike"); tl.fromTo(k, { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power3.out" }, T(l.strike)); }
+      });
+    });
+    if (s.x === "phone") {
+      const w = handset(push, "left:760px;top:150px;width:220px;height:220px", "#F5F5F7"), hs = w.querySelector(".hs");
+      ring(w, T(s.xc[0]), T(s.xc[1]));
+      tl.to(hs, { attr: { fill: "#F1283A" }, duration: 0.1 }, T(s.xc[1]));
+      tl.to(w, { rotation: -38, y: 34, scale: 0.9, duration: 0.16, ease: "power3.in" }, T(s.xc[1]));
+      tl.to(w.querySelector(".ar"), { opacity: 0, duration: 0.1 }, T(s.xc[1]));
+    }
+    if (s.x === "inbox") (s.pills || []).forEach((t, i) => {
+      const pl = $(push, "sl-pill", `top:${s.pillTop ?? 960}px;margin-top:${i * 104}px`, `<b></b>${t}`);
+      tl.fromTo(pl, { x: -90, opacity: 0, scale: 0.9 }, { x: 0, opacity: 1, scale: 1, duration: 0.3, ease: POP }, T(s.xc[i]));
+    });
+    if (s.x === "bar") {
+      const bar = $(push, "sl-bar"), fill = $(bar, "", "", "<i></i>").firstChild, ok = $(push, "sl-ok", "", "Replied");
+      tl.fromTo(fill, { scaleX: 0 }, { scaleX: 1, duration: T(s.xc[1]) - T(s.xc[0]), ease: "none" }, T(s.xc[0]));
+      tl.fromTo(ok, { scale: 0.5, opacity: 0, rotation: -4, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: POP }, T(s.xc[1]));
+    }
+    if (s.x === "logo") {
+      const lg = $(push, "", ""); lg.innerHTML = `<img class="sl-logo" src="${s.logo}" style="top:${s.logoTop ?? 1250}px">`; const im = lg.firstChild;
+      tl.fromTo(im, { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: EASE }, T(s.xc[0]));
+    }
+    if (s.x === "cta") {
+      const w = handset(push, "left:760px;top:150px;width:220px;height:220px", "#B794FF");
+      tl.fromTo(w, { scale: 0.4, opacity: 0, rotation: -20 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.45, ease: POP }, T(s.xc[0]));
+      ring(w, T(s.xc[0]) + 0.5, END);
+    }
+  });
+  tl.fromTo(el.querySelector(".grain"), { backgroundPosition: "0px 0px" }, { backgroundPosition: "480px 360px", duration: END, ease: "steps(240)" }, 0);
+};
+
 /* captions: one block per phrase (or per chunk of <= chunk words when chunk > 0), word highlight as spoken.
    phrases: [{cap,start,end}]; cap "" hides the caption (use when the line is already on screen). */
 function buildCaptions(tl, root, phrases, lightText, chunk) {

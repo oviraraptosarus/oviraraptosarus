@@ -1,0 +1,84 @@
+{
+ "name": "cold-call-ai heart",
+ "duration": 24.079,
+ "phrases": [
+  {
+   "text": "Stop calling strangers.",
+   "start": 0.04,
+   "end": 1.231,
+   "e": 0.95
+  },
+  {
+   "text": "They never asked.",
+   "start": 1.388,
+   "end": 2.177,
+   "e": 0.8
+  },
+  {
+   "text": "The people who did are already in your inbox.",
+   "start": 2.48,
+   "end": 4.439,
+   "e": 0.6
+  },
+  {
+   "text": "AI answers them in under sixty seconds.",
+   "start": 4.756,
+   "end": 6.592,
+   "e": 0.9
+  },
+  {
+   "text": "Will it sound like a robot?",
+   "start": 7.04,
+   "end": 8.21,
+   "e": 0.5
+  },
+  {
+   "text": "No. It writes in your voice, and you approve every message.",
+   "start": 8.412,
+   "end": 11.161,
+   "e": 0.7
+  },
+  {
+   "text": "I already follow up myself.",
+   "start": 11.577,
+   "end": 12.732,
+   "e": 0.5
+  },
+  {
+   "text": "It follows up at two in the morning, for twenty one days.",
+   "start": 12.937,
+   "end": 15.417,
+   "e": 0.7
+  },
+  {
+   "text": "What if they are not ready?",
+   "start": 15.842,
+   "end": 16.8,
+   "e": 0.5
+  },
+  {
+   "text": "They get pointed to your content. Quiet ones get a check in every month.",
+   "start": 17.002,
+   "end": 20.002,
+   "e": 0.65
+  },
+  {
+   "text": "Cold calling chases.",
+   "start": 20.448,
+   "end": 21.521,
+   "e": 0.8
+  },
+  {
+   "text": "DUXIO answers.",
+   "start": 21.679,
+   "end": 22.673,
+   "e": 0.95
+  },
+  {
+   "text": "Book a Strategy Call.",
+   "start": 23.118,
+   "end": 24.079,
+   "e": 0.95
+  }
+ ]
+}
