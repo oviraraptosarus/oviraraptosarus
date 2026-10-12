@@ -51,5 +51,6 @@ Visuals, images, footage, screenshots, music, logos and similar assets come from
 - 2026-10-12 · Reel "Dots That Stopped": reused an old concept and the existing kit, delivered flat UI cards on dark. Rejected. The reference videos barely influenced the look.
 - 2026-10-12 · Spent session budget on analysis, measuring and a render before asking the owner anything. The owner wants questions first and a cheap, fast build.
 - 2026-10-12 · Showed a popup question round. The owner wants all questions in one plain message.
+- 2026-10-12 · Reel "cold-call-ai" framed DUXIO mostly as answering and following up leads. Owner: sell the outcome (more money, better lead quality, other industry pains), not just saving leads. Saved as `duxio-brand` §0 (and pre-flight check 8).
 - 2026-10-12 · Owner reminded me: always ask them for visuals and other assets (they will provide). Saved as rule 3d.
 - 2026-10-12 · Assumed DUXIO and a 10 second format. The owner's content varies by niche; ask every time.

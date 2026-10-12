@@ -7,13 +7,34 @@ description: The DUXIO rulebook shared by every DUXIO deliverable (website, VSL,
 
 **Brand kit:** `brand/duxio/` holds everything this skill points to: logos (SVG, PNG, social avatars, the monogram), fonts, `tokens/tokens.css` and `tokens.json`, SFX, the owner's ElevenLabs voice, the master spec verbatim (`docs/owner-spec-parts-1-to-5.md`), facts, live site copy, the content library and raw research. Read `brand/duxio/README.md` first, and use those files instead of asking the owner again.
 
-DUXIO builds and runs the follow up that moves serious buyers from first interest to a booked sales call, for coaches and consultants selling high ticket offers. Everything below applies to every DUXIO asset. `duxio-website` and `duxio-vsl` add their own rules on top and never relax these.
+DUXIO turns the interest a coach already has into more paying clients, with better qualified sales calls and less of the coach's own time spent chasing, for coaches and consultants selling high ticket offers. The four step system (§4) is how it does that, not what we sell. Everything below applies to every DUXIO asset. `duxio-website` and `duxio-vsl` add their own rules on top and never relax these.
+
+## 0. Positioning: sell the outcome, not the follow up (owner rule, 2026-10-12)
+The owner does not want DUXIO framed as "saving leads". Saved leads are one proof point. The headline is what the coach gets: **more money from the people who already reached out, better qualified calls, and their time back.** Lead with that in every hook, headline, VO and CTA setup, then show the mechanism as the reason it works.
+
+**The five outcomes we sell (use at least one, name it before the mechanism):**
+| Outcome | In plain words | Mechanism behind it (§4) | Pain it answers (coaches' own words, paraphrased, from `brand/duxio/source-material/coach-pain-points-reddit.md`) |
+|---|---|---|---|
+| **More revenue from interest they already have** | More of the people who reached out end up paying clients. No new ad spend to replace the ones that went quiet. | 1 Answer, 3 Follow up, 4 Reopen | "My leads go cold before I get to them." Enquire, then ghost. Lead follow up is the most annoying job. |
+| **Better lead quality on the calendar** | Calls are with people who are serious and fit, not people who were never going to buy. | 2 Sort (three short questions) | "I hate people wasting my time." Interest that doesn't want to pay. |
+| **More booked calls actually happen** | Fewer no shows. People turn up. | 3 Reminders at 24h, 2h, 10m | Discovery call no shows, "something came up". |
+| **Time and sanity back** | The coach stops replying to DMs between sessions and at midnight. The business does not stop when they stop replying. They only take calls with serious people. | 1 Answer, 2 Sort, done for you | Coaching 55 to 60 hours a week. A business that needs them available. "Sales: I do them myself." Juggling four tools. |
+| **Clarity** | They see where leads drop off and what is working, every week. | Weekly report | "If you don't know your show rate and close rate, you're flying blind." |
+
+**How to write it**
+1. **Order:** pain in money or quality terms first, the outcome second, the mechanism third, the Strategy Call last. Example frame: "Your calendar is full of people who were never going to buy, and the ones who would went quiet." Then what changes. Then how.
+2. **Never describe DUXIO as** lead saving, lead recovery, a follow up tool, or an automation tool. Say what the coach ends up with.
+3. **Honest scope, so the outcome never over claims.** DUXIO works on the interest the coach already gets. It does not find new leads, does not make an offer better, and does not fix retention, pricing, certification or burnout (research §3). "More money" means more of the inbound turning into clients. "Better lead quality" means better qualified calls from the people who reach out, not better traffic. Never imply we generate the leads.
+4. **Benefit language, never a promised result.** Say what the system is built to do ("so more of your inbound becomes paying clients"). No guarantees, no percentages, no revenue numbers, no timelines for results, no "double", "10x" or "X more calls". The only numbers allowed are the §7 facts, the cited Harvard Business Review stat, and §7 example math labelled "Example. Just an estimate."
+5. **Money is allowed on screen as the coach's own math** ("Coach Math", labelled Example) because it turns the pain into revenue. Price never appears in reels, VSLs or ads (§5).
+6. **Plain words:** "people who aren't ready" and "serious buyers", not "tire kickers" or other agency slang. "Instant reply in your voice" over "chatbot" (§3). The owner has chosen the plain word "AI" for the cold calling reel (2026-10-12): "AI" is allowed for the system, "bot" and "chatbot" are not. Never claim it phones strangers; the cold calling angle is "stop chasing strangers, answer the people who already asked".
+7. **Pain bank:** use the coaches' words from the research file, paraphrased. Never show a quote attributed to a person or subreddit unless the thread has been opened and checked. The pains DUXIO does not solve (research §3) are recognition hooks only, never a claimed fix.
 
 ## 1. Voice
 - A calm, grounded infrastructure engineer. A senior partner auditing backend operations. Never a hyped internet marketer or an agency salesman.
 - Write like a voice note from a sharp, honest operator. Read every line aloud; if nobody would say it across a coffee table, delete it.
 - Short, conversational sentences. Mix three word sentences with natural ones. Paragraphs of one or two lines, three at most.
-- Frame: relief and upside, not tech. The client already has good content and an offer. Manual follow up is leaking money while they work.
+- Frame: relief and upside, not tech (and see §0: sell the outcome, not the follow up). The client already has good content and an offer. The upside is more paying clients, better calls and their time back; manual follow up is the reason it isn't happening today.
 - If an idea needs more than three sentences, cut it in half.
 
 ## 2. Hard copy rules (pre-flight; a violation blocks delivery)
@@ -106,3 +127,4 @@ Form questions (offer price point, monthly inquiries, biggest bottleneck) are op
 5. Mechanism is exactly the four steps in §4.
 6. Every claim is in §7, or the owner confirmed it.
 7. Price appears only on the website, written as setup plus monthly.
+8. The headline or hook names an outcome (more clients and revenue, better qualified calls, more shows, time back) before the mechanism. DUXIO is never described as lead saving or a follow up tool (§0), and nothing implies we find new leads or promises a result.
