@@ -8,6 +8,7 @@
 - **Mode:** the owner wants me to ask the question round (one plain message) before every video, then build cheaply. See `OWNER-RULES.md`.
 
 ## Done so far (newest first)
+- 2026-10-12 Added OWNER-RULES §3d: the owner supplies all visuals and assets; I always ask for them by name in the question round.
 - 2026-10-12 Long form: installed NextWork `creator-teardown` + `ai-editor` plugins (user scope, NOT set up or tested; run the `ai-editor` setup skill once before first use), added `.claude/skills/long-form-video` (auto-routed by `route-skills.py` on YouTube, long form, raw footage, tutorial prompts). Face content covered: ai-editor already fully set up (doctor says Ready) and OpenScreen v1.5.0 installed (normal installer; silent mode crashed). Nothing tested. Router no longer uses popups. Bad commands in the pasted guides are listed in the skill.
 - 2026-10-12 Studied Christian Peverelli's "I Fully Automated My Video Editing Using Claude Code" (YouTube HzXD4GVqXwM). Real cost there is about $24 to $27 per video, not $4. Takeaways saved in `OWNER-RULES.md` §3c: feedback becomes a numbered rule at once, tune sound separately, keep a reusable element library, strong model for setup and cheaper for routine builds.
 - 2026-10-12 Session update setup: `CONTEXT.md`, session-start hook, `brand/duxio/DESIGN.md`, `brand/_template/DESIGN.md`.
@@ -21,7 +22,7 @@
 0. Start an element library (`edits/duxio-reel-kit/library/`: reusable scenes, characters, textures) once the first reference-style reel is built.
 1. Wait for the owner to name the next video. Send the question round (OWNER-RULES §1), show open items from `NEEDS-FROM-OWNER.md`.
 2. Build asset capability for the references' look: drawn characters and sets (SVG), textures, travelling camera. Not started.
-3. Image source: still unanswered (the owner downloads images, supplies footage, or I draw vector art).
+3. Image source: answered 2026-10-12. The owner provides visuals, images, footage and music. I list the exact assets each concept needs and ask for them in the question round (OWNER-RULES §3d).
 
 ## Known facts to keep
 - Reel kit: `edits/duxio-reel-kit/` (`kit/build.py`, `scenes.js`, `kit.css`). Voice tool: `.claude/skills/voiceover-pacing/director.py`, run with `py -3.12`.

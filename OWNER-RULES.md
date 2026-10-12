@@ -39,6 +39,9 @@ After every step, update `CONTEXT.md` before replying. Log new mistakes in §5 a
 ## 3c. Feedback becomes a rule, immediately (from the Christian Peverelli walkthrough, 2026-10-12)
 Every note the owner gives on a video is written into the right file in the same turn: a numbered rule in the matching skill (`make-video/framework.md`, `editing-standard.md`, a brand `DESIGN.md`) or a line in §5. Say "saved as rule N" in one short line. Start with small clips (the hook first), tune the sound on its own, and keep a library of reusable reel elements (animations, characters, scenes) that grows each time one is used. Use the strongest model for setup and planning, a cheaper one for routine builds.
 
+## 3d. The owner supplies the assets, I always ask (2026-10-12)
+Visuals, images, footage, screenshots, music, logos and similar assets come from the owner: "ill provide them no worries". For every video I name exactly which assets the concept needs (a short list with a size or shot description each) and ask for them in the same one-message question round. I never invent, scrape or silently source them, and never use AI generated images or video. If an asset is missing I build the rest and flag the gap in `NEEDS-FROM-OWNER.md`. Where the owner sends nothing, I may only draw simple vector art in code and say so.
+
 ## 4. Quality bar
 - Output must look like the 7 reference reels: layered, textured, one world, a character or recurring object, a travelling camera, sound on every action. A reel made only of text and boxes on a dark gradient is rejected. See `.claude/skills/make-video/visual-breakdown.md` and `framework.md`.
 - Built for the Instagram algorithm: strong hook in the first second, short pacing, a reason to watch to the end. Not a stack of slides.
@@ -48,4 +51,5 @@ Every note the owner gives on a video is written into the right file in the same
 - 2026-10-12 · Reel "Dots That Stopped": reused an old concept and the existing kit, delivered flat UI cards on dark. Rejected. The reference videos barely influenced the look.
 - 2026-10-12 · Spent session budget on analysis, measuring and a render before asking the owner anything. The owner wants questions first and a cheap, fast build.
 - 2026-10-12 · Showed a popup question round. The owner wants all questions in one plain message.
+- 2026-10-12 · Owner reminded me: always ask them for visuals and other assets (they will provide). Saved as rule 3d.
 - 2026-10-12 · Assumed DUXIO and a 10 second format. The owner's content varies by niche; ask every time.
