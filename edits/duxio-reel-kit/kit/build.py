@@ -102,6 +102,7 @@ def main():
     css = open(os.path.join(HERE, "kit.css"), encoding="utf-8").read(); js = open(os.path.join(HERE, "scenes.js"), encoding="utf-8").read()
     apjs = os.path.join(HERE, "ap.js")
     if os.path.exists(apjs): js += "\n" + open(apjs, encoding="utf-8").read()   # Apple element scenes (S.ap)
+    for ext in sorted(glob.glob(os.path.join(HERE, "ap_ext_*.js"))): js += "\n" + open(ext, encoding="utf-8").read()   # per reel extra elements (merge into ap.js later)
     data = {"beats": cues_out, "phrases": phrases, "total": total, "captionLight": reel.get("captionLight", False), "capChunk": reel.get("capChunk", 0), "capClass": reel.get("capClass", "")}
     html = f"""<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <script src="gsap.min.js"></script><style>{fonts}{css}{":root{" + ";".join(f"{k}:{v}" for k, v in reel.get("vars", {}).items()) + "}"}</style></head><body>

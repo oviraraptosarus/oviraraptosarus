@@ -7,3 +7,5 @@ A config in, a renderable HyperFrames project out. You describe a reel as data; 
 3. `npx hyperframes check`, `snapshot`, `render` inside `out/<name>/`. Review real frames before sending.
 
 Scenes (`kit/scenes.js`): statement, stack, clock, msg, phone, wall, stamp, dots, chain, tier, compare, cta, plus the caption engine. Cues are phrase relative, so a new voice retimes the reel. SFX names live in `kit/sfx-map.json`. Add a scene by adding one function to `scenes.js`.
+
+**Several reels at once:** see `BATCH.md` (specs in `kit/specs/`, `kit/make.py`, `kit/batch.py`, element catalog `kit/ELEMENTS.md`).

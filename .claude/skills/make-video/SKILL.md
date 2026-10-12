@@ -7,6 +7,9 @@ description: "The one command for any video job: VSL, reel, short, TikTok, paid 
 
 The user never has to type other skill names. This skill picks and loads them, asks once for what's missing, and holds the work to `editing-standard.md`.
 
+## Step 0. More than one video? Use the batch framework
+If the owner asks for several reels, or "multiple at once": read `edits/duxio-reel-kit/BATCH.md` first. One intake message with one table row per video, one JSON spec per reel (`kit/specs/`), `kit/batch.py` to run them, contact sheets reviewed together. Parallel sessions use git worktrees (Mode B in that file). Reels built with the `ap` scene follow `preferences.md` "Short form defaults". Never build test videos to try the framework; the first real batch is the test.
+
 ## Step 1. Intake: ask what's missing, once
 
 **Read `OWNER-RULES.md` (repo root) first: the question round is ONE plain message with all its questions (no AskUserQuestion popups), written in simple kid-style words, and it covers niche, topic, ending, length, reference look, character, voice, captions, music, image source and on camera or faceless. Show the open items from `NEEDS-FROM-OWNER.md` (2 to 4 lines) in the same message.** The rest of this step describes the fields; ask them in that one message, not via popup.

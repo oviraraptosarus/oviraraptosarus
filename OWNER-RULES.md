@@ -42,6 +42,9 @@ Every note the owner gives on a video is written into the right file in the same
 ## 3d. The owner supplies the assets, I always ask (2026-10-12)
 Visuals, images, footage, screenshots, music, logos and similar assets come from the owner: "ill provide them no worries". For every video I name exactly which assets the concept needs (a short list with a size or shot description each) and ask for them in the same one-message question round. I never invent, scrape or silently source them, and never use AI generated images or video. If an asset is missing I build the rest and flag the gap in `NEEDS-FROM-OWNER.md`. Where the owner sends nothing, I may only draw simple vector art in code and say so.
 
+## 3e. Several videos at once: framework first, no test videos (2026-10-12)
+The owner wants to make many videos, in one session or several. Build the process before any video: `edits/duxio-reel-kit/BATCH.md` (batch intake table in one message, JSON specs, `kit/make.py` and `kit/batch.py`, worktrees for parallel sessions). Do not render test videos to prove tooling; verify with syntax checks, compile comparisons and `hyperframes check`, and let the first real batch exercise the rest. The owner pays for time and session limit, so say plainly what is verified and what is not.
+
 ## 4. Quality bar
 - Output must look like the 7 reference reels: layered, textured, one world, a character or recurring object, a travelling camera, sound on every action. A reel made only of text and boxes on a dark gradient is rejected. See `.claude/skills/make-video/visual-breakdown.md` and `framework.md`.
 - Built for the Instagram algorithm: strong hook in the first second, short pacing, a reason to watch to the end. Not a stack of slides.
