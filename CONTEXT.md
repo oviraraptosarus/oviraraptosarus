@@ -8,6 +8,7 @@
 - **Mode:** the owner wants me to ask the question round (one plain message) before every video, then build cheaply. See `OWNER-RULES.md`.
 
 ## Done so far (newest first)
+- 2026-10-12 Studied Christian Peverelli's "I Fully Automated My Video Editing Using Claude Code" (YouTube HzXD4GVqXwM). Real cost there is about $24 to $27 per video, not $4. Takeaways saved in `OWNER-RULES.md` §3c: feedback becomes a numbered rule at once, tune sound separately, keep a reusable element library, strong model for setup and cheaper for routine builds.
 - 2026-10-12 Session update setup: `CONTEXT.md`, session-start hook, `brand/duxio/DESIGN.md`, `brand/_template/DESIGN.md`.
 - 2026-10-12 `OWNER-RULES.md` (question round, cost rules, quality bar, mistake log) and `NEEDS-FROM-OWNER.md`.
 - 2026-10-12 `make-video/visual-breakdown.md`: what the 7 reference reels are built from.
@@ -16,6 +17,7 @@
 - 2026-10-11 Local setup on the owner's Windows PC: brag installed (plugin + `.claude/skills/brag*`, uncommitted), Python 3.12 has pyworld, reel kit built.
 
 ## Next
+0. Start an element library (`edits/duxio-reel-kit/library/`: reusable scenes, characters, textures) once the first reference-style reel is built.
 1. Wait for the owner to name the next video. Send the question round (OWNER-RULES §1), show open items from `NEEDS-FROM-OWNER.md`.
 2. Build asset capability for the references' look: drawn characters and sets (SVG), textures, travelling camera. Not started.
 3. Image source: still unanswered (the owner downloads images, supplies footage, or I draw vector art).

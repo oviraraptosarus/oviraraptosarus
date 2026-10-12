@@ -36,6 +36,9 @@ The owner has seen a full video cost about $4 with a strong result. That is the 
 ## 3b. Keep the files current
 After every step, update `CONTEXT.md` before replying. Log new mistakes in §5 as they happen. Update `NEEDS-FROM-OWNER.md` whenever an item opens or closes. Each brand has a `DESIGN.md`.
 
+## 3c. Feedback becomes a rule, immediately (from the Christian Peverelli walkthrough, 2026-10-12)
+Every note the owner gives on a video is written into the right file in the same turn: a numbered rule in the matching skill (`make-video/framework.md`, `editing-standard.md`, a brand `DESIGN.md`) or a line in §5. Say "saved as rule N" in one short line. Start with small clips (the hook first), tune the sound on its own, and keep a library of reusable reel elements (animations, characters, scenes) that grows each time one is used. Use the strongest model for setup and planning, a cheaper one for routine builds.
+
 ## 4. Quality bar
 - Output must look like the 7 reference reels: layered, textured, one world, a character or recurring object, a travelling camera, sound on every action. A reel made only of text and boxes on a dark gradient is rejected. See `.claude/skills/make-video/visual-breakdown.md` and `framework.md`.
 - Built for the Instagram algorithm: strong hook in the first second, short pacing, a reason to watch to the end. Not a stack of slides.
