@@ -19,16 +19,36 @@ def compile_spec(spec, tm):
     words = [p["t"].split() for p in spec["voice"]["phrases"]]
     C, T, SFX, cache = [], [], [], {}
 
+    def widx(p, tok):
+        """word position inside phrase p: int | first | mid | last | NN% | word:<text> (first match, punctuation and case ignored)"""
+        ws = words[p]; n = len(ws)
+        if isinstance(tok, int): return min(tok, n - 1)
+        tok = tok.strip().lower()
+        if tok == "first": return 0
+        if tok == "mid": return n // 2
+        if tok == "last": return n - 1
+        m = re.fullmatch(r"(\d+)%", tok)
+        if m: return min(n - 1, round(n * int(m.group(1)) / 100))
+        if tok.startswith("word:"):
+            want = re.sub(r"[^a-z0-9']", "", tok[5:])
+            for i, w in enumerate(ws):
+                if re.sub(r"[^a-z0-9']", "", w.lower()) == want: return i
+            raise ValueError(f"word {want!r} not in phrase {p}: {' '.join(ws)}")
+        raise ValueError(f"bad word ref {tok!r}")
+
     def parse(sp, r):
         if isinstance(r, (list, tuple)):
-            return int(r[0]), r[1], float(r[2]) if len(r) > 2 else 0.0
+            w = r[1] if r[1] == "end" else widx(int(r[0]), r[1])
+            return int(r[0]), w, float(r[2]) if len(r) > 2 else 0.0
         if isinstance(r, str):
-            m = re.fullmatch(r"end\s*([+-]\s*[0-9.]+)?", r.strip())
-            if m: return sp, "end", float((m.group(1) or "0").replace(" ", ""))
-            m = re.fullmatch(r"(\d+)\s*([+-]\s*[0-9.]+)?", r.strip())
-            if m: return sp, int(m.group(1)), float((m.group(2) or "0").replace(" ", ""))
-            raise ValueError(f"bad ref {r!r}")
-        return sp, int(r), 0.0
+            s = r.strip()
+            m = re.fullmatch(r"(end|first|mid|last|\d+%|word:[^+]+?|\d+)\s*(?:([+-])\s*([0-9.]+))?", s, re.I)
+            if not m: raise ValueError(f"bad ref {r!r}")
+            off = float(m.group(2) + m.group(3)) if m.group(2) else 0.0
+            if m.group(1).lower() == "end": return sp, "end", off
+            if m.group(1).isdigit(): return sp, widx(sp, int(m.group(1))), off
+            return sp, widx(sp, m.group(1)), off
+        return sp, widx(sp, int(r)), 0.0
 
     def cue(sp, r):
         p, w, off = parse(sp, r)

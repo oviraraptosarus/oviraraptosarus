@@ -10,7 +10,7 @@ make-video reads this before asking questions and appends the user's answers aft
 - Words: plain and human ("estimate", not "forecast"). Zero dashes in customer-facing text.
 
 ## Short form defaults (owner approved reel `cold-call-ai-v2`, 2026-10-12: "awesome, i love it")
-Apply to every reel, short and TikTok unless the owner says otherwise. Reference build: `edits/duxio-reel-kit/reels/cold-call-ai-v2/`, scene library `kit/ap.js`.
+**These defaults are packaged as Style 1 (Glass): `edits/duxio-reel-kit/styles/style-1/STYLE.md`, with ready templates and `kit/new_reel.py`. Start there.** Apply to every reel, short and TikTok unless the owner says otherwise. Reference build: `edits/duxio-reel-kit/reels/cold-call-ai-v2/`, scene library `kit/ap.js`.
 - **Show, don't just say:** every beat has a built visual element (iOS notifications, call screen, chat bubbles, toggles, calendar, lock screen, progress bars, counters), not only text. Think Apple. Reels of text only are rejected.
 - **Type:** Inter variable (display 760, light 250 for big numbers) plus Instrument Serif italic on the highlighted words. Eyebrow labels small, uppercase, tracked. Not Plus Jakarta Sans.
 - **Gradient only on highlight words** (violet; red for loss words). Body type stays solid. Soft violet bloom behind the frame, glass cards, grain, slow camera push, blur whips between beats.

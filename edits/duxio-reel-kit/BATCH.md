@@ -15,7 +15,7 @@ What it does NOT remove: writing the script and picking elements (I do that for 
 
 ## The flow
 1. **Batch intake, one message.** You name N videos. I send ONE plain message with a table, one row per video: topic or angle, objections or beats you want, ending (CTA), assets you will supply (rule 3d), length. Shared answers (voice, look, music, captions) come from the saved defaults, so they are not asked again. "You decide" on a row means I choose.
-2. **Specs.** I write `kit/specs/<id>.json` for every video (copy `kit/specs/_template.json`). If a video needs an element that does not exist, I add it to `kit/ap.js` once (see ELEMENTS.md).
+2. **Specs.** I start each video from a Style 1 template (`py -3.12 kit/new_reel.py <template> <id>`, templates in `styles/style-1/templates/`), rewrite its slots, and check it with `py -3.12 kit/check_spec.py kit/specs/<id>.json` (instant, no voice or render; `make.py` runs it too). Specs live in `kit/specs/<id>.json`. If a video needs an element that does not exist, I add it to `kit/ap.js` once (see ELEMENTS.md).
 3. **Run.** `py -3.12 kit/batch.py kit/specs/a.json kit/specs/b.json kit/specs/c.json --jobs 2` (or `kit/make.py` for one). Voice is cached and only re-rendered when the spoken script changes. `--no-render` stops after the contact sheets for a cheap review pass.
 4. **Review.** I read every `out/<id>/snapshots/contact-sheet*.jpg` and `REPORT.md` (pitch of the questions, loudness, check errors). Fixes are edits to the spec, then re-run that one id.
 5. **Deliver.** One message with the mp4s, what to confirm per video, and open items. Commit `kit/specs/<id>.json`, `reels/<id>/`, and the mp4.

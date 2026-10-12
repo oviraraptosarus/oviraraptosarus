@@ -4,6 +4,8 @@
 
 **Read `OWNER-RULES.md` every session** (how to ask, cost limits, quality bar, mistake log) and show the open items in `NEEDS-FROM-OWNER.md` at the start of every video job.
 
+**Short form videos use Style 1 by default** (owner approved, 2026-10-12): `edits/duxio-reel-kit/styles/style-1/STYLE.md` has the principles, tokens and checklist; ready templates are in `styles/style-1/templates/` (start one with `py -3.12 kit/new_reel.py <template> <id>`); the registry of styles is `styles/README.md`; making several videos at once is `edits/duxio-reel-kit/BATCH.md`. A new style is added by copying the folder, never by editing Style 1.
+
 ## Automatic skill routing
 A `UserPromptSubmit` hook (`.claude/hooks/route-skills.py`, registered in `.claude/settings.json`) reads each prompt and tells Claude which skills to load. The user never has to type skill names. Follow its instruction before anything else. Without the hook, route the same way:
 - any video job (short or long) → `make-video`, which always asks the missing brief questions first (one round), then logs the answers in `.claude/skills/make-video/preferences.md` so later videos ask less

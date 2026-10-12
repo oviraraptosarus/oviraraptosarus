@@ -1,0 +1,33 @@
+{
+ "_template": "Style 1 / how-it-works (about 28 s). The mechanism step by step, one element per step, outcome stated on each slide. Claims are the DUXIO brand section 7 claims.",
+ "_slots": [
+  "voice.phrases[].t: one sentence per step; keep the order lead arrives, answer, sort, book, follow up, reopen, report, CTA or change the elements to match",
+  "slides[].hl: headline lines (shorter than the sentence, one highlighted idea word in *stars*)",
+  "slides[].props: names and messages shown in the elements; keep 'Example' on screen",
+  "voice.phrases[4].cap and others: digits for on screen captions"
+ ],
+ "id": "TEMPLATE",
+ "voice": {
+  "phrases": [
+   {"t": "Here is what happens after someone messages you.", "speed": 1.1, "pause": 320, "e": 0.9},
+   {"t": "They get an answer in under sixty seconds, in your voice.", "speed": 1.12, "pause": 380, "e": 0.8, "cap": "They get an answer in under 60 seconds, in your voice."},
+   {"t": "Three short questions show who is serious.", "speed": 1.1, "pause": 340, "e": 0.75},
+   {"t": "Serious buyers book, and reminders keep them from no showing.", "speed": 1.1, "pause": 380, "e": 0.75},
+   {"t": "Follow up runs for twenty one days.", "speed": 1.1, "pause": 340, "e": 0.75, "cap": "Follow up runs for 21 days."},
+   {"t": "Quiet leads get a check in every month.", "speed": 1.1, "pause": 340, "e": 0.7},
+   {"t": "And you get a report every week.", "speed": 1.08, "pause": 380, "e": 0.8},
+   {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95}
+  ]
+ },
+ "silence_before": 7,
+ "slides": [
+  {"p": 0, "x": "notifs", "eye": "Step 1", "hl": ["Someone messages", "your *inbox.*"], "hw": ["first", "60%"], "xw": ["40%", "60%", "last"]},
+  {"p": 1, "x": "chat", "eye": "Step 2", "hl": ["Answered in under", "*60* *seconds.*"], "hw": ["first", "word:under"], "xw": ["20%", "40%", "65%", "80%"]},
+  {"p": 2, "x": "qual", "eye": "Step 3", "hl": ["Three questions show", "who is *serious.*"], "hw": ["first", "50%"], "xw": ["0+0.1", "15%", "30%", "45%", "75%", "last"]},
+  {"p": 3, "x": "cal", "eye": "Step 4", "hl": ["They book. Reminders", "keep them *showing* *up.*"], "hw": ["first", "50%"], "xw": ["0+0.05", "40%", "60%", "80%"]},
+  {"p": 4, "x": "lock", "eye": "Step 5", "hl": ["Follow up for", "*21* *days.*"], "hw": ["first", "word:twenty"], "xw": ["0+0.05", "20%", "word:for", "end-0.05"]},
+  {"p": 5, "x": "route", "eye": "Step 6", "hl": ["Quiet leads get", "a *check* *in.*"], "hw": ["first", "word:check"], "xw": ["first", "word:check"], "props": {"cards": [["play", "Not ready", "Pointed to your content"], ["cal", "Quiet lead", "A human check in, every month"]]}},
+  {"p": 6, "x": "report", "eye": "Step 7", "hl": ["Every week,", "a *report.*"], "hw": ["first", "word:report"], "xw": ["0+0.2", "word:every"]},
+  {"p": 7, "x": "cta", "hl": ["Book a", "*Strategy* *Call.*"], "hw": ["first", "word:strategy"], "xw": ["0+0.3", "end-0.35"]}
+ ]
+}

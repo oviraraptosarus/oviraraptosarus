@@ -12,6 +12,7 @@ import json, os, re, shutil, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__)); KIT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from compile_ap import compile_spec
+from check_spec import validate
 
 NPX = shutil.which("npx") or "npx"
 VOICE_DEFAULTS = {"voice": "af_heart", "base_speed": 1.12, "seed": 21, "takes": 6, "lead_ms": 40, "pause_scale": 1.0, "pause_max": 900}
@@ -65,6 +66,11 @@ def main():
     os.makedirs(rdir, exist_ok=True)
     rep = {"id": rid, "started": time.strftime("%Y-%m-%d %H:%M:%S"), "problems": []}
     t0 = time.time()
+
+    # 0 lint the spec before spending minutes on the voice
+    pre = validate(spec)
+    if pre:
+        rep["problems"] += [f"spec: {p}" for p in pre]; return finish(rep, rdir, out, 1)
 
     # 1 voice + music
     script = voice_script(spec)

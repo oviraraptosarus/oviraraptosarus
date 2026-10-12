@@ -25,6 +25,7 @@ parts = [
     "=== OWNER-RULES.md ===\n" + read("OWNER-RULES.md"),
     "=== CONTEXT.md ===\n" + read("CONTEXT.md"),
     "=== NEEDS-FROM-OWNER.md (remind the owner of open items) ===\n" + read("NEEDS-FROM-OWNER.md", 3000),
+    "=== VIDEO STYLES (short form default = Style 1; full rules in edits/duxio-reel-kit/styles/style-1/STYLE.md, templates via kit/new_reel.py, batch process in edits/duxio-reel-kit/BATCH.md) ===\n" + read("edits/duxio-reel-kit/styles/README.md", 2500),
     "=== git ===\n" + git("status", "-sb") + "\n" + git("log", "--oneline", "-5"),
 ]
 print(json.dumps({"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": "\n\n".join(parts)}}))

@@ -73,6 +73,10 @@ if "make-video" in out:
             "or says 'you decide', 'no questions' or 'just do it'. Skip the round for a revision of a video already "
             "built in this conversation. Then show a short Concept Card, build cheaply, and save the answers to "
             "make-video/preferences.md.")
+if "make-video" in out:
+    msg += (" SHORT FORM DEFAULT: Style 1 (Glass, Apple UI elements, Inter + Instrument Serif, gradient on highlight words only, "
+            "rising tone on questions, outcome first). Read edits/duxio-reel-kit/styles/style-1/STYLE.md and start from a template "
+            "(py -3.12 kit/new_reel.py <template> <id>); several reels at once: edits/duxio-reel-kit/BATCH.md. Use another style only if the owner names one.")
 if "reel-ideation" in out:
     msg += (" IDEATION GATE: reel-ideation runs BEFORE any script or build. Keep it cheap: 2 isolated branches for a quick reel (adhd skill), "
             "not a big fan-out; the owner watches the session budget. Use the adhd skill's method for hook, story and per-beat visuals, apply the gates, write the Concept Card, and "
