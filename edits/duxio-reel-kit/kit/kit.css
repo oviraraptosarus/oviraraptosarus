@@ -2,11 +2,11 @@
 :root{--paper:#F3F0EA;--ink:#111113;--obs:#0D0E12;--red:#F1283A;--violet:#6F00FF;--mute:#8A857E;--line:rgba(17,17,19,.14)}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;overflow:hidden;background:var(--obs)}
-#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink)}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:var(--fd,'Plus Jakarta Sans'),system-ui,sans-serif;color:var(--ink)}
 .scene{position:absolute;inset:0;overflow:hidden;visibility:hidden}
 .paper{background:var(--paper);color:var(--ink)} .dark{background:var(--obs);color:#F5F3EF}
 .abs{position:absolute} .c{display:flex;align-items:center;justify-content:center;text-align:center}
-.serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
+.serif{font-family:var(--fs,'Instrument Serif'),Georgia,serif;font-style:italic;font-weight:400}
 .red{color:var(--red)}
 /* statement */
 .stmt{position:absolute;left:70px;width:940px;display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -90,3 +90,32 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--obs)}
 .sl-bar i{display:block;height:100%;width:100%;background:#6F00FF;border-radius:9px;transform-origin:0 50%}
 .sl-ok{position:absolute;left:70px;top:1370px;padding:18px 44px 20px;border-radius:999px;background:#6F00FF;color:#fff;font-size:60px;font-weight:800;letter-spacing:-.02em}
 .sl-logo{position:absolute;left:70px;width:560px}
+
+/* slab v2: font roles and gradient highlights (set --fd display, --fs serif, --fm mono, --grad, --gradr per reel) */
+.sl-eb,.sl-pill,.sl-ok{font-family:var(--fm,inherit),monospace}
+.sl-eb{font-size:34px;letter-spacing:.12em;font-weight:500}
+.sl-pill{font-size:42px;font-weight:500;letter-spacing:0}
+.sl-line.f-serif{font-family:var(--fs),Georgia,serif;font-weight:400;letter-spacing:-.02em;text-transform:none;line-height:.95}
+.sl-line.f-serif .mk>i{font-style:italic}
+.sl-line.f-serifup{font-family:var(--fs),Georgia,serif;font-weight:400;letter-spacing:-.025em;text-transform:none;line-height:.95}
+.sl-line.f-mono{font-family:var(--fm),monospace;font-weight:500;letter-spacing:.06em}
+.gr{background-image:var(--grad,linear-gradient(95deg,#7A35FF 0%,#B794FF 55%,#F0E6FF 100%));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;padding:0 .1em 0 .04em;margin:0 -.1em 0 -.04em}
+.gr.red{background-image:var(--gradr,linear-gradient(95deg,#F1283A 0%,#FF8E6B 100%))}
+
+/* ap (apple element world, see ap.js) */
+.ap-bg{position:absolute;inset:0;background:#07060b;overflow:hidden}
+.ap-blob{position:absolute;border-radius:50%}
+.ap-sl{position:absolute;inset:0;visibility:hidden}
+.ap-in{position:absolute;inset:0}
+.ap-flash{position:absolute;inset:0;background:radial-gradient(130% 80% at 50% 40%,#8a2bff 0%,#7300f0 45%,#4b00a8 100%)}
+.ap-hl{position:absolute;left:90px;width:900px;text-align:center;font-weight:760;font-size:92px;line-height:1.04;letter-spacing:-.045em;color:#f5f5f7}
+.ap-hl .ln{display:block;white-space:nowrap}
+.ap-mw{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.04em .04em .26em;margin:0 -.04em -.26em}
+.ap-mw>span,.ap-mw>i{display:inline-block}
+.ap-it{font-family:var(--fs,'Instrument Serif'),serif;font-style:italic;font-weight:400;letter-spacing:-.01em;font-size:1.13em;line-height:1;color:#c9adff}
+.ap-it.gr{padding:0 .12em 0 .04em;margin:0 -.12em 0 -.04em}
+.ap-eye{position:absolute;left:90px;width:900px;text-align:center;font-size:30px;font-weight:650;letter-spacing:.14em;color:#b3b3bd;text-transform:uppercase}
+.ap-glass{position:absolute;background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(255,255,255,.05));border:1.5px solid rgba(255,255,255,.14);box-shadow:0 50px 90px -40px rgba(0,0,0,.75)}
+#cap.apple{left:90px;width:900px;top:1452px;height:100px}
+#cap.apple .cp{background:rgba(10,8,16,.55);border-radius:24px;padding:14px 28px;gap:0 13px;max-width:900px}
+#cap.apple .cw{font-size:46px;font-weight:680;letter-spacing:-.02em}

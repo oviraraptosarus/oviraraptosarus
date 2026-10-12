@@ -1,0 +1,28 @@
+{
+ "name": "cold-call-ai-v2 heart",
+ "voice": "af_heart",
+ "base_speed": 1.12,
+ "seed": 21,
+ "takes": 6,
+ "lead_ms": 40,
+ "pause_scale": 1.0,
+ "pause_max": 900,
+ "phrases": [
+  {"t": "Stop calling strangers.", "speed": 1.08, "pause": 180, "e": 0.95},
+  {"t": "The money is with the people who already asked.", "speed": 1.1, "pause": 300, "e": 0.8},
+  {"t": "Most go quiet while you are busy coaching.", "speed": 1.08, "pause": 340, "e": 0.6},
+  {"t": "AI answers every one in under sixty seconds, in your voice.", "speed": 1.12, "pause": 400, "e": 0.9, "cap": "AI answers every one in under 60 seconds, in your voice."},
+  {"t": "Three short questions sort out the serious buyers.", "speed": 1.1, "pause": 300, "e": 0.75},
+  {"t": "Reminders make sure they actually show up.", "speed": 1.1, "pause": 420, "e": 0.7},
+  {"t": "Does it sound like a robot?", "speed": 0.98, "pause": 260, "e": 0.55, "q": 8, "q_tail": 0.5},
+  {"t": "No. It writes in your voice, and you approve every message.", "speed": 1.12, "pause": 420, "e": 0.75},
+  {"t": "Can't I just follow up myself?", "speed": 0.98, "pause": 260, "e": 0.55, "q": 8, "q_tail": 0.5},
+  {"t": "You can. Not at two in the morning, for twenty one days.", "speed": 1.1, "pause": 420, "e": 0.75, "cap": "You can. Not at 2 AM, for 21 days."},
+  {"t": "What if they are not ready?", "speed": 0.98, "pause": 260, "e": 0.55, "q": 8, "q_tail": 0.45},
+  {"t": "They get pointed to your content. Quiet ones get a check in every month.", "speed": 1.12, "pause": 420, "e": 0.7},
+  {"t": "More paying clients. Calls worth taking.", "speed": 1.06, "pause": 380, "e": 0.85},
+  {"t": "Cold calling chases.", "speed": 1.06, "pause": 140, "e": 0.8},
+  {"t": "DUXIO answers.", "speed": 1.0, "pause": 440, "e": 0.95},
+  {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95}
+ ]
+}

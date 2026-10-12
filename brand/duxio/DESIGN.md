@@ -19,7 +19,14 @@ Source of truth for how DUXIO looks. Built only from `tokens/tokens.json`, `toke
 Glass panels in video: fill `rgba(255,255,255,.04)`, 1px border `rgba(255,255,255,.09)`, 28px radius. No blobs.
 
 ## Type
-Plus Jakarta Sans 400 to 800. Display weight 800, tracking about -0.03em on video (-0.02em on web). Eyebrows uppercase, tracking +0.08em. Instrument Serif italic for one accent word at most. Inter variable for UI.
+Web and older reels: Plus Jakarta Sans 400 to 800 (new reels use Inter + Instrument Serif, see below). Display weight 800, tracking about -0.03em on video (-0.02em on web). Eyebrows uppercase, tracking +0.08em. Instrument Serif italic for one accent word at most. Inter variable for UI.
+
+## Reel look, owner rules (2026-10-12, from the liked `duxio-reel` and v2 feedback)
+1. **Show, don't just say.** Every beat has a built visual element, not only text: iOS notifications, a call screen, chat bubbles, toggles, a calendar, a lock screen, progress bars, a counting badge. Think Apple. The kit scene is `ap` (`edits/duxio-reel-kit/kit/ap.js`).
+2. **Fonts for reels:** Inter variable (display 760, light 250 for big numbers) plus Instrument Serif italic for the highlighted words. Plus Jakarta Sans is for the website and the older reels; the owner called it basic.
+3. **Gradient only on the words that need highlighting** (violet, `--grad`; red `--gradr` for loss words). Body type stays solid. A soft violet bloom behind the frame is kept because the liked reel has it. No other gradients on text.
+4. **Questions must sound like questions.** Objection lines are phrased as real questions and the voice ends on a rising pitch (`q` in the voice script, WORLD tail glide in `voiceover-pacing/director.py`). Check the contour, don't assume.
+5. **Outcome first** (`duxio-brand` §0): money, call quality, show rate, time back. Not "saving leads".
 
 ## Shape and space
 Radius 10 / 16 / 24 and pill. 8px grid. One idea per frame, generous margin.

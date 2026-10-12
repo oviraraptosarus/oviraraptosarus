@@ -251,10 +251,14 @@ S.slab = (c) => {
     if (s.eyebrow) { const e = $(cam, "sl-eb", "", s.eyebrow); tl.fromTo(e, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: EASE }, t0 + 0.05); }
     const col = $(push, "sl-col", `top:${s.top ?? 200}px`);
     s.lines.forEach((l) => {
-      const row = $(col, "sl-line" + (l.outline ? " ol" : ""), `font-size:${l.size}px;${l.color ? "color:" + l.color + ";" : ""}${l.gap != null ? "margin-top:" + l.gap + "px;" : ""}${l.lc ? "text-transform:none;letter-spacing:-.03em;font-weight:700;" : ""}`);
+      const row = $(col, "sl-line" + (l.outline ? " ol" : "") + (l.ff ? " f-" + l.ff : ""), `font-size:${l.size}px;${l.w ? "font-weight:" + l.w + ";" : ""}${l.color ? "color:" + l.color + ";" : ""}${l.gap != null ? "margin-top:" + l.gap + "px;" : ""}${l.lc ? "text-transform:none;letter-spacing:-.03em;font-weight:700;" : ""}`);
       l.t.split(" ").forEach((w, wi) => {
-        const em = w.startsWith("*") && w.endsWith("*"), txt = em ? w.slice(1, -1) : w;
-        const m = $(row, "mk" + (l.slam ? " sv" : ""), l.strike ? "position:relative" : ""), i = $(m, em ? "serif" : "", em ? `color:${s.acc || "#B794FF"};font-size:${l.size * 1.18}px;text-transform:none;letter-spacing:-.03em` : "", txt);
+        const em = w.startsWith("*") && w.endsWith("*"), br = w.startsWith("{") && w.endsWith("}"), txt = em || br ? w.slice(1, -1) : w;
+        const gcls = (p.grad ? " gr" : "") + (s.gr === "red" ? " red" : "");
+        const m = $(row, "mk" + (l.slam ? " sv" : ""), l.strike ? "position:relative" : ""),
+          i = p.grad
+            ? $(m, (em ? "serif" : "") + (em || br || l.grad ? gcls : ""), em ? `font-size:${l.size * 1.12}px;text-transform:none;letter-spacing:-.02em;font-style:italic` : "", txt)
+            : $(m, em ? "serif" : "", em ? `color:${s.acc || "#B794FF"};font-size:${l.size * 1.18}px;text-transform:none;letter-spacing:-.03em` : "", txt);
         if (l.slam) tl.fromTo(i, { scale: 1.4, opacity: 0, transformOrigin: "30% 70%" }, { scale: 1, opacity: 1, duration: 0.26, ease: "power4.out" }, T(l.c) + wi * 0.07);
         else tl.fromTo(i, rise, { yPercent: 0, duration: 0.42, ease: EASE }, T(l.c) + wi * 0.07);
         if (l.strike != null) { const k = $(m, "th-strike"); tl.fromTo(k, { scaleX: 0 }, { scaleX: 1, duration: 0.2, ease: "power3.out" }, T(l.strike)); }
@@ -272,7 +276,7 @@ S.slab = (c) => {
       tl.fromTo(pl, { x: -90, opacity: 0, scale: 0.9 }, { x: 0, opacity: 1, scale: 1, duration: 0.3, ease: POP }, T(s.xc[i]));
     });
     if (s.x === "bar") {
-      const bar = $(push, "sl-bar"), fill = $(bar, "", "", "<i></i>").firstChild, ok = $(push, "sl-ok", "", "Replied");
+      const bt = s.barTop ?? 1290, bar = $(push, "sl-bar", `top:${bt}px`), fill = $(bar, "", "", "<i></i>").firstChild, ok = $(push, "sl-ok", `top:${bt + 80}px`, "Replied");
       tl.fromTo(fill, { scaleX: 0 }, { scaleX: 1, duration: T(s.xc[1]) - T(s.xc[0]), ease: "none" }, T(s.xc[0]));
       tl.fromTo(ok, { scale: 0.5, opacity: 0, rotation: -4, transformOrigin: "0% 50%" }, { scale: 1, opacity: 1, rotation: 0, duration: 0.4, ease: POP }, T(s.xc[1]));
     }

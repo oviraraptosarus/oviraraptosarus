@@ -52,5 +52,6 @@ Visuals, images, footage, screenshots, music, logos and similar assets come from
 - 2026-10-12 · Spent session budget on analysis, measuring and a render before asking the owner anything. The owner wants questions first and a cheap, fast build.
 - 2026-10-12 · Showed a popup question round. The owner wants all questions in one plain message.
 - 2026-10-12 · Reel "cold-call-ai" framed DUXIO mostly as answering and following up leads. Owner: sell the outcome (more money, better lead quality, other industry pains), not just saving leads. Saved as `duxio-brand` §0 (and pre-flight check 8).
+- 2026-10-12 · Reel "cold-call-ai" v1 was giant text only. Owner liked their earlier 59s `duxio-reel` (Apple style UI elements, Inter + Instrument Serif italic) better and asked for visual elements instead of text like "2 AM", gradient only on highlight words, more premium fonts, and questions that sound like questions. Saved as `brand/duxio/DESIGN.md` "Reel look, owner rules" 1 to 5 and the `ap` scene.
 - 2026-10-12 · Owner reminded me: always ask them for visuals and other assets (they will provide). Saved as rule 3d.
 - 2026-10-12 · Assumed DUXIO and a 10 second format. The owner's content varies by niche; ask every time.

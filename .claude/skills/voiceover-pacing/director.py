@@ -78,6 +78,34 @@ def nudge(a, st, gain_db):
     return a * (10 ** (gain_db / 20.0))
 
 
+def lift(a, st, tail=0.45, xf=0.02):
+    """Question intonation. Only the last `tail` seconds are re-synthesised (WORLD): the voiced contour is replaced by a glide
+    from the tail's low point up `st` semitones, so the phrase ends on a rise even when the TTS falls. The head stays untouched."""
+    x = a.astype(np.float64)
+    f0, t = pw.harvest(x, SR, f0_floor=70, f0_ceil=500, frame_period=5)
+    sp = pw.cheaptrick(x, f0, t, SR)
+    ap = pw.d4c(x, f0, t, SR)
+    k0 = int(np.searchsorted(t, len(x) / SR - tail))
+    v = np.where(f0[k0:] > 0)[0] + k0
+    if len(v) < 8:
+        return a
+    base = np.percentile(f0[v], 25)
+    ramp = np.clip((np.arange(len(f0)) - v[0]) / max(1, v[-1] - v[0]), 0, 1) ** 1.4
+    new = f0.copy()
+    new[v] = base * 2 ** (st * ramp[v] / 12.0)
+    for k in range(v[0], v[-1]):                      # bridge gaps of up to 3 frames so the glide stays continuous
+        if new[k] == 0 and (new[max(k - 3, 0):k] > 0).any() and (new[k:k + 4] > 0).any():
+            new[k] = base * 2 ** (st * ramp[k] / 12.0)
+    y = pw.synthesize(new[k0:], sp[k0:], ap[k0:], SR, frame_period=5)
+    s0 = int(round(t[k0] * SR))
+    y = y[: len(x) - s0]
+    ref = np.sqrt(np.mean(x[s0:] ** 2)) + 1e-9
+    y = y * (ref / (np.sqrt(np.mean(y ** 2)) + 1e-9))
+    c = min(int(xf * SR), len(y) // 2, s0)
+    w = np.linspace(0, 1, c)
+    return np.concatenate([x[: s0 - c], x[s0 - c: s0] * (1 - w) + y[:c] * w, y[c:]])
+
+
 def roughness(a):
     """Lower is cleaner. Counts pitch jumps and breathy/noisy voiced frames (the raspy glitches)."""
     x = a.astype(np.float64)
@@ -137,6 +165,8 @@ def build(script, out_mp3, report=False):
                       rise=p.get("rise", 0) * S, reset=p.get("reset", 0) * S, gain_db=p.get("gain", 0))
         else:                                # clean path: best of N takes, no resynthesis, no pitch shifting
             a = a * (10 ** (p.get("gain", 0) / 20.0))
+        if p.get("q"):                       # question: end the phrase on a rising pitch (semitones)
+            a = lift(a, p["q"], tail=p.get("q_tail", 0.42))
         a = fade(a)
         dur = len(a) / SR
         timings.append({"text": p["t"], "start": round(t, 3), "end": round(t + dur, 3), "e": p.get("e", 0.6)})

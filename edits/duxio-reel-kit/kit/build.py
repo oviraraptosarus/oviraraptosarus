@@ -96,8 +96,13 @@ def main():
 
     fonts = "".join(f"@font-face{{font-family:'Plus Jakarta Sans';font-weight:{w};src:url('assets/fonts/plus-jakarta-sans-latin-{w}-normal.woff2') format('woff2')}}" for w in (400, 500, 600, 700, 800))
     fonts += "@font-face{font-family:'Instrument Serif';font-style:italic;src:url('assets/fonts/instrument-serif-latin-400-italic.woff2') format('woff2')}"
+    for f in reel.get("fonts", []):   # extra faces: {family, file (in brand/duxio/fonts), weight, style}
+        shutil.copy(os.path.join(FONTS, f["file"]), os.path.join(assets, "fonts", f["file"]))
+        fonts += f"@font-face{{font-family:'{f['family']}';font-weight:{f.get('weight', 400)};font-style:{f.get('style', 'normal')};src:url('assets/fonts/{f['file']}') format('woff2')}}"
     css = open(os.path.join(HERE, "kit.css"), encoding="utf-8").read(); js = open(os.path.join(HERE, "scenes.js"), encoding="utf-8").read()
-    data = {"beats": cues_out, "phrases": phrases, "total": total, "captionLight": reel.get("captionLight", False), "capChunk": reel.get("capChunk", 0)}
+    apjs = os.path.join(HERE, "ap.js")
+    if os.path.exists(apjs): js += "\n" + open(apjs, encoding="utf-8").read()   # Apple element scenes (S.ap)
+    data = {"beats": cues_out, "phrases": phrases, "total": total, "captionLight": reel.get("captionLight", False), "capChunk": reel.get("capChunk", 0), "capClass": reel.get("capClass", "")}
     html = f"""<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
 <script src="gsap.min.js"></script><style>{fonts}{css}{":root{" + ";".join(f"{k}:{v}" for k, v in reel.get("vars", {}).items()) + "}"}</style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total}" data-width="1080" data-height="1920">
@@ -111,7 +116,7 @@ R.beats.forEach((b,i)=>{{
   const el=$(root,"scene "+b.bg); tl.set(el,{{visibility:"visible"}},b.start); tl.set(el,{{visibility:"hidden"}},b.end);
   b.layers.forEach(L=>S[L.scene]({{tl,el,props:L.props,cue:(k)=>L.cues[k]?L.cues[k].t:undefined,start:b.start,end:b.end}}));
 }});
-buildCaptions(tl,root,R.phrases,R.captionLight,R.capChunk);
+buildCaptions(tl,root,R.phrases,R.captionLight,R.capChunk); if(R.capClass) document.getElementById("cap").classList.add(R.capClass);
 tl.set({{}},{{}},R.total);
 window.__timelines=window.__timelines||{{}}; window.__timelines["main"]=tl;
 </script></body></html>"""
