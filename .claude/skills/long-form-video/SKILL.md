@@ -18,10 +18,10 @@ Sits on top of `make-video`. Its question round, `OWNER-RULES.md` and the qualit
 | Real screenshot and scroll B-roll as proof | Playwright MCP or Chrome, saving real pages (a real tweet, doc or repo page, never a mock) | available, untested here |
 | Music and SFX | `brand/duxio/music/library/`, `brand/duxio/sfx/`, then `music-director`. Pixabay audio is allowed if the licence is recorded. **StreamBeats licence for monetised YouTube is unverified; check before use** | |
 | Finish | FFmpeg: cut, loudness, black frame check, final render | installed |
-| Screen recorder with auto zoom | OpenScreen (MIT, siddharthvaddem/openscreen, 284 MB Windows installer) | **not installed**: a GUI recorder, only needed if the owner records screens. Ask before downloading |
+| Screen recorder with auto zoom (and webcam, for face content) | OpenScreen v1.5.0 (MIT, siddharthvaddem/openscreen), installed at `%LOCALAPPDATA%\Programs\Openscreen\Openscreen.exe` (SHA-256 checked; the silent installer crashed, the normal installer worked) | installed, not opened or tested |
 
 ## Which route
-- **Owner supplies talking-head or screen footage:** `ai-editor` (`start` → `cut` → `style-edit`), with `taste` saving every correction. Our additions: Hyperframes overlays instead of Remotion where the look matters, our loudness master, our framework hooks.
+- **Owner supplies talking-head, face or screen footage (face content works too):** `ai-editor` (`start` → `cut` → `style-edit`), with `taste` saving every correction. Our additions: Hyperframes overlays instead of Remotion where the look matters, our loudness master, our framework hooks.
 - **Faceless or generated YouTube (the common case for the owner):** no footage to cut. Script (copy skills) → voice (`voiceover-pacing`) → scenes in Hyperframes with real screenshot and licensed imagery → chapters → music and SFX → FFmpeg. Same framework, longer.
 - **Copy a creator's pacing:** run `creator-teardown` on their videos, save the numbers as a style, feed `style-edit` or our beat sheet.
 
