@@ -1,0 +1,40 @@
+# Allowed facts (every claim in the script must trace to one of these)
+From the DUXIO site (duxio-website-for-coaches) and the owner's own messages:
+- DUXIO builds and runs the follow-up that moves interested leads to booked sales calls, for coaches.
+- Every lead gets an answer in under a minute, written in the coach's voice; the coach approves the messages.
+- A few short questions sort serious buyers; the coach gets a text when someone looks ready.
+- Three weeks of follow-up: the coach's story, a real result, then an invite to book.
+- Reminders before every call: 24h, 2h and 10m.
+- Quiet leads get a short human check-in every month, reopened for 90 days.
+- A weekly report.
+- Built inside the coach's own accounts; it stays theirs. Nothing new to learn; about 30 minutes of the coach's time to set up.
+- Fit: offers of $1,000+ and at least 20 leads a month (owner's qualifier). Not for people with no leads.
+- CTA: free 30-minute Coach Funnel Audit; "we map your leaks live"; "no pitch until you ask for one" (owner's terms).
+- Real third-party stat (allowed, must be cited on screen): Harvard Business Review, "The Short Life of Online Sales Leads" (2011): firms that tried to contact leads within an hour were nearly seven times as likely to qualify the lead as those that waited even an hour longer.
+NOT allowed: client results, testimonials, invented stats or percentages, guarantees or refunds, invented scarcity, prices (owner prefers price on the call).
+Format: 16:9 faceless VSL, synthetic or owner voiceover, exactly 1:57. Spoken words must fit: ≤ 295 words.
+Visual language already built: a phone and CRM story about one lead ("Maya"): DM at 2:14 PM, reply at 10:02 PM, silence, a no-show; then a rewind and the same DM run through the DUXIO Lead-to-Call System.
+
+Additions (owner sources):
+- The owner's vault describes the core offer as a GoHighLevel-powered client acquisition system, built in the client's accounts.
+- The site's calculator uses a $3,000 offer as an *illustration* ("an illustration, not a forecast"). Use it only conditionally ("if your offer is…").
+- The site FAQ says messages are "written in your voice and approved". The reading used here is that the coach approves the message set before it goes live. Flagged to confirm with the owner.
+- Positioning (site hero): "We build and run the follow up that moves serious buyers from first interest to a booked sales call."
+- The owner's vault describes the audit scope: inspect the offer, lead capture, booking flow, follow-up and pipeline, to find a real problem and decide fit.
+- General, verifiable context: a GoHighLevel "snapshot" is a pre-built template account setup.
+- The same HBR study (Oldroyd, McElheran and Elkington, 2011) also found firms that tried to contact leads within an hour were more than sixty times as likely to qualify them as firms that waited 24 hours or longer. (Verified across secondary reports: smartcompany.com.au 2011, crankwheel and others.)
+
+Confirmed from the site FAQ (page.html, quoted verbatim). These override the earlier "price not allowed" and "approval to confirm" notes:
+- "Will this sound like a robot talking to my people? No. We write every message in your own voice and you approve all of it before anything goes out. Your reputation is the whole point."
+- "Why not just hire an assistant…? An assistant sleeps, forgets and costs more every month. This answers in under a minute, day or night, and never loses a lead."
+- "Reminders go out 24 hours, 2 hours and 10 minutes before the call, plus a short note on how you work, so they arrive warm."
+- "We build it, write it and run it. You get a text when someone serious comes in, and a weekly report. Setup takes about 30 minutes of your time."
+- "Who owns it…? You do. It is built inside your own accounts and your leads stay yours. Nothing is held hostage."
+- "$397 once to build it, then usually $300 to $800 a month to run it, based on your lead volume. You get the exact number on the call before paying anything." (Public on the site, so it may be stated.)
+Still not available: owner name or face, client results or testimonials.
+
+Owner answers (this conversation):
+- No client result or testimonial yet. Do not claim one.
+- Founding offer: 5 founding-coach spots, a genuine cap. Founding clients get a founding-client price and additional implementation support, in exchange for honest feedback. The exact price is not yet confirmed.
+- First reply: the owner's draft is a template, so the script may quote a first-reply message only if the owner sets it as the live message. Proposed: "Hey Maya, thanks for reaching out! What made you look into the program right now?"
+- The owner's framework advice: avoid naming GoHighLevel and other tool jargon in the VSL.

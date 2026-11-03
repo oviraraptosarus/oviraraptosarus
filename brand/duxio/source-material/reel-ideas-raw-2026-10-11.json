@@ -1,0 +1,2362 @@
+[
+ {
+  "id": "A1",
+  "title": "The Jam",
+  "hook_spoken": "They put the coin in. And nothing dropped.",
+  "hook_frame0": "A giant vending machine fills the frame. A glowing violet coin hangs half inside the slot and a snack labelled Your Coaching dangles off its spiral, stuck at the lip. Caption: They put the coin in.",
+  "pain": "People enquire, then ghost. They were interested, but the path to booking had too many steps (people wasting the coach's time, leads lost between first message and call).",
+  "format": "Original: stuck vending machine physics gag, then a keypad strip down",
+  "story": "A lead puts a coin in, the machine jams, we count the seven steps between interested and booked, strip it to three, and the snack drops.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "They put the coin in. And nothing dropped.",
+    "hero_visual": "Full bleed vending machine, snack hanging off the spiral by one corner, violet coin in the slot, red JAM light blinking.",
+    "motion": "Coin clinks in, spiral turns, snack tips forward, stops on a hard stall with a 3 frame shake. Light blinks.",
+    "sound": "Coin clink, motor whirr, grinding stall thud (hook hit at frame 0)."
+   },
+   {
+    "t": "2-7s",
+    "vo": "Here is why. Between I am interested and booked, most coaches make people take seven steps. Reply. Open a link. Find the form. Name. Email. Pick a time. Confirm.",
+    "hero_visual": "The whole screen becomes a huge keypad of seven fat buttons, each stamped with a step. A violet finger glow presses them in order.",
+    "motion": "Each button depresses with a squash and lights up in turn. The row gets slightly harder to press: later buttons are greyer.",
+    "sound": "Seven rising keypad clicks, each a little lower in volume, last one dull."
+   },
+   {
+    "t": "7-13s",
+    "vo": "Count yours. Every extra step is one more spring that can jam. Cut it to three. A question. A time. Done.",
+    "hero_visual": "The keypad: four of the seven buttons snap out sideways and fall off the bottom, leaving three giant buttons labelled Question, Time, Done that slide together and lock into a tight row.",
+    "motion": "Buttons snap off with an elastic ease. The remaining three magnet together with a small overshoot and a light sweep.",
+    "sound": "Four quick snaps, a magnetic clunk as the three join."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Fewer steps, and the snack drops. Comment STEPS and I'll DM you the three step version we use at DUXIO.",
+    "hero_visual": "Back to the vending machine wide: spiral turns, snack drops with a bounce into the tray, a door flap swings. Keyword card STEPS slides into the tray window.",
+    "motion": "Snack falls with two decaying bounces. The keyword card lands with a 3 percent overshoot. Last frame matches frame 0, snack hanging again so it loops.",
+    "sound": "Spiral whirr, bounce thuds, satisfying tray clack, soft pluck on the keyword."
+   }
+  ],
+  "keyword": "STEPS",
+  "length_s": 17,
+  "why_it_stops_scroll": "A stuck snack is a universal tiny tragedy. The viewer has to see if it drops, and the payoff is the satisfying snap of buttons.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A2",
+  "title": "The Gap",
+  "hook_spoken": "Twenty one days of follow up. Watch where it stops.",
+  "hook_frame0": "Top down view of a huge snaking line of 21 standing dominoes across the whole frame with a violet marble frozen an inch from the first one. Caption: Watch where it stops.",
+  "pain": "One message then silence. Coaches follow up once and then the chain dies (the lead gave up, a business that depends on constant availability).",
+  "format": "Original: domino chain run, then a tighter rebuild",
+  "story": "A follow up chain falls for three dominoes and dies at a big gap, so we close the gaps and the whole chain tips into a booked call.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Twenty one days of follow up. Watch where it stops.",
+    "hero_visual": "Full frame top down domino snake, each tile numbered Day 1 to Day 21, marble about to touch Day 1.",
+    "motion": "Marble rolls in, first tile tips, chain falls fast.",
+    "sound": "Hook hit, rapid wooden clacks."
+   },
+   {
+    "t": "2-6s",
+    "vo": "Day one. Day two. Day three. And then a gap.",
+    "hero_visual": "The fall stops dead at Day 3. The camera view is the gap itself: a huge empty stretch of floor with a chunky ruler measuring it, red tick marks.",
+    "motion": "Last tile leans, does not reach, wobbles back. A ruler draws across the gap and a red number counts up as the days pass.",
+    "sound": "Clacks stop, one dull thud, ruler ticking."
+   },
+   {
+    "t": "6-12s",
+    "vo": "Most coaches follow up once, then wait two weeks. A chain only falls if every gap is small enough. Keep every gap under a week, and keep each message short.",
+    "hero_visual": "A reset: tiles zip back up into new spacing on a calendar grid, tight at the start and a little wider later. Week markers run under them.",
+    "motion": "Tiles spring upright one by one with a pop. Spacing slides in an eased snap to the new layout.",
+    "sound": "Rapid pop sequence rising in pitch as tiles stand."
+   },
+   {
+    "t": "12-19s",
+    "vo": "Now watch. Every tile falls, and the last one lands right on a booked call. Comment CHAIN and I'll DM you the spacing we use.",
+    "hero_visual": "Full run again, camera tracks the fall along the S curve, last tile lands on a big calendar card that flips to Booked (Example). Keyword card CHAIN.",
+    "motion": "Chain falls with a pitch that rises per tile, the last tile pushes the card into a flip. Keyword card lands with overshoot.",
+    "sound": "Rising wooden clack ladder, a deep satisfying land thud, pluck."
+   }
+  ],
+  "keyword": "CHAIN",
+  "length_s": 19,
+  "why_it_stops_scroll": "Domino runs are hypnotic and the viewer wants to know where it breaks. The rising pitch of the clacks is pure ASMR.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A3",
+  "title": "Ten Marbles",
+  "hook_spoken": "Ten people asked about your coaching. How many reach the bottom?",
+  "hook_frame0": "Ten glowing violet marbles stacked at the neck of a huge glass funnel with three hatches down its side. Caption: 10 asked. How many reach the bottom?",
+  "pain": "Flying blind on numbers. Coaches do not know how many enquiries answer, book or show up.",
+  "format": "Original: marble funnel with trapdoor gates, counting game",
+  "story": "Ten marbles drop through three gates and the viewer sees how few reach the end, then learns the four number sticky note to track.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Ten people asked about your coaching. How many reach the bottom?",
+    "hero_visual": "Full screen glass funnel, ten marbles ready, three hatch gates labelled Answered, Booked, Showed up.",
+    "motion": "Marbles hover and tremble, then release.",
+    "sound": "Hook hit then marble rattle."
+   },
+   {
+    "t": "2-8s",
+    "vo": "Gate one, did you answer them. Gate two, did they book. Gate three, did they show up. Watch.",
+    "hero_visual": "Close on each gate in turn: a hatch swings open and some marbles drop out into the dark and turn grey while the rest roll on. Example counts: 10, then 6, then 4, then 3.",
+    "motion": "Hatch flaps down with a snap, grey marbles fall off screen with a bounce, a big number rolls down to the remaining count.",
+    "sound": "Hatch clunk, marble clatter falling, dull plops, number tick."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Most coaches never count. So here is the cheapest fix there is. A sticky note. Four lines. Asked. Answered. Booked. Showed up. Fill it in every Friday.",
+    "hero_visual": "A giant yellow sticky note fills the screen and a pen handwrites four lines with blank number boxes, then boxes fill with Example numbers.",
+    "motion": "Handwriting draws on with a path stroke, boxes count up and land with a small pop. Note peels slightly at one corner.",
+    "sound": "Pen scratch, tick per number, paper rustle."
+   },
+   {
+    "t": "14-19s",
+    "vo": "The gate that leaks most is the one to fix first. Comment JAR and I'll DM you the note to copy.",
+    "hero_visual": "The funnel returns, the biggest leaking gate glows red and a patch slides over it, a marble count pours into a full jar. Keyword card JAR.",
+    "motion": "Red glow pulses once, patch slaps on with a squash, marbles tumble into a jar. Last frame holds marbles at the funnel top for the loop.",
+    "sound": "Slap, marble pour, pluck."
+   }
+  ],
+  "keyword": "JAR",
+  "length_s": 19,
+  "why_it_stops_scroll": "A counting game with physical objects makes the viewer guess an answer before it is shown. Marbles dropping through gates is deeply satisfying.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "A4",
+  "title": "The Block Tower",
+  "hook_spoken": "Your business is a wobbly tower. Guess which block you are.",
+  "hook_frame0": "A tall wooden block tower fills the frame, wobbling slightly, with the bottom block labelled YOU in big letters. A single block in the middle is slid half out. Caption: Pull the wrong block.",
+  "pain": "The business that cannot run without the coach, and the coach does sales, replies and delivery alone.",
+  "format": "Original: block pulling game with a collapse",
+  "story": "Pulling out daily jobs makes the tower wobble until it collapses, so the coach sorts jobs into only they can do and the rest, and builds a second tower for the rest.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Your business is a wobbly tower. Guess which block is you.",
+    "hero_visual": "Full height tower of blocks each labelled with a job: Replies, Reminders, Follow ups, Scheduling, Sales calls, Coaching. The bottom block reads YOU.",
+    "motion": "Tower sways with a spring, a block slides half out.",
+    "sound": "Hook hit, wood creak."
+   },
+   {
+    "t": "2-8s",
+    "vo": "Replies. Reminders. Follow ups. Scheduling. All pulled from the same tower. And it all rests on one block.",
+    "hero_visual": "Close side view as block after block slides out and gets placed on top, tower leaning more with each, until the whole thing tips and crashes across the frame.",
+    "motion": "Each pull is a fast slide and stack with a growing tilt. Collapse: blocks tumble with squash and bounce, a camera shake of 3 frames.",
+    "sound": "Wooden slide, stack tap, rumbling crash."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Here is the fix. Write down everything you do in a week. Circle what only you can do. That is the coaching. Everything else is a job for a system.",
+    "hero_visual": "Blocks lie across the floor. The Coaching block glows violet and floats to the left. Everything else is swept by a line into a second tower on the right.",
+    "motion": "Violet glow on one block, the rest slide by a sweeping wipe and snap into a neat second tower with a click each.",
+    "sound": "Soft whoosh, clicks as blocks lock."
+   },
+   {
+    "t": "14-19s",
+    "vo": "Now the tower stands, because you are not holding it up alone. Comment TOWER and I'll DM you the weekly audit sheet.",
+    "hero_visual": "Two towers side by side, perfectly still, a small sparkle on the top block. Keyword card TOWER.",
+    "motion": "Towers settle with a 2 percent overshoot. Last frame returns to the first frame wobble for the loop.",
+    "sound": "Settle thud, pluck."
+   }
+  ],
+  "keyword": "TOWER",
+  "length_s": 19,
+  "why_it_stops_scroll": "A tower that is about to fall is pure tension. Everyone wants to see the crash, and the sort then snap is the reward.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "A5",
+  "title": "The Receipt",
+  "hook_spoken": "This is your job description. It is printed on a receipt.",
+  "hook_frame0": "A thermal receipt printer fills the bottom of the frame with a huge white receipt rolling up out of the top of the screen. Header reads TODAY'S JOB TITLES. Final line, already visible, reads TOTAL: 1 PERSON.",
+  "pain": "The constant whiplash of wearing opposing hats: coach, marketer, receptionist, tech support, all at once.",
+  "format": "Original: receipt printer ASMR with a tear off",
+  "story": "A receipt printer spits out every job a solo coach does, one is circled as the only one that earns, and the rest is torn off onto a second receipt.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "This is your job description. It is printed on a receipt.",
+    "hero_visual": "Giant receipt scrolling up the full frame, TOTAL: 1 PERSON stamped at the bottom.",
+    "motion": "Receipt feeds upward with a steady ratchet, lines appear row by row.",
+    "sound": "Hook hit, thermal printer buzz."
+   },
+   {
+    "t": "2-8s",
+    "vo": "Coach. Copywriter. Editor. Receptionist. Scheduler. Collections. Tech support. All of them, at once, by one person.",
+    "hero_visual": "Close on the text lines racing out of the printer, each job title a huge bold line in black ink on white paper, the paper ripples as it feeds.",
+    "motion": "Each line prints in with a quick horizontal reveal and a tiny paper jitter. Speed rises, and the last lines stack almost too fast to read.",
+    "sound": "Print buzz rising in pitch, tick per line."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Only one of those lines is the reason people pay you. Circle it.",
+    "hero_visual": "A thick violet marker circles the word Coach, ink bleeding slightly, while every other line fades to grey.",
+    "motion": "Circle draws on with a path stroke and a wobble. Other lines drop to 30 percent with a quick fade.",
+    "sound": "Marker squeak, soft thud."
+   },
+   {
+    "t": "13-19s",
+    "vo": "Now tear off the rest. Hand each one to a system. We run that part for coaches. Comment HATS and I'll DM you the hat audit.",
+    "hero_visual": "A serrated tear line sweeps across, the grey lines rip off the strip and flutter into a second receipt headed BACKEND, while the coach's receipt is one clean line. Keyword card HATS.",
+    "motion": "A tear wipe along a zigzag line, paper piece rotates away, second receipt prints the lines at pace. Keyword card lands.",
+    "sound": "Paper rip, printer buzz, pluck."
+   }
+  ],
+  "keyword": "HATS",
+  "length_s": 19,
+  "why_it_stops_scroll": "A never ending receipt is a known viral shape and the sound is addictive. The ending total is a joke the viewer wants to see land.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A6",
+  "title": "Find the DM",
+  "hook_spoken": "Find the DM that is ready to buy. You have ten seconds.",
+  "hook_frame0": "A screen stuffed with fourteen overlapping app windows, shaking, with a countdown 0:10 in huge numbers across the middle. A tiny violet DM bubble is barely visible under one window. Caption: Find the DM.",
+  "pain": "Juggling many tools and wrestling with tech stacks, so a real enquiry gets lost in the pile of tabs.",
+  "format": "Original: find it game then magnetic snap satisfying loop",
+  "story": "The viewer loses the find it game, then every window snaps into one tidy inbox and the buried DM is answered in a single tap.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Find the DM that is ready to buy. You have ten seconds.",
+    "hero_visual": "Chaos of windows filling the full frame, countdown 0:10 huge.",
+    "motion": "Windows jitter and drift, the countdown ticks down fast.",
+    "sound": "Hook hit, ticking clock."
+   },
+   {
+    "t": "2-6s",
+    "vo": "Too slow. Most coaches keep seven different places where people can message them.",
+    "hero_visual": "Timer hits zero, a red flash, the bubble slides further under a window. Seven icons without names pop up as big blank tiles, labelled DMs, Email, Form, Texts, Comments, Calendar, Notes.",
+    "motion": "Timer slams to zero with a shake. Tiles pop in with a stagger.",
+    "sound": "Buzzer, seven pops."
+   },
+   {
+    "t": "6-13s",
+    "vo": "One inbox. Everything lands in the same place. Watch them snap.",
+    "hero_visual": "All windows fly toward the center and magnet snap into a neat grid, then fold into one single tall column. Each snap is a tiny flash.",
+    "motion": "Windows ease in with a magnetic overshoot, grid then column, each one locking with a click flash.",
+    "sound": "Magnet clicks in a tight cascade, final deep lock."
+   },
+   {
+    "t": "13-19s",
+    "vo": "Now the DM is the first thing you see. Check that one place at set times and nothing hides. Comment MERGE and I'll DM you the one inbox setup.",
+    "hero_visual": "The column glows and the bubble rises to the top, a violet check draws on, Replied. Keyword card MERGE.",
+    "motion": "Bubble floats up with an ease, check draws, keyword card lands. The loop returns to the chaos by a quick re scatter.",
+    "sound": "Pluck, send sound, soft confirm."
+   }
+  ],
+  "keyword": "MERGE",
+  "length_s": 19,
+  "why_it_stops_scroll": "A visible countdown and a hidden object turn the viewer into a player who feels compelled to search. The snap cascade is a perfect tidy up payoff.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A7",
+  "title": "The Falling Blocks",
+  "hook_spoken": "Your week, as a game of falling blocks. There is no spot for the reply.",
+  "hook_frame0": "A giant falling blocks game board filling the whole screen, stacked to the top with chunky blocks labelled Client call, Client call, Client call. A single violet block labelled Reply hovers above with nowhere to land. Caption: There is no spot for the reply.",
+  "pain": "Training clients 55 to 60 hours a week leaves zero hours to reply.",
+  "format": "Original: falling block puzzle, line clear satisfying",
+  "story": "The reply block cannot fit into a packed week, so a five minute gap is built after each session and the whole row clears.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Your week, as a game of falling blocks. There is no spot for the reply.",
+    "hero_visual": "Full board, packed, Reply block hovering at the top.",
+    "motion": "The piece drops one step at a time and bounces off the top of the stack.",
+    "sound": "Hook hit, arcade blip."
+   },
+   {
+    "t": "2-7s",
+    "vo": "Back to back sessions, all day. Messages come in during the gap that does not exist.",
+    "hero_visual": "Reply block slams into the pile, the board flashes red, GAME OVER in huge arcade letters, while little DM bubbles pile up behind it.",
+    "motion": "Slam, red flash, text drops in with a bounce.",
+    "sound": "Game over jingle (short, not a chime), low thud."
+   },
+   {
+    "t": "7-13s",
+    "vo": "So build the gap. Five minutes after every session, on purpose. It is a block in the week, just like a client.",
+    "hero_visual": "The board resets. A column of narrow violet blocks labelled Replies, five minutes slides into the gaps between every Client call block.",
+    "motion": "Blocks fall in turn and lock with a snap, each with a tiny flash.",
+    "sound": "Lock clicks on a rising scale."
+   },
+   {
+    "t": "13-19s",
+    "vo": "Now watch. Every row clears. Comment BLOCKS and I'll DM you the five minute reply routine.",
+    "hero_visual": "Rows light up white and clear in a cascade, the whole board collapsing down into a tidy week. Keyword card BLOCKS.",
+    "motion": "Row flashes, rows vanish with a vertical squash, blocks fall to fill. Keyword card lands.",
+    "sound": "Line clear whoosh x4, rising pluck."
+   }
+  ],
+  "keyword": "BLOCKS",
+  "length_s": 19,
+  "why_it_stops_scroll": "Everybody knows this game and wants to see the piece not fit. The line clear cascade is the most satisfying moment in gaming.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A8",
+  "title": "Press Rewind",
+  "hook_spoken": "This call got booked. Rewind to find out why.",
+  "hook_frame0": "A giant calendar tile reading Booked, Thursday 2pm (Example) with a huge violet rewind symbol over it and a tape counter at 21:00. Caption: Press rewind. Find the message that did it.",
+  "pain": "Coaches cannot tell which follow up message actually brings someone back (leads die between first message and call, content is not the issue).",
+  "format": "Original: backwards detective rewind with a single reveal",
+  "story": "The video rewinds a booked call back through reminders and check ins to one message on day nine that did the work, then breaks down why it worked.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "This call got booked. Rewind to find out why.",
+    "hero_visual": "Calendar tile fills the frame, rewind symbol pulses, counter at 21 days.",
+    "motion": "Tape counter starts rolling down.",
+    "sound": "Hook hit, tape whir."
+   },
+   {
+    "t": "2-7s",
+    "vo": "Rewind past the reminders. Rewind past the check ins. Past the first reply.",
+    "hero_visual": "A flipbook of huge message cards rushes backwards across the screen: Reminder, Reminder, Check in, Check in, First reply, with the day counter ticking down from 21 to 9.",
+    "motion": "Cards fly in reverse with a motion smear, counter rolls down and slams on 9.",
+    "sound": "Rewind squeal, tape stop thunk."
+   },
+   {
+    "t": "7-13s",
+    "vo": "Day nine. One message. Is this right for someone like me? They never said it. So the message answered it for them.",
+    "hero_visual": "A single giant message card centered on black. Four words in big Instrument Serif italic glow: someone like me. Rest of the text types out in plain type.",
+    "motion": "Card drops into the center with an overshoot, the highlighted words get a violet underline that draws on.",
+    "sound": "Tape stop thud, typing patter, soft pluck on the phrase."
+   },
+   {
+    "t": "13-19s",
+    "vo": "Write one for your best client type. Name who it is for, then what changed for someone like them. Comment LIKEME and I'll DM you the template.",
+    "hero_visual": "A fill in the blank template card builds on screen with highlighted gaps. Then the calendar tile flashes back in, Booked. Keyword card LIKEME.",
+    "motion": "Blanks fill with Example words by a typing reveal, then a whip pan wipe returns to the Booked tile for the loop.",
+    "sound": "Typing, swish, pluck."
+   }
+  ],
+  "keyword": "LIKEME",
+  "length_s": 19,
+  "why_it_stops_scroll": "A mystery told in reverse makes viewers lean in to find the culprit, and the flipbook rewind is both fun and noisy.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "A9",
+  "title": "The Ice Cube",
+  "hook_spoken": "This call is booked for next Friday. It will not make it.",
+  "hook_frame0": "A big ice cube labelled Call, Next Friday sitting on a hot plate, steaming, already dripping. Caption: Will it last until Friday?",
+  "pain": "Getting people to actually show up after they book is brutal; something came up.",
+  "format": "Original: melting ice cube metaphor, then a slide to a closer date",
+  "story": "A call booked far away melts before the day arrives, so the coach moves the booking window closer and the cube stays solid.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "This call is booked for next Friday. It will not make it.",
+    "hero_visual": "Full frame ice cube, labelled Call, Next Friday, melting on a glowing hot plate with steam curling up.",
+    "motion": "The cube shrinks and drips, puddle spreading.",
+    "sound": "Hook hit, sizzle and drip."
+   },
+   {
+    "t": "2-8s",
+    "vo": "The further away the date, the more time life has to get in the way. Something came up. Every day is another degree of heat.",
+    "hero_visual": "A huge week calendar stretches across the frame. The cube slides along it from today to next Friday and shrinks with every day, a thermometer climbing on the side.",
+    "motion": "Cube slides day by day with a slow melt morph, the thermometer rolls up.",
+    "sound": "Drips accelerating, sizzle."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Fix it by offering the next two days, not the next two weeks. Show two slots, soon.",
+    "hero_visual": "The calendar sweeps, only tomorrow and the day after remain lit. A fresh cube is dropped on tomorrow and sits there solid with frost on it.",
+    "motion": "Wipe cuts away all days except two. Cube lands with a bounce and a frost glow.",
+    "sound": "Whoosh, ice clink, soft pluck."
+   },
+   {
+    "t": "14-19s",
+    "vo": "Closer date, colder cube. Comment SOON and I'll DM you the booking message we use.",
+    "hero_visual": "Close on the frosty cube on tomorrow's date, the call card flashes Joined, a breath of cold mist. Keyword card SOON.",
+    "motion": "Frost grows in a wipe across the cube, the card flips to Joined. Last frame resets with the hot plate for the loop.",
+    "sound": "Ice crackle, join sound, pluck."
+   }
+  ],
+  "keyword": "SOON",
+  "length_s": 19,
+  "why_it_stops_scroll": "A melting cube creates instant suspense and an ASMR drip. Seeing a tiny object under threat makes people watch to the end.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "A10",
+  "title": "Peg Board Drop",
+  "hook_spoken": "This person wants coaching. Where does the ball land?",
+  "hook_frame0": "A giant peg board with a violet ball labelled Wants coaching hovering at the top and three buckets at the bottom: Can't afford it, Not this year, Ready. Caption: Where does it land?",
+  "pain": "They literally do not want to pay; time wasters on discovery calls.",
+  "format": "Original: peg board drop game with a before and after",
+  "story": "A ball with no filter lands in the wrong bucket after a long call, so two pegs are added before the booking: price range and timing, and the balls land in the right place.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "This person wants coaching. Where does the ball land?",
+    "hero_visual": "Full height peg board, ball hovering, three labelled buckets.",
+    "motion": "Ball drops and bounces down through the pegs.",
+    "sound": "Hook hit, bouncing pings."
+   },
+   {
+    "t": "2-7s",
+    "vo": "Forty minutes on a call. And they cannot afford it.",
+    "hero_visual": "Ball lands in Can't afford it. A huge timer reads 40:00 wasted in red and a sad stack of empty calendar slots crumbles.",
+    "motion": "Ball thunks in, timer rolls to 40:00 with a hard stop, slots crumble in pieces.",
+    "sound": "Dull thud, tick roll, rubble."
+   },
+   {
+    "t": "7-13s",
+    "vo": "Before the call, ask two things in the DM. What range are you thinking of? And how soon do you want to start?",
+    "hero_visual": "Two new giant pegs snap into the board's top rows, labelled Range and Timing, each with a message bubble that pops from the peg.",
+    "motion": "Pegs slide in with snaps, bubbles scale up with a back ease.",
+    "sound": "Two snaps, typing patter."
+   },
+   {
+    "t": "13-19s",
+    "vo": "Now the right ones land where they should. Comment PEGS and I'll DM you the two questions word for word.",
+    "hero_visual": "Three balls drop one after another, each steered by the pegs into the correct bucket, the Ready bucket flashes Booked (Example). Keyword card PEGS.",
+    "motion": "Balls bounce with different paths into different buckets, the Ready bucket gets a light sweep. Keyword card lands.",
+    "sound": "Bouncing pings, bucket clunks, rising pluck."
+   }
+  ],
+  "keyword": "PEGS",
+  "length_s": 19,
+  "why_it_stops_scroll": "The viewer wants to see where a bouncing ball lands. Changing the board mid video makes the game feel rigged in the best way.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "B1",
+  "title": "Tell Me You're Fully Booked",
+  "hook_spoken": "Tell me you're fully booked and still panicking, without telling me.",
+  "hook_frame0": "A full bleed calendar month, every cell packed with solid violet blocks. The next month's page peeks from behind it, totally white, with one red text cursor blinking in the first cell.",
+  "pain": "Fully booked with delivery but quietly worried about next month, because nobody is replying to the people who asked.",
+  "format": "Tell me you X without telling me",
+  "story": "The 'tells' of a fully booked coach who is secretly running dry, ending in a five name check you can do tonight.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Tell me you're fully booked and still panicking, without telling me.",
+    "hero_visual": "Full bleed packed calendar, violet blocks, the empty white next month behind it with a blinking red cursor.",
+    "motion": "Cells are already filled at frame 0. A single ripple of brightness crosses the grid, then the page corner peels to expose the blank month.",
+    "sound": "hookhit at 0, a dry paper peel, one low heartbeat thump."
+   },
+   {
+    "t": "2-6s",
+    "vo": "You refresh your inbox at eleven p.m. to see if anyone new showed up.",
+    "hero_visual": "A gigantic digital clock reading 11:00 PM fills the screen, each digit the height of the frame, with a tiny glowing inbox icon under it.",
+    "motion": "Digits roll like a slot reel to 11:00 and land with a 3 percent pop. The inbox icon pulses once, then the red badge reads 0.",
+    "sound": "Tick roll, soft thud on landing, one tap on the badge."
+   },
+   {
+    "t": "6-11s",
+    "vo": "You scroll the past month and count the names that asked, then went quiet. Seven. Eight. Nine.",
+    "hero_visual": "A huge vertical list of first names in 200 point type scrolling past (Example names), each one with a small grey 'asked' tag. A running tally in the corner.",
+    "motion": "Names scroll with ease none then decelerate to a stop on the ninth. The tally rolls up in step with the spoken count.",
+    "sound": "Swish loop under the scroll, one pluck per count."
+   },
+   {
+    "t": "11-19s",
+    "vo": "Here's tonight's fix. Pick five names from the last thirty days. Send each one line: still on your mind?",
+    "hero_visual": "Five giant name tags lift off the list one at a time, each turns into a violet message bubble reading 'Still on your mind?' and flies off to the right edge.",
+    "motion": "Tags peel up with back.out, morph into bubbles, and exit on a straight path to the right with a slight stagger. The blank white next month behind them fills with one violet block per sent message.",
+    "sound": "Pluck ladder rising C4 to G4, a send whoosh each time."
+   },
+   {
+    "t": "19-24s",
+    "vo": "Comment NEXT and I'll DM you the exact one line messages we use for this.",
+    "hero_visual": "The next month calendar now half filled, with the keyword 'NEXT' in giant type across it.",
+    "motion": "Calendar blocks settle, keyword card slams in from the bottom, last frame matches the first frame composition (packed calendar).",
+    "sound": "Soft pad open, hit on the keyword."
+   }
+  ],
+  "keyword": "NEXT",
+  "length_s": 24,
+  "why_it_stops_scroll": "A wall of packed calendar with a blank page and a blinking cursor underneath tells a coach 'this is a secret I haven't said out loud' before any word is heard.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "B2",
+  "title": "The Silence Tier List",
+  "hook_spoken": "I ranked every message coaches send to someone who went quiet.",
+  "hook_frame0": "A giant S to F tier board with colored rows. A single bubble reading 'Just checking in!' hangs mid air above the F row, trembling, about to drop.",
+  "pain": "Leads who enquire and then go quiet, and coaches sending weak follow ups.",
+  "format": "Tier list (S to F rating)",
+  "story": "Four common follow ups get dropped into tiers, and the S tier turns out to be one simple move a coach can send tomorrow.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "I ranked every follow up coaches send to someone who went quiet. Watch where this one lands.",
+    "hero_visual": "Full screen tier board, rows S A B C D F, bright row colors. 'Just checking in!' bubble trembling above the F row.",
+    "motion": "Bubble shakes, then drops with a heavy squash into the F row, whole board shakes 2px for 3 frames.",
+    "sound": "hookhit, then a cartoon low thud, a soft record scratch."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Just checking in. F. It takes their time and gives them nothing. 'Did you see my last message?' D. Now they feel chased.",
+    "hero_visual": "Close up on the D row. A second bubble slaps in, a red eye icon on it, and a small flushed face bubble appears on the receiving side, backing away.",
+    "motion": "Board pans left to the D row via a mask wipe, bubble slams, receiver bubble slides out the right edge.",
+    "sound": "Slap, whoosh, small 'uh oh' pluck."
+   },
+   {
+    "t": "8-14s",
+    "vo": "A discount on the offer. C. You taught them to wait for sales. Saw this and thought of you, plus a short answer to their exact question. A.",
+    "hero_visual": "Hard cut to a giant 'C' letter filling the frame, then flipping on rotationY to 'A' with a violet bubble that has a play button thumbnail inside.",
+    "motion": "Letter flips with perspective, bubble lands in the A row with a back.out(1.4) and a light sweep across the row.",
+    "sound": "Discount: low thud. Flip: card slide. A: rising pluck."
+   },
+   {
+    "t": "14-20s",
+    "vo": "S tier? Close the loop. Send: should I close your file, or is this still on your mind? Nobody likes losing a door.",
+    "hero_visual": "A huge manila folder with a red 'CLOSE?' tab fills the screen and the S row beneath glows gold violet. The folder's lid hovers open.",
+    "motion": "Folder drops in with weight, lid cracks open, S row gets a long light sweep. The bubble inside the folder types out.",
+    "sound": "Paper slide, wooden knock, big satisfying lock-in on S."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment TIER and I'll DM you the S tier message, word for word.",
+    "hero_visual": "The completed tier board dimmed except the S row, with the keyword TIER stamped across it.",
+    "motion": "Rest of the board fades to 30 percent, keyword stamp slams down, last frame loops to the hanging bubble.",
+    "sound": "Stamp thud, soft pad."
+   }
+  ],
+  "keyword": "TIER",
+  "length_s": 24,
+  "why_it_stops_scroll": "A bubble trembling above the F row is a held breath: you have to see where it falls and what it breaks.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "B3",
+  "title": "Minute Twenty Eight",
+  "hook_spoken": "I'll never understand why we wait until minute twenty eight of a sales call to ask the budget.",
+  "hook_frame0": "A huge call timer reading 28:41 filling the top half, a calm call tile below it, and a single giant red question mark over the tile where the coach's face would be.",
+  "pain": "Wasting time on calls with people who cannot or will not pay; wanting time and price handled before the call.",
+  "format": "I'll never understand",
+  "story": "A thirty minute call is slow motion replayed to show where the real question lands, then the three line message that moves it before the call.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "I'll never understand why we wait until minute twenty eight of a sales call to ask the budget.",
+    "hero_visual": "Giant 28:41 timer, call tile with a big red question mark, a dollar sign bubble hovering in the corner.",
+    "motion": "The timer is already running at frame 0, ticking each second with a micro pop. The dollar bubble drifts in and a red ring pulses around it.",
+    "sound": "hookhit, clock tick bed, one hollow knock."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Twenty eight minutes of rapport. Of dreams. Of your best advice. And then, 'so, what's your budget?'",
+    "hero_visual": "A horizontal 30 minute bar fills across the screen in slow motion, filled with tiny coach advice bubbles. At the last sliver, a tall red bubble 'budget?' stabs in.",
+    "motion": "Bar fills with ease none, bubbles ride on top. The red bubble drops in at the end, bar cracks with a jagged line.",
+    "sound": "Rising riser, glass crack at the end."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Move three questions to before the call. What do you want. How soon. And what range feels workable.",
+    "hero_visual": "Three huge stacked cards, each filling a third of the screen, labelled WANT, SOON, RANGE. Each one flips from a question to a green check in turn.",
+    "motion": "Cards slam up from the bottom one by one with mask wipes, each flips on its check with a small overshoot.",
+    "sound": "Wooden pluck ladder C4 E4 G4, click on each check."
+   },
+   {
+    "t": "14-20s",
+    "vo": "People who answer are ready to talk. People who vanish just saved you thirty minutes.",
+    "hero_visual": "Split: left a bright calendar with a green call tile, right a ghost bubble dissolving into a clock that reads 30:00 returned to you, sliding back across the screen into a coach's day bar.",
+    "motion": "Right side bubble dissolves into particles that stream across the divider and refill a 30 minute slot in the day bar.",
+    "sound": "Soft whoosh, a satisfying fill sound, small pluck."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment BUDGET and I'll DM you the three line message we use for this.",
+    "hero_visual": "The timer from frame 0, now reading 00:00, with the keyword BUDGET beneath it.",
+    "motion": "Timer rewinds to zero, keyword slams, final frame matches the first (timer large).",
+    "sound": "Rewind blip, thud."
+   }
+  ],
+  "keyword": "BUDGET",
+  "length_s": 24,
+  "why_it_stops_scroll": "A call timer already sitting at 28:41 with a red question mark tells a coach 'something is about to go wrong' with the sound off.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "B4",
+  "title": "Would You Rather, Coach Edition",
+  "hook_spoken": "Would you rather ignore your phone mid session, or ignore the person who just asked to work with you?",
+  "hook_frame0": "A split screen of two giant buttons, left 'A' and right 'B'. Left shows a client tile frozen on a squat, right shows a phone buzzing with a red 4. Between them a thumb hovers.",
+  "pain": "Coaching 55 to 60 hours a week with no time to reply; selling alone, availability on demand.",
+  "format": "Would you rather",
+  "story": "A lose-lose choice is shown, then the middle door: a two line holding reply you can send in five seconds.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Would you rather ignore your phone mid session, or ignore the person who just asked to work with you?",
+    "hero_visual": "Two giant button halves, A and B, a thumb hovering between them. Left: a still client tile. Right: a phone vibrating with a red 4.",
+    "motion": "Halves slam in from the sides, phone shakes continuously, thumb sways and hesitates.",
+    "sound": "hookhit, haptic buzz x4 uneven."
+   },
+   {
+    "t": "3-8s",
+    "vo": "A. You pick up. Your client feels like second place. B. You don't. Four people feel like second place.",
+    "hero_visual": "Choose A: the client tile turns its back (the tile slides left and dims). Choose B: four bubbles each drop a grey 'seen' stamp then slide off the top.",
+    "motion": "Two fast match cuts, A resolves with a left slide, B with the four-bubble tumble.",
+    "sound": "Chair scrape, four small drops."
+   },
+   {
+    "t": "8-15s",
+    "vo": "There's a third door. A two line reply you can send in five seconds. Hey, with a client right now. What made you reach out today?",
+    "hero_visual": "A giant lock screen with a keyboard shortcut popping a saved reply bubble, the whole screen is the bubble text in big type.",
+    "motion": "Hard cut to a full screen phone, a long press shows a quick reply menu, the bubble writes itself in by words, thumb taps send. A 5 second ring timer finishes.",
+    "sound": "Keyboard taps, send whoosh, ring tick."
+   },
+   {
+    "t": "15-20s",
+    "vo": "It buys you an hour, and it starts the conversation. They answer. Then you reply between sessions.",
+    "hero_visual": "A day bar across the screen: coaching blocks in violet, a small gap in the middle where one reply dot sits and glows green. Four little dots below each carry a check.",
+    "motion": "Day bar draws on, dot lands in the gap with back.out, checks cascade down.",
+    "sound": "Pluck ladder, soft confirm."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment BUZZ and I'll DM you five holding replies you can save in your phone.",
+    "hero_visual": "A phone buzzing in the centre with BUZZ keyword on the screen.",
+    "motion": "Phone vibration stops on the keyword, last frame matches the opening split.",
+    "sound": "Hit, soft pad."
+   }
+  ],
+  "keyword": "BUZZ",
+  "length_s": 24,
+  "why_it_stops_scroll": "Two huge buttons and a hesitating thumb make the viewer pick a side before they have decided to watch.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "B5",
+  "title": "Typing Dots Story",
+  "hook_spoken": "They asked my price. I answered. Then the three dots appeared and never stopped.",
+  "hook_frame0": "A single enormous typing indicator bubble with three bouncing dots filling the whole screen from edge to edge, in pure white on obsidian. A timestamp in the corner reads 'Tuesday 3:12 PM'.",
+  "pain": "They DM, ask the price, then vanish.",
+  "format": "Text message story",
+  "story": "A story told through one chat thread whose typing dots never resolve, ending in what the silence usually means and a single follow up that works.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "They asked my price. I answered. Then the three dots appeared and never stopped.",
+    "hero_visual": "The huge bouncing dots bubble, timestamp Tuesday 3:12 PM in the corner.",
+    "motion": "Dots bounce in a wave on a 0.4 second loop, the timestamp holds. No cut for three seconds.",
+    "sound": "hookhit, low room tone, soft bubble pops in rhythm."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Tuesday, they ask, how much. I send the number. Typing. Typing. Wednesday, still typing.",
+    "hero_visual": "Camera pulls back into a full chat thread filling the screen with day dividers (Example) climbing upward, the dots bubble at the bottom of every day.",
+    "motion": "Thread scrolls up one day at a time on each spoken day with a hard ease, the dots always at the bottom of frame.",
+    "sound": "Message send pop, then day change tick."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Here's what I learned. They are not ghosting. They are comparing. You are one of three tabs.",
+    "hero_visual": "The chat shrinks to one tab in a row of three giant browser tabs, other two labelled Option 2 and Option 3, all with loading spinners.",
+    "motion": "Tabs slide in from the right with mask wipes and stagger; spinners rotate; the chat tab slightly dims.",
+    "sound": "Tab click x3, spinner whir."
+   },
+   {
+    "t": "14-20s",
+    "vo": "So don't chase. Add something to the tab. Forty eight hours later, send one line: here's what clients usually ask next, in case it helps.",
+    "hero_visual": "The chat tab glows, a new bubble lands with a small card attached: 'Question people ask next'. The other two tabs fade.",
+    "motion": "Chat tab slides forward and enlarges to full screen, the bubble lands with squash, a thumbs up reply arrives.",
+    "sound": "Send, soft pluck, reply ping."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment DOTS and I'll DM you the three lines I use after the price question.",
+    "hero_visual": "The bouncing dots return, now resolving into the word DOTS in giant type.",
+    "motion": "Dots morph into letters and settle, last frame matches the first.",
+    "sound": "Pop, thud."
+   }
+  ],
+  "keyword": "DOTS",
+  "length_s": 24,
+  "why_it_stops_scroll": "One enormous bouncing typing bubble that never resolves is a visual cliffhanger: the brain waits for the message.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "B6",
+  "title": "Red Flag, Green Flag: Your Inbox",
+  "hook_spoken": "Red flag, green flag, but it's the way your coaching business handles a new message.",
+  "hook_frame0": "The whole frame is flooded with solid red. A giant white flag icon planted in the middle snaps and flaps. Text on the red: 'If YOU are the whole process.'",
+  "pain": "Wearing opposing hats: coach, marketer, receptionist; the business stops when you stop replying.",
+  "format": "Red flag / green flag",
+  "story": "Six flags, each flipping the color of the screen, give a quick self audit of whether the business runs without you.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Red flag, green flag, but it's how your coaching business handles a new message.",
+    "hero_visual": "Whole screen solid red, flag icon in the middle snapping in the wind, 'If YOU are the whole process' in big white type.",
+    "motion": "Flag animates with a cloth flutter, the text slams on the first beat of the VO.",
+    "sound": "hookhit, flag snap whoosh."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Red flag. Every reply waits until you have a quiet minute. Green flag. Someone gets an answer even when you're mid session.",
+    "hero_visual": "Screen smash cut between full red and full green, each filled with one huge sentence in 140 point type and a giant icon (hourglass red, bolt green).",
+    "motion": "Colour flood wipes from the bottom, text lands word by word, icon swaps with a flip.",
+    "sound": "Red: low buzz hit. Green: bright pluck."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Red flag. You are the coach, the marketer and the receptionist before nine a.m. Green flag. You do the coaching and the rest runs on a list.",
+    "hero_visual": "Three oversized hats stacked on a hat stand fill the frame in red, then fall one by one, leaving one hat in green.",
+    "motion": "Hats drop from the top with squash and rotate to rest; a physics ease on each; one remains and glows green.",
+    "sound": "Wooden thud x3, one rising pluck."
+   },
+   {
+    "t": "14-20s",
+    "vo": "Red flag. The business stops when you stop replying. Quick test: if you took a week off, who answers the next person who asks?",
+    "hero_visual": "A massive empty chair icon on a calendar set to 7 days, a question bubble from a stranger landing in the middle of the empty week.",
+    "motion": "Seven-day strip draws on, bubble lands, nobody answers, the strip turns red.",
+    "sound": "Clock tick, empty room echo."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment FLAG and I'll DM you the six question audit so you can score your own.",
+    "hero_visual": "Red and green halves of the screen meeting at a diagonal, keyword FLAG in white.",
+    "motion": "Diagonal wipe, keyword stamp, final frame returns to full red flag.",
+    "sound": "Stamp, soft pad."
+   }
+  ],
+  "keyword": "FLAG",
+  "length_s": 24,
+  "why_it_stops_scroll": "A solid red screen at frame 0 is a color shock in a feed full of faces and darkness, and the text under it is a challenge.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "B7",
+  "title": "Day in the Life of Five Minutes",
+  "hook_spoken": "A day in the life of a coach who trains fifty five hours a week. Find the five minutes.",
+  "hook_frame0": "A huge 24 hour clock ring filling the frame, almost completely packed with violet session blocks, and one tiny white sliver pulsing at 12:10 PM with the label '5 min'.",
+  "pain": "Training clients 55 to 60 hours a week leaves no time to reply; selling alone.",
+  "format": "Day in the life",
+  "story": "A day timeline is walked hour by hour to find three gaps, and the gaps become reply windows instead of dead time.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "A day in the life of a coach who trains fifty five hours a week. Find the five minutes.",
+    "hero_visual": "Massive circular 24 hour clock ring packed with session blocks, one white sliver pulsing at 12:10 PM.",
+    "motion": "Ring is already full at frame 0, the sliver pulses on beat, a needle begins to sweep.",
+    "sound": "hookhit, clock tick, soft pulse on the sliver."
+   },
+   {
+    "t": "3-9s",
+    "vo": "Six a.m., first session. Eight, second. Ten, third. The needle moves and every block is booked.",
+    "hero_visual": "The ring unrolls into a giant horizontal day strip; the needle sweeps across it, each hour popping a different client tile (Example initials).",
+    "motion": "Ring unwinds into a strip via a morph, tiles pop in on each hour, a small phone icon buzzes under the strip, unnoticed.",
+    "sound": "Tick per hour, a phone haptic muffled."
+   },
+   {
+    "t": "9-15s",
+    "vo": "But look. Twelve ten. After lunch. Between the last two. Three gaps, five minutes each.",
+    "hero_visual": "Three gaps in the strip glow white and expand upward into three huge windows labelled with times, each containing a clean empty reply bubble.",
+    "motion": "Gaps burst open upward with back.out, the rest of the strip dims to 25 percent.",
+    "sound": "Three rising pluck notes, one per gap."
+   },
+   {
+    "t": "15-21s",
+    "vo": "Those are your reply windows. Answer everything in three bursts, then leave your phone alone the rest of the day.",
+    "hero_visual": "A giant inbox counter dropping from 11 to 0 in three decelerating steps, one per window, each step ticking a green check across the strip.",
+    "motion": "Counter rolls down in three stages with a 3 percent land on each, strip lights up with a green line sweeping left to right.",
+    "sound": "Tick rolls, confirm at low volume per window."
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment GAPS and I'll DM you the reply window schedule I'd start with.",
+    "hero_visual": "The original ring, now with three green slivers, and GAPS in giant type in the centre.",
+    "motion": "Strip rewinds into the ring, keyword lands in the centre, last frame matches the first.",
+    "sound": "Rewind blip, thud."
+   }
+  ],
+  "keyword": "GAPS",
+  "length_s": 25,
+  "why_it_stops_scroll": "A fully packed clock ring with one blinking white sliver sets a tiny puzzle: where is the five minutes.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "B8",
+  "title": "Myth: Quiet Means No",
+  "hook_spoken": "Myth. Someone who goes quiet has said no.",
+  "hook_frame0": "A gigantic red MYTH rubber stamp mid slam across a text bubble that says 'No reply = No', the stamp frozen two inches above the surface, ink ready.",
+  "pain": "Enquiring and then ghosting; coaches assuming silence means no and giving up after one message.",
+  "format": "Myth vs fact",
+  "story": "A stamp flips from MYTH to FACT, proving silence is not a no and giving a close-the-file message.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "Myth. Someone who goes quiet has said no.",
+    "hero_visual": "Giant MYTH stamp hovering above a bubble 'No reply = No', stamp slams down on the word 'Myth'.",
+    "motion": "Stamp drops with ease in, ink splatter, whole frame shakes 2px for 3 frames.",
+    "sound": "hookhit, heavy rubber stamp thud."
+   },
+   {
+    "t": "2-8s",
+    "vo": "Fact. Most people who go quiet are busy, distracted, or waiting for the right moment. Silence is almost never a decision.",
+    "hero_visual": "The stamp flips on rotationX to FACT in green, and behind it a giant calendar page flips through days with a tiny bubble sitting patiently on each.",
+    "motion": "Stamp flips with perspective, calendar pages fan behind at speed, the bubble stays centered.",
+    "sound": "Card flip, page riffle, soft pluck."
+   },
+   {
+    "t": "8-15s",
+    "vo": "So don't follow up with another pitch. Ask the one question that makes it easy for them to say yes, or no.",
+    "hero_visual": "A massive two button chooser, YES in violet and NO in grey, with a short message above: 'Should I close your file?'",
+    "motion": "Message types in word by word, buttons slide in left and right, a thumb taps YES with a ripple.",
+    "sound": "Keypress patter, tap, ripple whoosh."
+   },
+   {
+    "t": "15-20s",
+    "vo": "A clear no is a gift. A clear yes is a conversation. And a silence you can finally stop wondering about.",
+    "hero_visual": "A manila folder labelled with a first name closing with a satisfying snap, then reopening with a violet glow as a bubble pops out.",
+    "motion": "Folder slides, closes with a squash, reopens, bubble rises with back.out.",
+    "sound": "Folder snap, pluck, warm pad."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment FILE and I'll DM you the close the file message, word for word.",
+    "hero_visual": "The MYTH stamp ghosted at 20 percent, FILE in giant type over it.",
+    "motion": "Keyword lands over the faded stamp, last frame matches frame 0 with stamp hovering.",
+    "sound": "Stamp thud, pad."
+   }
+  ],
+  "keyword": "FILE",
+  "length_s": 24,
+  "why_it_stops_scroll": "A frozen oversized stamp about to slam creates tension in frame 0; you wait for the hit.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "B9",
+  "title": "Things That Just Make Sense: Show Rate",
+  "hook_spoken": "Things that just make sense. And one number that doesn't, because you've never measured it.",
+  "hook_frame0": "Two huge jigsaw-style pieces drifting toward each other on obsidian, one reading 'Booked' and the other 'Showed up', about to snap together with a big gap still between them.",
+  "pain": "Not knowing your show rate; flying blind on lead flow numbers.",
+  "format": "Things that just make sense (satisfying snaps)",
+  "story": "Three pieces snap with satisfying clicks, the fourth won't, and the missing number is your show rate which takes four minutes to calculate.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Things that just make sense. Booked, showed up.",
+    "hero_visual": "Two giant interlocking puzzle pieces, left BOOKED, right SHOWED UP, floating toward one another in slow motion.",
+    "motion": "Pieces drift closer, at the last frame they stop an inch apart and tremble, unsnapped.",
+    "sound": "hookhit, a held tension tone, tiny magnetic hum."
+   },
+   {
+    "t": "3-9s",
+    "vo": "Question, answer. Plan, schedule. Reminder, call. Click, click, click.",
+    "hero_visual": "Three fast pairs filling the screen in turn, each a different huge object: a key into a lock, a plug into a socket, a bubble into a calendar slot, each snapping with a flash.",
+    "motion": "Each pair slides together on a different axis, snaps with a 3 percent overshoot and a white flash line; hard cut between.",
+    "sound": "Three distinct satisfying clicks, rising pitch."
+   },
+   {
+    "t": "9-15s",
+    "vo": "But booked and showed up don't snap. Because you don't know the gap. Show rate is shows divided by bookings.",
+    "hero_visual": "Back to the two pieces, now with a huge division sign between them: '6 / 9' (Example) and a counter rolling to 67 percent. The missing gap is shaded red.",
+    "motion": "Numbers roll like slot reels and land, the red gap pulses, the pieces push but can't join.",
+    "sound": "Tick roll, low thud on the gap."
+   },
+   {
+    "t": "15-21s",
+    "vo": "Count it for four weeks. Booked calls, calls that happened. That number tells you whether you need more leads or better reminders.",
+    "hero_visual": "A giant four-column tally chart, one column per week, bars filling green and grey; a tiny reminder bell icon appears over the weakest week.",
+    "motion": "Bars grow from the baseline with stagger, bell swings once, the chart pulses on the weakest bar.",
+    "sound": "Soft taps per bar, bell tone muted."
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment SHOW and I'll DM you the one page tracker for your show rate.",
+    "hero_visual": "The two pieces finally snapping together, BOOKED SHOWED UP, keyword SHOW glowing.",
+    "motion": "Pieces snap with a flash, keyword lands, last frame loops back to the almost-snapped pieces.",
+    "sound": "Big click, bright pluck."
+   }
+  ],
+  "keyword": "SHOW",
+  "length_s": 25,
+  "why_it_stops_scroll": "Two puzzle pieces trembling an inch apart create a pull to see them click, a satisfying-loop tension that holds the thumb.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "B10",
+  "title": "How It Started, How It's Going: Your Tabs",
+  "hook_spoken": "How it started: one DM. How it's going: seventeen tabs and still no reply sent.",
+  "hook_frame0": "A browser tab bar stretching off both edges of the screen with 17 tiny tabs, a red 'Memory low' warning popping, and a single blinking cursor in a message box with nothing typed.",
+  "pain": "Juggling too many tools and wrestling with tech stacks; one central place for every lead.",
+  "format": "How it started / how it's going",
+  "story": "A tab explosion is collapsed into one four column list a coach can build in a spreadsheet tonight.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "How it started: one DM. How it's going: seventeen tabs and still no reply sent.",
+    "hero_visual": "Overflowing tab bar edge to edge with 17 tabs, red memory warning, empty message box with blinking cursor.",
+    "motion": "Tabs already in place at frame 0; the warning bounces in, tabs shiver.",
+    "sound": "hookhit, glitch buzz, an alert chime-free thud."
+   },
+   {
+    "t": "3-8s",
+    "vo": "A tab for the calendar. A tab for the notes. A tab for the payments. A tab for the reminders. A tab you forgot to close.",
+    "hero_visual": "Five giant generic app tiles (no brand names, plain colored squares with abstract icons) juggled in a loop by an arc path and dropping one at a time.",
+    "motion": "Tiles ride a looping arc path, one falls with a physics bounce each time, the arc gets faster.",
+    "sound": "Rhythmic juggle taps, tile drops thud."
+   },
+   {
+    "t": "8-14s",
+    "vo": "Here's the version that works. One list. Four columns. Name. What they asked. Last time you spoke. Next step.",
+    "hero_visual": "Hard cut to one giant clean table filling the screen, four columns drawing on in large type, three rows of Example names.",
+    "motion": "Columns draw on left to right with a mask wipe, rows fade in with stagger, the cursor fills the first row.",
+    "sound": "Pencil scratch, keypress patter, satisfying column click."
+   },
+   {
+    "t": "14-20s",
+    "vo": "Every new message goes in the list. Every morning you only look at one column, next step. If it's empty, nobody's waiting on you.",
+    "hero_visual": "The Next Step column zoomed into focus via a mask (not a zoom), highlighted in violet; empty rows show a green check; one row has a red date pulsing.",
+    "motion": "Other columns blur out, the column stays, checks draw on one by one, the red date pops.",
+    "sound": "Pluck ladder, check draws, one soft ping."
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment LIST and I'll DM you the template, so you can build it tonight.",
+    "hero_visual": "Seventeen tabs collapsed to one tab labelled LIST with the keyword in giant type.",
+    "motion": "Tabs collapse into one with a vacuum motion, keyword lands, last frame loops to the tab overload.",
+    "sound": "Vacuum whoosh, thud."
+   }
+  ],
+  "keyword": "LIST",
+  "length_s": 24,
+  "why_it_stops_scroll": "A tab bar stretching off both edges with a red memory warning is instant secondhand stress, and an empty message box blinking in the middle begs for resolution.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C1",
+  "title": "The Dots That Quit",
+  "hook_spoken": "Your lead typed for forty seconds. Then stopped. Here is what they almost sent.",
+  "hook_frame0": "A giant grey typing bubble fills 80 percent of the screen with three white dots pulsing. The third dot flickers out as the sound cuts to silence.",
+  "pain": "People enquire, then ghost, and the coach never learns why.",
+  "format": "Original: 'Almost Sent', a reveal of the deleted draft under the typing dots.",
+  "story": "Dot types a real question, the Typing Dots villain steals the letters back one at a time, and Dot only finishes when the coach's reply makes answering easy.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Your lead typed for forty seconds. Then stopped. Here is what they almost sent.",
+    "hero_visual": "Enormous three dot typing bubble filling the frame, the dots riding a sine wave.",
+    "motion": "Dots bounce in sequence, the third dies, and the bubble collapses to a flat line that wipes left.",
+    "sound": "Soft bubbly tick pulse, then a deflating pop on the collapse."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Under those dots was a question. Do you work with people like me? They deleted it. Too much to ask a stranger.",
+    "hero_visual": "Poster size white type 'Do you work with people like me?' across the whole frame with Dot's eyes looking up at it from the bottom corner. Tag: Example.",
+    "motion": "Letters backspace right to left in a fast stagger as Dot shrinks to 80 percent and its glow dims.",
+    "sound": "Keypress patter, then rapid backspace ticks, then one low thud."
+   },
+   {
+    "t": "8-15s",
+    "vo": "So make it a one tap answer. Ask a question with two options. A or B? A tired lead can answer that in two seconds.",
+    "hero_visual": "Two huge tiles, A and B, slam in side by side and fill the frame. Each holds one short line of text. Label: Example.",
+    "motion": "Tiles snap in from opposite edges with back.out. Dot's eye group glides to A and the A tile pulses once.",
+    "sound": "Two wooden plucks on a rising pair, then a tap."
+   },
+   {
+    "t": "15-21s",
+    "vo": "Comment TYPING and I'll DM you the five two option questions we use.",
+    "hero_visual": "Dot's typing dots return full screen in violet and the bubble pops into a sent message. The keyword TYPING sits in giant type.",
+    "motion": "Dots pulse three times, the bubble pops open with a 4 percent squash, and the last frame matches frame 0 in violet.",
+    "sound": "Send swish and a soft pluck."
+   }
+  ],
+  "keyword": "TYPING",
+  "length_s": 21,
+  "why_it_stops_scroll": "A giant typing bubble whose dots die mid pulse makes a stranger wonder what was about to be said.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "C2",
+  "title": "The Polite Cloud",
+  "hook_spoken": "Let me think about it means one of three things. Only one of them is a no.",
+  "hook_frame0": "A thick grey cloud fills the top of the frame holding the words 'Let me think about it' in huge type, sinking slowly onto a tiny violet bubble.",
+  "pain": "Leads say 'let me think about it' and vanish, and the coach has no move.",
+  "format": "Original: villain reveal, 'one phrase, three meanings', with a pop at the end.",
+  "story": "The Polite Cloud smothers Dot until the coach splits it into money, timing or trust and asks the one question that lights the real reason.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Let me think about it means one of three things. Only one of them is a no.",
+    "hero_visual": "Full width grey cloud with the phrase in huge white type, lowering over a tiny Dot.",
+    "motion": "Cloud descends and compresses Dot to 70 percent scale while its glow dims.",
+    "sound": "Low muffled pad and a soft downward whoosh."
+   },
+   {
+    "t": "3-9s",
+    "vo": "It is money. Or timing. Or trust. Almost never the offer itself.",
+    "hero_visual": "The cloud splits into three giant slabs that stack the full screen height: MONEY, TIMING, TRUST, each a different tone of grey.",
+    "motion": "Cloud tears into three slabs that slide in from the right on a stagger, each landing with a small overshoot.",
+    "sound": "Three descending thuds, each softer than the last."
+   },
+   {
+    "t": "9-16s",
+    "vo": "So do not chase. Ask: of course, what is the part you want to think over? Then wait.",
+    "hero_visual": "One huge reply bubble fills the frame with the question. Behind it, a single slab lights violet reading TIMING. Label: Example.",
+    "motion": "Bubble types in word by word. The other two slabs drop away off the bottom and the TIMING slab pulses.",
+    "sound": "Keypress taps, a send swish, then one clean pluck as the slab lights."
+   },
+   {
+    "t": "16-22s",
+    "vo": "Comment THINK and I'll DM you the three answers we use to find the real reason.",
+    "hero_visual": "Dot stands free of the cloud in full violet, the cloud a thin grey ribbon behind it. The keyword THINK in giant type.",
+    "motion": "Cloud lifts off and dissolves upward in a mask wipe. Dot pops to 105 percent and settles.",
+    "sound": "Soft pad opening and a pluck."
+   }
+  ],
+  "keyword": "THINK",
+  "length_s": 22,
+  "why_it_stops_scroll": "Coaches hear this phrase weekly, and a cloud visibly crushing a tiny bubble makes them want to see how it ends.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C3",
+  "title": "The Wall",
+  "hook_spoken": "You wrote four paragraphs. They read none of them.",
+  "hook_frame0": "A solid wall of tiny grey text covers the entire frame edge to edge with a small violet bubble at the very bottom edge, eyes looking up.",
+  "pain": "The coach over explains in DMs and the lead goes quiet.",
+  "format": "Original: 'cut it down' before and after with a scissors cut.",
+  "story": "Dot runs into The Wall of Text, a pair of scissors cuts it to three lines, and Dot walks through the gap and answers.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You wrote four paragraphs. They read none of them.",
+    "hero_visual": "Edge to edge dense text wall, no margins, a tiny Dot at the bottom looking up.",
+    "motion": "The wall drops into frame from above and stops with a 3 pixel shake a hair above Dot.",
+    "sound": "Heavy slam and a short dust rumble."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Long replies feel kind to you. To a busy lead, they feel like homework.",
+    "hero_visual": "Giant scrolling length bar on the right edge showing the wall as a 40 foot scroll with Dot's tiny thumb at the top. Label: Example.",
+    "motion": "The text scrolls at constant speed until the bar fills, Dot's eyes spin in a slow circle.",
+    "sound": "Ticking scroll bed and a quiet groan on the thumb stall."
+   },
+   {
+    "t": "8-15s",
+    "vo": "Cut it to three lines. One: say what you heard. Two: give one useful thing. Three: ask one question.",
+    "hero_visual": "A huge pair of scissors slices the wall into three giant numbered slabs: 1 HEARD, 2 USEFUL, 3 ASK. Each fills a third of the frame height.",
+    "motion": "Scissors travel on a diagonal path, the wall splits along the cut, and the slabs slide into a clean stack with a mask wipe down.",
+    "sound": "Snip, then three stacked wooden plucks."
+   },
+   {
+    "t": "15-21s",
+    "vo": "Comment SHORT and I'll DM you the three line template we use at DUXIO.",
+    "hero_visual": "The three slabs form a doorway. Dot walks through into a bright lane carrying a sent bubble. Giant keyword SHORT at top.",
+    "motion": "Dot slides through the gap, the lane widens, and the last frame matches frame 0 with the wall gone.",
+    "sound": "Soft whoosh and a send pluck."
+   }
+  ],
+  "keyword": "SHORT",
+  "length_s": 21,
+  "why_it_stops_scroll": "A wall of unreadable text crushing a tiny bubble is a visual joke every coach recognises in under a second.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C4",
+  "title": "Who Is Sam",
+  "hook_spoken": "Sam messaged you in March. Do you remember what Sam wanted?",
+  "hook_frame0": "A poster size contact card reads 'Sam' above an empty notes box with a blinking cursor and a giant grey question mark behind it.",
+  "pain": "Leads pile up with no context so the follow up is generic or never happens.",
+  "format": "Original: 'blank card' memory test where the viewer fails and learns the one line note.",
+  "story": "Dot is a blank contact among thirty identical blank cards until the coach adds one line of context and Dot lights up.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Sam messaged you in March. Do you remember what Sam wanted?",
+    "hero_visual": "Giant contact card 'Sam' with empty notes and a blinking cursor. Tag: Example.",
+    "motion": "Cursor blinks twice, the question mark pulses behind the card, and the card tilts 3 degrees.",
+    "sound": "Soft ticking cursor and a hollow note."
+   },
+   {
+    "t": "3-9s",
+    "vo": "You do not. And neither do the other thirty. Blank names in a long list.",
+    "hero_visual": "A wall of thirty identical blank contact cards, edge to edge in grey. A single card shows a violet rim that is Dot.",
+    "motion": "Cards multiply in a grid wave from the centre outward on a quick stagger, then the grid scrolls upward at constant speed.",
+    "sound": "Rapid card taps accelerating, then a quiet low note."
+   },
+   {
+    "t": "9-16s",
+    "vo": "Fix it with one line. Write what they wanted and what they asked. Wants to feel stronger by June. Asked about timing.",
+    "hero_visual": "One card fills the frame. Giant typed note appears in the notes box. Tag: Example.",
+    "motion": "Text types in by phrase, then the card flips and the other twenty nine cards sink away into the dark.",
+    "sound": "Keypress patter, then a plucked note on the line end."
+   },
+   {
+    "t": "16-22s",
+    "vo": "Now your follow up writes itself. Still aiming for June? Comment NOTE and I'll DM you the one line note format.",
+    "hero_visual": "Reply bubble 'Still aiming for June, Sam?' lands full screen. Dot glows warm and the keyword NOTE appears in giant type.",
+    "motion": "Bubble lands with back.out, Dot goes through the saved pop, and the card lights violet in a sweep.",
+    "sound": "Send swish, a pluck and a warm swell."
+   }
+  ],
+  "keyword": "NOTE",
+  "length_s": 22,
+  "why_it_stops_scroll": "Coaches test their own memory against a blank card and fail, which makes them watch for the fix.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C5",
+  "title": "The Hat Tower",
+  "hook_spoken": "You are the coach, the marketer and the receptionist. By lunch.",
+  "hook_frame0": "A towering stack of six hats fills the frame top to bottom, wobbling hard, each labelled COACH, MARKETER, RECEPTIONIST, CLOSER, TECH, BOOKKEEPER. A tiny Dot sits at the base.",
+  "pain": "The constant whiplash of wearing opposing hats, and the DMs that wait while the coach wears the wrong one.",
+  "format": "Original: 'blocked day' reveal with a clock sliced into hat colours.",
+  "story": "The Hat Tower topples on Dot until the coach gives each hat its own block of time and the receptionist hat gets a dedicated slot.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You are the coach, the marketer and the receptionist. By lunch.",
+    "hero_visual": "Six hats stacked, wobbling, with chunky labels, Dot at the base.",
+    "motion": "Tower sways with growing amplitude, the top hat tips and tumbles, and the rest lurch.",
+    "sound": "Creaking wood and a wobble whoosh."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Every DM that lands while you wear the wrong hat just waits.",
+    "hero_visual": "The tower crashes sideways across the frame. Dot's bubble is half hidden under the RECEPTIONIST hat.",
+    "motion": "Hats scatter with rotations on ease out, Dot's eyes glance left and right, and one hat spins to a stop on Dot.",
+    "sound": "Cascading thuds and a dull spin ring."
+   },
+   {
+    "t": "8-15s",
+    "vo": "Give each hat its own block. Coach in the morning. Content after lunch. Inbox hat twice a day, twenty minutes each.",
+    "hero_visual": "A giant clock face sliced into coloured wedges, each wedge carrying a hat. The inbox wedge is violet and widest on screen. Label: Example schedule.",
+    "motion": "Wedges draw on clockwise with svg path draw, hats pop onto them one by one on a wooden pluck ladder.",
+    "sound": "Rising wooden plucks, one per hat, ending in a click."
+   },
+   {
+    "t": "15-22s",
+    "vo": "The receptionist hat is the one we wear for coaches. Comment HATS and I'll DM you the day plan.",
+    "hero_visual": "The clock stays, the receptionist wedge glows, and Dot sits in the middle in full violet. Giant keyword HATS under it.",
+    "motion": "Violet line sweeps around the clock once and Dot pops with a 4 percent overshoot.",
+    "sound": "Soft sweep and a pluck."
+   }
+  ],
+  "keyword": "HATS",
+  "length_s": 22,
+  "why_it_stops_scroll": "A hat tower about to fall on a tiny bubble is a clear funny image that makes people ask what happens.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C6",
+  "title": "The Blind Spot",
+  "hook_spoken": "How many people booked last month, and how many showed up? Most coaches guess.",
+  "hook_frame0": "A huge dial gauge fills the frame with the needle jammed to the left and a giant '??%' in the middle while a black shadow sweeps across half of it.",
+  "pain": "Coaches do not know their show rate, so they are flying blind.",
+  "format": "Original: 'two numbers, one divide' with the dial resolving.",
+  "story": "The Blind Spot swallows the dial until the coach counts booked against showed and finds the real show rate.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "How many people booked last month, and how many showed up? Most coaches guess.",
+    "hero_visual": "Giant dial with needle stuck left, '??%' in the centre, a black wedge of shadow covering half.",
+    "motion": "Shadow sweeps across the dial, the needle shakes and rattles in place.",
+    "sound": "Metal rattle and a low drone."
+   },
+   {
+    "t": "3-9s",
+    "vo": "Here is the sixty second check. Count the calls booked. Count the calls that actually happened.",
+    "hero_visual": "Two enormous numbers, one on top of the other, filling the frame: BOOKED 9 and SHOWED 6. Label: Example.",
+    "motion": "Numbers roll like slot reels, decelerating, landing with a 3 percent overshoot each.",
+    "sound": "Tick roll that slows, then a land thud each."
+   },
+   {
+    "t": "9-15s",
+    "vo": "Showed divided by booked. Six of nine. That is sixty seven percent. Now you know your number.",
+    "hero_visual": "A division bar draws between the numbers and the dial's needle swings to 67 percent in violet. Label: Example.",
+    "motion": "Bar draws on, the needle sweeps with an overshoot, and the shadow burns off the dial from the edge.",
+    "sound": "Riser, needle sweep and a pluck on the land."
+   },
+   {
+    "t": "15-22s",
+    "vo": "Track it weekly and you will see what moves it. Comment RATE and I'll DM you the one minute tally sheet we use.",
+    "hero_visual": "A giant sticky note with tally marks fills the frame, five marks per row. Dot sits on top. Giant keyword RATE.",
+    "motion": "Tally strokes draw on one by one, and the note peels in with a small paper flutter.",
+    "sound": "Pencil scratches and a paper swish."
+   }
+  ],
+  "keyword": "RATE",
+  "length_s": 22,
+  "why_it_stops_scroll": "A broken dial under a shadow plus a '??%' makes coaches wonder whether they know their own number.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C7",
+  "title": "Seven Orbs",
+  "hook_spoken": "Seven tools. And still nobody answered that DM.",
+  "hook_frame0": "Seven glowing orbs with simple icons arc through the air in a juggling loop across the frame. One orb is falling toward a tiny violet bubble below.",
+  "pain": "Juggling many tools and wrestling tech stacks, with the DMs getting dropped.",
+  "format": "Original: 'juggling' loop that collapses into a single funnel.",
+  "story": "The orbs drop one at a time and Dot is hit, until the coach makes one place where every lead lands.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Seven tools. And still nobody answered that DM.",
+    "hero_visual": "Seven orbs (calendar, mail, chat, video, form, notes, payments) as generic icons on a huge juggling arc. Dot at the bottom.",
+    "motion": "Orbs ride an oval path with ease none, one falls and bounces, the arc stutters.",
+    "sound": "Whooshing loop and a drop thud."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Every new tool is one more place a lead can hide.",
+    "hero_visual": "The orbs crash to the floor one after another and roll toward Dot, filling the lower half of the frame.",
+    "motion": "Orbs bounce with squash and stretch on a stagger, Dot wobbles from a hit, the icon labels flicker.",
+    "sound": "Six staggered bounces ticking quieter, then a dull pile sound."
+   },
+   {
+    "t": "8-15s",
+    "vo": "Fix it with one rule. Every lead gets one line in one list, no matter where it came from. Name, last message, next step.",
+    "hero_visual": "A giant clean three column list fills the frame: NAME, LAST MESSAGE, NEXT STEP. Label: Example.",
+    "motion": "Orbs fly into a funnel, shrink into rows, and the table slides up with a mask wipe.",
+    "sound": "Suction whoosh and three taps as the rows settle."
+   },
+   {
+    "t": "15-22s",
+    "vo": "We build that one place inside your own accounts. Comment INBOX and I'll DM you the list layout.",
+    "hero_visual": "Dot sits first in the list, glowing, with a checkmark that draws on. Giant keyword INBOX.",
+    "motion": "Check draws on, Dot pops to 105 percent, and the list's first row lights violet.",
+    "sound": "Soft pluck and a settle."
+   }
+  ],
+  "keyword": "INBOX",
+  "length_s": 22,
+  "why_it_stops_scroll": "A juggling arc with one orb about to land on a small bubble gives a clear what happens next question.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "C8",
+  "title": "The Slammed Door",
+  "hook_spoken": "They said not right now. You said okay. That is the mistake.",
+  "hook_frame0": "A giant stone door slab labelled 'NOT RIGHT NOW' is mid slam, a thin bar of violet light still leaking through the gap where a tiny Dot stands.",
+  "pain": "A lead says not yet, the coach lets them go, and the conversation ends.",
+  "format": "Original: 'the door and the key' with a calendar date as the key.",
+  "story": "The door slams on Dot, then reopens on a date because the coach asks one specific question.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "They said not right now. You said okay. That is the mistake.",
+    "hero_visual": "Huge door slab closing, light bar narrowing, Dot's eyes visible in the gap.",
+    "motion": "Door travels the last inches and shuts with a small bounce, light snuffs out.",
+    "sound": "Heavy stone thud."
+   },
+   {
+    "t": "3-8s",
+    "vo": "No worries, talk soon. That reply feels kind. It also closes the door and loses the date.",
+    "hero_visual": "A big bubble 'No worries, talk soon!' slides away off the left edge into the dark. Label: Example.",
+    "motion": "Bubble drifts off with ease out and fades, Dot stays on the other side of the door as a faint glow.",
+    "sound": "Soft swish and a hollow note."
+   },
+   {
+    "t": "8-15s",
+    "vo": "Say this instead: totally, when should I check back in? Give them room, and get a date.",
+    "hero_visual": "A giant reply bubble in the centre. A calendar page flips to JUNE and a sticky note lands on it. Label: Example.",
+    "motion": "Bubble types in, the calendar flips by rotationX, and the sticky note slaps on with a 4 percent squash.",
+    "sound": "Keypress patter, page flip and a tap."
+   },
+   {
+    "t": "15-22s",
+    "vo": "When June comes, the door opens by itself. Comment WHEN and I'll DM you the check back message.",
+    "hero_visual": "The door slides open on the calendar date. Dot stands in the doorway in full violet. Giant keyword WHEN.",
+    "motion": "Door slides sideways, light floods the frame, and Dot pops with an overshoot.",
+    "sound": "Stone slide and a warm pluck."
+   }
+  ],
+  "keyword": "WHEN",
+  "length_s": 22,
+  "why_it_stops_scroll": "A half closed door with a sliver of light on a tiny bubble makes viewers wonder if it opens again.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "C9",
+  "title": "The Buzz",
+  "hook_spoken": "Your phone buzzes the same for a stranger's like and a person who wants to pay you.",
+  "hook_frame0": "A huge phone fills the frame vibrating violently with ten identical grey notifications stacked down the screen. One has a thin violet edge.",
+  "pain": "The coach cannot tell which message is a real enquiry in the noise, so the real ones wait.",
+  "format": "Original: 'find the one' spotlight reveal.",
+  "story": "The Buzz villain makes every alert identical until the coach gives enquiries their own sound and checks them first.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Your phone buzzes the same for a stranger's like and a person who wants to pay you.",
+    "hero_visual": "Giant phone shaking with ten identical notifications. One bubble has a violet rim.",
+    "motion": "Phone shakes with a deterministic jitter ladder, notifications stack with a staggered drop.",
+    "sound": "Buzz pulses stacking, uneven spacing."
+   },
+   {
+    "t": "3-9s",
+    "vo": "So the one that matters gets lost in the noise.",
+    "hero_visual": "Full width flat grey sound wave across the frame, ten equal bars, with one violet bar hidden among them.",
+    "motion": "Bars rise on a wave, all the same height, the violet one dips and is buried.",
+    "sound": "Ten identical ticks and a faint low tone."
+   },
+   {
+    "t": "9-16s",
+    "vo": "Make one buzz different. Give new enquiries their own sound. Mute the rest during sessions. Check that one first.",
+    "hero_visual": "The wave resets and one violet bar rockets to the top of the frame, huge. A bell icon beside it.",
+    "motion": "Violet bar shoots up with back.out, the grey ones shrink to nothing.",
+    "sound": "One distinct pluck and a sharp ring, grey bars silent."
+   },
+   {
+    "t": "16-22s",
+    "vo": "Comment BUZZ and I'll DM you the three phone settings we use for this.",
+    "hero_visual": "Dot sits on top of the tall violet bar like a flag. Giant keyword BUZZ below.",
+    "motion": "Dot bounces gently on the bar, phone silhouette fades behind.",
+    "sound": "Soft pluck and a settle."
+   }
+  ],
+  "keyword": "BUZZ",
+  "length_s": 22,
+  "why_it_stops_scroll": "A vibrating phone with one hidden violet notification turns the scroll into a find the one game.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "C10",
+  "title": "The Translator",
+  "hook_spoken": "Send me the details never means send me the details.",
+  "hook_frame0": "A giant live translator bar across the middle: 'Send me the details' on the left, a flipping blank slab on the right with a violet question mark, Dot peeking above it.",
+  "pain": "Vague lead replies that stall the conversation, and the coach takes them at face value.",
+  "format": "Original: subtitle translator, where each lead line gets decoded.",
+  "story": "Dot says something vague three times and the translator reveals what Dot actually means and the single line that answers it.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Send me the details never means send me the details.",
+    "hero_visual": "Giant translator bar with the phrase on the left, a flipping slab on the right.",
+    "motion": "The right slab spins like a split flap display and stops on a blank, Dot peeks over the bar.",
+    "sound": "Flap clatter and a stop tick."
+   },
+   {
+    "t": "3-8s",
+    "vo": "It means: I am not sure this is for me. Answer that, not their words.",
+    "hero_visual": "The slab flips to a huge line of type: 'I'm not sure this is for me.' Dot's eyes look away.",
+    "motion": "Split flap letters resolve left to right, Dot drifts 40 pixels away.",
+    "sound": "Letter ticks resolving and a quiet pad."
+   },
+   {
+    "t": "8-14s",
+    "vo": "I will check my schedule means: I do not know if it is worth it. And how much means: can I trust you?",
+    "hero_visual": "Two more translator pairs flash on full screen, one at a time, each swapping to its decoded line in giant type.",
+    "motion": "Each pair slides in from the right and flips, with a mask wipe between them.",
+    "sound": "Flap clatter twice, each a slightly higher pitch."
+   },
+   {
+    "t": "14-22s",
+    "vo": "Reply to the real question with one line. Comment DECODE and I'll DM you the decoder and the line that answers each. It is what we build into our replies.",
+    "hero_visual": "All three decoded lines stack with their answers in violet, filling the screen. Dot is centred and warm. Giant keyword DECODE.",
+    "motion": "Lines slide into a clean stack on a stagger, Dot moves to the middle and pops with an overshoot.",
+    "sound": "Three plucks rising and a soft swell."
+   }
+  ],
+  "keyword": "DECODE",
+  "length_s": 22,
+  "why_it_stops_scroll": "A translator that turns a polite line into its hidden meaning gives coaches a reveal they want to see and send.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D1",
+  "title": "The Gap Between Booked and Showed",
+  "hook_spoken": "They booked the call. Then something came up. Watch where they fall.",
+  "hook_frame0": "A giant dusk chasm filling the frame. A rickety bridge with only four planks left. A small glowing violet pin stands on the last plank and it cracks under its feet. Sound off, you want to know if it falls.",
+  "pain": "Booked discovery calls that end in 'something came up' (r/lifecoaching show up pain)",
+  "format": "Original: physical metaphor with a hard cut before and after of the same cliff angle",
+  "story": "A booked call is a bridge with days of missing planks, and one tiny confirm message is the plank that holds.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "They booked the call. Then something came up. Watch where they fall.",
+    "hero_visual": "Full frame chasm at dusk, two cliffs, a broken bridge, the violet pin on the last plank. Cliff signs read Booked and Call day.",
+    "motion": "Plank cracks in two stages, pin drops two metres and the frame holds on the gap. No zoom, the chasm is simply drawn huge.",
+    "sound": "Hook hit at frame 0, wood creak, a low thud as the pin falls."
+   },
+   {
+    "t": "3-7s",
+    "vo": "A call booked for Friday is five days of missing planks. Every empty day is a place to fall.",
+    "hero_visual": "Side view cutaway of the bridge as a timeline: five gaps numbered Mon to Fri in huge chunky type, four dark, one lit. Labelled Example.",
+    "motion": "Gaps draw on left to right, each number slams in on its spoken word.",
+    "sound": "Soft wooden tick per gap, a low wind bed."
+   },
+   {
+    "t": "7-13s",
+    "vo": "Fix it with one plank. The day before, send: still good for 2pm? Reply YES. A person who types yes has made a tiny promise.",
+    "hero_visual": "Close macro of a single big plank sliding into the gap with the text 'Still good for 2pm? Reply YES' carved across it. The next plank is a reply bubble that says YES and locks in beside it.",
+    "motion": "Plank drops with back.out landing and a 3 percent squash, YES bubble types in letter by letter and snaps to the plank edge.",
+    "sound": "Keypress patter, wood plank thunk, a bright pluck on YES."
+   },
+   {
+    "t": "13-17s",
+    "vo": "We build this into the follow up we run for coaches. Same cliffs, same call. Now the bridge holds.",
+    "hero_visual": "Hard cut to the exact first frame angle: bridge complete, pin walking across, a lit door marked Call at the far cliff opens.",
+    "motion": "Pin crosses with ease none, door light sweeps on arrival. The last frame matches the first for the loop.",
+    "sound": "Footsteps on wood, a pluck ladder rising with each plank, a soft door open."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment BRIDGE and I'll DM you the wording.",
+    "hero_visual": "Huge type BRIDGE across the finished bridge, the pin standing on the far side.",
+    "motion": "Word lands with expo.out, bridge glows once.",
+    "sound": "Single warm pluck, the bed holds."
+   }
+  ],
+  "keyword": "BRIDGE",
+  "length_s": 20,
+  "why_it_stops_scroll": "A cracking bridge with a tiny figure on it is a cliffhanger in one image: viewers wait to see the fall, then stay for the fix.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D2",
+  "title": "The Needle Pile",
+  "hook_spoken": "Your next client is already in your inbox. Here is how to find them in ninety seconds.",
+  "hook_frame0": "A mountain of thousands of tiny speech bubbles filling the whole frame like a haystack, with one violet needle glinting under a bubble near the centre.",
+  "pain": "Ready buyers buried in an unread inbox; lead follow ups named as the most annoying part of the business",
+  "format": "Original: physical metaphor, satisfying magnet pull, then a hard cut to the cleared desk",
+  "story": "Four search words act as a magnet and pull the buying messages out of the pile.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Your next client is already in your inbox. Here is how to find them in ninety seconds.",
+    "hero_visual": "The bubble haystack fills the frame edge to edge, the needle glints once.",
+    "motion": "Bubbles shimmer in a slow wave, the glint travels along the needle. Nothing zooms.",
+    "sound": "Hook hit, a rustle bed of tiny pops."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Search your messages for four words. Price. How much. Interested. Book.",
+    "hero_visual": "A giant horseshoe magnet descends from the top over the pile. Its four faces each carry one of the words in huge type.",
+    "motion": "Magnet drops with back.out, each word lands on its spoken beat and glows violet.",
+    "sound": "Metal clunk, a rising hum, one pluck per word."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Those people raised a hand. Start with the ones who waited longest, they are closest to leaving.",
+    "hero_visual": "Five violet needles leap out of the pile in arcs and stick to the magnet, each with a tiny timestamp tag that reads 'waited 3 days', 'waited 2 days' and so on (Example).",
+    "motion": "Needles follow curved paths with a small overshoot, stick with a snap. The pile sags below.",
+    "sound": "Magnetic snap per needle, a low rumble from the sagging pile."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Ninety seconds, five names. This is the sorting step we build for coaches, running every hour.",
+    "hero_visual": "Hard cut to a clean wide desk surface. Five cards in a perfect row, oldest on the left, a violet glow on the first card.",
+    "motion": "Cards deal in left to right with a mask wipe, glow settles.",
+    "sound": "Card place taps, one soft pad."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment MAGNET and I'll DM you the search words.",
+    "hero_visual": "Giant MAGNET type across the desk with the horseshoe drawn small beside it.",
+    "motion": "Type lands with expo.out.",
+    "sound": "One warm pluck."
+   }
+  ],
+  "keyword": "MAGNET",
+  "length_s": 20,
+  "why_it_stops_scroll": "A giant pile with one glinting needle is a visual puzzle, and a magnet pulling needles out is the most satisfying motion in the set.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D3",
+  "title": "The Shop With No Hours",
+  "hook_spoken": "Someone is knocking on your shop door at ten at night. The sign says nothing.",
+  "hook_frame0": "A huge steel roller shutter filling the frame in the dark, dents ripple outward from knocks coming from behind the viewer, and the blank sign above it swings.",
+  "pain": "Offers that require constant availability, leads messaging after hours, silence read as no",
+  "format": "Original: physical metaphor with a before and after of the same shutter",
+  "story": "People will wait if you tell them how long, so one line on the door turns knocking into notes under the door.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Someone is knocking on your shop door at ten at night. The sign says nothing.",
+    "hero_visual": "Corrugated shutter, blank hanging sign, a street clock reading 10:02 PM above.",
+    "motion": "Dents pulse outward from impact points on the metal, the sign swings on its chain.",
+    "sound": "Hook hit, three muffled knocks, a night air bed."
+   },
+   {
+    "t": "3-7s",
+    "vo": "Most buyers message after their own workday. If you say nothing, silence feels like a no.",
+    "hero_visual": "The sign flips to Open 9 to 5. The clock spins, then stops. Small bubble silhouettes turn and walk away along the pavement.",
+    "motion": "Sign flips on rotationX, clock hands whip then settle with a small overshoot, bubbles walk with a two frame bob.",
+    "sound": "Sign clack, clock whirr, footsteps fading."
+   },
+   {
+    "t": "7-12s",
+    "vo": "Put your hours on the door. One line in your first auto reply: I reply by eight every morning. Tell me what you need.",
+    "hero_visual": "A painted sign slides over the old one reading 'Back at 8am. Tell me what you need.' A slot opens in the shutter and the bubbles post notes through it, one by one.",
+    "motion": "Sign wipes in from the right, notes fold and slide through the slot with a small squash.",
+    "sound": "Sign slide, paper swish per note."
+   },
+   {
+    "t": "12-16s",
+    "vo": "Waiting is fine when they know how long. Or let us mind the door for you.",
+    "hero_visual": "Hard cut to morning light. The shutter rolls up in one move, a heap of notes on the floor, the clock reads 8:00 AM.",
+    "motion": "Shutter rises fast with ease power2.out, light floods the frame.",
+    "sound": "Shutter rattle up, birdsong, one pluck."
+   },
+   {
+    "t": "16-19s",
+    "vo": "Comment SHUTTER and I'll DM you the line.",
+    "hero_visual": "Open shop door with SHUTTER in giant type across the threshold.",
+    "motion": "Word lands with expo.out.",
+    "sound": "Warm pluck."
+   }
+  ],
+  "keyword": "SHUTTER",
+  "length_s": 19,
+  "why_it_stops_scroll": "Knocks rippling through a steel shutter from behind the viewer puts you inside the scene, and the blank sign creates the question of what should be on it.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D4",
+  "title": "The Dark Marble Run",
+  "hook_spoken": "Do you know where your leads fall out? Most coaches can't see it.",
+  "hook_frame0": "A black screen with a towering glass marble run in faint outline, twenty glowing marbles dropping in from the top and disappearing into darkness at the bottom.",
+  "pain": "Flying blind on show rate and close rate (r/executivecoaching: 'if you don't know these numbers daily')",
+  "format": "Original: satisfying marble run, lights on reveal, then a hard cut to the simple tracking note",
+  "story": "Turn the lights on in the run and the one gate that loses the most marbles is obvious.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Do you know where your leads fall out? Most coaches can't see it.",
+    "hero_visual": "Dark marble run filling the 9:16 frame, marbles falling and vanishing below with nothing counting them.",
+    "motion": "Marbles drop on pre computed bounce paths, glow trails fade after each bounce.",
+    "sound": "Hook hit, glass clicks on a rising tempo."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Four numbers on a sticky note. Messages, replies, booked, showed. Every Friday.",
+    "hero_visual": "Lights snap on. Three gates are revealed, labelled Replied, Booked, Showed, each with a big counter: 20, 14, 8, 5 (Example).",
+    "motion": "Counters roll with power3.out and land exactly, marbles stack in the catch trays.",
+    "sound": "Switch click, tick rolls that slow, glass clacks."
+   },
+   {
+    "t": "8-13s",
+    "vo": "The gate with the biggest drop is the only one worth fixing this week.",
+    "hero_visual": "One gate glows red, six marbles bounce out of it onto the floor, the rest roll on.",
+    "motion": "Red pulse on the gate, marbles bounce off with squash and settle.",
+    "sound": "Low thud, marble scatter, a single wooden pluck."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Five minutes on a Friday. That is your whole dashboard. Our weekly report for coaches shows the same four numbers.",
+    "hero_visual": "Hard cut to a giant sticky note on a clean wall, four lines in bold type with four blank numbers.",
+    "motion": "Note slaps on with a 4 degree rotation ladder, numbers type in.",
+    "sound": "Paper slap, keypress taps."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment MARBLES and I'll DM you the note.",
+    "hero_visual": "The note with MARBLES stamped across it.",
+    "motion": "Stamp lands with back.out.",
+    "sound": "Stamp thud, pluck."
+   }
+  ],
+  "keyword": "MARBLES",
+  "length_s": 20,
+  "why_it_stops_scroll": "Glowing marbles falling into a dark void is hypnotic and hides a question: where do they end up?",
+  "build_difficulty": 3
+ },
+ {
+  "id": "D5",
+  "title": "The Coach With Five Hats",
+  "hook_spoken": "You are the coach, the marketer and the receptionist. At the same time.",
+  "hook_frame0": "A smooth violet mannequin head centred in the frame wearing a wobbling tower of five different hats taller than the screen. The top hat is tipping.",
+  "pain": "The energetic whiplash of wearing opposing hats; selling by yourself",
+  "format": "Original: physical metaphor with a before and after wall of hooks",
+  "story": "One head cannot wear five hats at once, so hang each on its own hook and give one away.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You are the coach, the marketer and the receptionist. At the same time.",
+    "hero_visual": "Mannequin head with the hat tower: top hat, cap, headset visor, sun hat, hard hat. The tower sways and a hat drops off the top.",
+    "motion": "Pendulum sway with decreasing amplitude, a hat slides off and lands.",
+    "sound": "Hook hit, hat flop, a wobble whistle."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Every time you swap, it costs you a few minutes of focus. Reply. Coach. Post. Reply. Coach.",
+    "hero_visual": "Tight shot on the head as hats swap in sequence, with a giant stopwatch behind adding minutes with each swap (Example).",
+    "motion": "Each hat swaps by a quick vertical swipe, the stopwatch ticks forward with a roll.",
+    "sound": "Swap swish per hat, stopwatch ticks building."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Give each hat a time slot, then hang it up. Replies at eight. Calls from nine to three. Content at four. When it is coaching time, the receptionist hat stays on its hook.",
+    "hero_visual": "Hard cut to a clean wall with five hooks. Each hat hangs on a hook with a painted time block below it.",
+    "motion": "Hats fly to hooks and land with back.out, time blocks wipe in beneath.",
+    "sound": "Hook thunk per hat, pluck ladder."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Or give one hat to someone who wears it all day. We wear the follow up hat for coaches.",
+    "hero_visual": "The receptionist hat detaches from its hook and floats to a glowing second mannequin silhouette at the edge of the wall.",
+    "motion": "Hat glides on a curved path with ease power2.inOut, the glow pulses once.",
+    "sound": "Soft whoosh, warm pad."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment HATS and I'll DM you the day plan.",
+    "hero_visual": "HATS in huge type over the wall, four hats on hooks, one on the helper.",
+    "motion": "Type lands with expo.out.",
+    "sound": "Pluck."
+   }
+  ],
+  "keyword": "HATS",
+  "length_s": 20,
+  "why_it_stops_scroll": "A hat tower about to topple is instantly funny and relatable to anyone doing three jobs.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D6",
+  "title": "The House With Seven Doors",
+  "hook_spoken": "Seven tools, and still nobody answered that DM.",
+  "hook_frame0": "A towering house facade with seven differently coloured doors across three floors. A bubble knocks on each door, and a single lit window races between them.",
+  "pain": "Juggling tools and wrestling tech stacks, leads missed across channels",
+  "format": "Original: physical metaphor, before and after of the same facade",
+  "story": "Every place a lead can knock is a door you have to watch, so brick up six and point everyone at one.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Seven tools, and still nobody answered that DM.",
+    "hero_visual": "Full height facade, seven doors in seven colours, knocking bubbles at each, the lit window dashing between them.",
+    "motion": "Knock ripples radiate from each door, the window light flickers across the facade.",
+    "sound": "Hook hit, overlapping door knocks in different pitches."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Inbox, form, texts, comments, a link in your bio. Every place a lead can knock is a door you have to watch.",
+    "hero_visual": "Close on a door row at street level. Each door gets a big painted label as it is named. The knocks grow louder and two bubbles walk off the porch.",
+    "motion": "Labels stamp on with a small overshoot, bubbles walk away with a bob cycle.",
+    "sound": "Stamp thud per label, knocking crescendo."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Count your doors. Brick up every one you do not check daily and point everything at one.",
+    "hero_visual": "A brick wall builds across six doors with a wipe motion, one brick row at a time. The last door gets a doormat reading Start here.",
+    "motion": "Bricks stack in rows with a snap, doormat drops with a squash.",
+    "sound": "Brick thunk per row, trowel scrape, a pluck for the mat."
+   },
+   {
+    "t": "13-17s",
+    "vo": "One door. One inbox. We build it inside your own accounts so it stays that way.",
+    "hero_visual": "Hard cut to the same facade pulled calm: one lit door, bubbles entering one at a time, the window steady.",
+    "motion": "Bubbles slide in through the door on a single path, ease none.",
+    "sound": "Soft door chime free pad, a steady pluck."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment DOORS and I'll DM you the audit.",
+    "hero_visual": "DOORS in huge type across the bricked wall.",
+    "motion": "Type lands with expo.out.",
+    "sound": "Pluck."
+   }
+  ],
+  "keyword": "DOORS",
+  "length_s": 20,
+  "why_it_stops_scroll": "Seven colourful doors with something knocking on each is a visual puzzle people have to scan, and the bricking up is deeply satisfying.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D7",
+  "title": "The Smoke Signal",
+  "hook_spoken": "Someone sent you a fire emoji. That was not a reaction. That was a smoke signal.",
+  "hook_frame0": "Two dark hills at dusk. Thin smoke rises from the far hill and curls into the shape of a flame. The near hill has a cold, empty fire pit.",
+  "pain": "Warm leads giving small signals that coaches like and then ignore",
+  "format": "Original: physical metaphor, call and response before and after",
+  "story": "Small reactions are signals, and one answering question turns a smoke puff into a conversation.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Someone sent you a fire emoji. That was not a reaction. That was a smoke signal.",
+    "hero_visual": "Layered vector hills, a purple dusk sky, the far plume forms a flame shape. The near fire pit is cold and dark.",
+    "motion": "Smoke rises with a noise driven wave that settles into the flame form.",
+    "sound": "Hook hit, a low wind bed."
+   },
+   {
+    "t": "3-8s",
+    "vo": "A fire emoji. A heart. A reply that just says this. Most coaches like it and move on. That is a signal left unanswered.",
+    "hero_visual": "Three more puffs rise from the far hill, each forming a heart, a clap and the word this. They drift past the empty near hill and fade.",
+    "motion": "Puffs drift on diagonal paths with a fade at the end of each.",
+    "sound": "Soft puff per signal, a lonely low tone."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Answer with a question. What about it hit you? The emoji becomes a conversation.",
+    "hero_visual": "The near fire pit ignites. Its smoke climbs and forms a question mark that rises to meet the far plume.",
+    "motion": "Flame flickers up with back.out, question mark forms in smoke and travels across the gap.",
+    "sound": "Match strike, fire whoosh, a pluck on the question mark."
+   },
+   {
+    "t": "13-17s",
+    "vo": "The two columns join, and a message appears in the sky.",
+    "hero_visual": "Match cut: the joined smoke column twists upward and becomes a big speech bubble in the night sky with a typing indicator.",
+    "motion": "Column spirals into the bubble, typing dots pulse.",
+    "sound": "Warm pad, soft typing taps."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment SMOKE and I'll DM you the questions to send back.",
+    "hero_visual": "SMOKE in huge type lit by the fire pit glow.",
+    "motion": "Word lands with expo.out.",
+    "sound": "Pluck."
+   }
+  ],
+  "keyword": "SMOKE",
+  "length_s": 20,
+  "why_it_stops_scroll": "Smoke curling into an emoji is a strange image that raises the question of who is signalling and who is watching.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D8",
+  "title": "The Dropped Baton",
+  "hook_spoken": "You are fully booked. So why are you worried about next month?",
+  "hook_frame0": "A top down view of a running track. A glowing violet baton races along lane one toward the handoff zone. Lane two beside it is empty.",
+  "pain": "Fully booked and still worried about next month; no pipeline behind delivery",
+  "format": "Original: physical metaphor, before and after of the same handoff zone",
+  "story": "The baton drops because nobody warmed up the next runner, so schedule the warm up.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You are fully booked. So why are you worried about next month?",
+    "hero_visual": "Top down track, the baton racing to the end of the lane, an empty lane two with a lit handoff box.",
+    "motion": "Baton accelerates with a motion trail that follows the lane.",
+    "sound": "Hook hit, rising footstep pulse."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Your clients are the runner. Next month is the hand reaching back. If nobody is warming up, the baton drops.",
+    "hero_visual": "The baton enters the zone, nobody takes it, it slows, rolls, clatters and stops on the red line. Lane one reads This month, lane two reads Next month.",
+    "motion": "Baton slows with power3.out, bounces twice on stop.",
+    "sound": "Footstep pulse stops, baton clatter, a silence beat."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Put a pipeline slot on your calendar. Thirty minutes a week, just for people who have not booked yet.",
+    "hero_visual": "Close on a giant calendar week tile with Friday 30 minutes filled in violet and labelled Next runner. Lane two lights up behind it and a runner marker begins to jog.",
+    "motion": "Calendar block draws in with a mask wipe, lane two lights in a sweep.",
+    "sound": "Tick, wooden pluck, rhythmic jogging taps."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Warm up the next runner while this one is still running. We keep next month's runner moving for coaches.",
+    "hero_visual": "Hard cut to the same zone: the baton passes in mid stride and continues along lane two without a stop.",
+    "motion": "Baton and marker overlap, the baton hops lanes on a smooth path.",
+    "sound": "Quick swish, steady footstep pulse, a pluck."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment BATON and I'll DM you the Friday slot plan.",
+    "hero_visual": "BATON in huge type over the finished handoff.",
+    "motion": "Type lands with expo.out.",
+    "sound": "Pluck."
+   }
+  ],
+  "keyword": "BATON",
+  "length_s": 20,
+  "why_it_stops_scroll": "A baton racing toward an empty lane is a clear tension image that viewers want resolved.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "D9",
+  "title": "The Show Behind The Curtain",
+  "hook_spoken": "Your clients see ten hours of coaching. Here is what they never see.",
+  "hook_frame0": "A huge red velvet curtain filling the frame, a spotlight cutting across it, and the shapes of ropes and people straining behind the fabric.",
+  "pain": "Hidden work: billing, scheduling, replies and follow ups beyond the coaching hours",
+  "format": "Original: physical metaphor, front of house versus backstage, one hard cut",
+  "story": "The visible hours of coaching sit on a mountain of backstage work, so measure it for a week.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Your clients see ten hours of coaching. Here is what they never see.",
+    "hero_visual": "Red curtain, a spotlight, the curtain bulging as shadows pull ropes behind it.",
+    "motion": "Fabric ripples where shadows push against it, the spotlight sweeps once.",
+    "sound": "Hook hit, a rope creak, murmuring crowd."
+   },
+   {
+    "t": "3-7s",
+    "vo": "On stage, one chair, one conversation. That part is easy to see.",
+    "hero_visual": "The curtain draws open from the centre. A clean stage with a lone chair, a spotlight circle, and a clock reading Coaching.",
+    "motion": "Curtain opens with ease power2.inOut, spot warms up.",
+    "sound": "Curtain whoosh, a polite applause swell."
+   },
+   {
+    "t": "7-13s",
+    "vo": "Behind it, scheduling, billing, replies, follow ups, reminders, reports. Nobody claps for this part, but the show stops without it.",
+    "hero_visual": "Hard cut backstage: a dense web of ropes and pulleys. Six painted flats are hoisted by rope loops, each labelled with a task in big type.",
+    "motion": "Flats rise and fall on counterweight loops in staggered timing, labels stamp on each word.",
+    "sound": "Rope squeak, pulley rattle, stamp thud per label."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Tally it for one week. Every minute behind the curtain, by task. The back of the house is always bigger than you think.",
+    "hero_visual": "A giant clipboard fills the frame with six bars rising, the Follow ups bar the tallest (Example).",
+    "motion": "Bars grow with stagger, the tallest overshoots 4 percent and settles.",
+    "sound": "Tick roll, pencil scratch, low thud on the tallest."
+   },
+   {
+    "t": "17-20s",
+    "vo": "We run the follow up crew for coaches. Comment BACKSTAGE and I'll DM you the tally sheet.",
+    "hero_visual": "BACKSTAGE in huge type over the curtain, now closed again.",
+    "motion": "Curtain closes, type lands with expo.out.",
+    "sound": "Curtain swish, pluck."
+   }
+  ],
+  "keyword": "BACKSTAGE",
+  "length_s": 20,
+  "why_it_stops_scroll": "A curtain that visibly bulges with unseen people is a promise of a reveal, and the hard cut delivers a whole hidden world.",
+  "build_difficulty": 3
+ },
+ {
+  "id": "D10",
+  "title": "The Staircase To Booked",
+  "hook_spoken": "Your booking link is nine steps. Your lead gave up on step four.",
+  "hook_frame0": "A colossal staircase seen from the bottom, rising into the clouds, each step stamped with a number. A tiny violet pin sits on step one, then slides back down.",
+  "pain": "Friction between a message and the call, leads lost before they ever book",
+  "format": "Original: physical metaphor, before and after morph from stairs to ramp",
+  "story": "Every click is a step a lead can quit on, so flatten the stairs into a ramp.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Your booking link is nine steps. Your lead gave up on step four.",
+    "hero_visual": "Isometric staircase towering to the top of the frame with nine numbered steps visible, the pin slipping off step four.",
+    "motion": "Pin climbs three steps with small hops then slides back, steps stay locked.",
+    "sound": "Hook hit, hop taps, a slide whistle down."
+   },
+   {
+    "t": "3-8s",
+    "vo": "Click the link. Pick a day. Create an account. Verify your email. Every step is a place to leave.",
+    "hero_visual": "Step by step close up in a tilted view. Each step is labelled in giant type as the pin climbs, and on Create account a big gap opens and the pin teeters.",
+    "motion": "Labels stamp on per word, the pin tires and its glow dims at step four.",
+    "sound": "Stamp thud per step, rising tension drone."
+   },
+   {
+    "t": "8-13s",
+    "vo": "Cut a step each time. No account. Time zone set for them. Two fields, no more.",
+    "hero_visual": "Steps flatten one by one into a smooth ramp, the numbers collapsing from nine to three. The ramp is lit in violet.",
+    "motion": "Shape morph from stair profile to ramp profile, numbers roll down like a counter.",
+    "sound": "Stone grind per flattening, tick roll, a pluck at three."
+   },
+   {
+    "t": "13-17s",
+    "vo": "Count the taps from your link to booked. Get it under four. We keep the booking inside the conversation.",
+    "hero_visual": "Hard cut: the pin glides up the ramp in one smooth move to a door that lights up and reads Booked.",
+    "motion": "Pin travels with ease power2.inOut, door light sweeps on arrival.",
+    "sound": "Whoosh glide, door click, warm pluck."
+   },
+   {
+    "t": "17-20s",
+    "vo": "Comment RAMP and I'll DM you the checklist.",
+    "hero_visual": "RAMP in huge type over the ramp, the pin at the top.",
+    "motion": "Type lands with expo.out.",
+    "sound": "Pluck."
+   }
+  ],
+  "keyword": "RAMP",
+  "length_s": 20,
+  "why_it_stops_scroll": "A staircase that disappears into the clouds with a tiny figure sliding down is an instant question of how far they get.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E1",
+  "title": "The Dots That Stopped",
+  "hook_spoken": "They started typing. Then they stopped.",
+  "hook_frame0": "Full frame iMessage style thread on obsidian. One giant typing bubble with three pulsing dots fills the whole screen width, contact name Sam at the top, tiny Example tag. At 1.4s the dots vanish and the sound cuts to silence.",
+  "pain": "Leads asking a question or the price and then ghosting; coaches never know why they vanished",
+  "format": "Original: typing indicator suspense, a sound cut to silence as the pattern interrupt",
+  "story": "A lead's typing indicator appears and disappears, and the coach learns what that pause means and the one message to send within twenty minutes.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "They started typing. Then they stopped.",
+    "hero_visual": "Single typing bubble scaled to 900px wide, dots pulsing, then gone, leaving an empty thread",
+    "motion": "Dots pulse on a heartbeat rhythm, bubble pops out of existence with a quick collapse, thread slides up to fill the gap",
+    "sound": "Low heartbeat bass pulse synced to the dots, hard cut to total silence when they stop"
+   },
+   {
+    "t": "2-7s",
+    "vo": "That pause is the most important moment of your week. They were about to ask something, or say yes, or tell you the price scared them. You will never know which.",
+    "hero_visual": "Three half typed messages take over the whole frame one at a time in giant type: Can we... / How much is... / Never mind...",
+    "motion": "Each fragment types in, freezes mid word, then dissolves letter by letter downward like falling dust, next fragment replaces it with a mask wipe from the right",
+    "sound": "Keypress patter that dies mid word each time, soft low thud as each fragment drops"
+   },
+   {
+    "t": "7-13s",
+    "vo": "Stopped typing means hesitation, not no. So within twenty minutes, send something that lowers the pressure and asks one small thing.",
+    "hero_visual": "Huge clock face filling the frame with a violet arc sweeping twenty minutes, a stopped dots bubble sitting at its center",
+    "motion": "Arc draws on over the words twenty minutes, ending with a tick at the top; dots bubble sits still in the middle, a faint violet glow pulses once",
+    "sound": "Clock tick that slows, one wooden pluck when the arc closes"
+   },
+   {
+    "t": "13-20s",
+    "vo": "No rush at all. Anything I can clear up before you decide? Short. Warm. One question.",
+    "hero_visual": "Full screen message composer, the reply typing in large type line by line, send arrow glowing at the bottom, then a fresh typing bubble from Sam appears",
+    "motion": "Text types line by line, send arrow fires, thread scrolls, a new dots bubble from Sam pops in with a 4 percent squash",
+    "sound": "Keypress patter, send whoosh, a soft ping that rises when Sam starts typing again"
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment DOTS and I'll DM you the three messages for the moment they go quiet.",
+    "hero_visual": "Keyword card DOTS in giant type with the empty typing bubble returning as the last frame that loops into frame 0",
+    "motion": "Word DOTS lands with back.out, bubble pulses once to match frame 0 for a seamless loop",
+    "sound": "Heartbeat pulse returns for one beat, then a pluck"
+   }
+  ],
+  "keyword": "DOTS",
+  "length_s": 24,
+  "why_it_stops_scroll": "A giant typing bubble that vanishes with the sound cut mimics a real lost lead moment, and a stranger instantly wants to know what the person was going to say.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "E2",
+  "title": "2:07 AM Draft",
+  "hook_spoken": "It is 2:07 in the morning and you are answering a lead.",
+  "hook_frame0": "Pitch black room feel: a phone screen at lowest brightness filling the frame, status bar reading 2:07 AM, a DM composer with the cursor typing Hey so sorry for the late and backspacing it. Only the screen glow lights the frame.",
+  "pain": "Sales process is the coach at 11pm in the DMs; a business that cannot run without them",
+  "format": "Original: screen recording POV at night, write and delete loop",
+  "story": "A coach writes a long apologetic reply at 2am and learns to draft at night and send in the morning so they stop training leads to expect midnight service.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "It is 2:07 in the morning and you are answering a lead.",
+    "hero_visual": "Full frame dim phone screen, 2:07 AM, composer with the cursor typing and deleting a sorry message, blue white glow pulsing on the obsidian",
+    "motion": "Text types, backspaces, types again; screen glow flickers with each keystroke; a battery icon drops from 14 percent to 13",
+    "sound": "Deep room tone, soft quiet keypresses, one distant clock tick"
+   },
+   {
+    "t": "3-8s",
+    "vo": "You write four sentences, apologize twice, and send it. The lead now knows you answer at two in the morning. And some of them will expect it.",
+    "hero_visual": "The message grows into a huge wall of apology text that fills the frame, then a stamp reading Sent 2:11 AM crashes down over it",
+    "motion": "Text wall builds line by line, sent stamp scales from 3.5 to 1 with a rotate of -6 degrees, background shakes 2px for 3 frames",
+    "sound": "Send whoosh, stamp thud, a low sub hit"
+   },
+   {
+    "t": "8-15s",
+    "vo": "Instead, write it in your notes. Draft it at night, send it at seven fifty, before your first client.",
+    "hero_visual": "Giant clock numerals rolling from 2:07 to 7:50 over a sky wash that shifts from obsidian to warm violet dawn, an open Notes page called Drafts sliding in over it",
+    "motion": "Clock digits roll slot style and decelerate onto 7:50, background gradient sweeps, notes page slides in with a mask wipe from below",
+    "sound": "Tick roll that slows, soft morning pad rising, one pluck at 7:50"
+   },
+   {
+    "t": "15-20s",
+    "vo": "Same reply. Better words. And they learn when you answer, so they wait for it.",
+    "hero_visual": "Notes page in huge type with three lines: Hey Sam, thanks for waiting. What made you reach out? Send 7:50. A green send tick draws on beside it",
+    "motion": "Lines type in, the check draws on with an svg path stroke, a calm breathing glow around the page",
+    "sound": "Keypress patter, check draw tick, warm pluck"
+   },
+   {
+    "t": "20-24s",
+    "vo": "Comment DRAFT and I'll DM you the notes template and three morning replies.",
+    "hero_visual": "Keyword card DRAFT in giant type over the dim phone screen from frame 0, now showing 7:50 AM and an empty composer",
+    "motion": "Word lands with back.out, last frame matches frame 0 framing for the loop",
+    "sound": "Room tone fades, pluck, silence"
+   }
+  ],
+  "keyword": "DRAFT",
+  "length_s": 24,
+  "why_it_stops_scroll": "The 2:07 AM glow and a cursor that types then deletes feels like looking at your own phone in bed, and a stranger wonders who it is and what they are sending.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "E3",
+  "title": "The Lead's Pulse",
+  "hook_spoken": "Every lead has a pulse. Here is when it stops.",
+  "hook_frame0": "Full frame violet ECG line on obsidian, steady beats, huge number 120 BPM in white and a small label under it: Lead, 5 minutes after they message you. Sound on is a clear heart monitor beep.",
+  "pain": "Leads going cold and ghosting before the coach follows up; coaches do not know how fast interest fades",
+  "format": "Original: heart monitor flatline with a countdown of hours",
+  "story": "A heart monitor shows a lead's interest slowing over days, flatlining at day three, then one message restarts the pulse and the viewer learns the exact line.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Every lead has a pulse. Here is when it stops.",
+    "hero_visual": "Full frame ECG trace sweeping across, big 120 BPM numeral, steady violet line",
+    "motion": "Trace draws left to right looping, numeral breathes with each spike",
+    "sound": "Clean heart monitor beep per spike"
+   },
+   {
+    "t": "3-9s",
+    "vo": "One hour, sixty. One day, forty. Day three, nothing. Most coaches reply when the line is already flat.",
+    "hero_visual": "BPM numeral rolling down with a giant timestamp changing underneath: 1 hour, 1 day, 3 days; the line slowing, stretching, then going flat as the numeral hits 00, tinted red only at the flatline",
+    "motion": "Counter rolls slot style and decelerates, line spacing between spikes widens, final spike stretches into a flat line across the frame",
+    "sound": "Beep spacing slows, then one long flat tone, 1 second"
+   },
+   {
+    "t": "9-15s",
+    "vo": "A flat line is not dead. It is quiet. So send the one line that works on quiet leads.",
+    "hero_visual": "A DM composer rising from the bottom over the flat line, typing a message while the flat line sits across the whole composer",
+    "motion": "Composer slides up with expo.out, text types, flat line holds then lifts into a first spike as send fires",
+    "sound": "Flat tone cuts, keypress patter, send whoosh, one beep returns"
+   },
+   {
+    "t": "15-21s",
+    "vo": "Still on your radar, or did life take over? Two options, zero pressure. Then they answer.",
+    "hero_visual": "Giant message text on screen in two lines, with the ECG back at full strength behind it at 90 BPM and a reply bubble landing: Life took over, let's talk",
+    "motion": "Message sits centered, spikes resume across the entire background, reply bubble lands with 4 percent squash",
+    "sound": "Beeps return in rhythm, soft pluck on the reply"
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment PULSE and I'll DM you the check in lines that restart quiet leads.",
+    "hero_visual": "Keyword card PULSE with a single steady beat line running through it",
+    "motion": "Line draws through the word and loops back to the frame 0 trace",
+    "sound": "Two beeps, pluck"
+   }
+  ],
+  "keyword": "PULSE",
+  "length_s": 25,
+  "why_it_stops_scroll": "A heart monitor with a lead label is an odd, urgent image in a coaching feed, so a stranger wonders whose heart it is and why it is slowing.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E4",
+  "title": "Delete Until It Works",
+  "hook_spoken": "You wrote one hundred and forty words to a stranger. They read none.",
+  "hook_frame0": "A solid wall of tiny 40pt text fills the frame, a huge blinking cursor at the end, and the backspace key starts chewing words off the end in chunks. A giant counter in the corner reads 140.",
+  "pain": "First replies that are too long or salesy, causing leads to disengage; coaches wearing the wrong hat",
+  "format": "Original: delete until it's good, a shrinking word count",
+  "story": "A long first reply is deleted down line by line to three short lines, teaching a usable rule for the opening message.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You wrote one hundred and forty words to a stranger. They read none.",
+    "hero_visual": "Full frame paragraph wall, counter 140 in the corner, cursor blinking and backspace eating the end of the text",
+    "motion": "Words delete in chunks from the end, counter ticks down in sync, text size grows slightly as the wall shrinks to stay fill frame",
+    "sound": "Typewriter backspace thuds in a fast rolling rhythm, bell ding on the line break"
+   },
+   {
+    "t": "3-9s",
+    "vo": "So delete it. Cut your story. Cut your credentials. Cut the part where you say let me know if you have questions.",
+    "hero_visual": "The counter takes over the frame in giant numerals rolling 140 to 60 to 25 to 12 while the text behind shrinks with it; cut lines flash a red strikethrough as they leave",
+    "motion": "Counter rolls slot style and decelerates, lines strike through with svg path draw then drop away, background text re-wraps",
+    "sound": "Tick roll that slows, backspace thuds, soft thud on each landing number"
+   },
+   {
+    "t": "9-16s",
+    "vo": "Line one answers their question in five words. Line two asks them one thing. There is no line three.",
+    "hero_visual": "Three giant stacked line blocks on a clean card, line one filled with an Example reply, line two filled with a question, line three an empty dashed block that dissolves",
+    "motion": "Lines type in sequentially, line three block draws on then fades out, each line in a different brightness",
+    "sound": "Keypress patter, a wooden pluck per line on a rising ladder, soft swish on dissolve"
+   },
+   {
+    "t": "16-21s",
+    "vo": "Short replies get answered. Long ones get saved for later and forgotten.",
+    "hero_visual": "Two huge phone screens side by side: left shows a tall scroll of text with Saved for later in a corner, right shows a two line reply with a reply bubble coming in",
+    "motion": "Left screen scrolls and greys out, right screen lights up and receives a bubble with a 3 percent overshoot",
+    "sound": "Scroll swish dying out, ping on the right"
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment SHORT and I'll DM you the three line first reply for the questions you get most.",
+    "hero_visual": "Keyword card SHORT in giant type, the cursor blinking after it",
+    "motion": "Word lands with back.out, cursor blinks twice, loops to the wall of text in frame 0",
+    "sound": "Single typewriter bell, pluck"
+   }
+  ],
+  "keyword": "SHORT",
+  "length_s": 25,
+  "why_it_stops_scroll": "A wall of text that deletes itself while a counter drops is satisfying to watch and promises a rule before the viewer knows what it is.",
+  "build_difficulty": 1
+ },
+ {
+  "id": "E5",
+  "title": "Who Spoke Last",
+  "hook_spoken": "Open your deadest DM thread. Look at who spoke last.",
+  "hook_frame0": "A DM thread rendered as a long film strip, a scrubber thumb dragging backward fast with timestamps blurring past: 5 days, 3 weeks, 2 months. The strip fills the full frame width.",
+  "pain": "Dead conversations and forgotten leads; coaches not knowing why threads went cold",
+  "format": "Original: scrubber rewind audit, a thread played backward",
+  "story": "A scrubber winds back through a dead thread to find the last message, revealing that who spoke last decides what to send next.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "Open your deadest DM thread. Look at who spoke last.",
+    "hero_visual": "Film strip of chat bubbles streaming past under a huge scrubber thumb dragging backward, timestamps blurring",
+    "motion": "Strip moves right with motion blur, the thumb drags left along the track, speed decelerating to a stop",
+    "sound": "Tape rewind whirr that winds down, a clunk when it stops"
+   },
+   {
+    "t": "3-8s",
+    "vo": "This is the last message in the thread. It decides everything.",
+    "hero_visual": "A single message bubble fills the screen in giant type, highlighted violet with a timestamp 47 days ago, everything else blurred behind",
+    "motion": "Bubble locks center with a 3 percent overshoot, background blur pulls in from the edges, timestamp counts up like a slot reel",
+    "sound": "Thud on the lock, low drone"
+   },
+   {
+    "t": "8-15s",
+    "vo": "If you spoke last, they left you on read. Rewrite it as a question. If they spoke last, you owe them a reply. And it is never too late for that one.",
+    "hero_visual": "Screen splits vertically into two full height halves: You spoke last with a left aligned bubble and a small question mark, They spoke last with a right aligned bubble and a clock",
+    "motion": "Divider slams in from the top, halves fill with their bubbles one after the other, the owe a reply half pulses once",
+    "sound": "Swish for the divider, a wooden pluck per half"
+   },
+   {
+    "t": "15-21s",
+    "vo": "Do it for ten threads tonight. Ten checks. Ten chances.",
+    "hero_visual": "A giant vertical list of ten thread rows, checks drawing on one at a time until the last row glows violet",
+    "motion": "Rows slide in staggered, check marks draw on with svg path, last one pops with a glow",
+    "sound": "Rising pluck ladder, ten taps, one soft chime free ending replaced by a pluck"
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment LAST and I'll DM you the message to send for each one.",
+    "hero_visual": "Keyword card LAST in giant type with the scrubber thumb resting on it",
+    "motion": "Word lands, thumb nudges back to the start of the strip to loop into frame 0",
+    "sound": "Soft rewind whirr, pluck"
+   }
+  ],
+  "keyword": "LAST",
+  "length_s": 25,
+  "why_it_stops_scroll": "A scrubber racing backward through months of messages makes a stranger need to see what it lands on.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E6",
+  "title": "What They Typed and Deleted",
+  "hook_spoken": "I know what your lead typed after your price. Then deleted.",
+  "hook_frame0": "The lead's phone, seen from their side, full frame: the coach's message at the top reads Programs start at [your price]. Below it the reply field with the lead's cursor, typing ok let me think about it.",
+  "pain": "Leads ghosting after the price; people who do not want to pay or are unsure and do not say it",
+  "format": "Original: lead POV, type and delete, the reply you never saw",
+  "story": "From the lead's phone we watch them type, delete and close the app after the price, then learn what they were really thinking and how to send the price so they stay.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "I know what your lead typed after your price. Then deleted.",
+    "hero_visual": "Lead POV phone screen full frame, coach's price message above, reply being typed and deleted letter by letter",
+    "motion": "Typing and backspace loop, cursor blink, message reply shortens to nothing",
+    "sound": "Keypress patter, backspace ticks, quiet room tone"
+   },
+   {
+    "t": "3-5s",
+    "vo": "Then they swipe the app away.",
+    "hero_visual": "App switcher view: the messaging app card flicks upward and off the screen, leaving a wallpaper",
+    "motion": "Card flicks off with ease in, rest of the cards settle",
+    "sound": "Swipe whoosh, then a silent beat"
+   },
+   {
+    "t": "5-12s",
+    "vo": "Is it worth it? Will it work for me? What will my partner say? Three thoughts. None of them were answered.",
+    "hero_visual": "Three giant thought bubbles taking over the full frame one after another in huge white type on violet, each scaled to fill the screen",
+    "motion": "Each bubble pops in with back.out, the previous slides away in a different direction (up, left, down), bubbles tail drawn on",
+    "sound": "Three soft low pops, pitch rising"
+   },
+   {
+    "t": "12-20s",
+    "vo": "So send the price with one line on what changes, and an easy next step. Want me to walk you through who this fits?",
+    "hero_visual": "The coach's message rebuilt in a large composer: the price, then a line of what it covers, then a question line, each highlighted in turn with a violet underline",
+    "motion": "Each line types in and its underline draws on with a svg stroke, the send arrow glows",
+    "sound": "Keypress patter, three wooden plucks, send whoosh"
+   },
+   {
+    "t": "20-25s",
+    "vo": "Comment THINK and I'll DM you three ways to send a price that keeps them in the conversation.",
+    "hero_visual": "Keyword card THINK in huge type, the lead's reply field behind it with a cursor staying still",
+    "motion": "Word lands, cursor blinks and types a single y for yes, loops to frame 0",
+    "sound": "Single keypress, pluck"
+   }
+  ],
+  "keyword": "THINK",
+  "length_s": 25,
+  "why_it_stops_scroll": "Seeing the reply a lead typed and deleted is a secret glimpse behind a closed door, and a stranger has to know what the thoughts were.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E7",
+  "title": "The Twelve Second Note",
+  "hook_spoken": "This twelve second message beats every reminder text you will ever send.",
+  "hook_frame0": "A giant voice message bubble fills the frame, wide waveform bars moving, a play head sliding, the label 0:12 and a tiny Example tag. The waveform bars move to the voiceover itself.",
+  "pain": "Discovery call no shows and something came up reschedules",
+  "format": "Original: voice note reveal, waveform reacts to the VO",
+  "story": "A voice note waveform plays the exact script of a twelve second message to send the day before a call, replacing the cold reminder text.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "This twelve second message beats every reminder text you will ever send.",
+    "hero_visual": "Huge voice message bubble, 70 waveform bars dancing to the VO, timer 0:12 counting",
+    "motion": "Bars scale on voice amplitude, play head slides, bubble breathes",
+    "sound": "Voice note play blip, the VO itself drives the waveform"
+   },
+   {
+    "t": "3-10s",
+    "vo": "Hi Sam, it's me. I'm looking forward to tomorrow at two. I'll bring up what you said about your schedule. See you then.",
+    "hero_visual": "The script appears as karaoke type in full frame over the dimmed waveform, the active word glowing violet, with the words Sam, tomorrow at two, and your schedule underlined",
+    "motion": "Word by word active pop, underlines draw on as each key word is spoken",
+    "sound": "Soft keypress tick per underline, quiet room tone"
+   },
+   {
+    "t": "10-17s",
+    "vo": "A text is easy to ignore. A voice with their name in it is not. Send it the day before, not the hour before.",
+    "hero_visual": "Two full height columns: left a tiny grey text bubble that fades, right a giant violet waveform glowing; a 24 hour timeline bar above showing the send point",
+    "motion": "Left bubble greys and shrinks 15 percent, right waveform expands and pulses, timeline marker snaps to 24 hours before",
+    "sound": "Dull thump left, warm voice blip right, marker click"
+   },
+   {
+    "t": "17-22s",
+    "vo": "They show up warm, because they were spoken to by a person.",
+    "hero_visual": "A call tile filling the frame with a joined indicator turning green and a chair filling, tagged Example",
+    "motion": "Tile slides in with a mask wipe, joined badge pops with 3 percent overshoot",
+    "sound": "Join sound at low volume, pluck"
+   },
+   {
+    "t": "22-26s",
+    "vo": "Comment VOICE and I'll DM you the script and when to send it.",
+    "hero_visual": "Keyword card VOICE in huge type with the waveform bars forming the letters",
+    "motion": "Bars settle into the letters, last frame matches the opening waveform for the loop",
+    "sound": "Voice blip, pluck"
+   }
+  ],
+  "keyword": "VOICE",
+  "length_s": 26,
+  "why_it_stops_scroll": "A huge moving waveform that is the actual voice on the reel pulls the ear and eye together, and viewers want to hear what the twelve seconds say.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E8",
+  "title": "Find the DM Speedrun",
+  "hook_spoken": "How long does it take you to find the DM you promised to answer?",
+  "hook_frame0": "A giant stopwatch reading 0:00 over a fan of full size app cards, labels Messages, Notes, Mail, Calendar, Forms and Tab 6, the stopwatch starting at frame 0.",
+  "pain": "Juggling tools, a stack of tabs, lost DMs and leads in too many places",
+  "format": "Original: speedrun timer, hunting through app cards",
+  "story": "A stopwatch races while a coach hunts through tools for one promised reply, then drops to four seconds with a single Waiting on me list anyone can start tonight.",
+  "beats": [
+   {
+    "t": "0-4s",
+    "vo": "How long does it take you to find the DM you promised to answer?",
+    "hero_visual": "Stopwatch in giant numerals on top of a fan of app cards flipping past the camera one by one",
+    "motion": "Cards flip through the stack fast with perspective, stopwatch digits roll up",
+    "sound": "Card flick per switch, steady clock tick"
+   },
+   {
+    "t": "4-9s",
+    "vo": "Messages. Notes. Mail. Calendar. A form from last week. The stopwatch lands on forty seven seconds.",
+    "hero_visual": "Each app fills the frame in turn with its search field typed in, then X marks, the stopwatch stopping at 0:47 in red",
+    "motion": "Full screen swaps in different directions (left, up, right), stopwatch lands with 3 percent overshoot and tints red",
+    "sound": "Swipe per app, red thud on the stop"
+   },
+   {
+    "t": "9-17s",
+    "vo": "Make one page. Call it Waiting on me. Three columns: name, what they asked, date. Add them when they message. Delete them when you answer.",
+    "hero_visual": "A giant clean notes page titled Waiting on me with three columns filling the frame and three Example rows typing in",
+    "motion": "Title types in, column headers draw on, rows slide in staggered; a row gets crossed off with a path draw and removed",
+    "sound": "Keypress patter, a pluck per column, strike swish on delete"
+   },
+   {
+    "t": "17-22s",
+    "vo": "Now it takes four seconds. One list. No hunting.",
+    "hero_visual": "Stopwatch again in giant numerals, now snapping to 0:04 in violet, with the list behind it glowing",
+    "motion": "Stopwatch resets and runs, lands on 0:04 with a 4 percent pop",
+    "sound": "Tick roll that stops quickly, pluck"
+   },
+   {
+    "t": "22-26s",
+    "vo": "Comment LIST and I'll DM you the page to copy.",
+    "hero_visual": "Keyword card LIST with the notes page rows forming the letters",
+    "motion": "Rows slide into the word, last frame resets the stopwatch to 0:00 for the loop",
+    "sound": "Pluck, tick"
+   }
+  ],
+  "keyword": "LIST",
+  "length_s": 26,
+  "why_it_stops_scroll": "A visible stopwatch racing against a pile of apps makes every coach ask whether they would beat it.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E9",
+  "title": "The Send Button",
+  "hook_spoken": "You are afraid to send this one sentence.",
+  "hook_frame0": "A giant send arrow filling the frame, a thumb shadow hovering above it, the message in the composer reading Programs start at [your price]. A slow heartbeat thump and the arrow trembles.",
+  "pain": "Fear of naming the price; leads who do not want to pay wasting calls; building time and price into the sales process before the call",
+  "format": "Original: the hovering thumb moment, a heartbeat that speeds up before sending",
+  "story": "A coach hovers over send on a price sentence, sends it, and learns that stating a range and who it is for before the call saves everyone's time.",
+  "beats": [
+   {
+    "t": "0-3s",
+    "vo": "You are afraid to send this one sentence.",
+    "hero_visual": "Giant send arrow with a thumb shadow hovering over it, the price sentence above in a composer",
+    "motion": "Arrow vibrates, shadow drifts closer and further, composer text blinks slightly",
+    "sound": "Slow heartbeat thump that gradually speeds up"
+   },
+   {
+    "t": "3-10s",
+    "vo": "Here is the sentence. My programs start at this range, they include this, and they fit people who are here. Price, what changes, who it is for.",
+    "hero_visual": "The sentence as three huge colored blocks stacked to fill the frame: [price range], [what changes], [who it fits], each lighting up in turn",
+    "motion": "Blocks slide in one at a time with back.out, each block flashes violet when its words are spoken",
+    "sound": "Heartbeat continues quieter, a pluck per block"
+   },
+   {
+    "t": "10-15s",
+    "vo": "Send it before the call. Not on it.",
+    "hero_visual": "Full black screen with the word Delivered in small type at the bottom, one second of near silence, then the heartbeat stops",
+    "motion": "Arrow fires and flies off the top of the screen, a hard cut to black, Delivered fades in without delay",
+    "sound": "Send whoosh, then dead silence for one second"
+   },
+   {
+    "t": "15-21s",
+    "vo": "Then a reply lands. Makes sense, can we book? Or, not for me right now. Both are good news. You just saved a call.",
+    "hero_visual": "Two giant reply bubbles one after the other filling the screen: Makes sense, can we book? and Not for me right now, labelled Example",
+    "motion": "First bubble lands with 4 percent squash, slides off left, second lands with a different ease, both end with a green tick draw",
+    "sound": "Ping, soft pluck, second ping lower"
+   },
+   {
+    "t": "21-25s",
+    "vo": "Comment RANGE and I'll DM you three ways to word it.",
+    "hero_visual": "Keyword card RANGE in huge type, send arrow returning calm",
+    "motion": "Word lands, arrow trembles once to loop into frame 0",
+    "sound": "Heartbeat thump, pluck"
+   }
+  ],
+  "keyword": "RANGE",
+  "length_s": 25,
+  "why_it_stops_scroll": "A thumb hovering over a trembling send button with a heartbeat is a feeling every viewer knows, and they need to see what happens when it is pressed.",
+  "build_difficulty": 2
+ },
+ {
+  "id": "E10",
+  "title": "Slash Hi",
+  "hook_spoken": "You type the same five messages every single day.",
+  "hook_frame0": "Pure obsidian, three characters typed in a giant composer: slash h i, then the whole screen explodes into a full paragraph reply that fills the frame in under half a second.",
+  "pain": "Coach wearing every hat at once, repeating answers all day as the receptionist; the whiplash of opposing roles",
+  "format": "Original: text expander snap, repetition then compression",
+  "story": "A wall of the same message typed again and again is replaced by three saved reply shortcuts any coach can set up tonight.",
+  "beats": [
+   {
+    "t": "0-2s",
+    "vo": "You type the same five messages every single day.",
+    "hero_visual": "Composer with slash hi typed, which snaps into a full paragraph filling the frame",
+    "motion": "Three characters type, paragraph pops in as a block with a hard snap",
+    "sound": "Three keypresses, a pop snap"
+   },
+   {
+    "t": "2-8s",
+    "vo": "Hi, thanks for reaching out. What are you hoping to change. Typed once. Typed twice. Typed twenty times this month.",
+    "hero_visual": "A stack of the same message bubble repeating and filling the frame, a counter in the corner rolling 1, 5, 20",
+    "motion": "Bubbles pile up quickly pushing each other up and off the top, counter rolls and decelerates at twenty",
+    "sound": "Rapid keypress patter that gets faster, tick roll, low thud at twenty"
+   },
+   {
+    "t": "8-16s",
+    "vo": "Open saved replies in your business inbox. Make three. Slash hi for your first reply. Slash call for your booking answer. Slash later for the not yet.",
+    "hero_visual": "Giant Saved replies settings page with three shortcut rows, each shortcut in huge type on the left and its expanded text on the right",
+    "motion": "Rows slide in one at a time with a mask wipe from the right, each shortcut typed then expanded with a snap",
+    "sound": "Keypress, snap pop per expansion, rising plucks"
+   },
+   {
+    "t": "16-21s",
+    "vo": "That is three hours of typing a month back. And you still sound like you.",
+    "hero_visual": "A clock face filling the frame with the typed minutes draining from the dial like sand, a violet fill for minutes gained",
+    "motion": "Dial fills in violet over the words three hours, ending with a 3 percent pop",
+    "sound": "Soft sand whoosh, one pluck"
+   },
+   {
+    "t": "21-26s",
+    "vo": "We build these into the whole backend for coaches, but you can have three tonight. Comment SHORTCUT and I'll DM you the three to copy.",
+    "hero_visual": "Keyword card SHORTCUT with slash typed before it and the word expanding to full size",
+    "motion": "Slash types, word snaps out to full width, last frame returns to the empty composer of frame 0",
+    "sound": "Keypress, snap pop, pluck"
+   }
+  ],
+  "keyword": "SHORTCUT",
+  "length_s": 26,
+  "why_it_stops_scroll": "Three typed characters instantly exploding into a full screen paragraph is a snappy, satisfying opening that makes the viewer curious how it was done.",
+  "build_difficulty": 1
+ }
+]

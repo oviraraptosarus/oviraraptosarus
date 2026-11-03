@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="gsap.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#f1efed}
+:root{--or:#ff4f1a;--ord:#e23c0b;--ink:#17171a;--bg:#f1efed}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink)}
+.scene{position:absolute;inset:0;opacity:0;overflow:hidden}
+.abs{position:absolute}
+.it{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-weight:400}
+.or{color:var(--ord)}
+.ballg{background:radial-gradient(circle at 34% 28%,#ffb08a 0%,#ff6a33 22%,#ff4f1a 48%,#e2380b 78%,#b52a06 100%)}
+.num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;letter-spacing:-.02em;text-shadow:0 2px 12px rgba(120,20,0,.45)}
+.eye{position:absolute;border-radius:50%;background:#fff}
+.eye i{position:absolute;border-radius:50%;background:#17171a}
+.mask{position:absolute;left:0;width:1920px;overflow:hidden;text-align:center}
+.hdr{position:relative;font-size:76px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.light{background:radial-gradient(ellipse at 50% 45%,#fbfaf9 0%,#f1efed 58%,#e4e0dc 100%)}
+/* ---------- S1 dashboard ---------- */
+#s1{background:radial-gradient(ellipse at 62% 38%,#4a210f 0%,#1a1210 48%,#08080b 100%)}
+#glow{left:880px;top:120px;width:900px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,92,34,.55),rgba(255,92,34,0) 65%)}
+#dashp{left:0;top:0;width:1920px;height:1080px}
+#dash{left:270px;top:170px;width:1380px;height:780px;background:#f6f5f3;border-radius:26px;overflow:hidden;box-shadow:0 80px 140px -30px rgba(0,0,0,.75),0 0 0 2px rgba(255,255,255,.06)}
+.sb{left:0;top:0;width:190px;height:780px;background:#17171a}
+.sb .lg{position:absolute;left:34px;top:36px;width:44px;height:44px;border-radius:14px;background:var(--or)}
+.sb .nv{position:absolute;left:34px;width:122px;height:16px;border-radius:8px;background:#34343b}
+.sb .nv.on{background:var(--or)}
+.mainp{left:190px;top:0;width:1190px;height:780px}
+.dt{left:40px;top:34px;font-size:40px;font-weight:700}
+.dchip{top:36px;height:40px;border-radius:20px;background:#e6e4e1}
+.kpi{position:absolute;top:116px;width:262px;height:170px;border-radius:20px;background:#fff;box-shadow:0 10px 30px -14px rgba(0,0,0,.18);overflow:hidden}
+.kl{position:absolute;left:24px;top:20px;font-size:22px;font-weight:600;color:#85817c}
+.kn{position:absolute;left:24px;top:56px;font-size:46px;font-weight:700;letter-spacing:-.03em;white-space:nowrap}
+.kd{position:absolute;left:24px;top:122px;font-size:22px;font-weight:700;color:#15803d}
+.card{position:absolute;top:312px;height:420px;border-radius:20px;background:#fff;box-shadow:0 10px 30px -14px rgba(0,0,0,.18);overflow:hidden}
+.br{position:absolute;left:30px;height:16px;border-radius:8px;background:#e6e4e1}
+.warn{right:18px;top:16px;width:38px;height:38px;border-radius:50%;background:#dc2626;color:#fff;font-size:26px;font-weight:800;display:flex;align-items:center;justify-content:center}
+#vig{inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(0,0,0,0) 38%,rgba(0,0,0,.7) 100%)}
+#sheen{left:-500px;top:-100px;width:380px;height:1300px;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.22),rgba(255,255,255,0))}
+#flood{inset:0;background:linear-gradient(100deg,#ff5a22,#ff4f1a 60%,#e8400f);transform-origin:left}
+/* ---------- S2/S3 ball ---------- */
+.ball{position:absolute;left:750px;top:330px;width:420px;height:420px}
+.ball .body{position:absolute;inset:0;border-radius:50%;box-shadow:inset -22px -34px 60px rgba(110,20,0,.35),0 60px 80px -34px rgba(200,60,20,.5)}
+.ball .clip{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.hole{position:absolute;border-radius:50%;background:var(--bg)}
+#puddle{left:580px;top:780px;width:760px;height:58px;border-radius:50%;background:radial-gradient(ellipse at 50% 35%,#ff7a45,#ff4f1a 60%,#c8340a)}
+.crumb{position:absolute;border-radius:50%;background:#ff5a22}
+.drip{position:absolute;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:#ff5a22}
+.minus{position:absolute;font-size:118px;font-weight:800;letter-spacing:-.03em}
+/* monster */
+#mon{left:360px;top:410px;width:260px;height:260px}
+#mon .mouth{position:absolute;inset:0;border-radius:50%;background:#1b1250}
+.jaw{position:absolute;left:0;width:260px;height:130px;background:radial-gradient(circle at 34% 28%,#b9b0ff 0%,#7b6bff 38%,#5a47f0 72%,#3a2bb8 100%);background-size:260px 260px}
+#jawU{top:0;border-radius:130px 130px 0 0;transform-origin:50% 100%;background-position:0 0}
+#jawL{top:130px;border-radius:0 0 130px 130px;transform-origin:50% 0%;background-position:0 -130px}
+.tooth{position:absolute;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent}
+.tu{bottom:0;border-top:22px solid #fff}
+.tl{top:0;border-bottom:22px solid #fff}
+/* flame */
+#flame{left:1360px;top:360px;width:220px;height:300px}
+#flameIn{left:30px;top:50px;width:160px;height:160px;border-radius:0 50% 50% 50%;background:radial-gradient(circle at 60% 60%,#d7ecff,#4d9bff 45%,#1f5fe0)}
+/* box */
+#box{left:810px;top:790px;width:300px;height:215px}
+.lid{position:absolute;top:0;width:150px;height:38px;background:#d6995a;border-radius:6px;z-index:3}
+#lidL{left:0;transform-origin:left bottom}
+#lidR{left:150px;transform-origin:right bottom}
+/* ---------- S4 day -> night ---------- */
+#s4night{background:radial-gradient(ellipse at 50% 70%,#2a1408 0%,#0d0b10 55%,#050507 100%)}
+#s4day{background:linear-gradient(180deg,#fff4e4 0%,#ffdcb8 100%)}
+.star{position:absolute;border-radius:50%}
+#sun{left:1440px;top:360px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#ffd08a,#ff8a3d 55%,#ff4f1a);box-shadow:0 0 120px 40px rgba(255,140,60,.45)}
+#moon{left:1450px;top:380px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle at 36% 32%,#ffb27a,#ff6a2a 60%,#e2380b);box-shadow:0 0 90px 24px rgba(255,90,30,.4)}
+#moonbite{left:1510px;top:350px;width:190px;height:190px;border-radius:50%;background:#0d0b10}
+#clock{left:760px;top:350px;width:400px;height:400px;border-radius:50%;background:#fff;border:14px solid var(--or);box-shadow:0 40px 90px -30px rgba(120,40,0,.5)}
+.tk{position:absolute;left:193px;top:12px;width:6px;height:20px;border-radius:3px;background:#17171a;transform-origin:3px 188px}
+.tk.b{width:10px;height:30px;left:191px}
+.hand{position:absolute;border-radius:6px;background:#17171a}
+#hh{left:192px;top:100px;width:12px;height:100px;transform-origin:50% 100%}
+#mh{left:194px;top:58px;width:8px;height:142px;transform-origin:50% 100%}
+#hub{left:182px;top:182px;width:32px;height:32px;border-radius:50%;background:var(--or)}
+/* ---------- S5 receipt ---------- */
+#rc{left:640px;top:96px;width:640px;height:830px}
+#rcpaper{left:0;top:0;width:640px;height:800px;background:#fff;box-shadow:0 50px 90px -30px rgba(60,30,10,.35)}
+#rczig{left:0;top:799px;width:640px;height:24px;background:linear-gradient(-45deg,transparent 12px,#fff 0) 0 0/24px 24px repeat-x,linear-gradient(45deg,transparent 12px,#fff 0) 0 0/24px 24px repeat-x}
+.rr{position:absolute;left:56px;width:528px;height:74px;display:flex;align-items:center;justify-content:space-between;font-size:44px;font-weight:600}
+.rr .d{width:20px;height:20px;border-radius:50%;margin-right:20px;flex:none}
+.rr .l{display:flex;align-items:center}
+.rr .v{font-weight:800;letter-spacing:-.02em}
+#rline{left:56px;top:480px;width:528px;height:0;border-top:4px dashed #cfcac4}
+#kept{left:56px;top:566px;width:528px;height:200px}
+#pill{left:0;top:30px;width:528px;height:150px;border-radius:75px;background:radial-gradient(ellipse at 35% 25%,#ff9a6a 0%,#ff5a22 40%,#e93d0d 80%,#c02e06);box-shadow:inset -14px -22px 40px rgba(110,20,0,.3),0 30px 50px -22px rgba(200,60,20,.55);transform-origin:left center}
+/* ---------- S6 ---------- */
+#logo{left:0;top:230px;width:1920px;height:170px;display:flex;align-items:center;justify-content:center;gap:42px}
+#tally{position:relative;width:170px;height:150px;flex:none}
+.tm{position:absolute;top:6px;width:18px;height:138px;background:#17171a;border-radius:9px;transform-origin:50% 100%}
+#slash{position:absolute;left:-16px;top:66px;width:204px;height:20px;background:var(--ord);border-radius:10px;transform-origin:0 50%}
+#word{font-size:200px;font-weight:800;letter-spacing:-.05em;line-height:150px;height:150px}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="18.4" data-width="1920" data-height="1080">
+
+<!-- S1: dashboard that lies -->
+<div id="s1" class="scene">
+  <div id="glow" class="abs"></div>
+  <div id="dashp" class="abs">
+   <div id="dash" class="abs">
+    <div class="sb abs"><div class="lg"></div>
+      <div class="nv on" style="top:150px"></div><div class="nv" style="top:204px"></div><div class="nv" style="top:258px"></div><div class="nv" style="top:312px"></div><div class="nv" style="top:366px"></div></div>
+    <div class="mainp abs">
+      <div class="dt abs">Overview</div>
+      <div class="dchip abs" style="left:760px;width:150px"></div><div class="dchip abs" style="left:928px;width:120px"></div>
+      <div class="abs" style="left:1068px;top:34px;width:44px;height:44px;border-radius:50%;background:#ff8a5c"></div>
+      <div id="kRev" class="kpi" style="left:40px"><div class="kl">Revenue</div><div id="revn" class="kn">$0.00</div><div id="revd" class="kd">▲ 12.4% this week</div><div id="warn" class="abs warn">!</div></div>
+      <div id="k2" class="kpi" style="left:326px"><div class="kl">Orders</div><div class="kn">38</div><div class="kd">▲ 6.1%</div></div>
+      <div id="k3" class="kpi" style="left:612px"><div class="kl">Conversion</div><div class="kn">3.2%</div><div class="kd">▲ 0.4%</div></div>
+      <div id="k4" class="kpi" style="left:898px"><div class="kl">Ad spend</div><div class="kn">$398</div><div class="kd" style="color:#85817c">this week</div></div>
+      <div id="chart" class="card" style="left:40px;width:700px">
+        <div class="kl" style="top:24px">Sales over time</div>
+        <svg class="abs" style="left:24px;top:70px" width="652" height="320" viewBox="0 0 652 320">
+          <defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4f1a" stop-opacity=".28"/><stop offset="1" stop-color="#ff4f1a" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 270 C70 255 110 200 180 214 S290 140 360 168 S470 70 540 98 S620 44 652 30 L652 320 L0 320Z" fill="url(#ag)" id="area"/>
+          <path id="lineG" d="M0 270 C70 255 110 200 180 214 S290 140 360 168 S470 70 540 98 S620 44 652 30" fill="none" stroke="#ff4f1a" stroke-width="7" stroke-linecap="round"/>
+          <path id="lineR" d="M0 270 L70 250 L120 262 L190 190 L230 232 L300 150 L330 200 L400 120 L440 190 L520 90 L560 160 L652 60" fill="none" stroke="#dc2626" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div id="side" class="card" style="left:764px;width:420px">
+        <div class="kl" style="top:24px">Top products</div>
+        <div class="br" style="top:90px;width:300px;background:#ffd2bf"></div><div class="br" style="top:140px;width:230px"></div><div class="br" style="top:190px;width:340px;background:#ffd2bf"></div><div class="br" style="top:240px;width:180px"></div><div class="br" style="top:290px;width:260px"></div><div class="br" style="top:340px;width:210px"></div>
+      </div>
+    </div>
+    <div id="sheen" class="abs"></div>
+   </div>
+  </div>
+  <div id="vig" class="abs"></div>
+</div>
+<div id="flood" class="abs" style="opacity:0"></div>
+
+<!-- S2: the ball -->
+<div id="s2" class="scene light">
+  <div class="mask" style="top:130px;height:120px"><div id="s2h1" class="hdr">It says you made</div></div>
+  <div class="mask" style="top:130px;height:120px"><div id="s2h2" class="hdr">You <span class="it or" style="font-size:90px">actually</span> kept</div></div>
+  <div id="puddle" class="abs"></div>
+  <div id="drips" class="abs" style="inset:0"></div>
+  <div id="b2" class="ball">
+    <div class="body ballg"></div>
+    <div id="b2n" class="num" style="font-size:92px">$1,284</div>
+    <div id="b2e1" class="eye" style="left:128px;top:82px;width:52px;height:62px"><i style="left:14px;top:18px;width:26px;height:30px"></i></div>
+    <div id="b2e2" class="eye" style="left:240px;top:82px;width:52px;height:62px"><i style="left:14px;top:18px;width:26px;height:30px"></i></div>
+  </div>
+  <div id="today" class="abs it or" style="left:0;width:1920px;text-align:center;top:800px;font-size:110px">today.</div>
+  <div id="sigh" class="abs it" style="left:1190px;top:310px;font-size:64px;color:#8f8a85">(sigh)</div>
+</div>
+
+<!-- S3: three thieves -->
+<div id="s3" class="scene" style="background:var(--bg)">
+  <div class="mask" style="top:130px;height:120px"><div id="h31" class="hdr">Fees <span class="it" style="color:#5b4bea;font-size:90px">ate</span></div></div>
+  <div class="mask" style="top:130px;height:120px"><div id="h32" class="hdr">Ads <span class="it" style="color:#1f63e0;font-size:90px">burned</span></div></div>
+  <div class="mask" style="top:130px;height:120px"><div id="h33" class="hdr">Shipping <span class="it" style="color:#a8651a;font-size:90px">took</span></div></div>
+  <div id="box" class="abs">
+    <div id="boxback" class="abs" style="left:0;top:30px;width:300px;height:185px;background:#8a5a2a;border-radius:8px;z-index:1"></div>
+    <div id="lidL" class="lid"></div><div id="lidR" class="lid"></div>
+    <div id="chunk" class="abs ballg" style="left:105px;top:-100px;width:90px;height:90px;border-radius:50%;z-index:2;opacity:0"></div>
+    <div id="boxfront" class="abs" style="left:0;top:34px;width:300px;height:181px;background:linear-gradient(#e8bb86,#cf9456);border-radius:8px;z-index:4;box-shadow:0 30px 50px -20px rgba(80,40,0,.4)">
+      <div class="abs" style="left:92px;top:96px;width:116px;height:32px;border:3px solid #9a5f25;border-radius:4px;color:#9a5f25;font-size:15px;font-weight:700;letter-spacing:.15em;text-align:center;line-height:26px">SHIPPING</div></div>
+  </div>
+  <div id="b3w" class="ball">
+    <div class="body ballg"></div>
+    <div class="clip">
+      <div id="hA" class="hole" style="left:-55px;top:105px;width:140px;height:140px;opacity:0"></div>
+      <div id="hB" class="hole" style="left:-25px;top:215px;width:108px;height:108px;opacity:0"></div>
+      <div id="burn" class="abs" style="left:262px;top:84px;width:200px;height:200px;border-radius:50%;opacity:0">
+        <div class="abs" style="inset:-34px;border-radius:50%;background:radial-gradient(circle,rgba(30,16,8,.75) 55%,rgba(30,16,8,0) 72%)"></div>
+        <div id="burnring" class="abs" style="inset:-2px;border-radius:50%;background:#ffd36b;box-shadow:0 0 28px 8px rgba(255,150,40,.85)"></div>
+        <div class="abs hole" style="inset:12px;"></div>
+      </div>
+      <div id="hC" class="hole" style="left:140px;top:340px;width:140px;height:140px;opacity:0"></div>
+    </div>
+    <div id="b3n" class="num" style="font-size:90px">$1,284</div>
+  </div>
+  <div id="fx" class="abs" style="inset:0"></div>
+  <div id="mon" class="abs">
+    <div class="mouth"></div>
+    <div id="jawL" class="jaw"><div class="tooth tl" style="left:150px"></div><div class="tooth tl" style="left:188px"></div><div class="tooth tl" style="left:112px"></div></div>
+    <div id="jawU" class="jaw"><div class="tooth tu" style="left:150px"></div><div class="tooth tu" style="left:188px"></div><div class="tooth tu" style="left:112px"></div>
+      <div class="eye" style="left:96px;top:34px;width:46px;height:54px"><i style="left:20px;top:16px;width:22px;height:26px"></i></div>
+      <div class="eye" style="left:156px;top:34px;width:46px;height:54px"><i style="left:20px;top:16px;width:22px;height:26px"></i></div></div>
+  </div>
+  <div id="flame" class="abs">
+    <div id="flameIn" class="abs"></div>
+    <div class="eye" style="left:62px;top:128px;width:34px;height:40px"><i style="left:11px;top:14px;width:16px;height:18px"></i></div>
+    <div class="eye" style="left:118px;top:128px;width:34px;height:40px"><i style="left:11px;top:14px;width:16px;height:18px"></i></div>
+  </div>
+  <div id="m1" class="minus" style="left:300px;top:720px;color:#5b4bea">−$164</div>
+  <div id="m2" class="minus" style="left:1310px;top:720px;color:#1f63e0">−$398</div>
+  <div id="m3" class="minus" style="left:1230px;top:880px;color:#a8651a">−$310</div>
+</div>
+
+<!-- S4: day, then midnight -->
+<div id="s4" class="scene">
+  <div id="s4night" class="abs" style="inset:0"><div id="stars" class="abs" style="inset:0"></div><div id="moon" class="abs"></div><div id="moonbite" class="abs"></div></div>
+  <div id="s4day" class="abs" style="inset:0"><div id="sun" class="abs"></div></div>
+  <div id="s4h" class="abs" style="left:0;width:1920px;text-align:center;top:170px;font-size:68px;font-weight:600;color:#17171a">And you only find out at</div>
+  <div id="clock" class="abs">
+    <div id="ticks"></div>
+    <div id="hh" class="hand"></div><div id="mh" class="hand"></div><div id="hub" class="abs"></div>
+  </div>
+  <div id="midnight" class="abs it or" style="left:0;width:1920px;text-align:center;top:800px;font-size:150px;color:#ff7a45">midnight.</div>
+</div>
+
+<!-- S5: the bill -->
+<div id="s5" class="scene light">
+  <div id="rc" class="abs">
+    <div id="rcpaper" class="abs"></div><div id="rczig" class="abs"></div>
+    <div class="abs it" style="left:56px;top:40px;font-size:46px;color:#8f8a85">yesterday</div>
+    <div id="r0" class="rr" style="top:118px"><div class="l"><span class="d" style="background:#17171a"></span>Total sales</div><div class="v">$1,284</div></div>
+    <div id="r1" class="rr" style="top:206px"><div class="l"><span class="d" style="background:#5b4bea"></span>Fees</div><div class="v" style="color:#5b4bea">−$164</div></div>
+    <div id="r2" class="rr" style="top:294px"><div class="l"><span class="d" style="background:#1f63e0"></span>Ads</div><div class="v" style="color:#1f63e0">−$398</div></div>
+    <div id="r3" class="rr" style="top:382px"><div class="l"><span class="d" style="background:#a8651a"></span>Shipping</div><div class="v" style="color:#a8651a">−$310</div></div>
+    <div id="rline" class="abs"></div>
+    <div id="keptlbl" class="abs it" style="left:56px;top:508px;font-size:46px;color:#8f8a85;opacity:0">you kept</div>
+    <div id="kept" class="abs">
+      <div id="pill"><div id="pilln" class="num" style="font-size:96px;letter-spacing:-.03em">$412</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- S6: sign-off -->
+<div id="s6" class="scene light">
+  <div id="logo" class="abs">
+    <div id="tally"><div class="tm" style="left:6px"></div><div class="tm" style="left:46px"></div><div class="tm" style="left:86px"></div><div class="tm" style="left:126px"></div><div id="slash"></div></div>
+    <div id="word">Kept<span class="or">.</span></div>
+  </div>
+  <div class="mask" style="top:520px;height:140px"><div id="made1" style="font-size:104px;font-weight:700;letter-spacing:-.03em;line-height:1.3">Made with Claude.</div></div>
+  <div class="mask" style="top:670px;height:150px"><div id="made2" class="it or" style="font-size:96px;line-height:1.4">Every single frame.</div></div>
+</div>
+
+<!--AUDIO-->
+<hf-audio-group id="voiceover" data-label="Voiceover" data-volume="1" data-fx-chain='{"version": 1, "nodes": [{"type": "highpass", "id": "v1", "label": "Remove Rumble", "params": {"frequency": 80, "q": 0.707, "poles": "2"}}, {"type": "peaking", "id": "v2", "label": "Reduce Mud", "params": {"frequency": 250, "gain": -3, "q": 1}}, {"type": "compressor", "id": "v3", "label": "Even Out Loudness", "params": {"threshold": -20, "ratio": 3, "attack": 10, "release": 150, "makeup": 3}}, {"type": "peaking", "id": "v4", "label": "Add Clarity", "params": {"frequency": 3000, "gain": 2.5, "q": 1}}, {"type": "limiter", "id": "v5", "label": "Peak Ceiling", "params": {"limit": -1}}]}'></hf-audio-group>
+<hf-audio-group id="sfx" data-label="SFX" data-volume="0.7" data-fx-chain='{"version": 1, "nodes": [{"type": "highpass", "id": "s1", "params": {"frequency": 60, "q": 0.707, "poles": "2"}}, {"type": "limiter", "id": "s2", "params": {"limit": -3}}]}'></hf-audio-group>
+<audio id="vo1" src="assets/vo/vo1.wav" data-start="0.35" data-duration="1.707" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo2a" src="assets/vo/vo2a.wav" data-start="2.8" data-duration="1.749" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo2b" src="assets/vo/vo2b.wav" data-start="4.65" data-duration="1.664" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo3a" src="assets/vo/vo3a.wav" data-start="6.5" data-duration="0.875" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo3b" src="assets/vo/vo3b.wav" data-start="7.55" data-duration="1.003" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo3c" src="assets/vo/vo3c.wav" data-start="8.6" data-duration="1.109" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo4a" src="assets/vo/vo4a.wav" data-start="10.0" data-duration="1.173" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo4b" src="assets/vo/vo4b.wav" data-start="11.25" data-duration="0.832" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo5" src="assets/vo/vo5.wav" data-start="13.85" data-duration="1.472" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="vo6" src="assets/vo/vo6.wav" data-start="15.55" data-duration="1.984" data-track-index="10" data-volume="1" data-audio-group="voiceover"></audio>
+<audio id="sfx0" src="assets/sfx/glitch.wav" data-start="1.12" data-duration="0.350" data-track-index="20" data-volume="0.55" data-audio-group="sfx"></audio>
+<audio id="sfx1" src="assets/sfx/glitch.wav" data-start="1.3" data-duration="0.350" data-track-index="21" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx2" src="assets/sfx/error_005.ogg" data-start="1.2" data-duration="0.500" data-track-index="22" data-volume="0.35" data-audio-group="sfx"></audio>
+<audio id="sfx3" src="assets/sfx/whoosh.wav" data-start="0.05" data-duration="0.500" data-track-index="23" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx4" src="assets/sfx/whoosh.wav" data-start="2.15" data-duration="0.500" data-track-index="24" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx5" src="assets/sfx/whoosh.wav" data-start="2.6" data-duration="0.500" data-track-index="25" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx6" src="assets/sfx/boing.wav" data-start="2.74" data-duration="0.500" data-track-index="26" data-volume="0.6" data-audio-group="sfx"></audio>
+<audio id="sfx7" src="assets/sfx/drop_002.ogg" data-start="2.92" data-duration="0.191" data-track-index="27" data-volume="0.8" data-audio-group="sfx"></audio>
+<audio id="sfx8" src="assets/sfx/slide.wav" data-start="4.98" data-duration="0.900" data-track-index="28" data-volume="0.35" data-audio-group="sfx"></audio>
+<audio id="sfx9" src="assets/sfx/bloop.wav" data-start="5.25" data-duration="0.120" data-track-index="29" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx10" src="assets/sfx/bloop.wav" data-start="5.35" data-duration="0.120" data-track-index="30" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx11" src="assets/sfx/bloop.wav" data-start="5.45" data-duration="0.120" data-track-index="31" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx12" src="assets/sfx/bloop.wav" data-start="5.55" data-duration="0.120" data-track-index="32" data-volume="0.35" data-audio-group="sfx"></audio>
+<audio id="sfx13" src="assets/sfx/click2.ogg" data-start="6.02" data-duration="0.056" data-track-index="33" data-volume="0.6" data-audio-group="sfx"></audio>
+<audio id="sfx14" src="assets/sfx/blink.wav" data-start="6.32" data-duration="0.040" data-track-index="34" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="sfx15" src="assets/sfx/drop_001.ogg" data-start="6.4" data-duration="0.110" data-track-index="35" data-volume="0.8" data-audio-group="sfx"></audio>
+<audio id="sfx16" src="assets/sfx/whoosh.wav" data-start="6.45" data-duration="0.500" data-track-index="36" data-volume="0.3" data-audio-group="sfx"></audio>
+<audio id="sfx17" src="assets/sfx/impactPlank_medium_000.ogg" data-start="6.92" data-duration="0.779" data-track-index="37" data-volume="1" data-audio-group="sfx"></audio>
+<audio id="sfx18" src="assets/sfx/chomp.wav" data-start="6.9" data-duration="0.300" data-track-index="38" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx19" src="assets/sfx/chips-handle-1.ogg" data-start="6.98" data-duration="0.616" data-track-index="39" data-volume="0.7" data-audio-group="sfx"></audio>
+<audio id="sfx20" src="assets/sfx/pop.wav" data-start="7.02" data-duration="0.060" data-track-index="40" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx21" src="assets/sfx/whoosh.wav" data-start="7.5" data-duration="0.500" data-track-index="41" data-volume="0.3" data-audio-group="sfx"></audio>
+<audio id="sfx22" src="assets/sfx/whoosh.wav" data-start="7.5" data-duration="0.500" data-track-index="42" data-volume="0.3" data-audio-group="sfx"></audio>
+<audio id="sfx23" src="assets/sfx/sizzle.wav" data-start="7.9" data-duration="0.900" data-track-index="43" data-volume="0.7" data-audio-group="sfx"></audio>
+<audio id="sfx24" src="assets/sfx/impactSoft_medium_001.ogg" data-start="7.9" data-duration="0.183" data-track-index="44" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx25" src="assets/sfx/pop.wav" data-start="8.02" data-duration="0.060" data-track-index="45" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx26" src="assets/sfx/whoosh.wav" data-start="8.38" data-duration="0.500" data-track-index="46" data-volume="0.3" data-audio-group="sfx"></audio>
+<audio id="sfx27" src="assets/sfx/drop_001.ogg" data-start="8.58" data-duration="0.110" data-track-index="47" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx28" src="assets/sfx/click2.ogg" data-start="8.95" data-duration="0.056" data-track-index="48" data-volume="0.6" data-audio-group="sfx"></audio>
+<audio id="sfx29" src="assets/sfx/bloop.wav" data-start="9.3" data-duration="0.120" data-track-index="49" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx30" src="assets/sfx/impactPlank_medium_004.ogg" data-start="9.62" data-duration="0.779" data-track-index="50" data-volume="1" data-audio-group="sfx"></audio>
+<audio id="sfx31" src="assets/sfx/pop.wav" data-start="9.62" data-duration="0.060" data-track-index="51" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx32" src="assets/sfx/riser.wav" data-start="10.55" data-duration="0.700" data-track-index="52" data-volume="0.55" data-audio-group="sfx"></audio>
+<audio id="sfx33" src="assets/sfx/impactBell_heavy_000.ogg" data-start="11.25" data-duration="1.480" data-track-index="53" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx34" src="assets/sfx/whoosh.wav" data-start="11.3" data-duration="0.500" data-track-index="54" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx35" src="assets/sfx/tick.wav" data-start="11.3" data-duration="0.030" data-track-index="55" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx36" src="assets/sfx/tick.wav" data-start="11.41" data-duration="0.030" data-track-index="56" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx37" src="assets/sfx/tick.wav" data-start="11.52" data-duration="0.030" data-track-index="57" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx38" src="assets/sfx/tick.wav" data-start="11.63" data-duration="0.030" data-track-index="58" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx39" src="assets/sfx/tick.wav" data-start="11.74" data-duration="0.030" data-track-index="59" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx40" src="assets/sfx/tick.wav" data-start="11.85" data-duration="0.030" data-track-index="60" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx41" src="assets/sfx/card-slide-1.ogg" data-start="12.1" data-duration="0.601" data-track-index="61" data-volume="0.8" data-audio-group="sfx"></audio>
+<audio id="sfx42" src="assets/sfx/click2.ogg" data-start="12.5" data-duration="0.056" data-track-index="62" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx43" src="assets/sfx/click2.ogg" data-start="12.76" data-duration="0.056" data-track-index="63" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx44" src="assets/sfx/click2.ogg" data-start="13.02" data-duration="0.056" data-track-index="64" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx45" src="assets/sfx/click2.ogg" data-start="13.28" data-duration="0.056" data-track-index="65" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx46" src="assets/sfx/card-slide-3.ogg" data-start="13.45" data-duration="0.598" data-track-index="66" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx47" src="assets/sfx/riser.wav" data-start="13.3" data-duration="0.700" data-track-index="67" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx48" src="assets/sfx/impactBell_heavy_000.ogg" data-start="13.9" data-duration="1.480" data-track-index="68" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx49" src="assets/sfx/sparkle.wav" data-start="13.95" data-duration="1.000" data-track-index="69" data-volume="0.5" data-audio-group="sfx"></audio>
+<audio id="sfx50" src="assets/sfx/card-slide-1.ogg" data-start="15.3" data-duration="0.601" data-track-index="70" data-volume="0.8" data-audio-group="sfx"></audio>
+<audio id="sfx51" src="assets/sfx/impactBell_heavy_003.ogg" data-start="15.62" data-duration="0.654" data-track-index="71" data-volume="0.9" data-audio-group="sfx"></audio>
+<audio id="sfx52" src="assets/sfx/sparkle.wav" data-start="15.7" data-duration="1.000" data-track-index="72" data-volume="0.45" data-audio-group="sfx"></audio>
+<audio id="sfx53" src="assets/sfx/ding.wav" data-start="16.55" data-duration="1.200" data-track-index="73" data-volume="0.4" data-audio-group="sfx"></audio>
+<audio id="music" src="assets/music/bed.mp3" data-start="0.2" data-duration="18.2" data-track-index="5" data-volume="0.55" data-audio-group="music" data-fx-carve="{&quot;enabled&quot;:true,&quot;sources&quot;:[&quot;voiceover&quot;],&quot;strength&quot;:0.6}" data-fx-chain="{&quot;version&quot;:1,&quot;nodes&quot;:[{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n1&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:250,&quot;gain&quot;:-5.8,&quot;q&quot;:1.82}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n2&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:630,&quot;gain&quot;:-5.8,&quot;q&quot;:1.82}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n3&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:1000,&quot;gain&quot;:-9.46,&quot;q&quot;:1.82}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n4&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:1600,&quot;gain&quot;:-11.6,&quot;q&quot;:1.82}},{&quot;type&quot;:&quot;peaking&quot;,&quot;id&quot;:&quot;n5&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;frequency&quot;:2500,&quot;gain&quot;:-6.01,&quot;q&quot;:1.82}},{&quot;type&quot;:&quot;gain&quot;,&quot;id&quot;:&quot;n6&quot;,&quot;fromCarve&quot;:true,&quot;params&quot;:{&quot;gain&quot;:0}},{&quot;type&quot;:&quot;lowpass&quot;,&quot;id&quot;:&quot;lp&quot;,&quot;label&quot;:&quot;Midnight filter&quot;,&quot;params&quot;:{&quot;frequency&quot;:18000,&quot;q&quot;:0.9,&quot;poles&quot;:&quot;2&quot;}}]}" data-automation="{&quot;version&quot;:1,&quot;lanes&quot;:[{&quot;target&quot;:&quot;volume&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0.9},{&quot;t&quot;:9.9,&quot;v&quot;:0.9},{&quot;t&quot;:10.3,&quot;v&quot;:0.5},{&quot;t&quot;:12,&quot;v&quot;:0.5},{&quot;t&quot;:12.3,&quot;v&quot;:1},{&quot;t&quot;:17.4,&quot;v&quot;:1},{&quot;t&quot;:18.2,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.lp.frequency&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:18000},{&quot;t&quot;:10,&quot;v&quot;:18000},{&quot;t&quot;:10.5,&quot;v&quot;:700,&quot;curve&quot;:0.4},{&quot;t&quot;:12,&quot;v&quot;:700},{&quot;t&quot;:12.3,&quot;v&quot;:18000,&quot;curve&quot;:0.4}]},{&quot;target&quot;:&quot;fx.n1.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.128,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:-2.4},{&quot;t&quot;:0.299,&quot;v&quot;:-2.8},{&quot;t&quot;:0.384,&quot;v&quot;:-3.8},{&quot;t&quot;:0.469,&quot;v&quot;:-2.7},{&quot;t&quot;:0.555,&quot;v&quot;:-1.9},{&quot;t&quot;:0.64,&quot;v&quot;:-1.4},{&quot;t&quot;:0.725,&quot;v&quot;:-1},{&quot;t&quot;:0.811,&quot;v&quot;:-0.7},{&quot;t&quot;:0.896,&quot;v&quot;:-0.5},{&quot;t&quot;:0.981,&quot;v&quot;:-1.2},{&quot;t&quot;:1.067,&quot;v&quot;:-0.9},{&quot;t&quot;:1.152,&quot;v&quot;:-0.6},{&quot;t&quot;:1.237,&quot;v&quot;:-3.3},{&quot;t&quot;:1.323,&quot;v&quot;:-2.4},{&quot;t&quot;:1.408,&quot;v&quot;:-1.7},{&quot;t&quot;:1.493,&quot;v&quot;:-1.6},{&quot;t&quot;:1.579,&quot;v&quot;:-1.1},{&quot;t&quot;:1.664,&quot;v&quot;:-0.8},{&quot;t&quot;:1.749,&quot;v&quot;:-0.6},{&quot;t&quot;:2.005,&quot;v&quot;:-0.2},{&quot;t&quot;:2.091,&quot;v&quot;:0},{&quot;t&quot;:2.688,&quot;v&quot;:0},{&quot;t&quot;:2.773,&quot;v&quot;:-2.8},{&quot;t&quot;:2.859,&quot;v&quot;:-3.9},{&quot;t&quot;:2.944,&quot;v&quot;:-3.7},{&quot;t&quot;:3.029,&quot;v&quot;:-5.4},{&quot;t&quot;:3.115,&quot;v&quot;:-3.9},{&quot;t&quot;:3.2,&quot;v&quot;:-2.7},{&quot;t&quot;:3.285,&quot;v&quot;:-1.9},{&quot;t&quot;:3.371,&quot;v&quot;:-1.8},{&quot;t&quot;:3.456,&quot;v&quot;:-1.3},{&quot;t&quot;:3.541,&quot;v&quot;:-0.9},{&quot;t&quot;:3.627,&quot;v&quot;:-0.7},{&quot;t&quot;:3.968,&quot;v&quot;:-0.5},{&quot;t&quot;:4.053,&quot;v&quot;:-1.3},{&quot;t&quot;:4.139,&quot;v&quot;:-1},{&quot;t&quot;:4.224,&quot;v&quot;:-0.7},{&quot;t&quot;:4.565,&quot;v&quot;:-0.5},{&quot;t&quot;:4.651,&quot;v&quot;:-3.9},{&quot;t&quot;:4.736,&quot;v&quot;:-2.8},{&quot;t&quot;:4.821,&quot;v&quot;:-2.7},{&quot;t&quot;:4.907,&quot;v&quot;:-3.9},{&quot;t&quot;:4.992,&quot;v&quot;:-2.7},{&quot;t&quot;:5.077,&quot;v&quot;:-1.9},{&quot;t&quot;:5.163,&quot;v&quot;:-1.4},{&quot;t&quot;:5.248,&quot;v&quot;:-1},{&quot;t&quot;:5.333,&quot;v&quot;:-0.7},{&quot;t&quot;:5.419,&quot;v&quot;:-0.5},{&quot;t&quot;:5.504,&quot;v&quot;:-2.5},{&quot;t&quot;:5.589,&quot;v&quot;:-1.9},{&quot;t&quot;:5.675,&quot;v&quot;:-1.4},{&quot;t&quot;:6.016,&quot;v&quot;:-1.1},{&quot;t&quot;:6.101,&quot;v&quot;:-0.8},{&quot;t&quot;:6.272,&quot;v&quot;:-0.4},{&quot;t&quot;:6.357,&quot;v&quot;:-0.3},{&quot;t&quot;:6.443,&quot;v&quot;:-4.1},{&quot;t&quot;:6.528,&quot;v&quot;:-4.9},{&quot;t&quot;:6.613,&quot;v&quot;:-4.9},{&quot;t&quot;:6.699,&quot;v&quot;:-3.7},{&quot;t&quot;:6.784,&quot;v&quot;:-2.7},{&quot;t&quot;:6.869,&quot;v&quot;:-1.9},{&quot;t&quot;:7.04,&quot;v&quot;:-1.6},{&quot;t&quot;:7.125,&quot;v&quot;:-1.1},{&quot;t&quot;:7.211,&quot;v&quot;:-0.8},{&quot;t&quot;:7.296,&quot;v&quot;:-0.6},{&quot;t&quot;:7.381,&quot;v&quot;:-0.4},{&quot;t&quot;:7.467,&quot;v&quot;:-3.7},{&quot;t&quot;:7.552,&quot;v&quot;:-2.6},{&quot;t&quot;:7.637,&quot;v&quot;:-1.9},{&quot;t&quot;:7.723,&quot;v&quot;:-4.2},{&quot;t&quot;:7.808,&quot;v&quot;:-5.1},{&quot;t&quot;:7.893,&quot;v&quot;:-3.6},{&quot;t&quot;:7.979,&quot;v&quot;:-2.6},{&quot;t&quot;:8.064,&quot;v&quot;:-2},{&quot;t&quot;:8.149,&quot;v&quot;:-1.4},{&quot;t&quot;:8.235,&quot;v&quot;:-1},{&quot;t&quot;:8.32,&quot;v&quot;:-0.7},{&quot;t&quot;:8.576,&quot;v&quot;:-0.3},{&quot;t&quot;:8.661,&quot;v&quot;:-2},{&quot;t&quot;:8.747,&quot;v&quot;:-3.1},{&quot;t&quot;:8.832,&quot;v&quot;:-2.2},{&quot;t&quot;:8.917,&quot;v&quot;:-1.6},{&quot;t&quot;:9.003,&quot;v&quot;:-1.1},{&quot;t&quot;:9.088,&quot;v&quot;:-1.7},{&quot;t&quot;:9.173,&quot;v&quot;:-1.2},{&quot;t&quot;:9.259,&quot;v&quot;:-2},{&quot;t&quot;:9.344,&quot;v&quot;:-1.4},{&quot;t&quot;:9.429,&quot;v&quot;:-1},{&quot;t&quot;:9.515,&quot;v&quot;:-0.7},{&quot;t&quot;:9.771,&quot;v&quot;:-0.3},{&quot;t&quot;:9.856,&quot;v&quot;:-2.4},{&quot;t&quot;:9.941,&quot;v&quot;:-4},{&quot;t&quot;:10.027,&quot;v&quot;:-2.8},{&quot;t&quot;:10.112,&quot;v&quot;:-4.6},{&quot;t&quot;:10.197,&quot;v&quot;:-4.2},{&quot;t&quot;:10.283,&quot;v&quot;:-3},{&quot;t&quot;:10.368,&quot;v&quot;:-2.3},{&quot;t&quot;:10.453,&quot;v&quot;:-1.7},{&quot;t&quot;:10.539,&quot;v&quot;:-1.2},{&quot;t&quot;:10.624,&quot;v&quot;:-0.9},{&quot;t&quot;:10.709,&quot;v&quot;:-0.6},{&quot;t&quot;:10.965,&quot;v&quot;:-0.2},{&quot;t&quot;:11.051,&quot;v&quot;:0},{&quot;t&quot;:11.136,&quot;v&quot;:-3.6},{&quot;t&quot;:11.221,&quot;v&quot;:-3.8},{&quot;t&quot;:11.307,&quot;v&quot;:-4.3},{&quot;t&quot;:11.392,&quot;v&quot;:-3},{&quot;t&quot;:11.477,&quot;v&quot;:-2.2},{&quot;t&quot;:11.563,&quot;v&quot;:-1.8},{&quot;t&quot;:11.648,&quot;v&quot;:-1.3},{&quot;t&quot;:11.733,&quot;v&quot;:-0.9},{&quot;t&quot;:11.819,&quot;v&quot;:-0.6},{&quot;t&quot;:12.075,&quot;v&quot;:-0.2},{&quot;t&quot;:12.16,&quot;v&quot;:0},{&quot;t&quot;:13.696,&quot;v&quot;:0},{&quot;t&quot;:13.781,&quot;v&quot;:-3.5},{&quot;t&quot;:13.867,&quot;v&quot;:-4.2},{&quot;t&quot;:13.952,&quot;v&quot;:-3},{&quot;t&quot;:14.123,&quot;v&quot;:-3.3},{&quot;t&quot;:14.208,&quot;v&quot;:-2.4},{&quot;t&quot;:14.293,&quot;v&quot;:-1.7},{&quot;t&quot;:14.379,&quot;v&quot;:-1.2},{&quot;t&quot;:14.464,&quot;v&quot;:-1.7},{&quot;t&quot;:14.549,&quot;v&quot;:-1.2},{&quot;t&quot;:14.635,&quot;v&quot;:-4},{&quot;t&quot;:14.72,&quot;v&quot;:-3},{&quot;t&quot;:14.805,&quot;v&quot;:-2.6},{&quot;t&quot;:14.891,&quot;v&quot;:-2},{&quot;t&quot;:14.976,&quot;v&quot;:-1.4},{&quot;t&quot;:15.061,&quot;v&quot;:-1},{&quot;t&quot;:15.147,&quot;v&quot;:-0.7},{&quot;t&quot;:15.317,&quot;v&quot;:-0.4},{&quot;t&quot;:15.403,&quot;v&quot;:-1.2},{&quot;t&quot;:15.488,&quot;v&quot;:-4.3},{&quot;t&quot;:15.573,&quot;v&quot;:-4.1},{&quot;t&quot;:15.659,&quot;v&quot;:-3.8},{&quot;t&quot;:15.744,&quot;v&quot;:-2.7},{&quot;t&quot;:15.829,&quot;v&quot;:-3.1},{&quot;t&quot;:15.915,&quot;v&quot;:-3.2},{&quot;t&quot;:16,&quot;v&quot;:-2.3},{&quot;t&quot;:16.085,&quot;v&quot;:-1.6},{&quot;t&quot;:16.171,&quot;v&quot;:-1.2},{&quot;t&quot;:16.256,&quot;v&quot;:-0.8},{&quot;t&quot;:16.427,&quot;v&quot;:-0.5},{&quot;t&quot;:16.512,&quot;v&quot;:-3.8},{&quot;t&quot;:16.597,&quot;v&quot;:-2.7},{&quot;t&quot;:16.683,&quot;v&quot;:-1.9},{&quot;t&quot;:16.768,&quot;v&quot;:-1.4},{&quot;t&quot;:16.939,&quot;v&quot;:-1.2},{&quot;t&quot;:17.024,&quot;v&quot;:-0.8},{&quot;t&quot;:17.28,&quot;v&quot;:-0.4},{&quot;t&quot;:17.365,&quot;v&quot;:-0.3},{&quot;t&quot;:17.365,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n2.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:0},{&quot;t&quot;:0.299,&quot;v&quot;:-1},{&quot;t&quot;:0.384,&quot;v&quot;:-2.3},{&quot;t&quot;:0.469,&quot;v&quot;:-1.9},{&quot;t&quot;:0.555,&quot;v&quot;:-1.4},{&quot;t&quot;:0.64,&quot;v&quot;:-4.1},{&quot;t&quot;:0.725,&quot;v&quot;:-4},{&quot;t&quot;:0.811,&quot;v&quot;:-2.9},{&quot;t&quot;:0.896,&quot;v&quot;:-2},{&quot;t&quot;:0.981,&quot;v&quot;:-3.4},{&quot;t&quot;:1.067,&quot;v&quot;:-2.4},{&quot;t&quot;:1.152,&quot;v&quot;:-4.3},{&quot;t&quot;:1.237,&quot;v&quot;:-4.3},{&quot;t&quot;:1.323,&quot;v&quot;:-3.8},{&quot;t&quot;:1.408,&quot;v&quot;:-2.7},{&quot;t&quot;:1.493,&quot;v&quot;:-1.9},{&quot;t&quot;:1.579,&quot;v&quot;:-1.4},{&quot;t&quot;:1.664,&quot;v&quot;:-1.9},{&quot;t&quot;:1.749,&quot;v&quot;:-1.4},{&quot;t&quot;:1.835,&quot;v&quot;:-1},{&quot;t&quot;:1.92,&quot;v&quot;:-0.7},{&quot;t&quot;:2.176,&quot;v&quot;:-0.2},{&quot;t&quot;:2.261,&quot;v&quot;:0},{&quot;t&quot;:2.688,&quot;v&quot;:0},{&quot;t&quot;:2.773,&quot;v&quot;:-2.1},{&quot;t&quot;:2.859,&quot;v&quot;:-3.2},{&quot;t&quot;:2.944,&quot;v&quot;:-2.8},{&quot;t&quot;:3.029,&quot;v&quot;:-2.6},{&quot;t&quot;:3.115,&quot;v&quot;:-3.2},{&quot;t&quot;:3.2,&quot;v&quot;:-2.3},{&quot;t&quot;:3.285,&quot;v&quot;:-1.6},{&quot;t&quot;:3.371,&quot;v&quot;:-3.8},{&quot;t&quot;:3.456,&quot;v&quot;:-4.6},{&quot;t&quot;:3.541,&quot;v&quot;:-4.4},{&quot;t&quot;:3.627,&quot;v&quot;:-3.4},{&quot;t&quot;:3.712,&quot;v&quot;:-2.4},{&quot;t&quot;:3.968,&quot;v&quot;:-2},{&quot;t&quot;:4.053,&quot;v&quot;:-3.2},{&quot;t&quot;:4.139,&quot;v&quot;:-2.5},{&quot;t&quot;:4.224,&quot;v&quot;:-1.8},{&quot;t&quot;:4.309,&quot;v&quot;:-1.3},{&quot;t&quot;:4.395,&quot;v&quot;:-0.9},{&quot;t&quot;:4.48,&quot;v&quot;:-0.6},{&quot;t&quot;:4.565,&quot;v&quot;:-3.9},{&quot;t&quot;:4.651,&quot;v&quot;:-3.2},{&quot;t&quot;:4.736,&quot;v&quot;:-2.3},{&quot;t&quot;:4.821,&quot;v&quot;:-3.3},{&quot;t&quot;:4.907,&quot;v&quot;:-2.3},{&quot;t&quot;:4.992,&quot;v&quot;:-1.8},{&quot;t&quot;:5.077,&quot;v&quot;:-2.8},{&quot;t&quot;:5.163,&quot;v&quot;:-2},{&quot;t&quot;:5.248,&quot;v&quot;:-1.4},{&quot;t&quot;:5.333,&quot;v&quot;:-1},{&quot;t&quot;:5.419,&quot;v&quot;:-0.7},{&quot;t&quot;:5.504,&quot;v&quot;:-3},{&quot;t&quot;:5.589,&quot;v&quot;:-3.2},{&quot;t&quot;:5.675,&quot;v&quot;:-2.2},{&quot;t&quot;:5.76,&quot;v&quot;:-4.2},{&quot;t&quot;:5.845,&quot;v&quot;:-3.7},{&quot;t&quot;:5.931,&quot;v&quot;:-3.5},{&quot;t&quot;:6.016,&quot;v&quot;:-2.5},{&quot;t&quot;:6.101,&quot;v&quot;:-1.8},{&quot;t&quot;:6.187,&quot;v&quot;:-1.2},{&quot;t&quot;:6.272,&quot;v&quot;:-0.9},{&quot;t&quot;:6.357,&quot;v&quot;:-0.6},{&quot;t&quot;:6.443,&quot;v&quot;:-1.4},{&quot;t&quot;:6.528,&quot;v&quot;:-1},{&quot;t&quot;:6.613,&quot;v&quot;:-0.8},{&quot;t&quot;:6.699,&quot;v&quot;:-1.6},{&quot;t&quot;:6.784,&quot;v&quot;:-1.2},{&quot;t&quot;:6.869,&quot;v&quot;:-2.4},{&quot;t&quot;:6.955,&quot;v&quot;:-1.7},{&quot;t&quot;:7.04,&quot;v&quot;:-1.2},{&quot;t&quot;:7.125,&quot;v&quot;:-0.9},{&quot;t&quot;:7.211,&quot;v&quot;:-0.6},{&quot;t&quot;:7.381,&quot;v&quot;:-0.3},{&quot;t&quot;:7.467,&quot;v&quot;:-2.1},{&quot;t&quot;:7.552,&quot;v&quot;:-1.5},{&quot;t&quot;:7.637,&quot;v&quot;:-1},{&quot;t&quot;:7.723,&quot;v&quot;:-3},{&quot;t&quot;:7.808,&quot;v&quot;:-2.1},{&quot;t&quot;:7.893,&quot;v&quot;:-1.6},{&quot;t&quot;:7.979,&quot;v&quot;:-3.2},{&quot;t&quot;:8.064,&quot;v&quot;:-2.9},{&quot;t&quot;:8.149,&quot;v&quot;:-2},{&quot;t&quot;:8.235,&quot;v&quot;:-1.4},{&quot;t&quot;:8.32,&quot;v&quot;:-1},{&quot;t&quot;:8.405,&quot;v&quot;:-0.7},{&quot;t&quot;:8.576,&quot;v&quot;:-0.5},{&quot;t&quot;:8.661,&quot;v&quot;:-3.8},{&quot;t&quot;:8.832,&quot;v&quot;:-3.5},{&quot;t&quot;:8.917,&quot;v&quot;:-2.5},{&quot;t&quot;:9.003,&quot;v&quot;:-1.7},{&quot;t&quot;:9.088,&quot;v&quot;:-4.8},{&quot;t&quot;:9.173,&quot;v&quot;:-4.2},{&quot;t&quot;:9.259,&quot;v&quot;:-3.4},{&quot;t&quot;:9.344,&quot;v&quot;:-2.4},{&quot;t&quot;:9.429,&quot;v&quot;:-1.7},{&quot;t&quot;:9.515,&quot;v&quot;:-1.2},{&quot;t&quot;:9.6,&quot;v&quot;:-0.9},{&quot;t&quot;:9.685,&quot;v&quot;:-0.6},{&quot;t&quot;:9.771,&quot;v&quot;:-0.4},{&quot;t&quot;:9.856,&quot;v&quot;:-1.3},{&quot;t&quot;:10.027,&quot;v&quot;:-1.6},{&quot;t&quot;:10.112,&quot;v&quot;:-1.8},{&quot;t&quot;:10.197,&quot;v&quot;:-3.4},{&quot;t&quot;:10.283,&quot;v&quot;:-2.4},{&quot;t&quot;:10.368,&quot;v&quot;:-2.9},{&quot;t&quot;:10.624,&quot;v&quot;:-2.6},{&quot;t&quot;:10.709,&quot;v&quot;:-2.1},{&quot;t&quot;:10.795,&quot;v&quot;:-1.5},{&quot;t&quot;:10.88,&quot;v&quot;:-1},{&quot;t&quot;:10.965,&quot;v&quot;:-0.7},{&quot;t&quot;:11.051,&quot;v&quot;:-0.5},{&quot;t&quot;:11.136,&quot;v&quot;:-0.8},{&quot;t&quot;:11.221,&quot;v&quot;:-4.9},{&quot;t&quot;:11.307,&quot;v&quot;:-3.5},{&quot;t&quot;:11.477,&quot;v&quot;:-3.1},{&quot;t&quot;:11.563,&quot;v&quot;:-2.2},{&quot;t&quot;:11.648,&quot;v&quot;:-1.6},{&quot;t&quot;:11.733,&quot;v&quot;:-1.1},{&quot;t&quot;:11.819,&quot;v&quot;:-0.8},{&quot;t&quot;:11.904,&quot;v&quot;:-0.6},{&quot;t&quot;:12.16,&quot;v&quot;:-0.2},{&quot;t&quot;:12.245,&quot;v&quot;:0},{&quot;t&quot;:13.696,&quot;v&quot;:0},{&quot;t&quot;:13.781,&quot;v&quot;:-2.4},{&quot;t&quot;:13.867,&quot;v&quot;:-1.8},{&quot;t&quot;:13.952,&quot;v&quot;:-1.2},{&quot;t&quot;:14.037,&quot;v&quot;:-3.9},{&quot;t&quot;:14.208,&quot;v&quot;:-4.2},{&quot;t&quot;:14.293,&quot;v&quot;:-3},{&quot;t&quot;:14.379,&quot;v&quot;:-2.1},{&quot;t&quot;:14.464,&quot;v&quot;:-2},{&quot;t&quot;:14.549,&quot;v&quot;:-1.5},{&quot;t&quot;:14.635,&quot;v&quot;:-1.4},{&quot;t&quot;:14.72,&quot;v&quot;:-3.8},{&quot;t&quot;:14.805,&quot;v&quot;:-3.4},{&quot;t&quot;:14.891,&quot;v&quot;:-2.6},{&quot;t&quot;:14.976,&quot;v&quot;:-1.8},{&quot;t&quot;:15.061,&quot;v&quot;:-1.3},{&quot;t&quot;:15.147,&quot;v&quot;:-0.9},{&quot;t&quot;:15.232,&quot;v&quot;:-0.7},{&quot;t&quot;:15.403,&quot;v&quot;:-0.3},{&quot;t&quot;:15.488,&quot;v&quot;:-1.8},{&quot;t&quot;:15.573,&quot;v&quot;:-1.4},{&quot;t&quot;:15.659,&quot;v&quot;:-3.8},{&quot;t&quot;:15.744,&quot;v&quot;:-2.7},{&quot;t&quot;:15.829,&quot;v&quot;:-3},{&quot;t&quot;:15.915,&quot;v&quot;:-4.1},{&quot;t&quot;:16,&quot;v&quot;:-3.8},{&quot;t&quot;:16.085,&quot;v&quot;:-2.7},{&quot;t&quot;:16.171,&quot;v&quot;:-1.9},{&quot;t&quot;:16.256,&quot;v&quot;:-1.4},{&quot;t&quot;:16.341,&quot;v&quot;:-4.2},{&quot;t&quot;:16.427,&quot;v&quot;:-3},{&quot;t&quot;:16.512,&quot;v&quot;:-2.4},{&quot;t&quot;:16.597,&quot;v&quot;:-1.7},{&quot;t&quot;:16.683,&quot;v&quot;:-2.2},{&quot;t&quot;:16.768,&quot;v&quot;:-3.4},{&quot;t&quot;:16.853,&quot;v&quot;:-2.4},{&quot;t&quot;:16.939,&quot;v&quot;:-3.2},{&quot;t&quot;:17.024,&quot;v&quot;:-2.8},{&quot;t&quot;:17.109,&quot;v&quot;:-2.2},{&quot;t&quot;:17.195,&quot;v&quot;:-1.6},{&quot;t&quot;:17.28,&quot;v&quot;:-1.1},{&quot;t&quot;:17.365,&quot;v&quot;:-0.8},{&quot;t&quot;:17.365,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n3.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:0},{&quot;t&quot;:0.299,&quot;v&quot;:-1.1},{&quot;t&quot;:0.384,&quot;v&quot;:-6.7},{&quot;t&quot;:0.469,&quot;v&quot;:-5.9},{&quot;t&quot;:0.555,&quot;v&quot;:-4.2},{&quot;t&quot;:0.64,&quot;v&quot;:-6.5},{&quot;t&quot;:0.725,&quot;v&quot;:-5.4},{&quot;t&quot;:0.811,&quot;v&quot;:-3.8},{&quot;t&quot;:0.896,&quot;v&quot;:-2.7},{&quot;t&quot;:0.981,&quot;v&quot;:-2.5},{&quot;t&quot;:1.067,&quot;v&quot;:-1.8},{&quot;t&quot;:1.152,&quot;v&quot;:-6.6},{&quot;t&quot;:1.237,&quot;v&quot;:-7.1},{&quot;t&quot;:1.323,&quot;v&quot;:-5.9},{&quot;t&quot;:1.408,&quot;v&quot;:-4.2},{&quot;t&quot;:1.493,&quot;v&quot;:-3},{&quot;t&quot;:1.579,&quot;v&quot;:-2.1},{&quot;t&quot;:1.664,&quot;v&quot;:-1.5},{&quot;t&quot;:1.749,&quot;v&quot;:-1.1},{&quot;t&quot;:1.835,&quot;v&quot;:-0.8},{&quot;t&quot;:2.005,&quot;v&quot;:-0.4},{&quot;t&quot;:2.091,&quot;v&quot;:-0.3},{&quot;t&quot;:2.688,&quot;v&quot;:0},{&quot;t&quot;:2.773,&quot;v&quot;:-3.3},{&quot;t&quot;:2.859,&quot;v&quot;:-2.9},{&quot;t&quot;:2.944,&quot;v&quot;:-2},{&quot;t&quot;:3.029,&quot;v&quot;:-2.8},{&quot;t&quot;:3.115,&quot;v&quot;:-2.7},{&quot;t&quot;:3.2,&quot;v&quot;:-1.9},{&quot;t&quot;:3.285,&quot;v&quot;:-1.5},{&quot;t&quot;:3.371,&quot;v&quot;:-7},{&quot;t&quot;:3.456,&quot;v&quot;:-7.3},{&quot;t&quot;:3.541,&quot;v&quot;:-6.1},{&quot;t&quot;:3.627,&quot;v&quot;:-4.4},{&quot;t&quot;:3.712,&quot;v&quot;:-3.1},{&quot;t&quot;:3.883,&quot;v&quot;:-3.3},{&quot;t&quot;:3.968,&quot;v&quot;:-2.3},{&quot;t&quot;:4.053,&quot;v&quot;:-2.6},{&quot;t&quot;:4.139,&quot;v&quot;:-3.1},{&quot;t&quot;:4.224,&quot;v&quot;:-2.2},{&quot;t&quot;:4.309,&quot;v&quot;:-1.6},{&quot;t&quot;:4.395,&quot;v&quot;:-1.1},{&quot;t&quot;:4.48,&quot;v&quot;:-0.8},{&quot;t&quot;:4.565,&quot;v&quot;:-2.9},{&quot;t&quot;:4.651,&quot;v&quot;:-5.9},{&quot;t&quot;:4.736,&quot;v&quot;:-4.2},{&quot;t&quot;:4.821,&quot;v&quot;:-3.1},{&quot;t&quot;:4.907,&quot;v&quot;:-2.2},{&quot;t&quot;:4.992,&quot;v&quot;:-2.4},{&quot;t&quot;:5.077,&quot;v&quot;:-6.3},{&quot;t&quot;:5.163,&quot;v&quot;:-4.5},{&quot;t&quot;:5.248,&quot;v&quot;:-3.2},{&quot;t&quot;:5.333,&quot;v&quot;:-2.3},{&quot;t&quot;:5.419,&quot;v&quot;:-1.6},{&quot;t&quot;:5.504,&quot;v&quot;:-4.4},{&quot;t&quot;:5.589,&quot;v&quot;:-3.9},{&quot;t&quot;:5.675,&quot;v&quot;:-2.7},{&quot;t&quot;:5.76,&quot;v&quot;:-6.4},{&quot;t&quot;:5.845,&quot;v&quot;:-6.2},{&quot;t&quot;:5.931,&quot;v&quot;:-5.5},{&quot;t&quot;:6.016,&quot;v&quot;:-3.9},{&quot;t&quot;:6.101,&quot;v&quot;:-2.8},{&quot;t&quot;:6.187,&quot;v&quot;:-2},{&quot;t&quot;:6.272,&quot;v&quot;:-1.4},{&quot;t&quot;:6.357,&quot;v&quot;:-1},{&quot;t&quot;:6.443,&quot;v&quot;:-0.7},{&quot;t&quot;:6.528,&quot;v&quot;:-2.2},{&quot;t&quot;:6.613,&quot;v&quot;:-5.2},{&quot;t&quot;:6.699,&quot;v&quot;:-4.1},{&quot;t&quot;:6.784,&quot;v&quot;:-3},{&quot;t&quot;:6.869,&quot;v&quot;:-6.7},{&quot;t&quot;:6.955,&quot;v&quot;:-4.8},{&quot;t&quot;:7.04,&quot;v&quot;:-3.4},{&quot;t&quot;:7.125,&quot;v&quot;:-2.4},{&quot;t&quot;:7.211,&quot;v&quot;:-1.7},{&quot;t&quot;:7.296,&quot;v&quot;:-1.2},{&quot;t&quot;:7.381,&quot;v&quot;:-4.4},{&quot;t&quot;:7.467,&quot;v&quot;:-8.5},{&quot;t&quot;:7.552,&quot;v&quot;:-6.1},{&quot;t&quot;:7.637,&quot;v&quot;:-4.3},{&quot;t&quot;:7.723,&quot;v&quot;:-5.6},{&quot;t&quot;:7.808,&quot;v&quot;:-5.2},{&quot;t&quot;:7.893,&quot;v&quot;:-3.7},{&quot;t&quot;:8.064,&quot;v&quot;:-4},{&quot;t&quot;:8.149,&quot;v&quot;:-2.9},{&quot;t&quot;:8.235,&quot;v&quot;:-2},{&quot;t&quot;:8.32,&quot;v&quot;:-1.4},{&quot;t&quot;:8.405,&quot;v&quot;:-1},{&quot;t&quot;:8.491,&quot;v&quot;:-0.7},{&quot;t&quot;:8.661,&quot;v&quot;:-0.9},{&quot;t&quot;:8.747,&quot;v&quot;:-3.1},{&quot;t&quot;:8.832,&quot;v&quot;:-3},{&quot;t&quot;:8.917,&quot;v&quot;:-2.1},{&quot;t&quot;:9.003,&quot;v&quot;:-1.5},{&quot;t&quot;:9.088,&quot;v&quot;:-6.4},{&quot;t&quot;:9.173,&quot;v&quot;:-7.2},{&quot;t&quot;:9.259,&quot;v&quot;:-6.2},{&quot;t&quot;:9.344,&quot;v&quot;:-4.4},{&quot;t&quot;:9.429,&quot;v&quot;:-3.1},{&quot;t&quot;:9.515,&quot;v&quot;:-2.2},{&quot;t&quot;:9.6,&quot;v&quot;:-1.6},{&quot;t&quot;:9.685,&quot;v&quot;:-1.1},{&quot;t&quot;:9.771,&quot;v&quot;:-0.8},{&quot;t&quot;:9.856,&quot;v&quot;:-0.6},{&quot;t&quot;:9.941,&quot;v&quot;:-0.4},{&quot;t&quot;:10.027,&quot;v&quot;:-3},{&quot;t&quot;:10.197,&quot;v&quot;:-2.9},{&quot;t&quot;:10.283,&quot;v&quot;:-2.1},{&quot;t&quot;:10.368,&quot;v&quot;:-6.6},{&quot;t&quot;:10.453,&quot;v&quot;:-5},{&quot;t&quot;:10.539,&quot;v&quot;:-6.8},{&quot;t&quot;:10.624,&quot;v&quot;:-6.2},{&quot;t&quot;:10.709,&quot;v&quot;:-5.7},{&quot;t&quot;:10.795,&quot;v&quot;:-4},{&quot;t&quot;:10.88,&quot;v&quot;:-2.9},{&quot;t&quot;:10.965,&quot;v&quot;:-2},{&quot;t&quot;:11.051,&quot;v&quot;:-1.5},{&quot;t&quot;:11.136,&quot;v&quot;:-1},{&quot;t&quot;:11.221,&quot;v&quot;:-3.7},{&quot;t&quot;:11.307,&quot;v&quot;:-2.8},{&quot;t&quot;:11.392,&quot;v&quot;:-7.1},{&quot;t&quot;:11.477,&quot;v&quot;:-6.2},{&quot;t&quot;:11.563,&quot;v&quot;:-4.4},{&quot;t&quot;:11.648,&quot;v&quot;:-3.2},{&quot;t&quot;:11.733,&quot;v&quot;:-2.3},{&quot;t&quot;:11.819,&quot;v&quot;:-1.6},{&quot;t&quot;:11.904,&quot;v&quot;:-1.2},{&quot;t&quot;:11.989,&quot;v&quot;:-0.8},{&quot;t&quot;:12.16,&quot;v&quot;:-0.4},{&quot;t&quot;:12.245,&quot;v&quot;:-0.3},{&quot;t&quot;:13.696,&quot;v&quot;:0},{&quot;t&quot;:13.781,&quot;v&quot;:-5.5},{&quot;t&quot;:13.867,&quot;v&quot;:-4.4},{&quot;t&quot;:13.952,&quot;v&quot;:-3.1},{&quot;t&quot;:14.037,&quot;v&quot;:-6.8},{&quot;t&quot;:14.123,&quot;v&quot;:-7.9},{&quot;t&quot;:14.208,&quot;v&quot;:-6.7},{&quot;t&quot;:14.293,&quot;v&quot;:-4.8},{&quot;t&quot;:14.379,&quot;v&quot;:-3.4},{&quot;t&quot;:14.464,&quot;v&quot;:-2.5},{&quot;t&quot;:14.549,&quot;v&quot;:-1.9},{&quot;t&quot;:14.635,&quot;v&quot;:-1.4},{&quot;t&quot;:14.72,&quot;v&quot;:-4.3},{&quot;t&quot;:14.805,&quot;v&quot;:-3.7},{&quot;t&quot;:14.891,&quot;v&quot;:-3.5},{&quot;t&quot;:14.976,&quot;v&quot;:-2.5},{&quot;t&quot;:15.061,&quot;v&quot;:-1.8},{&quot;t&quot;:15.147,&quot;v&quot;:-1.3},{&quot;t&quot;:15.232,&quot;v&quot;:-0.9},{&quot;t&quot;:15.317,&quot;v&quot;:-0.6},{&quot;t&quot;:15.403,&quot;v&quot;:-0.5},{&quot;t&quot;:15.488,&quot;v&quot;:-2.2},{&quot;t&quot;:15.573,&quot;v&quot;:-1.5},{&quot;t&quot;:15.659,&quot;v&quot;:-1.3},{&quot;t&quot;:15.744,&quot;v&quot;:-1},{&quot;t&quot;:15.829,&quot;v&quot;:-4.6},{&quot;t&quot;:15.915,&quot;v&quot;:-8.2},{&quot;t&quot;:16,&quot;v&quot;:-7.7},{&quot;t&quot;:16.085,&quot;v&quot;:-5.5},{&quot;t&quot;:16.171,&quot;v&quot;:-3.9},{&quot;t&quot;:16.256,&quot;v&quot;:-2.8},{&quot;t&quot;:16.341,&quot;v&quot;:-5.4},{&quot;t&quot;:16.427,&quot;v&quot;:-3.8},{&quot;t&quot;:16.512,&quot;v&quot;:-2.7},{&quot;t&quot;:16.597,&quot;v&quot;:-1.9},{&quot;t&quot;:16.683,&quot;v&quot;:-1.9},{&quot;t&quot;:16.768,&quot;v&quot;:-5.7},{&quot;t&quot;:16.853,&quot;v&quot;:-4.1},{&quot;t&quot;:16.939,&quot;v&quot;:-5},{&quot;t&quot;:17.024,&quot;v&quot;:-4.5},{&quot;t&quot;:17.109,&quot;v&quot;:-3.3},{&quot;t&quot;:17.195,&quot;v&quot;:-2.3},{&quot;t&quot;:17.28,&quot;v&quot;:-1.7},{&quot;t&quot;:17.365,&quot;v&quot;:-1.2},{&quot;t&quot;:17.365,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n4.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.128,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:-2.7},{&quot;t&quot;:0.299,&quot;v&quot;:-2.3},{&quot;t&quot;:0.384,&quot;v&quot;:-9.5},{&quot;t&quot;:0.469,&quot;v&quot;:-8},{&quot;t&quot;:0.555,&quot;v&quot;:-5.7},{&quot;t&quot;:0.64,&quot;v&quot;:-4.5},{&quot;t&quot;:0.725,&quot;v&quot;:-6.2},{&quot;t&quot;:0.811,&quot;v&quot;:-4.4},{&quot;t&quot;:0.896,&quot;v&quot;:-3.1},{&quot;t&quot;:0.981,&quot;v&quot;:-3.1},{&quot;t&quot;:1.067,&quot;v&quot;:-2.2},{&quot;t&quot;:1.152,&quot;v&quot;:-8.4},{&quot;t&quot;:1.237,&quot;v&quot;:-7.8},{&quot;t&quot;:1.323,&quot;v&quot;:-5.5},{&quot;t&quot;:1.408,&quot;v&quot;:-3.9},{&quot;t&quot;:1.493,&quot;v&quot;:-2.8},{&quot;t&quot;:1.579,&quot;v&quot;:-2},{&quot;t&quot;:1.664,&quot;v&quot;:-3.5},{&quot;t&quot;:1.749,&quot;v&quot;:-2.5},{&quot;t&quot;:1.835,&quot;v&quot;:-1.8},{&quot;t&quot;:1.92,&quot;v&quot;:-1.3},{&quot;t&quot;:2.005,&quot;v&quot;:-0.9},{&quot;t&quot;:2.091,&quot;v&quot;:-0.6},{&quot;t&quot;:2.347,&quot;v&quot;:-0.2},{&quot;t&quot;:2.432,&quot;v&quot;:0},{&quot;t&quot;:2.688,&quot;v&quot;:0},{&quot;t&quot;:2.773,&quot;v&quot;:-4.4},{&quot;t&quot;:2.859,&quot;v&quot;:-4.2},{&quot;t&quot;:2.944,&quot;v&quot;:-3},{&quot;t&quot;:3.029,&quot;v&quot;:-4.6},{&quot;t&quot;:3.115,&quot;v&quot;:-3.3},{&quot;t&quot;:3.2,&quot;v&quot;:-2.3},{&quot;t&quot;:3.285,&quot;v&quot;:-5.9},{&quot;t&quot;:3.371,&quot;v&quot;:-6.4},{&quot;t&quot;:3.456,&quot;v&quot;:-5.3},{&quot;t&quot;:3.541,&quot;v&quot;:-5.9},{&quot;t&quot;:3.627,&quot;v&quot;:-4.2},{&quot;t&quot;:3.712,&quot;v&quot;:-3.8},{&quot;t&quot;:3.797,&quot;v&quot;:-3.2},{&quot;t&quot;:3.883,&quot;v&quot;:-7.3},{&quot;t&quot;:3.968,&quot;v&quot;:-5.2},{&quot;t&quot;:4.053,&quot;v&quot;:-4.9},{&quot;t&quot;:4.139,&quot;v&quot;:-3.9},{&quot;t&quot;:4.224,&quot;v&quot;:-2.8},{&quot;t&quot;:4.309,&quot;v&quot;:-2},{&quot;t&quot;:4.395,&quot;v&quot;:-1.4},{&quot;t&quot;:4.48,&quot;v&quot;:-1},{&quot;t&quot;:4.565,&quot;v&quot;:-5},{&quot;t&quot;:4.651,&quot;v&quot;:-7.9},{&quot;t&quot;:4.736,&quot;v&quot;:-6},{&quot;t&quot;:4.821,&quot;v&quot;:-6.2},{&quot;t&quot;:4.907,&quot;v&quot;:-4.4},{&quot;t&quot;:4.992,&quot;v&quot;:-3.1},{&quot;t&quot;:5.077,&quot;v&quot;:-6.1},{&quot;t&quot;:5.163,&quot;v&quot;:-4.3},{&quot;t&quot;:5.248,&quot;v&quot;:-3.1},{&quot;t&quot;:5.333,&quot;v&quot;:-2.2},{&quot;t&quot;:5.419,&quot;v&quot;:-1.5},{&quot;t&quot;:5.504,&quot;v&quot;:-1.9},{&quot;t&quot;:5.589,&quot;v&quot;:-7.1},{&quot;t&quot;:5.675,&quot;v&quot;:-6.9},{&quot;t&quot;:5.76,&quot;v&quot;:-9},{&quot;t&quot;:5.845,&quot;v&quot;:-8.4},{&quot;t&quot;:5.931,&quot;v&quot;:-6},{&quot;t&quot;:6.016,&quot;v&quot;:-4.2},{&quot;t&quot;:6.101,&quot;v&quot;:-3},{&quot;t&quot;:6.187,&quot;v&quot;:-2.1},{&quot;t&quot;:6.272,&quot;v&quot;:-1.5},{&quot;t&quot;:6.357,&quot;v&quot;:-1.1},{&quot;t&quot;:6.443,&quot;v&quot;:-0.8},{&quot;t&quot;:6.528,&quot;v&quot;:-1},{&quot;t&quot;:6.613,&quot;v&quot;:-5.4},{&quot;t&quot;:6.699,&quot;v&quot;:-4.1},{&quot;t&quot;:6.784,&quot;v&quot;:-2.9},{&quot;t&quot;:6.869,&quot;v&quot;:-8.9},{&quot;t&quot;:6.955,&quot;v&quot;:-6.3},{&quot;t&quot;:7.04,&quot;v&quot;:-4.5},{&quot;t&quot;:7.125,&quot;v&quot;:-3.2},{&quot;t&quot;:7.211,&quot;v&quot;:-2.3},{&quot;t&quot;:7.296,&quot;v&quot;:-1.6},{&quot;t&quot;:7.381,&quot;v&quot;:-3.2},{&quot;t&quot;:7.467,&quot;v&quot;:-7},{&quot;t&quot;:7.552,&quot;v&quot;:-5},{&quot;t&quot;:7.637,&quot;v&quot;:-3.6},{&quot;t&quot;:7.723,&quot;v&quot;:-9.5},{&quot;t&quot;:7.808,&quot;v&quot;:-8.5},{&quot;t&quot;:7.893,&quot;v&quot;:-6},{&quot;t&quot;:7.979,&quot;v&quot;:-4.3},{&quot;t&quot;:8.064,&quot;v&quot;:-6.2},{&quot;t&quot;:8.149,&quot;v&quot;:-4.4},{&quot;t&quot;:8.235,&quot;v&quot;:-3.1},{&quot;t&quot;:8.32,&quot;v&quot;:-2.2},{&quot;t&quot;:8.405,&quot;v&quot;:-1.6},{&quot;t&quot;:8.491,&quot;v&quot;:-1.1},{&quot;t&quot;:8.576,&quot;v&quot;:-0.8},{&quot;t&quot;:8.661,&quot;v&quot;:-3.6},{&quot;t&quot;:8.747,&quot;v&quot;:-4.2},{&quot;t&quot;:8.832,&quot;v&quot;:-3.6},{&quot;t&quot;:8.917,&quot;v&quot;:-2.5},{&quot;t&quot;:9.003,&quot;v&quot;:-1.8},{&quot;t&quot;:9.088,&quot;v&quot;:-7},{&quot;t&quot;:9.259,&quot;v&quot;:-6.8},{&quot;t&quot;:9.344,&quot;v&quot;:-4.8},{&quot;t&quot;:9.429,&quot;v&quot;:-3.4},{&quot;t&quot;:9.515,&quot;v&quot;:-2.4},{&quot;t&quot;:9.6,&quot;v&quot;:-1.7},{&quot;t&quot;:9.685,&quot;v&quot;:-1.2},{&quot;t&quot;:9.771,&quot;v&quot;:-0.9},{&quot;t&quot;:9.856,&quot;v&quot;:-0.6},{&quot;t&quot;:10.027,&quot;v&quot;:-0.3},{&quot;t&quot;:10.112,&quot;v&quot;:-1.2},{&quot;t&quot;:10.197,&quot;v&quot;:-2.3},{&quot;t&quot;:10.283,&quot;v&quot;:-2.1},{&quot;t&quot;:10.368,&quot;v&quot;:-8.7},{&quot;t&quot;:10.453,&quot;v&quot;:-6.2},{&quot;t&quot;:10.539,&quot;v&quot;:-7.2},{&quot;t&quot;:10.624,&quot;v&quot;:-7},{&quot;t&quot;:10.709,&quot;v&quot;:-6.4},{&quot;t&quot;:10.795,&quot;v&quot;:-4.6},{&quot;t&quot;:10.88,&quot;v&quot;:-3.2},{&quot;t&quot;:10.965,&quot;v&quot;:-2.3},{&quot;t&quot;:11.051,&quot;v&quot;:-1.6},{&quot;t&quot;:11.136,&quot;v&quot;:-3.3},{&quot;t&quot;:11.221,&quot;v&quot;:-5.6},{&quot;t&quot;:11.307,&quot;v&quot;:-4},{&quot;t&quot;:11.392,&quot;v&quot;:-8.7},{&quot;t&quot;:11.477,&quot;v&quot;:-7.3},{&quot;t&quot;:11.563,&quot;v&quot;:-5.2},{&quot;t&quot;:11.648,&quot;v&quot;:-3.7},{&quot;t&quot;:11.733,&quot;v&quot;:-2.6},{&quot;t&quot;:11.819,&quot;v&quot;:-1.9},{&quot;t&quot;:11.904,&quot;v&quot;:-1.3},{&quot;t&quot;:11.989,&quot;v&quot;:-0.9},{&quot;t&quot;:12.075,&quot;v&quot;:-0.7},{&quot;t&quot;:12.331,&quot;v&quot;:-0.2},{&quot;t&quot;:12.416,&quot;v&quot;:0},{&quot;t&quot;:13.696,&quot;v&quot;:0},{&quot;t&quot;:13.781,&quot;v&quot;:-1.5},{&quot;t&quot;:13.867,&quot;v&quot;:-5.5},{&quot;t&quot;:13.952,&quot;v&quot;:-6.2},{&quot;t&quot;:14.037,&quot;v&quot;:-10.6},{&quot;t&quot;:14.123,&quot;v&quot;:-9.8},{&quot;t&quot;:14.208,&quot;v&quot;:-7},{&quot;t&quot;:14.293,&quot;v&quot;:-5.2},{&quot;t&quot;:14.379,&quot;v&quot;:-3.7},{&quot;t&quot;:14.464,&quot;v&quot;:-2.9},{&quot;t&quot;:14.549,&quot;v&quot;:-2.6},{&quot;t&quot;:14.635,&quot;v&quot;:-1.8},{&quot;t&quot;:14.72,&quot;v&quot;:-5.7},{&quot;t&quot;:14.805,&quot;v&quot;:-4.1},{&quot;t&quot;:14.891,&quot;v&quot;:-4.4},{&quot;t&quot;:14.976,&quot;v&quot;:-3.1},{&quot;t&quot;:15.061,&quot;v&quot;:-2.2},{&quot;t&quot;:15.147,&quot;v&quot;:-1.6},{&quot;t&quot;:15.232,&quot;v&quot;:-1.1},{&quot;t&quot;:15.317,&quot;v&quot;:-0.8},{&quot;t&quot;:15.403,&quot;v&quot;:-0.6},{&quot;t&quot;:15.488,&quot;v&quot;:-0.4},{&quot;t&quot;:15.573,&quot;v&quot;:-4},{&quot;t&quot;:15.659,&quot;v&quot;:-5.8},{&quot;t&quot;:15.744,&quot;v&quot;:-4.2},{&quot;t&quot;:15.829,&quot;v&quot;:-3.5},{&quot;t&quot;:15.915,&quot;v&quot;:-6.2},{&quot;t&quot;:16,&quot;v&quot;:-7.3},{&quot;t&quot;:16.085,&quot;v&quot;:-5.2},{&quot;t&quot;:16.171,&quot;v&quot;:-3.7},{&quot;t&quot;:16.256,&quot;v&quot;:-2.6},{&quot;t&quot;:16.341,&quot;v&quot;:-5.9},{&quot;t&quot;:16.427,&quot;v&quot;:-4.6},{&quot;t&quot;:16.512,&quot;v&quot;:-3.3},{&quot;t&quot;:16.597,&quot;v&quot;:-2.3},{&quot;t&quot;:16.683,&quot;v&quot;:-1.7},{&quot;t&quot;:16.768,&quot;v&quot;:-1.2},{&quot;t&quot;:16.853,&quot;v&quot;:-2.7},{&quot;t&quot;:16.939,&quot;v&quot;:-8.8},{&quot;t&quot;:17.024,&quot;v&quot;:-6.5},{&quot;t&quot;:17.109,&quot;v&quot;:-4.6},{&quot;t&quot;:17.195,&quot;v&quot;:-3.3},{&quot;t&quot;:17.28,&quot;v&quot;:-2.3},{&quot;t&quot;:17.365,&quot;v&quot;:-1.7},{&quot;t&quot;:17.365,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n5.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.128,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:-2.7},{&quot;t&quot;:0.299,&quot;v&quot;:-2.3},{&quot;t&quot;:0.384,&quot;v&quot;:-4.2},{&quot;t&quot;:0.469,&quot;v&quot;:-3.4},{&quot;t&quot;:0.555,&quot;v&quot;:-2.5},{&quot;t&quot;:0.64,&quot;v&quot;:-2},{&quot;t&quot;:0.725,&quot;v&quot;:-2},{&quot;t&quot;:0.811,&quot;v&quot;:-1.4},{&quot;t&quot;:0.896,&quot;v&quot;:-1},{&quot;t&quot;:0.981,&quot;v&quot;:-3.9},{&quot;t&quot;:1.067,&quot;v&quot;:-2.9},{&quot;t&quot;:1.152,&quot;v&quot;:-2.3},{&quot;t&quot;:1.237,&quot;v&quot;:-4.3},{&quot;t&quot;:1.323,&quot;v&quot;:-4},{&quot;t&quot;:1.408,&quot;v&quot;:-2.8},{&quot;t&quot;:1.579,&quot;v&quot;:-2.5},{&quot;t&quot;:1.664,&quot;v&quot;:-2},{&quot;t&quot;:1.749,&quot;v&quot;:-1.4},{&quot;t&quot;:1.835,&quot;v&quot;:-1},{&quot;t&quot;:1.92,&quot;v&quot;:-0.7},{&quot;t&quot;:2.176,&quot;v&quot;:-0.3},{&quot;t&quot;:2.261,&quot;v&quot;:0},{&quot;t&quot;:2.688,&quot;v&quot;:0},{&quot;t&quot;:2.773,&quot;v&quot;:-1.6},{&quot;t&quot;:2.859,&quot;v&quot;:-1.5},{&quot;t&quot;:2.944,&quot;v&quot;:-3.1},{&quot;t&quot;:3.115,&quot;v&quot;:-3.3},{&quot;t&quot;:3.2,&quot;v&quot;:-2.3},{&quot;t&quot;:3.285,&quot;v&quot;:-2.1},{&quot;t&quot;:3.371,&quot;v&quot;:-1.5},{&quot;t&quot;:3.456,&quot;v&quot;:-1.1},{&quot;t&quot;:3.541,&quot;v&quot;:-2.1},{&quot;t&quot;:3.712,&quot;v&quot;:-2.2},{&quot;t&quot;:3.797,&quot;v&quot;:-1.6},{&quot;t&quot;:3.883,&quot;v&quot;:-1.1},{&quot;t&quot;:3.968,&quot;v&quot;:-0.9},{&quot;t&quot;:4.053,&quot;v&quot;:-2.4},{&quot;t&quot;:4.224,&quot;v&quot;:-2.3},{&quot;t&quot;:4.309,&quot;v&quot;:-1.6},{&quot;t&quot;:4.395,&quot;v&quot;:-1.2},{&quot;t&quot;:4.48,&quot;v&quot;:-0.8},{&quot;t&quot;:4.565,&quot;v&quot;:-3.3},{&quot;t&quot;:4.651,&quot;v&quot;:-5.2},{&quot;t&quot;:4.736,&quot;v&quot;:-4.6},{&quot;t&quot;:4.821,&quot;v&quot;:-3.3},{&quot;t&quot;:5.077,&quot;v&quot;:-3.5},{&quot;t&quot;:5.163,&quot;v&quot;:-2.5},{&quot;t&quot;:5.248,&quot;v&quot;:-1.8},{&quot;t&quot;:5.333,&quot;v&quot;:-1.3},{&quot;t&quot;:5.589,&quot;v&quot;:-1.3},{&quot;t&quot;:5.675,&quot;v&quot;:-2},{&quot;t&quot;:5.76,&quot;v&quot;:-2.7},{&quot;t&quot;:5.845,&quot;v&quot;:-1.9},{&quot;t&quot;:5.931,&quot;v&quot;:-1.4},{&quot;t&quot;:6.016,&quot;v&quot;:-1},{&quot;t&quot;:6.101,&quot;v&quot;:-0.7},{&quot;t&quot;:6.357,&quot;v&quot;:-0.2},{&quot;t&quot;:6.443,&quot;v&quot;:-3.2},{&quot;t&quot;:6.528,&quot;v&quot;:-3.9},{&quot;t&quot;:6.613,&quot;v&quot;:-5.6},{&quot;t&quot;:6.699,&quot;v&quot;:-4.8},{&quot;t&quot;:6.784,&quot;v&quot;:-3.4},{&quot;t&quot;:6.869,&quot;v&quot;:-2.9},{&quot;t&quot;:6.955,&quot;v&quot;:-2.1},{&quot;t&quot;:7.04,&quot;v&quot;:-1.5},{&quot;t&quot;:7.125,&quot;v&quot;:-1},{&quot;t&quot;:7.211,&quot;v&quot;:-0.7},{&quot;t&quot;:7.296,&quot;v&quot;:-0.5},{&quot;t&quot;:7.381,&quot;v&quot;:-2.7},{&quot;t&quot;:7.467,&quot;v&quot;:-3.8},{&quot;t&quot;:7.552,&quot;v&quot;:-2.7},{&quot;t&quot;:7.637,&quot;v&quot;:-1.9},{&quot;t&quot;:7.723,&quot;v&quot;:-2.2},{&quot;t&quot;:7.808,&quot;v&quot;:-3.9},{&quot;t&quot;:7.893,&quot;v&quot;:-2.8},{&quot;t&quot;:7.979,&quot;v&quot;:-2},{&quot;t&quot;:8.064,&quot;v&quot;:-2.3},{&quot;t&quot;:8.149,&quot;v&quot;:-3},{&quot;t&quot;:8.235,&quot;v&quot;:-2.1},{&quot;t&quot;:8.32,&quot;v&quot;:-1.5},{&quot;t&quot;:8.405,&quot;v&quot;:-1.1},{&quot;t&quot;:8.491,&quot;v&quot;:-0.9},{&quot;t&quot;:8.576,&quot;v&quot;:-2.2},{&quot;t&quot;:8.661,&quot;v&quot;:-3.2},{&quot;t&quot;:8.747,&quot;v&quot;:-5.1},{&quot;t&quot;:8.832,&quot;v&quot;:-3.6},{&quot;t&quot;:8.917,&quot;v&quot;:-2.7},{&quot;t&quot;:9.003,&quot;v&quot;:-1.9},{&quot;t&quot;:9.259,&quot;v&quot;:-1.8},{&quot;t&quot;:9.344,&quot;v&quot;:-1.3},{&quot;t&quot;:9.429,&quot;v&quot;:-0.9},{&quot;t&quot;:9.515,&quot;v&quot;:-0.6},{&quot;t&quot;:9.771,&quot;v&quot;:-0.2},{&quot;t&quot;:9.856,&quot;v&quot;:-2.8},{&quot;t&quot;:9.941,&quot;v&quot;:-3},{&quot;t&quot;:10.027,&quot;v&quot;:-2.1},{&quot;t&quot;:10.112,&quot;v&quot;:-1.7},{&quot;t&quot;:10.197,&quot;v&quot;:-3},{&quot;t&quot;:10.283,&quot;v&quot;:-2.5},{&quot;t&quot;:10.368,&quot;v&quot;:-3},{&quot;t&quot;:10.453,&quot;v&quot;:-3.3},{&quot;t&quot;:10.539,&quot;v&quot;:-3.5},{&quot;t&quot;:10.624,&quot;v&quot;:-3},{&quot;t&quot;:10.709,&quot;v&quot;:-2.9},{&quot;t&quot;:10.795,&quot;v&quot;:-2},{&quot;t&quot;:10.88,&quot;v&quot;:-1.5},{&quot;t&quot;:10.965,&quot;v&quot;:-1},{&quot;t&quot;:11.051,&quot;v&quot;:-0.7},{&quot;t&quot;:11.136,&quot;v&quot;:-1.6},{&quot;t&quot;:11.221,&quot;v&quot;:-5},{&quot;t&quot;:11.307,&quot;v&quot;:-3.6},{&quot;t&quot;:11.392,&quot;v&quot;:-3.6},{&quot;t&quot;:11.477,&quot;v&quot;:-4.4},{&quot;t&quot;:11.563,&quot;v&quot;:-3.7},{&quot;t&quot;:11.648,&quot;v&quot;:-2.9},{&quot;t&quot;:11.733,&quot;v&quot;:-2.1},{&quot;t&quot;:11.819,&quot;v&quot;:-1.5},{&quot;t&quot;:11.904,&quot;v&quot;:-1.1},{&quot;t&quot;:11.989,&quot;v&quot;:-0.7},{&quot;t&quot;:12.245,&quot;v&quot;:-0.3},{&quot;t&quot;:12.331,&quot;v&quot;:0},{&quot;t&quot;:13.696,&quot;v&quot;:0},{&quot;t&quot;:13.781,&quot;v&quot;:-1.4},{&quot;t&quot;:13.867,&quot;v&quot;:-2.9},{&quot;t&quot;:13.952,&quot;v&quot;:-2.9},{&quot;t&quot;:14.037,&quot;v&quot;:-4.2},{&quot;t&quot;:14.123,&quot;v&quot;:-3.3},{&quot;t&quot;:14.208,&quot;v&quot;:-2.3},{&quot;t&quot;:14.293,&quot;v&quot;:-1.9},{&quot;t&quot;:14.379,&quot;v&quot;:-1.4},{&quot;t&quot;:14.464,&quot;v&quot;:-2},{&quot;t&quot;:14.549,&quot;v&quot;:-1.4},{&quot;t&quot;:14.635,&quot;v&quot;:-4.4},{&quot;t&quot;:14.72,&quot;v&quot;:-3.3},{&quot;t&quot;:14.805,&quot;v&quot;:-2.3},{&quot;t&quot;:14.891,&quot;v&quot;:-2.3},{&quot;t&quot;:14.976,&quot;v&quot;:-1.6},{&quot;t&quot;:15.061,&quot;v&quot;:-1.2},{&quot;t&quot;:15.147,&quot;v&quot;:-0.8},{&quot;t&quot;:15.317,&quot;v&quot;:-0.4},{&quot;t&quot;:15.403,&quot;v&quot;:-0.3},{&quot;t&quot;:15.488,&quot;v&quot;:-2.8},{&quot;t&quot;:15.573,&quot;v&quot;:-2.5},{&quot;t&quot;:15.659,&quot;v&quot;:-2.3},{&quot;t&quot;:15.744,&quot;v&quot;:-1.6},{&quot;t&quot;:15.829,&quot;v&quot;:-1.1},{&quot;t&quot;:15.915,&quot;v&quot;:-1},{&quot;t&quot;:16,&quot;v&quot;:-1.6},{&quot;t&quot;:16.085,&quot;v&quot;:-1.1},{&quot;t&quot;:16.171,&quot;v&quot;:-0.8},{&quot;t&quot;:16.256,&quot;v&quot;:-0.6},{&quot;t&quot;:16.341,&quot;v&quot;:-3.8},{&quot;t&quot;:16.427,&quot;v&quot;:-2.8},{&quot;t&quot;:16.512,&quot;v&quot;:-3.8},{&quot;t&quot;:16.597,&quot;v&quot;:-2.8},{&quot;t&quot;:16.683,&quot;v&quot;:-2.4},{&quot;t&quot;:16.768,&quot;v&quot;:-1.7},{&quot;t&quot;:16.939,&quot;v&quot;:-1.3},{&quot;t&quot;:17.024,&quot;v&quot;:-3.6},{&quot;t&quot;:17.109,&quot;v&quot;:-3.5},{&quot;t&quot;:17.195,&quot;v&quot;:-2.5},{&quot;t&quot;:17.28,&quot;v&quot;:-1.8},{&quot;t&quot;:17.365,&quot;v&quot;:-1.2},{&quot;t&quot;:17.365,&quot;v&quot;:0}]},{&quot;target&quot;:&quot;fx.n6.gain&quot;,&quot;points&quot;:[{&quot;t&quot;:0,&quot;v&quot;:0},{&quot;t&quot;:0.128,&quot;v&quot;:0},{&quot;t&quot;:0.213,&quot;v&quot;:-11.8},{&quot;t&quot;:0.299,&quot;v&quot;:-13.9},{&quot;t&quot;:0.384,&quot;v&quot;:-14.3},{&quot;t&quot;:0.469,&quot;v&quot;:-14.4},{&quot;t&quot;:0.811,&quot;v&quot;:-14.4},{&quot;t&quot;:0.896,&quot;v&quot;:-13.9},{&quot;t&quot;:0.981,&quot;v&quot;:-14.3},{&quot;t&quot;:1.067,&quot;v&quot;:-14.4},{&quot;t&quot;:1.749,&quot;v&quot;:-14.4},{&quot;t&quot;:1.835,&quot;v&quot;:-13.9},{&quot;t&quot;:1.92,&quot;v&quot;:-13.4},{&quot;t&quot;:2.005,&quot;v&quot;:-12.9},{&quot;t&quot;:2.091,&quot;v&quot;:-12.5},{&quot;t&quot;:2.176,&quot;v&quot;:-12.1},{&quot;t&quot;:2.261,&quot;v&quot;:-11.6},{&quot;t&quot;:2.347,&quot;v&quot;:-11.2},{&quot;t&quot;:2.432,&quot;v&quot;:-10.8},{&quot;t&quot;:2.517,&quot;v&quot;:-10.5},{&quot;t&quot;:2.603,&quot;v&quot;:-10.1},{&quot;t&quot;:2.688,&quot;v&quot;:-13.6},{&quot;t&quot;:2.773,&quot;v&quot;:-14.3},{&quot;t&quot;:4.309,&quot;v&quot;:-13.9},{&quot;t&quot;:4.395,&quot;v&quot;:-13.4},{&quot;t&quot;:4.48,&quot;v&quot;:-14.2},{&quot;t&quot;:5.333,&quot;v&quot;:-13.9},{&quot;t&quot;:5.419,&quot;v&quot;:-13.4},{&quot;t&quot;:5.504,&quot;v&quot;:-14.2},{&quot;t&quot;:6.016,&quot;v&quot;:-13.9},{&quot;t&quot;:6.101,&quot;v&quot;:-13.4},{&quot;t&quot;:6.187,&quot;v&quot;:-12.9},{&quot;t&quot;:6.272,&quot;v&quot;:-12.5},{&quot;t&quot;:6.357,&quot;v&quot;:-14.1},{&quot;t&quot;:7.04,&quot;v&quot;:-13.9},{&quot;t&quot;:7.125,&quot;v&quot;:-13.4},{&quot;t&quot;:7.211,&quot;v&quot;:-12.9},{&quot;t&quot;:7.296,&quot;v&quot;:-12.5},{&quot;t&quot;:7.381,&quot;v&quot;:-14.1},{&quot;t&quot;:8.235,&quot;v&quot;:-13.9},{&quot;t&quot;:8.32,&quot;v&quot;:-13.4},{&quot;t&quot;:8.405,&quot;v&quot;:-12.9},{&quot;t&quot;:8.491,&quot;v&quot;:-14.1},{&quot;t&quot;:9.429,&quot;v&quot;:-13.9},{&quot;t&quot;:9.515,&quot;v&quot;:-13.4},{&quot;t&quot;:9.6,&quot;v&quot;:-12.9},{&quot;t&quot;:9.685,&quot;v&quot;:-12.5},{&quot;t&quot;:9.771,&quot;v&quot;:-12.1},{&quot;t&quot;:9.856,&quot;v&quot;:-14},{&quot;t&quot;:11.733,&quot;v&quot;:-13.9},{&quot;t&quot;:11.819,&quot;v&quot;:-13.4},{&quot;t&quot;:11.904,&quot;v&quot;:-12.9},{&quot;t&quot;:11.989,&quot;v&quot;:-12.5},{&quot;t&quot;:12.075,&quot;v&quot;:-12.1},{&quot;t&quot;:12.16,&quot;v&quot;:-11.6},{&quot;t&quot;:12.245,&quot;v&quot;:-11.2},{&quot;t&quot;:12.331,&quot;v&quot;:-10.8},{&quot;t&quot;:12.416,&quot;v&quot;:-10.5},{&quot;t&quot;:12.501,&quot;v&quot;:-10.1},{&quot;t&quot;:12.587,&quot;v&quot;:-9.7},{&quot;t&quot;:12.672,&quot;v&quot;:-9.4},{&quot;t&quot;:12.757,&quot;v&quot;:-9.1},{&quot;t&quot;:12.843,&quot;v&quot;:-8.8},{&quot;t&quot;:12.928,&quot;v&quot;:-8.4},{&quot;t&quot;:13.013,&quot;v&quot;:-8.2},{&quot;t&quot;:13.099,&quot;v&quot;:-7.9},{&quot;t&quot;:13.184,&quot;v&quot;:-7.6},{&quot;t&quot;:13.269,&quot;v&quot;:-7.3},{&quot;t&quot;:13.355,&quot;v&quot;:-7.1},{&quot;t&quot;:13.44,&quot;v&quot;:-6.8},{&quot;t&quot;:13.525,&quot;v&quot;:-6.6},{&quot;t&quot;:13.611,&quot;v&quot;:-6.4},{&quot;t&quot;:13.696,&quot;v&quot;:-12.9},{&quot;t&quot;:13.781,&quot;v&quot;:-14.1},{&quot;t&quot;:15.061,&quot;v&quot;:-13.9},{&quot;t&quot;:15.147,&quot;v&quot;:-13.4},{&quot;t&quot;:15.232,&quot;v&quot;:-12.9},{&quot;t&quot;:15.317,&quot;v&quot;:-12.5},{&quot;t&quot;:15.403,&quot;v&quot;:-14.1},{&quot;t&quot;:16.171,&quot;v&quot;:-13.9},{&quot;t&quot;:16.256,&quot;v&quot;:-13.4},{&quot;t&quot;:16.341,&quot;v&quot;:-13.3},{&quot;t&quot;:16.427,&quot;v&quot;:-14.2},{&quot;t&quot;:17.28,&quot;v&quot;:-13.9},{&quot;t&quot;:17.365,&quot;v&quot;:-13.4},{&quot;t&quot;:17.451,&quot;v&quot;:-12.9},{&quot;t&quot;:17.536,&quot;v&quot;:-12.5},{&quot;t&quot;:17.621,&quot;v&quot;:-12.1},{&quot;t&quot;:17.707,&quot;v&quot;:-11.6},{&quot;t&quot;:17.792,&quot;v&quot;:-11.2},{&quot;t&quot;:17.877,&quot;v&quot;:-10.8},{&quot;t&quot;:17.963,&quot;v&quot;:-10.5},{&quot;t&quot;:18.048,&quot;v&quot;:-10.1},{&quot;t&quot;:18.133,&quot;v&quot;:-9.7},{&quot;t&quot;:18.219,&quot;v&quot;:-9.4},{&quot;t&quot;:18.304,&quot;v&quot;:-9.1},{&quot;t&quot;:18.389,&quot;v&quot;:-8.8},{&quot;t&quot;:18.475,&quot;v&quot;:-8.4},{&quot;t&quot;:18.56,&quot;v&quot;:-8.2},{&quot;t&quot;:18.645,&quot;v&quot;:-7.9},{&quot;t&quot;:18.731,&quot;v&quot;:-7.6},{&quot;t&quot;:18.816,&quot;v&quot;:-7.3},{&quot;t&quot;:18.901,&quot;v&quot;:-7.1},{&quot;t&quot;:18.987,&quot;v&quot;:-6.8},{&quot;t&quot;:19.072,&quot;v&quot;:-6.6},{&quot;t&quot;:19.157,&quot;v&quot;:-6.4},{&quot;t&quot;:19.243,&quot;v&quot;:-6.1},{&quot;t&quot;:19.413,&quot;v&quot;:-5.7},{&quot;t&quot;:19.499,&quot;v&quot;:-5.5},{&quot;t&quot;:19.669,&quot;v&quot;:-5.1},{&quot;t&quot;:19.755,&quot;v&quot;:-5},{&quot;t&quot;:19.925,&quot;v&quot;:-4.6},{&quot;t&quot;:20.011,&quot;v&quot;:-4.5},{&quot;t&quot;:20.181,&quot;v&quot;:-4.1},{&quot;t&quot;:20.267,&quot;v&quot;:-4},{&quot;t&quot;:20.523,&quot;v&quot;:-3.6},{&quot;t&quot;:20.608,&quot;v&quot;:-3.5},{&quot;t&quot;:20.864,&quot;v&quot;:-3.1},{&quot;t&quot;:20.949,&quot;v&quot;:-3},{&quot;t&quot;:21.291,&quot;v&quot;:-2.6},{&quot;t&quot;:21.376,&quot;v&quot;:-2.5},{&quot;t&quot;:21.803,&quot;v&quot;:-2.1},{&quot;t&quot;:21.888,&quot;v&quot;:-2},{&quot;t&quot;:22.485,&quot;v&quot;:-1.6},{&quot;t&quot;:22.571,&quot;v&quot;:-1.5},{&quot;t&quot;:23.424,&quot;v&quot;:-1.1},{&quot;t&quot;:23.509,&quot;v&quot;:-1},{&quot;t&quot;:24.96,&quot;v&quot;:-0.6},{&quot;t&quot;:25.045,&quot;v&quot;:-0.5},{&quot;t&quot;:27.435,&quot;v&quot;:-0.2},{&quot;t&quot;:27.52,&quot;v&quot;:0}]}]}"></audio>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+const $=s=>document.querySelector(s);
+const mk=(p,c,css,html)=>{const e=document.createElement("div");e.className=c;if(css)e.style.cssText=css;if(html)e.innerHTML=html;(typeof p==="string"?$(p):p).appendChild(e);return e};
+const fmt=v=>"$"+Math.round(v).toLocaleString("en-US");
+const count=(sel,a,b,t,d,ease,f)=>{const o={v:a};tl.to(o,{v:b,duration:d,ease:ease||"power2.out",onUpdate(){$(sel).textContent=(f||fmt)(o.v)}},t)};
+const cut=(id,on,off)=>{tl.set(id,{opacity:1},on);if(off!=null)tl.set(id,{opacity:0},off)};
+
+/* initial transforms live in the timeline, never in CSS */
+gsap.set("#dash",{transformPerspective:2600,rotationY:-15,rotationX:7,rotation:-2.5});
+gsap.set(["#b2e1","#b2e2"],{scale:0});
+
+/* ================= S1  0 – 2.8  the dashboard that lies ================= */
+cut("#s1",0,2.85);
+tl.fromTo("#dashp",{x:340,filter:"blur(30px)",opacity:.7},{x:0,filter:"blur(0px)",opacity:1,duration:.85,ease:"expo.out"},0);
+tl.fromTo("#dash",{rotationY:-30},{rotationY:-15,duration:.85,ease:"expo.out"},0);
+tl.fromTo("#glow",{opacity:0},{opacity:1,duration:.9,ease:"power2.out"},0);
+tl.fromTo("#sheen",{x:0},{x:2500,duration:1.2,ease:"power2.inOut"},.25);
+count("#revn",0,1284,.2,.85,"power3.out",v=>"$"+v.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}));
+const lg=$("#lineG"),lgL=lg.getTotalLength();lg.style.strokeDasharray=lgL;
+tl.fromTo(lg,{strokeDashoffset:lgL},{strokeDashoffset:0,duration:.9,ease:"power2.out"},.25);
+const lr=$("#lineR"),lrL=lr.getTotalLength();lr.style.strokeDasharray=lrL;
+tl.set(lr,{strokeDashoffset:lrL},0);
+tl.set("#warn",{scale:0},0);
+// slow, calm drift while the voice asks the question
+tl.to("#dash",{rotationY:-12,rotation:-2,duration:.9,ease:"sine.inOut"},1.12);
+// 1.1s: "It's lying." -> show it visually: metric turns red, the rest greys out
+tl.to("#dash",{keyframes:[{x:-14},{x:12},{x:-8},{x:5},{x:0}],duration:.3,ease:"none"},1.1);
+tl.to("#kRev",{backgroundColor:"#fee2e2",duration:.25,ease:"power2.out"},1.12);
+tl.to("#revn",{color:"#dc2626",duration:.25},1.12);
+tl.to("#revd",{color:"#dc2626",duration:.25},1.12);
+tl.to("#lineG",{opacity:0,duration:.2},1.15);
+tl.to("#area",{opacity:0,duration:.2},1.15);
+tl.to(lr,{strokeDashoffset:0,duration:.45,ease:"power2.out"},1.15);
+tl.fromTo("#warn",{scale:0},{scale:1,duration:.3,ease:"back.out(3)"},1.2);
+tl.to(["#k2","#k3","#k4","#chart","#side"],{opacity:.28,filter:"grayscale(1)",duration:.4,ease:"power2.out"},1.25);
+tl.to("#revn",{keyframes:[{opacity:.4},{opacity:1},{opacity:.5},{opacity:1}],duration:.3,ease:"none"},1.15);
+tl.to("#glow",{opacity:.25,duration:.5},1.2);
+tl.to("#vig",{opacity:1,duration:.4},1.2);
+// exit: dashboard tilts away and blurs, orange flood carries us to the next scene
+tl.to("#dashp",{x:-520,filter:"blur(26px)",opacity:0,duration:.5,ease:"power3.in"},2.05);
+tl.to("#dash",{rotationY:-34,duration:.5,ease:"power3.in"},2.05);
+tl.set("#flood",{opacity:1,scaleX:0,transformOrigin:"left center"},2.1);
+tl.to("#flood",{scaleX:1,duration:.4,ease:"expo.inOut"},2.2);
+cut("#s2",2.65,6.45);
+tl.set("#flood",{transformOrigin:"right center"},2.65);
+tl.to("#flood",{scaleX:0,duration:.4,ease:"expo.inOut"},2.68);
+tl.set("#flood",{opacity:0},3.1);
+
+/* ================= S2  2.65 – 6.45  you actually kept ================= */
+tl.set("#s2h2",{yPercent:110},0);tl.set("#puddle",{scaleX:0},0);tl.set(["#today","#sigh"],{opacity:0},0);
+tl.fromTo("#b2",{y:-40,opacity:0},{y:0,opacity:1,duration:.5,ease:"back.out(1.8)"},2.72);
+tl.fromTo("#s2h1",{yPercent:110},{yPercent:0,duration:.45,ease:"expo.out"},2.9);
+tl.to("#today",{opacity:1,duration:.01},3.45);
+tl.fromTo("#today",{y:50},{y:0,duration:.55,ease:"expo.out"},3.45);
+tl.to("#s2h1",{yPercent:-110,duration:.3,ease:"power3.in"},4.5);
+tl.to("#s2h2",{yPercent:0,duration:.45,ease:"expo.out"},4.65);
+tl.to("#today",{opacity:0,y:30,duration:.25,ease:"power2.in"},4.55);
+// melt: the ball spreads out on the floor
+tl.to("#b2",{scaleY:.62,scaleX:1.22,y:62,duration:.6,ease:"power2.in",transformOrigin:"50% 100%"},4.95);
+tl.to("#puddle",{scaleX:1,duration:.55,ease:"expo.out"},5.4);
+count("#b2n",1284,412,4.95,.85,"power2.in");
+for(let i=0;i<5;i++){const d=mk("#drips","drip",`left:${880+i*46}px;top:770px;width:${22+(i%3)*8}px;height:${30+(i%3)*10}px`);
+  tl.fromTo(d,{y:0,opacity:0},{y:90+(i%2)*20,opacity:1,duration:.36,ease:"power2.in"},5.2+i*.05);tl.to(d,{opacity:0,duration:.1},5.62+i*.04);}
+tl.to("#b2",{scaleY:.58,scaleX:.58,y:-30,duration:.5,ease:"back.out(2.4)",transformOrigin:"50% 100%"},5.78);
+tl.to("#b2n",{y:48,scale:.95,duration:.4,ease:"power2.out"},5.78);
+tl.to(["#b2e1","#b2e2"],{scale:1,duration:.3,ease:"back.out(3)"},6.0);
+tl.to(["#b2e1","#b2e2"],{keyframes:[{scaleY:.1,duration:.06},{scaleY:1,duration:.1}]},6.3);
+tl.to("#sigh",{opacity:1,duration:.01},6.05);
+tl.fromTo("#sigh",{x:-20},{x:0,duration:.4,ease:"power2.out"},6.05);
+
+/* ================= S3  6.4 – 10.0  three thieves, each one really does it ================= */
+cut("#s3",6.4,10.05);
+tl.set(["#h31","#h32","#h33"],{yPercent:110},0);
+tl.set(["#m1","#m2","#m3"],{opacity:0},0);
+tl.set("#jawU",{rotation:0},0);tl.set("#jawL",{rotation:0},0);
+tl.fromTo("#b3w",{scale:0},{scale:1,duration:.4,ease:"back.out(2)"},6.4);
+const crumbs=(x,y,t,dir,c)=>{for(let i=0;i<8;i++){const e=mk("#fx","crumb",`left:${x}px;top:${y}px;width:${14+(i%3)*6}px;height:${14+(i%3)*6}px;background:${c||"#ff5a22"}`);
+  const a=(i/8)*Math.PI-Math.PI/2;
+  tl.fromTo(e,{x:0,y:0,scale:1,opacity:1},{x:dir*Math.cos(a)*(110+i*16),y:Math.sin(a)*110+150,scale:.3,opacity:0,duration:.65,ease:"power2.out"},t)}};
+/* -- fees: purple monster with jaws, a real chomp -- */
+tl.fromTo("#mon",{x:-760,rotation:-20},{x:0,rotation:0,duration:.4,ease:"back.out(1.4)"},6.42);
+tl.to("#h31",{yPercent:0,duration:.38,ease:"expo.out"},6.5);
+tl.to("#jawU",{rotation:-38,duration:.16,ease:"power2.out"},6.62);
+tl.to("#jawL",{rotation:38,duration:.16,ease:"power2.out"},6.62);
+tl.to("#mon",{x:-30,duration:.08,ease:"power2.out"},6.68);                    // wind-up
+tl.to("#mon",{x:196,duration:.13,ease:"power3.in"},6.78);                   // strike
+tl.to("#jawU",{rotation:0,duration:.07,ease:"power4.in"},6.91);             // CHOMP
+tl.to("#jawL",{rotation:0,duration:.07,ease:"power4.in"},6.91);
+tl.set(["#hA","#hB"],{opacity:1},6.95);
+tl.fromTo(["#hA","#hB"],{scale:0},{scale:1,duration:.12,ease:"power2.out",stagger:.04},6.95);
+tl.to("#b3w",{x:26,duration:.07,yoyo:true,repeat:1},6.95);
+count("#b3n",1284,1120,6.95,.4);
+tl.to("#jawU",{keyframes:[{rotation:-12},{rotation:0},{rotation:-10},{rotation:0}],duration:.4,ease:"none"},7.05);
+tl.to("#jawL",{keyframes:[{rotation:12},{rotation:0},{rotation:10},{rotation:0}],duration:.4,ease:"none"},7.05);
+crumbs(790,540,6.95,-1,"#ff5a22");
+tl.fromTo("#m1",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(3)"},7.0);
+tl.to("#mon",{x:-780,rotation:-24,duration:.32,ease:"power3.in"},7.5);
+tl.to("#h31",{yPercent:-110,duration:.26,ease:"power3.in"},7.45);
+tl.to("#m1",{opacity:0,y:-30,duration:.22,ease:"power2.in"},7.5);
+/* -- ads: the flame scorches a hole through the ball (script says burned, visual burns) -- */
+tl.fromTo("#flame",{x:760,y:20},{x:0,y:0,duration:.4,ease:"back.out(1.4)"},7.46);
+tl.to("#h32",{yPercent:0,duration:.38,ease:"expo.out"},7.55);
+tl.to("#flameIn",{keyframes:[{scaleX:.9,scaleY:1.1},{scaleX:1.08,scaleY:.94},{scaleX:.95,scaleY:1.08},{scaleX:1,scaleY:1}],duration:.5,ease:"none"},7.7);
+tl.to("#flame",{x:-228,y:30,duration:.16,ease:"power2.in"},7.87);                  // hover over the ball
+tl.set("#burn",{opacity:1},7.9);
+tl.fromTo("#burn",{scale:0},{scale:1,duration:.55,ease:"power2.out"},7.9);
+tl.fromTo("#burnring",{backgroundColor:"#fff3b0"},{backgroundColor:"#8a2e0a",duration:.9,ease:"power1.in"},7.9);
+tl.to("#b3w",{x:-10,duration:.06,yoyo:true,repeat:3},7.95);
+count("#b3n",1120,722,7.9,.55);
+for(let i=0;i<9;i++){const s=mk("#fx","crumb",`left:${1130+(i%4)*24}px;top:${470+(i%3)*30}px;width:${8+(i%3)*4}px;height:${8+(i%3)*4}px;background:${i%2?"#ffb02e":"#ff7a1a"}`);
+  tl.fromTo(s,{y:0,opacity:0,x:0},{y:-120-(i%4)*30,x:(i%3-1)*30,opacity:1,duration:.5,ease:"power1.out"},7.95+i*.04);tl.to(s,{opacity:0,duration:.25},8.38+i*.04);}
+for(let i=0;i<3;i++){const s=mk("#fx","crumb",`left:${1100+i*50}px;top:${440}px;width:${60+i*14}px;height:${60+i*14}px;background:rgba(90,84,80,.45);filter:blur(14px)`);
+  tl.fromTo(s,{y:0,opacity:0},{y:-170,opacity:.8,duration:.7,ease:"power1.out"},8.0+i*.08);tl.to(s,{opacity:0,duration:.3},8.55+i*.05);}
+tl.fromTo("#m2",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(3)"},8.0);
+tl.to("#flame",{x:760,duration:.3,ease:"power3.in"},8.35);
+tl.to("#h32",{yPercent:-110,duration:.26,ease:"power3.in"},8.3);
+tl.to("#m2",{opacity:0,y:-30,duration:.22,ease:"power2.in"},8.35);
+/* -- shipping: the box snaps up a piece of the ball and shuts -- */
+tl.fromTo("#box",{y:520},{y:0,duration:.4,ease:"back.out(1.5)"},8.55);
+tl.to("#h33",{yPercent:0,duration:.38,ease:"expo.out"},8.6);
+tl.to("#lidL",{rotation:-125,duration:.22,ease:"back.out(2)"},8.95);
+tl.to("#lidR",{rotation:125,duration:.22,ease:"back.out(2)"},8.95);
+tl.set("#hC",{opacity:1},9.3);
+tl.fromTo("#hC",{scale:0},{scale:1,duration:.12,ease:"power2.out"},9.3);
+tl.set("#chunk",{opacity:1,x:0,y:0,scale:1},9.3);
+tl.fromTo("#chunk",{x:0,y:0,scale:1},{x:0,y:180,scale:.65,duration:.3,ease:"power2.in"},9.3);   // dropped into the box, hidden behind the front panel
+tl.to("#chunk",{opacity:0,duration:.01},9.62);
+tl.to("#lidL",{rotation:0,duration:.18,ease:"bounce.out"},9.55);
+tl.to("#lidR",{rotation:0,duration:.18,ease:"bounce.out"},9.55);
+tl.to("#box",{keyframes:[{y:-14,duration:.08},{y:0,duration:.14,ease:"bounce.out"}]},9.62);
+count("#b3n",722,412,9.3,.4);
+tl.fromTo("#m3",{opacity:0,y:40},{opacity:1,y:0,duration:.35,ease:"back.out(3)"},9.6);
+tl.to(["#b3w","#box","#m3","#h33"],{opacity:0,duration:.25,ease:"power2.in"},9.75);
+
+/* ================= S4  9.95 – 12.3  daytime first, THEN midnight on the word ================= */
+cut("#s4",9.95,12.4);
+for(let i=0;i<46;i++){const x=(i*431)%1900,y=(i*277)%1040,s=2+(i%3)*2;const c=i%4===0?"#ff9a5c":"#fff";
+  const e=mk("#stars","star",`left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${c}`);
+  tl.fromTo(e,{opacity:0},{opacity:.4+(i%5)*.12,duration:.35,ease:"power1.out"},11.4+(i%9)*.04);}
+// ticks for a readable clock face
+for(let i=0;i<12;i++){const t=mk("#ticks","tk"+(i%3===0?" b":""));t.style.transform=`rotate(${i*30}deg)`;}
+tl.set(["#midnight"],{opacity:0},0);
+tl.set("#s4night",{opacity:0},0);
+tl.set("#moon",{y:700},0);tl.set("#moonbite",{y:700},0);
+tl.set("#hh",{rotation:67.5},0);tl.set("#mh",{rotation:90},0);
+tl.fromTo("#s4h",{opacity:0,y:-24},{opacity:1,y:0,duration:.45,ease:"power3.out"},10.0);
+tl.fromTo("#clock",{y:80,opacity:0},{y:0,opacity:1,duration:.5,ease:"expo.out"},10.0);
+tl.fromTo("#sun",{y:30},{y:0,duration:1.2,ease:"sine.out"},10.0);
+tl.to("#mh",{rotation:90+25,duration:1.15,ease:"none"},10.1);    // the day just ticks by
+tl.to("#hh",{rotation:67.5+2,duration:1.15,ease:"none"},10.1);
+// 11.25: the word "midnight" -> the world turns night
+tl.set("#s4night",{opacity:1},11.2);
+tl.to("#s4day",{opacity:0,duration:.4,ease:"power2.inOut"},11.25);
+tl.to("#sun",{y:760,duration:.55,ease:"power2.in"},11.25);
+tl.to(["#moon","#moonbite"],{y:0,duration:.7,ease:"power2.out"},11.3);
+tl.to("#s4h",{color:"#fff",duration:.35},11.3);
+tl.to("#clock",{backgroundColor:"#14141c",duration:.4},11.3);
+tl.to(["#hh","#mh"],{backgroundColor:"#ffffff",duration:.3},11.3);
+tl.to(".tk",{backgroundColor:"#ffffff",duration:.3},11.3);
+tl.fromTo("#mh",{rotation:115},{rotation:115+360*2+167,duration:.85,ease:"expo.inOut"},11.3);  // lands on :47
+tl.fromTo("#hh",{rotation:69.5},{rotation:360+23.5,duration:.85,ease:"expo.inOut"},11.3);        // just before 1
+tl.to("#midnight",{opacity:1,duration:.01},11.4);
+tl.fromTo("#midnight",{y:40},{y:0,duration:.5,ease:"expo.out"},11.4);
+
+/* ================= S5  12.2 – 15.5  the bill, then the reveal ================= */
+cut("#s5",12.15,15.6);
+tl.fromTo("#s5",{clipPath:"inset(0 0 0 100%)"},{clipPath:"inset(0 0 0 0%)",duration:.5,ease:"expo.inOut"},12.1);
+tl.fromTo("#rc",{y:90,opacity:0},{y:0,opacity:1,duration:.55,ease:"expo.out"},12.25);
+tl.set(["#r0","#r1","#r2","#r3"],{opacity:0},0);tl.set("#pill",{scaleX:0},0);tl.set("#pilln",{opacity:0},0);
+["#r0","#r1","#r2","#r3"].forEach((r,i)=>tl.fromTo(r,{opacity:0,x:36},{opacity:1,x:0,duration:.3,ease:"power3.out"},12.5+i*.26));
+tl.fromTo("#rline",{width:0},{width:528,duration:.4,ease:"power2.inOut"},13.45);
+tl.fromTo("#keptlbl",{opacity:0,y:10},{opacity:1,y:0,duration:.35,ease:"power2.out"},13.7);
+tl.to("#keptlbl",{opacity:.35,duration:.3},13.95);
+tl.to(["#r0","#r1","#r2","#r3"],{opacity:.35,duration:.4,ease:"power2.out"},13.9);        // the rows step back
+tl.to("#pill",{scaleX:1,duration:.45,ease:"expo.out"},13.88);
+tl.set("#pilln",{opacity:1},13.9);
+count("#pilln",1284,412,13.9,.55,"power3.out",v=>"$"+Math.round(v));
+tl.to("#pill",{y:-8,duration:.1,yoyo:true,repeat:1,ease:"power2.out"},14.5);
+
+/* ================= S6  15.4 – 18.4  sign-off ================= */
+cut("#s6",15.35,18.4);
+tl.fromTo("#s6",{yPercent:100},{yPercent:0,duration:.45,ease:"expo.inOut"},15.3);
+tl.set("#made1",{yPercent:110},0);tl.set("#made2",{yPercent:110},0);
+tl.fromTo(".tm",{scaleY:0},{scaleY:1,duration:.26,ease:"back.out(2)",stagger:.05},15.6);
+tl.fromTo("#slash",{scaleX:0,rotation:-26},{scaleX:1,rotation:-26,duration:.2,ease:"power3.out"},15.84);
+tl.fromTo("#word",{x:-44,opacity:0},{x:0,opacity:1,duration:.45,ease:"expo.out"},15.66);
+tl.to("#made1",{yPercent:0,duration:.45,ease:"expo.out"},15.95);
+tl.to("#made2",{yPercent:0,duration:.45,ease:"expo.out"},16.5);
+
+window.__timelines["main"]=tl;
+tl.seek(0);
+</script>
+</body>
+</html>

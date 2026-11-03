@@ -1,0 +1,42 @@
+{
+ "name": "dots-10s heart",
+ "duration": 8.926,
+ "phrases": [
+  {
+   "text": "They started typing.",
+   "start": 0.04,
+   "end": 0.964,
+   "e": 0.75
+  },
+  {
+   "text": "Then they stopped.",
+   "start": 1.102,
+   "end": 1.929,
+   "e": 0.3
+  },
+  {
+   "text": "That's not a no.",
+   "start": 2.649,
+   "end": 3.423,
+   "e": 0.9
+  },
+  {
+   "text": "Send this within twenty minutes.",
+   "start": 3.641,
+   "end": 4.921,
+   "e": 0.75
+  },
+  {
+   "text": "No rush. Anything I can clear up?",
+   "start": 5.227,
+   "end": 6.892,
+   "e": 0.6
+  },
+  {
+   "text": "Watch them start typing again.",
+   "start": 7.336,
+   "end": 8.738,
+   "e": 0.95
+  }
+ ]
+}

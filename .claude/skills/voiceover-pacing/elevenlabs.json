@@ -1,0 +1,16 @@
+{
+  "_note": "Voice names are looked up in the account (then the shared library) at run time, so no voice id is hard coded. Settings are starting points from ElevenLabs guidance; confirm by ear. Not yet run: the cloud session cannot reach api.elevenlabs.io.",
+  "male": {
+    "use": "VSLs, YouTube, calm authority",
+    "search": ["Marcus", "Adam"],
+    "model": "eleven_multilingual_v2",
+    "settings": {"stability": 0.65, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": true, "speed": 1.0}
+  },
+  "female_reel": {
+    "use": "reels, ads, energetic voiceover",
+    "search": ["Jessica", "Laura", "Aria"],
+    "model": "eleven_multilingual_v2",
+    "settings": {"stability": 0.38, "similarity_boost": 0.75, "style": 0.35, "use_speaker_boost": true, "speed": 1.08},
+    "v3_option": "eleven_v3 takes tags like [excited], [softly], [pause] and reads more emotionally; set Stability to Natural in the UI"
+  }
+}

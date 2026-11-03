@@ -1,0 +1,26 @@
+{
+ "_template": "Style 1 / lead-leak (about 22 s). The pain of a lead going cold in money terms, then the fix, then the CTA.",
+ "_slots": [
+  "voice.phrases[].t: rewrite the five sentences; keep pain first, fix second",
+  "slides[].props: the notification wording and the time labels (props.times needs 5 labels for the age element)",
+  "slides[].hl: headline lines with one *highlighted* idea word each"
+ ],
+ "id": "TEMPLATE",
+ "voice": {
+  "phrases": [
+   {"t": "Your next client is already in your inbox.", "speed": 1.1, "pause": 320, "e": 0.9},
+   {"t": "Then eight hours go by.", "speed": 1.06, "pause": 360, "e": 0.6},
+   {"t": "A reply in under sixty seconds changes that.", "speed": 1.1, "pause": 380, "e": 0.85, "cap": "A reply in under 60 seconds changes that."},
+   {"t": "And it keeps following up, day after day.", "speed": 1.1, "pause": 400, "e": 0.75},
+   {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95}
+  ]
+ },
+ "silence_before": 4,
+ "slides": [
+  {"p": 0, "x": "notifs", "hl": ["Your next client", "is in your *inbox.*"], "hw": ["first", "word:is"], "xw": ["50%"], "props": {"rows": [["send", "Instagram", "Maya R.", "Hey! Is your coaching program still open?"]]}},
+  {"p": 1, "x": "age", "gr": "red", "hl": ["Then eight hours", "go *by.*"], "hw": ["first", "word:go"], "xw": ["0+0.1", "20%", "40%", "60%", "last"], "props": {"times": ["now", "10 min ago", "1 h ago", "4 h ago", "8 h ago"]}},
+  {"p": 2, "x": "chat", "eye": "The fix", "hl": ["Answer in under", "*60* *seconds.*"], "hw": ["first", "word:under"], "xw": ["first", "word:in", "word:seconds", "word:changes"]},
+  {"p": 3, "x": "lock", "eye": "Then it keeps going", "hl": ["Follow up,", "*day* after day."], "hw": ["first", "word:day"], "xw": ["0+0.05", "25%", "word:day", "end-0.05"], "props": {"time": "9:41", "mode": "Focus", "caption": "DAY AFTER DAY", "title": "Follow up sent to Maya R.", "body": "In your voice. Approved by you."}},
+  {"p": 4, "x": "cta", "hl": ["Book a", "*Strategy* *Call.*"], "hw": ["first", "word:strategy"], "xw": ["0+0.3", "end-0.35"]}
+ ]
+}

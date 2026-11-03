@@ -1,0 +1,66 @@
+{
+ "name": "Male ref match",
+ "duration": 17.614,
+ "phrases": [
+  {
+   "text": "Every coach watching this",
+   "start": 0.06,
+   "end": 1.382,
+   "e": 0.5
+  },
+  {
+   "text": "has lost sales this month",
+   "start": 1.485,
+   "end": 2.838,
+   "e": 0.5
+  },
+  {
+   "text": "for one simple reason.",
+   "start": 2.952,
+   "end": 4.218,
+   "e": 0.5
+  },
+  {
+   "text": "Someone reached out",
+   "start": 4.607,
+   "end": 5.621,
+   "e": 0.5
+  },
+  {
+   "text": "while you were in a client call, or asleep.",
+   "start": 5.711,
+   "end": 7.607,
+   "e": 0.5
+  },
+  {
+   "text": "You took three hours to reply.",
+   "start": 7.839,
+   "end": 9.486,
+   "e": 0.5
+  },
+  {
+   "text": "By the time you saw the notification,",
+   "start": 9.818,
+   "end": 11.702,
+   "e": 0.5
+  },
+  {
+   "text": "they were already gone.",
+   "start": 11.83,
+   "end": 12.883,
+   "e": 0.5
+  },
+  {
+   "text": "Or you spent forty five minutes on Zoom",
+   "start": 13.373,
+   "end": 15.198,
+   "e": 0.5
+  },
+  {
+   "text": "with someone who was never going to buy.",
+   "start": 15.297,
+   "end": 17.283,
+   "e": 0.5
+  }
+ ]
+}

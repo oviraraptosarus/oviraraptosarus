@@ -1,0 +1,18 @@
+{
+ "name": "dots-10s heart",
+ "voice": "af_heart",
+ "base_speed": 1.12,
+ "seed": 21,
+ "takes": 6,
+ "lead_ms": 40,
+ "pause_scale": 1.0,
+ "pause_max": 900,
+ "phrases": [
+  {"t": "They started typing.", "speed": 1.04, "pause": 140, "e": 0.75, "cap": "They started typing."},
+  {"t": "Then they stopped.", "speed": 0.94, "pause": 760, "e": 0.3, "cap": "Then they stopped."},
+  {"t": "That's not a no.", "speed": 1.0, "pause": 220, "e": 0.9, "cap": ""},
+  {"t": "Send this within twenty minutes.", "speed": 1.12, "pause": 300, "e": 0.75, "cap": "Send this within twenty minutes."},
+  {"t": "No rush. Anything I can clear up?", "speed": 1.05, "pause": 440, "e": 0.6, "cap": ""},
+  {"t": "Watch them start typing again.", "speed": 1.08, "pause": 200, "e": 0.95, "cap": "Watch them start typing again."}
+ ]
+}

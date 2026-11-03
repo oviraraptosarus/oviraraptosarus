@@ -1,0 +1,51 @@
+{
+ "_template": "Style 1 / objection-answers (about 36 s). Outcome first, then three objections, each a real question answered by a different element, then the contrast and the CTA.",
+ "_slots": [
+  "voice.phrases[].t: rewrite every sentence for the new topic (one idea each; phrases ending in ? get the rising question tone automatically)",
+  "slides[].hl: the two headline lines for each slide, shorter than the sentence; wrap the one idea word in *stars* (two words = *a* *b*)",
+  "slides[].eye: the small label above the headline (Objection 1 of 3, The answer, ...)",
+  "slides[].props: element wording (names, messages, times). Keep 'Example' on screen. Defaults are the DUXIO cold calling reel",
+  "slides[].x: swap the element if another fits better (kit/ELEMENTS.md). Keep the cue count of the element in xw",
+  "voice.phrases[].cap: only where the on screen digits differ from the spoken words"
+ ],
+ "id": "TEMPLATE",
+ "voice": {
+  "phrases": [
+   {"t": "Stop calling strangers.", "speed": 1.08, "pause": 180, "e": 0.95},
+   {"t": "The money is with the people who already asked.", "speed": 1.1, "pause": 300, "e": 0.8},
+   {"t": "Most go quiet while you are busy coaching.", "speed": 1.08, "pause": 340, "e": 0.6},
+   {"t": "AI answers every one in under sixty seconds, in your voice.", "speed": 1.12, "pause": 400, "e": 0.9, "cap": "AI answers every one in under 60 seconds, in your voice."},
+   {"t": "Three short questions sort out the serious buyers.", "speed": 1.1, "pause": 300, "e": 0.75},
+   {"t": "Reminders make sure they actually show up.", "speed": 1.1, "pause": 420, "e": 0.7},
+   {"t": "Does it sound like a robot?", "e": 0.55},
+   {"t": "No. It writes in your voice, and you approve every message.", "speed": 1.12, "pause": 420, "e": 0.75},
+   {"t": "Can't I just follow up myself?", "e": 0.55},
+   {"t": "You can. Not at two in the morning, for twenty one days.", "speed": 1.1, "pause": 420, "e": 0.75, "cap": "You can. Not at 2 AM, for 21 days."},
+   {"t": "What if they are not ready?", "e": 0.55},
+   {"t": "They get pointed to your content. Quiet ones get a check in every month.", "speed": 1.12, "pause": 420, "e": 0.7},
+   {"t": "More paying clients. Calls worth taking.", "speed": 1.06, "pause": 380, "e": 0.85},
+   {"t": "Cold calling chases.", "speed": 1.06, "pause": 140, "e": 0.8},
+   {"t": "DUXIO answers.", "speed": 1.0, "pause": 440, "e": 0.95},
+   {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95}
+  ]
+ },
+ "silence_before": 15,
+ "slides": [
+  {"p": 0, "x": "call", "gr": "red", "hl": ["Stop calling", "*strangers.*"], "hw": ["first", "word:strangers"], "xw": ["first", "end-0.12"]},
+  {"p": 1, "x": "notifs", "eye": "Where the money is", "hl": ["The money is with", "the people who *asked.*"], "hw": ["first", "mid"], "xw": ["30%", "55%", "last"]},
+  {"p": 2, "x": "age", "eye": "What happens next", "gr": "red", "hl": ["Most go *quiet*", "while you coach."], "hw": ["first", "40%"], "xw": ["0+0.1", "25%", "50%", "75%", "last"]},
+  {"p": 3, "x": "chat", "eye": "The answer", "hl": ["*AI* answers in", "under *60* *seconds.*"], "hw": ["first", "word:under"], "xw": ["20%", "40%", "65%", "75%"]},
+  {"p": 4, "x": "qual", "eye": "Better calls", "hl": ["Three questions sort", "the serious *buyers.*"], "hw": ["first", "60%"], "xw": ["0+0.1", "15%", "25%", "50%", "75%", "last"]},
+  {"p": 5, "x": "cal", "eye": "Fewer no shows", "hl": ["Reminders get them", "to *show* *up.*"], "hw": ["first", "70%"], "xw": ["0+0.05", "15%", "45%", "70%"]},
+  {"p": 6, "x": "typing", "eye": "Objection 1 of 3", "hl": ["Does it sound", "like a *robot?*"], "hw": ["first", "50%"], "xw": ["0+0.1"]},
+  {"p": 7, "x": "appr", "eye": "The answer", "hl": ["No. It writes in", "*your* *voice.*"], "hw": ["first", "word:your"], "xw": ["0+0.15", "75%", "40%", "50%"]},
+  {"p": 8, "x": "badge", "eye": "Objection 2 of 3", "hl": ["Can't I just", "follow up *myself?*"], "hw": ["first", "50%"], "xw": ["0+0.1", "30%", "end-0.05"]},
+  {"p": 9, "x": "lock", "eye": "The answer", "hl": ["Not at two in", "the *morning.*"], "hw": ["word:not", "word:in"], "xw": ["0+0.05", "word:two", "word:for", "end-0.05"]},
+  {"p": 10, "x": "notready", "eye": "Objection 3 of 3", "hl": ["What if they", "are *not* *ready?*"], "hw": ["first", "50%"], "xw": ["0+0.1", "word:not"]},
+  {"p": 11, "x": "route", "eye": "The answer", "hl": ["Your *content,*", "then a *check* *in.*"], "hw": ["word:your", "word:check"], "xw": ["word:pointed", "word:quiet"]},
+  {"p": 12, "x": "report", "eye": "What you get", "hl": ["More paying *clients.*", "Calls worth *taking.*"], "hw": ["first", "word:calls"], "xw": ["0+0.2", "word:clients"]},
+  {"p": 13, "x": "handset", "gr": "red", "hl": ["Cold calling", "*chases.*"], "hw": ["first", "last"], "xw": ["first", "end-0.1"]},
+  {"p": 14, "x": "logo", "flash": true, "plain": true, "hl": [], "hw": [], "xw": ["first", "last"]},
+  {"p": 15, "x": "cta", "hl": ["Book a", "*Strategy* *Call.*"], "hw": ["first", "word:strategy"], "xw": ["0+0.3", "end-0.35"]}
+ ]
+}

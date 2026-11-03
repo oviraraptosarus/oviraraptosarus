@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="gsap.min.js"></script>
+<style>
+@font-face{font-family:'PJ';font-weight:500;src:url('assets/fonts/pj500.woff2') format('woff2')}
+@font-face{font-family:'PJ';font-weight:600;src:url('assets/fonts/pj600.woff2') format('woff2')}
+@font-face{font-family:'PJ';font-weight:700;src:url('assets/fonts/pj700.woff2') format('woff2')}
+@font-face{font-family:'PJ';font-weight:800;src:url('assets/fonts/pj800.woff2') format('woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0D0E12}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0D0E12;color:#F5F5F7;font-family:'PJ',sans-serif;-webkit-font-smoothing:antialiased}
+.abs{position:absolute}
+.tn{font-variant-numeric:tabular-nums}
+.v{color:#B794FF}.g{color:#9A9AA5}.r{color:#FF4D5E}
+#lift{left:-300px;top:-200px;width:1500px;height:1300px;background:radial-gradient(closest-side,rgba(111,0,255,.20),rgba(111,0,255,0))}
+#lift2{left:300px;top:1000px;width:1100px;height:1000px;background:radial-gradient(closest-side,rgba(120,130,160,.08),rgba(120,130,160,0))}
+#burst{left:240px;top:240px;width:600px;height:600px;border-radius:50%;border:6px solid #B794FF;opacity:0}
+/* counter */
+#pctwrap{left:0;width:1080px;top:150px;text-align:center;line-height:1;height:340px}
+#pct{font-size:310px;font-weight:800;letter-spacing:-.05em}
+#pcts{font-size:140px;font-weight:800;color:#B794FF;letter-spacing:-.03em;margin-left:8px}
+#bar{left:120px;top:540px;width:840px;height:14px;border-radius:7px;background:rgba(255,255,255,.08)}
+#fill{left:120px;top:540px;width:840px;height:14px;border-radius:7px;background:linear-gradient(90deg,#6F00FF,#B794FF);transform-origin:0 50%;box-shadow:0 0 30px rgba(183,148,255,.7)}
+.tick{top:528px;width:3px;height:38px;border-radius:2px;background:rgba(255,255,255,.18)}
+#dot{left:92px;top:507px;width:60px;height:60px;border-radius:50%;background:#5B5B66;box-shadow:0 0 0 0 rgba(183,148,255,0)}
+.eye{top:20px;width:9px;height:14px;border-radius:5px;background:#0D0E12;transform-origin:50% 50%}
+/* type */
+.hl{font-weight:800;letter-spacing:-.035em;line-height:1.1;color:#F5F5F7;text-align:center}
+.ln{display:block;white-space:nowrap}
+.mw{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.04em .03em .22em;margin:0 -.03em -.22em}
+.mw>span{display:inline-block}
+.eyebrow{font-size:28px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9A9AA5;text-align:center}
+.glass{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.11);border-radius:36px;box-shadow:0 70px 120px -50px rgba(0,0,0,.9)}
+.ex{font-size:20px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9A9AA5;padding:6px 12px;border:1px solid rgba(255,255,255,.14);border-radius:12px}
+.st{opacity:0}
+/* DM */
+#dm{left:120px;top:1020px;width:840px;height:230px;padding:36px 40px 36px 150px}
+#dm .av{position:absolute;left:36px;top:40px;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+#dm .nm{font-size:30px;font-weight:700;color:#9A9AA5}
+#dm .tx{font-size:44px;font-weight:700;letter-spacing:-.02em;margin-top:6px;line-height:1.15}
+/* ring */
+#ringsvg{left:300px;top:660px;width:480px;height:480px}
+#rt{left:300px;width:480px;top:820px;text-align:center;font-size:132px;font-weight:800;letter-spacing:-.04em}
+#rl{left:300px;width:480px;top:960px;text-align:center}
+#reply{left:150px;top:1200px;width:780px;padding:36px 44px;border-radius:40px 40px 40px 12px;background:linear-gradient(180deg,#7A1DFF,#6F00FF);box-shadow:0 40px 90px -30px rgba(111,0,255,.8);font-size:38px;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+#vc{left:150px;top:1425px;font-size:24px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#CDB8FF}
+#dlv{left:800px;top:1425px;font-size:24px;font-weight:700;color:#7CE3A8}
+/* rows */
+.row{left:150px;width:780px;height:112px;padding:0 36px;display:flex;align-items:center;justify-content:space-between;font-size:42px;font-weight:700;letter-spacing:-.02em}
+.row .ck{width:56px;height:56px;border-radius:50%;border:3px solid rgba(255,255,255,.2);position:relative}
+.row .ck svg{position:absolute;left:0;top:0;width:56px;height:56px}
+.row .pd{width:20px;height:20px;border-radius:50%;background:#B794FF;box-shadow:0 0 22px rgba(183,148,255,.9);margin-right:24px}
+.row .lab{display:flex;align-items:center}
+.row .tm{font-size:30px;font-weight:700;color:#9A9AA5}
+/* slot */
+#slot{left:140px;top:960px;width:800px;height:210px;text-align:center;padding-top:50px}
+#slot .d{font-size:36px;font-weight:700;color:#9A9AA5}
+#slot .t{font-size:84px;font-weight:800;letter-spacing:-.04em;line-height:1.1}
+#booked{left:340px;top:1210px;width:400px;height:96px;border-radius:48px;background:#6F00FF;color:#fff;font-size:44px;font-weight:800;text-align:center;line-height:96px;box-shadow:0 0 60px rgba(111,0,255,.7)}
+/* call */
+#tile{left:170px;top:960px;width:740px;height:500px}
+#tile .ph{position:absolute;left:260px;top:50px;width:220px;height:220px;border-radius:50%;border:5px dashed rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:110px;font-weight:800;color:#fff}
+#tile .tm{position:absolute;left:0;width:740px;top:300px;text-align:center;font-size:58px;font-weight:700;color:#9A9AA5}
+#joined{left:340px;top:1355px;width:400px;height:90px;border-radius:45px;background:#14C27A;color:#04210f;font-size:42px;font-weight:800;text-align:center;line-height:90px}
+/* end */
+#kw{left:140px;top:880px;width:800px;height:230px;border-radius:120px;background:linear-gradient(180deg,#7A1DFF,#6F00FF);text-align:center;line-height:230px;font-size:150px;font-weight:800;letter-spacing:-.04em;box-shadow:0 0 120px rgba(111,0,255,.7)}
+/* captions */
+.cap{left:60px;width:960px;top:1488px;text-align:center;font-size:62px;font-weight:800;letter-spacing:-.025em;line-height:1.1;opacity:0;text-shadow:0 4px 30px rgba(0,0,0,.8)}
+.cap span{display:inline-block;margin:0 .14em;color:#fff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="__D__" data-width="1080" data-height="1920">
+<div id="lift" class="abs"></div><div id="lift2" class="abs"></div><div id="burst" class="abs"></div>
+
+<div id="pctwrap" class="abs"><span id="pct" class="tn">0</span><span id="pcts">%</span></div>
+<div id="bar" class="abs"></div><div id="fill" class="abs"></div>
+<div class="abs tick" style="left:243px"></div><div class="abs tick" style="left:414px"></div><div class="abs tick" style="left:540px"></div><div class="abs tick" style="left:708px"></div><div class="abs tick" style="left:834px"></div>
+<div id="dot" class="abs"><div class="abs eye" id="e1" style="left:16px"></div><div class="abs eye" id="e2" style="left:36px"></div></div>
+
+<!-- S0 -->
+<div id="s0t" class="abs st hl" style="left:0;width:1080px;top:690px;font-size:96px"></div>
+<div id="s0l" class="abs st" style="left:0;width:1080px;top:940px;text-align:center;font-size:64px;font-weight:800;color:#B794FF;letter-spacing:-.02em">Loading<span id="dots">...</span></div>
+<div id="dm" class="abs st glass"><div class="av"></div><div class="nm">Sam</div><div class="tx">How much is your coaching?</div><div class="ex abs" style="right:30px;top:26px">Example</div></div>
+<!-- S1 -->
+<svg id="ringsvg" class="abs st" viewBox="0 0 480 480"><circle cx="240" cy="240" r="200" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="18"/><circle id="ringp" cx="240" cy="240" r="200" fill="none" stroke="#B794FF" stroke-width="18" stroke-linecap="round" transform="rotate(-90 240 240)" stroke-dasharray="1257" stroke-dashoffset="1257" style="filter:drop-shadow(0 0 16px rgba(183,148,255,.8))"/></svg>
+<div id="rt" class="abs st tn">0:00</div><div id="rl" class="abs st eyebrow">Time to reply</div>
+<div id="reply" class="abs st">Hey Sam! Thanks for reaching out. What made you look into this right now?</div>
+<div id="vc" class="abs st">In your own words</div><div id="dlv" class="abs st">Delivered ✓</div>
+<div id="s1ex" class="abs st ex" style="left:150px;top:620px;display:none">Example</div>
+<!-- S2 -->
+<div id="s2t" class="abs st hl" style="left:0;width:1080px;top:690px;font-size:100px"></div>
+<div id="r1" class="abs st glass row" style="top:960px"><span>What they want</span><div class="ck"></div></div>
+<div id="r2" class="abs st glass row" style="top:1100px"><span>Where they are</span><div class="ck"></div></div>
+<div id="r3" class="abs st glass row" style="top:1240px"><span>How soon</span><div class="ck"></div></div>
+<!-- S3 -->
+<div id="s3t" class="abs st hl" style="left:0;width:1080px;top:690px;font-size:100px"></div>
+<div id="slot" class="abs st glass"><div class="d">Thursday</div><div class="t tn">2:00 PM</div></div>
+<div id="booked" class="abs st" data-layout-allow-overlap>Booked ✓</div>
+<!-- S4 -->
+<div id="s4t" class="abs st hl" style="left:0;width:1080px;top:690px;font-size:100px"></div>
+<div id="n1" class="abs st glass row" style="top:900px"><div class="lab"><div class="pd"></div><span>24 hours before</span></div><span class="tm">Reminder</span></div>
+<div id="n2" class="abs st glass row" style="top:1040px"><div class="lab"><div class="pd"></div><span>2 hours before</span></div><span class="tm">Reminder</span></div>
+<div id="n3" class="abs st glass row" style="top:1180px"><div class="lab"><div class="pd"></div><span>10 minutes before</span></div><span class="tm">Reminder</span></div>
+<!-- S5 -->
+<div id="s5t" class="abs st hl" style="left:0;width:1080px;top:690px;font-size:100px"></div>
+<div id="tile" class="abs st glass"><div class="ph" id="ph">S</div><div class="tm tn" id="tt">00:00</div></div>
+<div id="joined" class="abs st" data-layout-allow-overlap>Joined</div>
+<!-- S6 -->
+<div id="s6t" class="abs st hl" style="left:0;width:1080px;top:820px;font-size:110px"></div>
+<!-- S7 -->
+<div id="kwe" class="abs st eyebrow" style="left:0;width:1080px;top:800px">Comment</div>
+<div id="kw" class="abs st">LOADING</div>
+<div id="kws" class="abs st" style="left:0;width:1080px;top:1150px;text-align:center;font-size:46px;font-weight:700;color:#9A9AA5;letter-spacing:-.02em">and I'll send you the whole flow</div>
+<div id="logo" class="abs st" style="left:340px;top:1290px;width:400px"><img src="assets/img/duxio-wordmark-white.svg" style="width:400px;display:block"></div>
+
+<div id="caps"></div>
+<!--AUDIO-->
+</div>
+<script>
+const T=__T__, W_=__W__;
+const tl=gsap.timeline({paused:true});
+const $=s=>document.querySelector(s);
+const MW=(id,lines,times)=>{ // lines: array of arrays of [text,cls]; times flat
+  const el=$(id);let i=0;el.innerHTML=lines.map(l=>'<span class="ln">'+l.map(w=>'<span class="mw"><span class="w'+(w[1]?' '+w[1]:'')+'">'+w[0]+'</span></span>').join(' ')+'</span>').join('');
+  el.querySelectorAll('.w').forEach((w,k)=>{gsap.set(w,{yPercent:115});tl.to(w,{yPercent:0,duration:.45,ease:"expo.out"},Math.max(.02,times[k]-.08));});
+};
+const IN=(sel,t,o={})=>tl.fromTo(sel,{opacity:0,y:o.y??40,scale:o.s??.96},{opacity:1,y:0,scale:1,duration:o.d??.5,ease:o.e??"expo.out",immediateRender:false},t);
+const OUT=(sel,t)=>tl.to(sel,{opacity:0,y:-30,duration:.25,ease:"power2.in"},t);
+const POP=(sel,t)=>tl.fromTo(sel,{scale:.2,opacity:0},{scale:1,opacity:1,duration:.45,ease:"back.out(1.6)",immediateRender:false},t);
+// ---- counter: one proxy drives number, bar, dot, colour ----
+const P={v:0};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const col=v=>{const t=Math.min(1,v/100),a=[91,91,102],b=[111,0,255];return 'rgb('+a.map((x,i)=>Math.round(lerp(x,b[i],t))).join(',')+')'};
+gsap.set('#fill',{scaleX:0});
+const render=()=>{const v=P.v;$('#pct').textContent=Math.round(v);gsap.set('#fill',{scaleX:v/100});gsap.set('#dot',{x:840*v/100,backgroundColor:col(v)});};
+render();
+const steps=[[15,T.s15],[35,T.s35],[50,T.s50],[70,T.s70],[85,T.s85],[100,T.s100]];
+steps.forEach(([to,L])=>tl.to(P,{v:to,duration:.7,ease:"power3.out",onUpdate:render},L-.7));
+tl.add(()=>render(),0);
+// Dot breathing + blinks
+tl.to('#dot',{scale:1.08,duration:.6,ease:"sine.inOut",yoyo:true,repeat:Math.max(0,Math.floor(__D__/1.2)-1)},0);
+[2.4,6.3,11.0,17.0,23.0].forEach(t=>tl.to('.eye',{scaleY:.1,duration:.07,yoyo:true,repeat:1},t));
+tl.to('#lift',{x:80,y:60,duration:__D__,ease:"none"},0);
+// ---- S0 ----
+MW('#s0t',[[["Turning","" ],["a",""],["DM",""]],[["into","" ],["a",""],["client.","v"]]],[T.turn,T.a1,T.dmw,T.into,T.a2,T.client]);
+tl.set('#s0t',{opacity:1},0);
+IN('#s0l',T.loading-.1,{d:.4});tl.set('#s0l',{opacity:1},T.loading-.1);
+['.','..','...'].forEach((d,k)=>{});
+tl.fromTo('#dots',{opacity:.2},{opacity:1,duration:.35,yoyo:true,repeat:7,ease:"sine.inOut"},T.loading);
+IN('#dm',T.dm,{y:-90,s:1,d:.55,e:"back.out(1.5)"});
+tl.fromTo('#dm',{scaleY:1},{scaleY:.96,duration:.1,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},T.dm+.35);
+['#s0t','#s0l','#dm'].forEach(s=>OUT(s,T.s15-.28));
+// ---- S1 ----
+tl.set(['#ringsvg','#rt','#rl'],{opacity:1},T.s15-.02);
+IN('#ringsvg',T.s15-.05,{d:.45});IN('#rt',T.s15-.05,{d:.45});IN('#rl',T.s15-.05,{d:.45});
+const RT={v:0};
+tl.to(RT,{v:42,duration:1.0,ease:"power3.out",onUpdate:()=>{const s=Math.round(RT.v);$('#rt').textContent='0:'+String(s).padStart(2,'0');gsap.set('#ringp',{strokeDashoffset:1257*(1-RT.v/60)});}},T.s15+.1);
+tl.fromTo('#rt',{scale:1},{scale:1.07,duration:.12,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},T.s15+1.12);
+IN('#reply',T.reply,{y:60,s:1,d:.5,e:"back.out(1.4)"});IN('#vc',T.own,{d:.35});IN('#dlv',T.reply+.9,{d:.3});
+['#ringsvg','#rt','#rl','#reply','#vc','#dlv'].forEach(s=>OUT(s,T.s35-.28));
+// ---- S2 ----
+MW('#s2t',[[["Three",""],["quick",""]],[["questions.","v"]]],[T.three,T.quick,T.questions]);
+tl.set('#s2t',{opacity:1},T.three-.05);tl.set('#s2t',{opacity:0},T.s50-.28);
+const CHK='<svg viewBox="0 0 56 56"><path class="cp" d="M15 29 L24 38 L41 18" fill="none" stroke="#B794FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="48" stroke-dashoffset="48"/></svg>';
+['#r1','#r2','#r3'].forEach((r,k)=>{$(r+' .ck').insertAdjacentHTML('beforeend',CHK);const t=[T.want,T.where,T.soon][k];
+ IN(r,t-.35,{y:50,d:.45});tl.to(r+' .cp',{strokeDashoffset:0,duration:.3,ease:"power2.out"},t+.1);tl.fromTo(r+' .ck',{scale:1},{scale:1.15,duration:.12,yoyo:true,repeat:1,ease:"power2.out",borderColor:"#B794FF",immediateRender:false},t+.1);
+ OUT(r,T.s50-.28);});
+// ---- S3 ----
+MW('#s3t',[[["Pick",""],["a",""],["time.","v"]]],[T.pick,T.pick+.1,T.time]);
+tl.set('#s3t',{opacity:1},T.s50-.05);tl.set('#s3t',{opacity:0},T.s70-.28);
+IN('#slot',T.s50+.35,{y:70,s:1,d:.55,e:"back.out(1.3)"});
+tl.to('#slot',{borderColor:"#B794FF",boxShadow:"0 0 70px rgba(111,0,255,.7)",duration:.25},T.time+.1);
+POP('#booked',T.time+.25);
+['#slot','#booked'].forEach(s=>OUT(s,T.s70-.28));
+// ---- S4 ----
+MW('#s4t',[[["Reminders.","v"]]],[T.reminders]);
+tl.set('#s4t',{opacity:1},T.s70-.05);tl.set('#s4t',{opacity:0},T.s85-.28);
+[['#n1',T.day],['#n2',T.two],['#n3',T.ten]].forEach(([n,t])=>{IN(n,t-.3,{y:0,s:1,d:.5});tl.fromTo(n,{x:90},{x:0,duration:.5,ease:"back.out(1.4)",immediateRender:false},t-.3);OUT(n,T.s85-.28);});
+// ---- S5 ----
+MW('#s5t',[[["They",""],["actually",""]],[["show",""],["up.","v"]]],[T.they,T.actually,T.show,T.up]);
+tl.set('#s5t',{opacity:1},T.s85-.05);tl.set('#s5t',{opacity:0},T.s100+.15);
+IN('#tile',T.s85+.1,{y:60,s:.96,d:.5});
+const TT={v:0};
+tl.to(TT,{v:7,duration:1.6,ease:"none",onUpdate:()=>{$('#tt').textContent='00:'+String(Math.round(TT.v)).padStart(2,'0');}},T.s85+.2);
+tl.to('#ph',{backgroundColor:"#6F00FF",borderColor:"#B794FF",borderStyle:"solid",boxShadow:"0 0 80px rgba(111,0,255,.8)",duration:.3},T.show);
+tl.fromTo('#ph',{scale:.85},{scale:1,duration:.5,ease:"back.out(1.6)",immediateRender:false},T.show);
+POP('#joined',T.show+.15);
+['#tile','#joined'].forEach(s=>OUT(s,T.s100+.15));
+// ---- S6 ----
+tl.fromTo('#burst',{scale:.4,opacity:.9},{scale:1.7,opacity:0,duration:.8,ease:"power2.out",immediateRender:false},T.s100-.05);
+tl.fromTo('#pctwrap',{scale:1},{scale:1.07,duration:.14,yoyo:true,repeat:1,ease:"power2.out",immediateRender:false},T.s100-.02);
+MW('#s6t',[[["Now","" ],["it's",""],["just",""]],[["a",""],["good",""]],[["conversation.","v"]]],[T.now,T.its,T.just,T.a3,T.good,T.conv]);
+tl.set('#s6t',{opacity:1},T.now-.05);tl.set('#s6t',{opacity:0},T.kw-.12);
+tl.fromTo('#lift',{opacity:1},{opacity:1.0,duration:.1},0);
+// ---- S7 ----
+IN('#kwe',T.kw-.1,{d:.4});
+tl.set('#kw',{opacity:1},T.kw);POP('#kw',T.kw);
+tl.fromTo('#kw',{boxShadow:"0 0 60px rgba(111,0,255,.4)"},{boxShadow:"0 0 150px rgba(111,0,255,.9)",duration:.7,yoyo:true,repeat:5,ease:"sine.inOut",immediateRender:false},T.kw+.4);
+IN('#kws',T.kw+.5,{d:.5});IN('#logo',T.kw+1.4,{d:.5});
+// ---- captions ----
+(()=>{const root=$('#caps');let g=[],groups=[];
+ W_.forEach((w,i)=>{g.push(w);const end=/[.,]$/.test(w.w)||g.length>=3;if(end||i===W_.length-1){groups.push(g);g=[];}});
+ groups.forEach((grp,gi)=>{const d=document.createElement('div');d.className='abs cap';d.id='cap'+gi;d.innerHTML=grp.map(w=>'<span>'+w.w.replace(/[.,]$/,'')+'</span>').join(' ');root.appendChild(d);
+  const st=grp[0].s,en=gi<groups.length-1?groups[gi+1][0].s:grp[grp.length-1].s+.9;
+  tl.set(d,{opacity:1},st);tl.set(d,{opacity:0},Math.max(st+.1,en-.02));
+  d.querySelectorAll('span').forEach((sp,k)=>{tl.fromTo(sp,{scale:1},{scale:1.14,color:"#B794FF",duration:.14,ease:"power2.out",immediateRender:false},grp[k].s);tl.to(sp,{scale:1,color:"#ffffff",duration:.2},grp[k].s+.2);});
+ });})();
+window.__timelines=window.__timelines||{};window.__timelines["main"]=tl;
+</script>
+</body>
+</html>

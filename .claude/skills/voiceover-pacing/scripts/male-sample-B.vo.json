@@ -1,0 +1,111 @@
+{
+ "name": "Male VSL sample",
+ "base_speed": 0.98,
+ "seed": 5,
+ "shape": false,
+ "pause_scale": 0.6,
+ "pause_max": 480,
+ "takes": 6,
+ "phrases": [
+  {
+   "t": "You booked the call.",
+   "speed": 1.0,
+   "pause": 350,
+   "e": 0.5
+  },
+  {
+   "t": "They never showed.",
+   "speed": 0.95,
+   "pause": 550,
+   "e": 0.5
+  },
+  {
+   "t": "Not because they changed their mind.",
+   "speed": 0.98,
+   "pause": 300,
+   "e": 0.5
+  },
+  {
+   "t": "Because nobody followed up.",
+   "speed": 0.92,
+   "pause": 700,
+   "e": 0.5
+  },
+  {
+   "t": "Here's what actually happens.",
+   "speed": 1.0,
+   "pause": 400,
+   "e": 0.5
+  },
+  {
+   "t": "A lead messages you at nine at night.",
+   "speed": 1.0,
+   "pause": 200,
+   "e": 0.5
+  },
+  {
+   "t": "You're with a client.",
+   "speed": 1.0,
+   "pause": 250,
+   "e": 0.5
+  },
+  {
+   "t": "By the time you reply,",
+   "speed": 1.0,
+   "pause": 100,
+   "e": 0.5
+  },
+  {
+   "t": "they've already moved on.",
+   "speed": 0.92,
+   "pause": 700,
+   "e": 0.5
+  },
+  {
+   "t": "That's not a content problem.",
+   "speed": 0.95,
+   "pause": 300,
+   "e": 0.5
+  },
+  {
+   "t": "That's a follow up problem.",
+   "speed": 0.9,
+   "pause": 800,
+   "e": 0.5
+  },
+  {
+   "t": "DUXIO answers every lead, day or night,",
+   "speed": 1.0,
+   "pause": 150,
+   "e": 0.5
+  },
+  {
+   "t": "sorts the serious ones,",
+   "speed": 1.0,
+   "pause": 150,
+   "e": 0.5
+  },
+  {
+   "t": "and books them onto your calendar.",
+   "speed": 0.96,
+   "pause": 600,
+   "e": 0.5
+  },
+  {
+   "t": "You take the calls that matter.",
+   "speed": 0.92,
+   "pause": 300,
+   "e": 0.5
+  },
+  {
+   "t": "Book a Strategy Call.",
+   "speed": 0.88,
+   "pause": 0,
+   "e": 0.5
+  }
+ ],
+ "voice": {
+  "am_adam": 0.5,
+  "am_onyx": 0.5
+ }
+}

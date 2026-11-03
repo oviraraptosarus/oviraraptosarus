@@ -1,0 +1,17 @@
+/* DUXIO brand tokens. Import in any page or HyperFrames composition. Paths are relative to this file. */
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:normal;src:url('../fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:500;font-style:normal;src:url('../fonts/plus-jakarta-sans-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;font-style:normal;src:url('../fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;font-style:normal;src:url('../fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:800;font-style:normal;src:url('../fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:italic;src:url('../fonts/plus-jakarta-sans-latin-400-italic.woff2') format('woff2')}
+:root{
+  --canvas:#FFFFFF; --canvas-subtle:#F9FAFB;
+  --ink:#111113; --secondary:#4B5563; --muted:#6B7280;
+  --accent-violet:#6F00FF; --accent-red:#F1283A; --obsidian:#0D0E12;
+  --border:rgba(0,0,0,.08); --border-strong:rgba(0,0,0,.12);
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --track-display:-0.02em; --track-eyebrow:0.08em;
+  --radius-sm:10px; --radius-md:16px; --radius-lg:24px; --radius-pill:999px;
+  --space:8px;
+}

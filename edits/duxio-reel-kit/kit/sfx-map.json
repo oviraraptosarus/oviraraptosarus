@@ -1,0 +1,160 @@
+{
+ "cut": {
+  "files": [
+   "whoosh.wav",
+   "elements/swoosh.mp3"
+  ],
+  "v": 0.22,
+  "max": 0.6
+ },
+ "hit": {
+  "files": "elements/boom.mp3",
+  "v": 0.45,
+  "max": 1.4
+ },
+ "whoosh": {
+  "files": [
+   "whoosh.wav",
+   "elements/whoosh.mp3"
+  ],
+  "v": 0.3,
+  "max": 0.8
+ },
+ "pop": {
+  "files": "elements/pop.mp3",
+  "v": 0.3,
+  "max": 0.4
+ },
+ "tick": {
+  "files": [
+   "tick.wav",
+   "ctick.wav"
+  ],
+  "v": 0.28,
+  "max": 0.2
+ },
+ "click": {
+  "files": [
+   "click3.ogg",
+   "elements/click.mp3"
+  ],
+  "v": 0.3,
+  "max": 0.2
+ },
+ "key": {
+  "files": [
+   "keypress-001.wav",
+   "keypress-002.wav",
+   "keypress-003.wav",
+   "keypress-004.wav"
+  ],
+  "v": 0.22,
+  "max": 0.25
+ },
+ "stamp": {
+  "files": "elements/boom.mp3",
+  "v": 0.55,
+  "max": 1.0
+ },
+ "riser": {
+  "files": "riser.wav",
+  "v": 0.25,
+  "max": 2.0
+ },
+ "sub": {
+  "files": "sub.wav",
+  "v": 0.4,
+  "max": 1.2
+ },
+ "send": {
+  "files": "send.wav",
+  "v": 0.35,
+  "max": 0.8
+ },
+ "ping": {
+  "files": "ping.wav",
+  "v": 0.25,
+  "max": 0.8
+ },
+ "snap": {
+  "files": "snap.wav",
+  "v": 0.3,
+  "max": 0.3
+ },
+ "drop": {
+  "files": [
+   "drop_001.ogg",
+   "drop_002.ogg"
+  ],
+  "v": 0.35,
+  "max": 0.4
+ },
+ "tap": {
+  "files": [
+   "tap1.wav",
+   "tap2.wav",
+   "tap3.wav"
+  ],
+  "v": 0.3,
+  "max": 0.3
+ },
+ "shutter": {
+  "files": "elements/shutter.mp3",
+  "v": 0.35,
+  "max": 0.6
+ },
+ "glitch": {
+  "files": "elements/glitch.mp3",
+  "v": 0.3,
+  "max": 0.5
+ },
+ "notify": {
+  "files": "elements/notification.mp3",
+  "v": 0.3,
+  "max": 0.8
+ },
+ "pluck": {
+  "files": "swell.wav",
+  "v": 0.25,
+  "max": 1.2
+ },
+ "hookhit": {
+  "files": "hookhit.wav",
+  "v": 0.5,
+  "max": 1.6
+ },
+ "pulse": {
+  "files": "pulse.wav",
+  "v": 0.3,
+  "max": 0.7
+ },
+ "plink": {
+  "files": [
+   "plink-1.wav",
+   "plink-2.wav",
+   "plink-3.wav"
+  ],
+  "v": 0.22,
+  "max": 0.25
+ },
+ "wood-c5": {
+  "files": "pluck-wood-c5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-e5": {
+  "files": "pluck-wood-e5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-g5": {
+  "files": "pluck-wood-g5.wav",
+  "v": 0.22,
+  "max": 0.6
+ },
+ "wood-c6": {
+  "files": "pluck-wood-c6.wav",
+  "v": 0.22,
+  "max": 0.6
+ }
+}

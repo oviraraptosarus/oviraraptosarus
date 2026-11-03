@@ -1,0 +1,25 @@
+{
+ "name": "cold-call-ai heart",
+ "voice": "af_heart",
+ "base_speed": 1.14,
+ "seed": 21,
+ "takes": 6,
+ "lead_ms": 40,
+ "pause_scale": 1.0,
+ "pause_max": 900,
+ "phrases": [
+  {"t": "Stop calling strangers.", "speed": 1.08, "pause": 160, "e": 0.95, "cap": ""},
+  {"t": "They never asked.", "speed": 1.0, "pause": 320, "e": 0.8, "cap": ""},
+  {"t": "The people who did are already in your inbox.", "speed": 1.14, "pause": 320, "e": 0.6, "cap": "The people who did are already in your inbox."},
+  {"t": "AI answers them in under sixty seconds.", "speed": 1.12, "pause": 440, "e": 0.9, "cap": ""},
+  {"t": "Will it sound like a robot?", "speed": 1.1, "pause": 200, "e": 0.5, "cap": ""},
+  {"t": "No. It writes in your voice, and you approve every message.", "speed": 1.14, "pause": 440, "e": 0.7, "cap": "No. It writes in your voice, and you approve every message."},
+  {"t": "I already follow up myself.", "speed": 1.1, "pause": 200, "e": 0.5, "cap": ""},
+  {"t": "It follows up at two in the morning, for twenty one days.", "speed": 1.14, "pause": 440, "e": 0.7, "cap": "It follows up at 2 AM, for 21 days."},
+  {"t": "What if they are not ready?", "speed": 1.1, "pause": 200, "e": 0.5, "cap": ""},
+  {"t": "They get pointed to your content. Quiet ones get a check in every month.", "speed": 1.14, "pause": 440, "e": 0.65, "cap": "They get pointed to your content. Quiet ones get a check in every month."},
+  {"t": "Cold calling chases.", "speed": 1.08, "pause": 150, "e": 0.8, "cap": ""},
+  {"t": "DUXIO answers.", "speed": 1.0, "pause": 420, "e": 0.95, "cap": ""},
+  {"t": "Book a Strategy Call.", "speed": 1.04, "pause": 0, "e": 0.95, "cap": ""}
+ ]
+}

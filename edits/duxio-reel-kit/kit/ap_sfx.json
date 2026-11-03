@@ -1,0 +1,21 @@
+{
+ "_comment": "Default sound design per ap element. Entry = [name, ref, volume, offset seconds]. ref: c0 (slide start), hcN / xcN (Nth headline or element cue, hc-1 = last). Specials: ['ticks', ref, {n, gap, v, start, accel}] and ['spread', 'xcA:xcB', {n, v}] (n ticks spread between two cues).",
+ "_slide": [["whoosh", "c0", 0.2, -0.08]],
+ "_hl": [["tap", "each:hc", 0.14, 0.0]],
+ "call": [["pulse", "xc0", 0.25, 0.1], ["drop", "xc1", 0.35, 0.0], ["snap", "xc1", 0.22, 0.12]],
+ "notifs": [["notify", "each:xc", 0.2, 0.0]],
+ "age": [["pop", "xc0", 0.22, 0.15], ["tick", "each:xc1+", 0.2, 0.0]],
+ "chat": [["pop", "xc0", 0.22, 0.3], ["ticks", "xc1", {"n": 7, "gap": 0.12, "v": 0.14}], ["send", "xc2", 0.35, 0.0], ["plink", "xc3", 0.22, 0.0]],
+ "qual": [["pop", "xc0", 0.2, 0.0], ["pop", "each:xc1-3", 0.18, 0.0], ["plink", "each:xc1-3", 0.2, 0.35], ["plink", "xc4", 0.28, 0.0], ["notify", "xc5", 0.28, 0.0]],
+ "cal": [["pop", "xc0", 0.22, 0.0], ["plink", "xc0", 0.2, 0.35], ["notify", "each:xc1+", 0.2, 0.0]],
+ "typing": [["pulse", "xc0", 0.25, 0.1]],
+ "appr": [["pop", "xc0", 0.22, 0.0], ["click", "xc1", 0.3, 0.0], ["send", "xc2", 0.3, 0.0], ["plink", "xc3", 0.2, 0.0]],
+ "badge": [["pop", "xc0", 0.22, 0.2], ["notify", "xc1", 0.18, 0.0], ["ticks", "xc0", {"n": 14, "start": 0.5, "gap": 0.07, "accel": 0.004, "v": 0.13}]],
+ "lock": [["sub", "xc0", 0.25, 0.05], ["notify", "xc1", 0.25, 0.0], ["spread", "xc2:xc3", {"n": 21, "v": 0.12}]],
+ "notready": [["pulse", "xc0", 0.25, 0.1], ["pop", "xc1", 0.2, 0.0]],
+ "route": [["pop", "each:xc", 0.22, 0.0], ["plink", "xc1", 0.22, 0.35]],
+ "report": [["pop", "xc0", 0.22, 0.0], ["whoosh", "xc1", 0.18, 0.0], ["ticks", "xc1", {"n": 4, "gap": 0.18, "start": 0.1, "v": 0.16}]],
+ "handset": [["pulse", "xc0", 0.25, 0.1], ["drop", "xc1", 0.35, 0.0], ["snap", "xc1", 0.25, 0.1]],
+ "logo": [["stamp", "xc0", 0.4, 0.05], ["snap", "xc1", 0.28, 0.0]],
+ "cta": [["snap", "hc0", 0.22, 0.0], ["pop", "xc0", 0.22, 0.0], ["click", "xc1", 0.3, 0.0], ["send", "xc1", 0.3, 0.1]]
+}
